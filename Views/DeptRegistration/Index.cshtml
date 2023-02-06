@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model ssc.Models.DeptRegistration
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -47,17 +49,30 @@
   </head>
 
   <body>
-
+<form  asp-action="Index" asp-controller="UserDepartment">
+    @using (Html.BeginForm("Index","Gallery", FormMethod.Post, new{enctype= "multipart/formdata"}))
+    {
     <div class="br-pagebody">
         <div class="br-section-wrapper">
 		<div class="text-center pd-y-10"><img src="img/logo.jpg" class="img-fluid"></div>
           <h4>User Department Registration</h4>
           <div class="form-layout form-layout-1">
             <div class="row mg-b-25">
-              <div class="col-lg-4">
+              <div class="col-lg-3">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Department: <span class="tx-danger">*</span></label>
-                  <select class="form-control select2" data-placeholder="Choose Branch" id="branch">
+                  <label class="form-control-label tx-gray-700">Ministry: <span asp-validation-for="Ministry" class="tx-danger"></span></label>
+                  <select asp-items="@(new SelectList(ViewBag.message,"ministry_id","ministry_name"))" class="form-control select2" asp-for="Ministry" data-placeholder="Choose Branch" id="branch">
+                    
+					<option>----Choose Ministry----</option>
+                   
+                    
+                  </select>
+                </div>
+              </div><!-- col-4 -->
+              <div class="col-lg-3">
+                <div class="form-group">
+                  <label class="form-control-label tx-gray-700">Department: <span asp-validation-for="Department" class="tx-danger"></span></label>
+                  <select class="form-control select2" asp-for="Department" data-placeholder="Choose Branch" id="branch">
                     
 					<option>----Choose Department----</option>
                     <option value="D1">Department 1</option>
@@ -68,29 +83,29 @@
                   </select>
                 </div>
               </div><!-- col-4 -->
-			  <div class="col-lg-4">
+			  <div class="col-lg-3">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Name: <span class="tx-danger">*</span></label>
-				  <input type="text" class="form-control" id="name" >
+                  <label class="form-control-label tx-gray-700">Name: <span asp-validation-for="Name" class="tx-danger"></span></label>
+				  <input type="text" asp-for="Name"  class="form-control" id="name" >
+                </div>
+              </div>
+			  <div class="col-lg-3">
+                <div class="form-group">
+                  <label class="form-control-label tx-gray-700">Mobile: <span asp-validation-for="Mobile_no" class="tx-danger"></span></label>
+				  <input type="text" asp-for="Mobile_no"  class="form-control" id="mob" >
                 </div>
               </div>
 			  <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Mobile: <span class="tx-danger">*</span></label>
-				  <input type="text" class="form-control" id="mob" >
+                  <label class="form-control-label tx-gray-700">Email: <span asp-validation-for="Email" class="tx-danger"></span></label>
+				  <input type="text" asp-for="Email" class="form-control" id="email" >
                 </div>
               </div>
 			  <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Email: <span class="tx-danger">*</span></label>
-				  <input type="text" class="form-control" id="email" >
-                </div>
-              </div>
-			  <div class="col-lg-4">
-                <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Nodal officer doc upload: <span class="tx-danger">*</span></label>
+                  <label class="form-control-label tx-gray-700" for="customFile">Nodal officer doc upload: <span asp-validation-for="Upload_doc" class="tx-danger"></span></label>
 				  <label class="custom-file">
-                <input  type="file" id="file2" class="custom-file-input">
+                <input  type="file" asp-for="Upload_doc" id="file2" class="custom-file-input">
                 <span class="custom-file-control custom-file-control-primary"></span>
               </label>
 <p class="text-center"><strong>(Brows PDF format invoce )</strong></p>
@@ -150,8 +165,8 @@
     <script src="lib/popper.js/popper.js"></script>
     <script src="lib/bootstrap.js"></script>
     <script src="lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-    
-
+    }
+    </form>
   </body>
 
 </html>
