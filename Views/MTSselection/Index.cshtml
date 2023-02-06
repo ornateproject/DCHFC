@@ -1,0 +1,835 @@
+﻿@model ssc.Models.MTSselection;
+
+
+<form asp-action="Index" asp-controller="UserDepartment">
+    <div class="br-pageheader pd-y-15 pd-l-20">
+      <nav class="breadcrumb pd-0 mg-0 tx-12">
+        <a class="breadcrumb-item" href="UserDeptDashboard.html">Dashboard</a>
+            <span class="breadcrumb-item active"> Requisition Proforma (MTS- Non Technical)</span>
+      </nav>
+    </div><!-- br-pageheader -->
+    <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+        <h4 class="tx-gray-800 mg-b-5"> Requisition Proforma (MTS- Non Technical)</h4>
+
+    </div>
+
+    <div class="br-pagebody">
+      <div class="br-section-wrapper">
+          <div class="row mg-b-25">
+           @* @*@*<h4 class="tx-gray-800 mg-b-5">Details of the Post (for which Requisition is being submitted):-</h4>*@*@*@
+          </div>
+          <div class="row mg-b-25">
+
+            <div class="col-lg-4">
+              <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Name of the Post </label>
+
+                <input  type="text" class="form-control">
+
+              </div>
+            </div><!-- col-4 -->
+            <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                        Pay Matrix (as per 7th CPC): <span class="tx-danger"></span></label>
+                <input  type="text" class="form-control">
+                 
+
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Age Limit </label>
+
+                <input  type="text" class="form-control">
+
+              </div>
+            </div><!-- col-4 -->
+            <div class="col-lg-4">
+              <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Classification of Post <span class="tx-danger"></span></label>
+                        <input type="text" class="form-control">
+                @*<select class="form-control select2"  data-placeholder="Exam" id="poNo">
+
+                  <option>----Select----</option>
+                  <option>Group ‘B’ Non-Gazetted</option>
+                  <option>Group-‘C’, Non-Technica</option>
+
+                </select>*@
+
+              </div>
+            </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Place of initial posting [name of the
+                            State(s)/UTs]. <span class="tx-danger"></span>
+                        </label>
+                        <input type="text" class="form-control">
+                        
+
+                    </div>
+                </div><!-- col-4 -->
+                <!-- col-4 -->
+            <!-- col-4 -->
+
+
+            <!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Whether All India Service Liability (AISL)
+                            is involved?
+                             <span class="tx-danger"></span>
+                        </label>
+                        <input type="text" class="form-control">
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            How have the vacancies arisen?
+                            (Clearly specify, by promotion/resignation/
+                            death/ retirement etc. in case the vacancy is
+                            due to failure to recruit by transfer/
+                            deputation, the details may be indicated)
+                          
+                            <span class="tx-danger"></span>
+                        </label>
+                        <input type="text" class="form-control">
+
+
+                    </div>
+                </div>
+            
+          </div>
+          
+          @*<div class="row mg-b-25">
+
+            <div class="col-lg-12">
+              <div class="form-group">
+
+                <label class="form-control-label tx-gray-700">How have the vacancies arisen?
+                  (Clearly specify, by promotion/resignation/
+                  death/ retirement etc. in case the vacancy is due
+                  to failure to recruit by transfer/deputation, the
+                  details thereof may also be indicated)
+                   <span  class="tx-danger"></span></label>
+
+                <input type="text"  class="form-control">
+
+              </div>
+            </div><!-- col-4 -->
+           
+            
+            <!-- col-4 -->
+
+
+           
+          </div>*@
+
+          
+      
+             
+                <div class="row mg-b-25">
+
+            <div class="col-lg-12">
+              <div class="form-group">
+
+                <label class="form-control-label tx-gray-700">Whether the post is identified suitable for PwD Candidates :
+</label>
+
+
+              </div>
+            </div><!-- col-4 -->
+
+    </div>
+                <div class="row mg-b-25">
+      
+                  <div class="col-lg-2">
+                    <div class="form-group">
+      
+                      <label class="form-control-label tx-gray-700">Category-wise (Vertical)  <span  class="tx-danger">*</span></label>
+                       
+                    </div>
+                  </div><!-- col-4 -->
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label class="form-control-label tx-gray-700">UR <span
+                          class="tx-danger">*</span></label>
+                     
+      
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label class="form-control-label tx-gray-700">OBC <span
+                          class="tx-danger">*</span></label>
+                     
+      
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label class="form-control-label tx-gray-700">SC <span
+                          class="tx-danger">*</span></label>
+                     
+      
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label class="form-control-label tx-gray-700">ST <span
+                          class="tx-danger">*</span></label>
+                     
+      
+                    </div>
+                  </div>
+                  <div class="col-lg-1">
+                    <div class="form-group">
+                      <label class="form-control-label tx-gray-700">EWS <span
+                          class="tx-danger">*</span></label>
+                     
+      
+                    </div>
+                  </div>
+                  <div class="col-lg-1">
+                    <div class="form-group">
+                      <label class="form-control-label tx-gray-700">TOTAL <span
+                          class="tx-danger">*</span></label>
+                     
+      
+                    </div>
+                  </div>
+         </div>
+
+         <div class="row mg-b-25">
+      
+          <div class="col-lg-2">
+            <div class="form-group">
+
+              <label class="form-control-label tx-gray-700">No. of vacancies<span class="tx-danger">*</span></label>
+               
+            </div>
+          </div><!-- col-4 -->
+          <div class="col-lg-2">
+            <div class="form-group">
+              <input type="text"  class="form-control">
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="form-group">
+              <input type="text"  class="form-control">
+            </div>
+          </div>
+          
+          <div class="col-lg-2">
+            <div class="form-group">
+              <input type="text"  class="form-control">
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="form-group">
+              <input type="text"  class="form-control">
+            </div>
+          </div>
+          <div class="col-lg-1">
+            <div class="form-group">
+              <input type="text"  class="form-control">
+            </div>
+          </div>
+          <div class="col-lg-1">
+            <div class="form-group">
+              <input type="text"  class="form-control">
+            </div>
+          </div>
+ </div>
+
+ <div class="row mg-b-25">
+
+  <div class="col-lg-12">
+    <div class="form-group">
+
+      <label class="form-control-label tx-gray-700">*In accordance with DOP&T’s OM No. 36039/1/2019-Estt.(Res.) dated 19.01.2019
+         <span class="tx-danger">*</span></label>
+    </div>
+  </div><!-- col-4 -->
+ 
+  
+  <!-- col-4 -->
+
+
+ 
+</div>
+
+<div class="row mg-b-25">
+  <p class="tx-gray-800 mg-b-5">Whether the post is identified suitable for PwD Candidates 
+      <select class="form-control select2"  data-placeholder="Exam" id="poNo">
+
+                      <option>----Select----</option>
+                      <option>Yes</option>
+                      <option>No</option>
+    
+                    </select>
+                    </p>
+</div>
+<div class="row mg-b-25">
+
+  <div class="col-lg-4">
+    <div class="form-group">
+
+      <label class="form-control-label tx-gray-700">Type of Disability   <span class="tx-danger">*</span></label>
+       <select class="form-control select2"  data-placeholder="Exam" id="poNo">
+
+                      <option>----Select----</option>
+                      <option>Blindness and low vision </option>
+                      <option>Deaf and hard of hearing </option>
+                          <option>Locomotor disability including cerebral palsy,<br /> leprosy cured,<br />dwarfism, acid attack victims and
+                    <br />muscular dystrophy </option>
+
+                    <option>Autism, intellectual disability, specific</br>learning disability and mental illness</option>
+                    <option>Multiple disabilities from amongst<br />persons under clauses (i) to (iv) above<br />including deaf, blindness</option>
+
+                    </select>
+                    </p>
+    </div>
+  </div><!-- col-4 -->
+  
+  <div class="col-lg-4">
+    <div class="form-group">
+      <label class="form-control-label tx-gray-700">Suitable
+        for PwD <span
+          class="tx-danger">*</span></label>
+          <select class="form-control select2"  data-placeholder="Exam" id="poNo">
+
+                      <option>----Select----</option>
+                      <option>Yes</option>
+                      <option>No</option>
+    
+                    </select>
+     
+
+    </div>
+  </div>
+  
+  <div class="col-lg-4">
+    <div class="form-group">
+      <label class="form-control-label tx-gray-700">Permissible disability* <span
+          class="tx-danger">*</span></label>
+              <input type="text"   class="form-control">
+     
+
+    </div>
+  </div>
+  <div class="row mg-b-25">
+
+            <div class="col-lg-12">
+              <div class="form-group">
+
+                <label class="form-control-label tx-gray-700">**Permissible disabilities i.e. One Arm affected, One Leg affected, Both Legs affected, One
+Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mentioned
+</label>
+
+
+              </div>
+            </div><!-- col-4 -->
+
+    </div>
+  </div>
+
+  <div class="row mg-b-25">
+      <p  class="tx-gray-800 mg-b-5">Horizontal Reservation (Refer DOP&T O.M. No. 36035/02/2017-Estt.(Res.)dt.15.01.2018)</p>
+    
+</p>
+</div>
+<div class="row mg-b-25">  
+    <p class="tx-gray-800 mg-b-5">Out of the total number of vacancies shown above in Col. 5(a), the number of vacancies
+reserved for Persons with Disabilities (PwD):-</p>
+</div>
+  <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">VH</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+    <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">HH</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+    <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">OH</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+    <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">OTHERS</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+    <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700"><b>Total</b> vacancies reserved for Persons
+with Disabilities (PwD)</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+
+  <div class="row mg-b-25">  
+      <div class="col-lg-6 ">
+              <div class="form-group">
+
+           <label class=" d-flex form-control-label tx-gray-700">Out of Total reserved PwD vacancies in</br>
+                     5(c) above, number of vacancies which</br>may be filled through non-PwD</br> candidates in the event of not finding</br>
+                      candidates from earmarked PwD</br>
+                        category:</label>
+</div>
+</div>
+<div class="col-lg-6">
+           <div class="form-group">
+           <input type="text" a class="form-control">
+
+</div>
+</div>
+</div>
+
+<div class="row mg-b-25">  
+      <div class="col-lg-4">
+           <div class="form-group">
+
+           <label class="form-control-label tx-gray-700">Out of Total PwD vacancies as<br />mentioned in 5(c) above, number of<br />
+vacancies and corresponding Vertical<br />category which should be left unfilled<br />
+in the event of not finding candidates<br />from earmarked PwD category::</label>
+</div>
+</div>
+ <div class="col-lg-4">
+      <div class="form-group">
+      <label class="form-control-label tx-gray-700">Number </label>
+                    <input type="text" a class="form-control">
+
+      </div>
+</div>
+<div class="col-lg-4">
+     <div class="form-group">
+      <label class="form-control-label tx-gray-700">Vertical Category </label>
+                    <input type="text"  class="form-control">
+
+      </div>
+</div>
+</div>
+
+
+<div class="row mg-b-25">  
+   <div class="col-lg-6">
+           <label class="form-control-label tx-gray-700">Out of the total vacancies shown above<br />
+      in col. 5(a), vacancies reserved for ExServiceman (ESM)</label>
+   </div>
+ <div class="col-lg-6">
+      <div class="form-group">
+      <label class="form-control-label tx-gray-700">Number </label>
+                    <input type="text"  class="form-control">
+
+      </div>
+ </div>
+</div>
+
+
+
+
+<div class="row mg-b-25">  
+      <div class="col-lg-4">
+
+           <label class="form-control-label tx-gray-700">Out of Total ESM vacancies as<br />
+                                mentioned in 5(d) above, number of<br />
+                                vacancies and corresponding Vertical<br />
+                                category which should be left unfilled<br />
+                                   in the event of not finding candidates<br />
+                                    from earmarked ESM category:</label>
+</div>
+ <div class="col-lg-4">
+      <div class="form-group">
+      <label class="form-control-label tx-gray-700">Number </label>
+                    <input type="text"  class="form-control">
+
+      </div>
+</div>
+<div class="col-lg-4">
+     <div class="form-group">
+      <label class="form-control-label tx-gray-700">Vertical Category </label>
+                    <input type="text"  class="form-control">
+
+      </div>
+</div>
+</div>
+    <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">Period of probation</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+
+ <div class="row mg-b-25">
+
+  <div class="col-lg-12">
+    <div class="form-group">
+
+      <label class="form-control-label tx-gray-700 d-flex ">Qualification as laid down in the notified Recruitment Rules including any relaxation:
+         </label>
+    </div>
+  </div>
+</div>
+
+    <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">Essential</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+      <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">Desirable (Please indicate ‘NIL’ if not
+specified in the Recruitment Rules)</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+     <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">Relaxation, if any</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+      <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">Whether Indenting Department has furnished
+any clarification on EQ/Eligibility/Experience
+to any of the Regional Office(s) of SSC.</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+
+        <select class="form-control select2" data-placeholder="Exam" id="poNo">
+
+                      <option>----Select----</option>
+                      <option>Yes</option>
+                      <option>No</option>
+        </select>
+
+  </div>
+  </div>
+  
+ <div class="row mg-b-25">  
+      <div class="col-lg-6">
+           <label class="form-control-label tx-gray-700">Age Limits as per Recruitment Rules :-</label>
+</div>
+<div class="col-lg-6">
+    <div class="form-group">
+                            <input type="text"  class="form-control">
+
+  </div>
+  </div>
+
+  
+
+ <div class="col-lg-6">
+    <div class="form-group">
+        <label class="form-control-label tx-gray-700">Any other requirements or conditions not covered<br />
+by the above columns </label>
+                               
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+       <input type="text"  class="form-control">
+
+  </div>
+  </div> 
+  </div>
+
+<div class="row mg-b-25">
+<h4 class="tx-gray-800 mg-b-5">Name, address & Tel.
+No. of the Officer</h4>
+</div>
+    <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">Name:</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+      <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">Designation:</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+      <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">Address:</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+      <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">Tel.No./Mobile No</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text" class="form-control">
+  </div>
+  </div>
+  </div>
+      <div class="row mg-b-25">  
+<div class="col-lg-6">
+    <div class="form-group">
+    <label class="form-control-label tx-gray-700">E-mail:</label>      
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+  </div>
+
+   <div class="row mg-b-25">  
+      <div class="col-lg-6">
+           <label class="form-control-label tx-gray-700">  Whether the captioned post(s) has/have been<br />
+exempted from ban orders imposed by the M/o
+</div>
+<div class="col-lg-6">
+    <div class="form-group">
+                     <select class="form-control select2"  data-placeholder="Exam" id="poNo">
+
+                      <option>----Select----</option>
+                      <option>Yes</option>
+                      <option>No</option>
+    
+                    </select>             
+
+  </div>
+  </div>
+  </div>
+
+   <div class="row mg-b-25">  
+      <div class="col-lg-6">
+           <label class="form-control-label tx-gray-700"> Whether a ‘No Objection Certificate’ from<br />
+             Division of Retraining and Redeployment of the<br />
+             DOPT has been obtained in accordance with the<br />
+             CCS (Redeployment of Surplus Staff) Rules</label>
+             </div>
+
+
+     <div class="col-lg-6">
+    <div class="form-group">
+      
+       <select class="form-control select2"  data-placeholder="Exam" id="poNo">
+
+                      <option>----Select----</option>
+                      <option>Yes</option>
+                      <option>No</option>
+    
+                    </select>
+
+  </div>
+  </div>
+  </div>
+     <div class="row mg-b-25">  
+      <div class="col-lg-6">
+           <label class="form-control-label tx-gray-700"> Whether the number of vacancies reserved for SC,
+ST, OBC & EWS as mentioned in Column 5(a)</br>
+above, is in accordance with the reservation quota</br>
+fixed for these Categories as per DOPT O.M.</br>
+No.36012/2/96-Estt.(Res.), dated 02.07.1997 and
+DOPT O.M. No.36012/5/97-Estt.Vol.II, dated</br>
+20.07.2000 & DoP&T O.M. No. 36039/1/2019-</br>
+Estt.(Res.) dated 19/01/2019 or any subsequent</br>
+orders?
+</label>
+             </div>
+
+
+     <div class="col-lg-6">
+    <div class="form-group">
+      
+       <select class="form-control select2"  data-placeholder="Exam" id="poNo">
+
+                      <option>----Select----</option>
+                      <option>Yes</option>
+                      <option>No</option>
+    
+                    </select>
+
+  </div>
+  </div>
+  </div>
+
+  
+  <div class="row mg-b-25">  
+      <div class="col-lg-6">
+           <label class="form-control-label tx-gray-700">Whether the vacancies for PwD and ESM have<br />
+      been worked out with reference to DOPT O.M
+      </label>
+      </div>
+<div class="col-lg-6">
+    <div class="form-group">
+                            
+                            <select class="form-control select2"  data-placeholder="Exam" id="poNo">
+
+                      <option>----Select----</option>
+                      <option>Yes</option>
+                      <option>No</option>
+    
+                    </select>
+
+  </div>
+  </div>
+  </div>
+
+   <div class="row mg-b-25">  
+      <div class="col-lg-6">
+           <label class="form-control-label tx-gray-700"> Whether the provisions of ‘The Rights of Persons<br />
+    with Disabilities Act, 2016’ are complied with?
+</label>
+</div>
+<div class="col-lg-6">
+    <div class="form-group">
+                        <select class="form-control select2"  data-placeholder="Exam" id="poNo">
+
+                      <option>----Select----</option>
+                      <option>Yes</option>
+                      <option>No</option>
+    
+                    </select>
+                    </div>
+  </div>
+  </div>
+
+   <div class="row mg-b-25">  
+      <div class="col-lg-6">
+           <label class="form-control-label tx-gray-700">Letter No. and date of the Previous requisition for<br />
+the same post (along with category-wise break-up<br />
+of the number of vacancies) placed with the SSC<br />
+by your office<br />
+</label>
+</div>
+
+<div class="col-lg-6">
+    <div class="form-group">
+                                    <input type="text" class="form-control">
+
+  </div>
+  </div>
+  </div>
+
+  <div class="row mg-b-25">  
+      <div class="col-lg-6">
+           <label class="form-control-label tx-gray-700">Letter No. and date by which nomination has been<br />
+     made earlier by SSC to your office for the same<br />
+     Post and No. of vacancies filled by your<br />
+     Office/Deptt.
+     </label>
+</div>
+
+<div class="col-lg-6">
+    <div class="form-group">
+    <input type="text"  class="form-control">
+  </div>
+  </div>
+ </div>
+  
+  <div class="form-layout-footer" asp-action="index">
+            <button class="btn btn-red  btn btn-success" id="sbt" style="cursor:pointer" type="submit"> <span class="text-white">Submit</span></button>
+            <button class="btn btn-secondary "  style="cursor:pointer" id="sbt" type='reset'>Cancel</button>
+          </div><!-- form-layout-footer -->
+        </div><!-- form-layout -->
+      <!-- br-section-wrapper -->
+    </div><!-- br-pagebody -->
+</form>
+
+   
+
+
+   
