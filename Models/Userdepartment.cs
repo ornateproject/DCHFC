@@ -5,6 +5,9 @@ namespace ssc.Models
     public class UserDepartment
     {
         public int ID { get; set; }
+
+
+
         [Required(ErrorMessage = "*")]
         public string? post_name { get; set; }
         [Required(ErrorMessage = "*")]
@@ -113,8 +116,9 @@ namespace ssc.Models
         [Required(ErrorMessage = "*")]
 
         public string? Requirment { get; set; }
-        [Required(ErrorMessage = "*")]
 
+        [Required(ErrorMessage = "*")]
+        [StringLength(5,ErrorMessage ="DDD")]
         public string? Name { get; set; }
         [Required(ErrorMessage = "*")]
 
@@ -128,6 +132,7 @@ namespace ssc.Models
 
         public string? Mobile_no { get; set; }
         [Required(ErrorMessage = "*")]
+      
 
         public string? Email { get; set; }
         [Required(ErrorMessage = "*")]
