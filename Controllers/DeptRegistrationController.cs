@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ssc.Data;
 using ssc.Models;
 using ssc.repository;
+using System.Data;
 using static ssc.Models.DeptRegistration;
 
 namespace ssc.Controllers
@@ -19,9 +21,10 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var sdxf = _deptregrepo.get_ministry();
-
-            return View();
+             var ministry= _deptregrepo.get_ministry();
+            ManageDepreg manageDepreg = new ManageDepreg();
+            manageDepreg.Ministries = JsonConvert.DeserializeObject<List<ministry>>(ministry);
+            return View(manageDepreg);
         }
 
         [HttpPost]
@@ -37,9 +40,16 @@ namespace ssc.Controllers
             return View();
 
         }
-            
 
+        public string getdepartment(int ministryID)
+        {
+            var dep = _deptregrepo.get_deparment(1);
             
+            return JsonConvert.SerializeObject(dep);
+        }
+
+
+
     }
 
 

@@ -8,7 +8,7 @@ namespace ssc.Models
     {
         public int ID { get; set; }
         [Required(ErrorMessage = "*")]
-        public string? Ministry  { get; set; }
+        public string? Ministry { get; set; }
 
 
         [Required(ErrorMessage = "*")]
@@ -26,15 +26,21 @@ namespace ssc.Models
         [Required(ErrorMessage = "*")]
 
         public IFormFile? Upload_doc { get; set; }
-        public IEnumerable<SelectListItem> ministry_name { get;  set; }
-
+        //public IEnumerable<SelectListItem> ministry_name { get;  set; }
+    }
         public class ministry
         {
-            [Key]
+           
             public int? ministry_id { get; set; }
 
             public string? ministry_name { get; set; }
         }
 
-    }
+        public class ManageDepreg
+        {
+            public List<ministry>? Ministries { get; set; }
+            public DeptRegistration? depreg { get; set; }
+        }
+
+    
 }

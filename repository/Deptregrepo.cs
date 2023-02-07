@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
 using ssc.Models;
 using System.Data;
 
@@ -39,11 +40,11 @@ namespace ssc.repository
         public string InsertpostData(DeptRegistration department)
         {
             var cRepo = new Ministryrepo();
-            var ministry = new DeptRegistration()
-            {
+            //var ministry = new DeptRegistration()
+            //{
 
-                ministry_name = cRepo.Getrecord()
-            };
+            //    ministry_name = cRepo.Getrecord()
+            //};
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -83,7 +84,25 @@ namespace ssc.repository
                     con.Close();
                 }
             }
-            return "1";
+            return JsonConvert.SerializeObject(dt);
+        }
+        public DataTable get_deparment(int ministryt_id)
+        {
+
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("get_Dept", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Ministry", ministryt_id);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    con.Close();
+                }
+            }
+            return dt;
         }
     }
 

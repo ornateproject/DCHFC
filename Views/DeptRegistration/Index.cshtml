@@ -1,4 +1,4 @@
-﻿@model ssc.Models.DeptRegistration
+﻿@model ssc.Models.ManageDepreg
 @{
    
 	Layout=null;
@@ -63,55 +63,58 @@
           <h4>User Department Registration</h4>
           <div class="form-layout form-layout-1">
             <div class="row mg-b-25">
-              <div class="col-lg-3">
+              <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Ministry: <span asp-validation-for="Ministry" class="tx-danger"></span></label>
-                  <select  class="form-control select2"  asp-for="Ministry" data-placeholder="Choose Branch" id="branch">
+                  <label class="form-control-label tx-gray-700">Ministry: <span asp-validation-for="depreg.Ministry" class="tx-danger"></span></label>
+                  <select  class="form-control select2"  asp-for="depreg.Ministry"  data-placeholder="Choose Branch">
                     
 					<option>----Choose Ministry----</option>
+                                    @foreach (var ministry in Model.Ministries)
+                                    {
+                                     <option value="@ministry.ministry_id"> @ministry.ministry_name</option>   
+                                    }
+
+                    
+                  </select>
+                </div>
+                </div>
+             
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label tx-gray-700">Department: <span asp-validation-for="depreg.Department" class="tx-danger"></span></label>
+                  <select class="form-control select2" asp-for="depreg.Department" data-placeholder="Choose Branch">
+                    
+					<option>----Choose Department----</option>
                    
                     
                   </select>
                 </div>
-                </div>
               </div><!-- col-4 -->
-              <div class="col-lg-3">
+			  <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Department: <span asp-validation-for="Department" class="tx-danger"></span></label>
-                  <select class="form-control select2" asp-for="Department" data-placeholder="Choose Branch" id="branch">
-                    
-					<option>----Choose Department----</option>
-                    <option value="D1">Department 1</option>
-                    <option value="D2">Department 2</option>
-					<option value="D3">Department 3</option>
-					<option value="D4">Department 4</option>
-                    
-                  </select>
-                </div>
-              </div><!-- col-4 -->
-			  <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Name: <span asp-validation-for="Name" class="tx-danger"></span></label>
-				  <input type="text" asp-for="Name"  class="form-control" id="name" >
+                  <label class="form-control-label tx-gray-700">Name: <span asp-validation-for="depreg.Name" class="tx-danger"></span></label>
+				  <input type="text" asp-for="depreg.Name"  class="form-control" id="name" >
                 </div>
               </div>
-			  <div class="col-lg-3">
+              </div>
+              <div class="row mg-b-25">
+			  <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Mobile: <span asp-validation-for="Mobile_no" class="tx-danger"></span></label>
-				  <input type="text" asp-for="Mobile_no"  class="form-control" id="mob" >
+                  <label class="form-control-label tx-gray-700">Mobile: <span asp-validation-for="depreg.Mobile_no" class="tx-danger"></span></label>
+				  <input type="text" asp-for="depreg.Mobile_no"  class="form-control" id="mob" >
                 </div>
               </div>
 			  <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Email: <span asp-validation-for="Email" class="tx-danger"></span></label>
-				  <input type="text" asp-for="Email" class="form-control" id="email" >
+                  <label class="form-control-label tx-gray-700">Email: <span asp-validation-for="depreg.Email" class="tx-danger"></span></label>
+				  <input type="text" asp-for="depreg.Email" class="form-control" id="email" >
                 </div>
               </div>
 			  <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700" for="customFile">Nodal officer doc upload: <span asp-validation-for="Upload_doc" class="tx-danger"></span></label>
+                  <label class="form-control-label tx-gray-700" for="customFile">Nodal officer doc upload: <span asp-validation-for="depreg.Upload_doc" class="tx-danger"></span></label>
 				  <label class="custom-file">
-                <input  type="file" asp-for="Upload_doc" id="file2" class="custom-file-input">
+                <input  type="file" asp-for="depreg.Upload_doc" id="file2" class="custom-file-input">
                 <span class="custom-file-control custom-file-control-primary"></span>
               </label>
 <p class="text-center"><strong>(Brows PDF format invoce )</strong></p>
@@ -173,6 +176,46 @@
     <script src="~/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
     
     </form>
+
+    <script>
+
+        $(document).ready(function () {
+            //alert();
+
+	
+     $("#depreg_Ministry").change(function() {
+        //alert( $('option:selected', this).val() );
+         var ministry = $('option:selected', this).val();
+
+         $.ajax({
+                type: "POST",
+                url: "http://localhost:5027/DeptRegistration/getdepartment",
+                data: { ministryID: ministry}, 
+                dataType: "JSON",
+                contentType: "application/json; charset=utf-8",
+                
+                success: function (data) {
+                   // alert();
+                    $("#depreg_Department").empty();
+                    $("#depreg_Department").append('<option value="">----Choose Department----</option>');
+                    $.each(data, function(k, v) {
+							var sf=v;
+							
+							$("#depreg_Department").append('<option value='+v.dep_id+'>'+v.dep_name+'</option>');
+
+							
+						  });
+                },
+                error: function (err) {
+
+                    alert("Some Thing Went Wrong");
+                }
+            });
+        });
+    });
+	
+
+    </script>
   </body>
 
 </html>
