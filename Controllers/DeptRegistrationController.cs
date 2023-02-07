@@ -15,28 +15,26 @@ namespace ssc.Controllers
         {
             _deptregrepo = new Deptregrepo(configuration);
         }
+
+        [HttpGet]
         public IActionResult Index()
         {
+            var sdxf = _deptregrepo.get_ministry();
+
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(IFormFile myfile)
+        public async Task<IActionResult> Index(DeptRegistration department)
         {
-            //if (myfile != null)
-            //{
-            //    var path = Path.Combine(wwwrootDirectry, DateTime.Now.Ticks.ToString() +
-            //        Path.GetExtension(myfile.FileName));
 
-            //    using (var stream = new FileStream(path, FileMode.Create))
-            //    {
-            //        await myfile.CopyToAsync(stream);
-            //    }
-            //}
+            if (ModelState.IsValid)
+            {
+                var asd = _deptregrepo.InsertpostData(department);
 
-            //var vm = new DeptRegistration();
-            //vm.ministry_master = ministry_Dept();
-            return View(vm);
+                return RedirectToAction("Index");
+            }
+            return View();
 
         }
             

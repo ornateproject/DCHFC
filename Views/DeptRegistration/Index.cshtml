@@ -50,8 +50,8 @@
 
   <body>
 <form  asp-action="Index" asp-controller="UserDepartment">
-    @using (Html.BeginForm("Index","Gallery", FormMethod.Post, new{enctype= "multipart/formdata"}))
-    {
+   @* @using (html.beginform("index","gallery", formmethod.post, new{enctype= "multipart/formdata"}))
+    {*@
     <div class="br-pagebody">
         <div class="br-section-wrapper">
 		<div class="text-center pd-y-10"><img src="img/logo.jpg" class="img-fluid"></div>
@@ -61,12 +61,13 @@
               <div class="col-lg-3">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Ministry: <span asp-validation-for="Ministry" class="tx-danger"></span></label>
-                  <select asp-items="@(new SelectList(ViewBag.message,"ministry_id","ministry_name"))" class="form-control select2" asp-for="Ministry" data-placeholder="Choose Branch" id="branch">
+                  <select  class="form-control select2"  asp-for="Ministry" data-placeholder="Choose Branch" id="branch">
                     
 					<option>----Choose Ministry----</option>
                    
                     
                   </select>
+                </div>
                 </div>
               </div><!-- col-4 -->
               <div class="col-lg-3">
@@ -165,7 +166,7 @@
     <script src="lib/popper.js/popper.js"></script>
     <script src="lib/bootstrap.js"></script>
     <script src="lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-    }
+    
     </form>
   </body>
 

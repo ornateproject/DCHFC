@@ -8,26 +8,82 @@ namespace ssc.repository
     public class Deptregrepo
     {
         private string connectionString;
+        
         public Deptregrepo(IConfiguration configuration)
         {
             connectionString = configuration.GetValue<string>("DBInfo:ConnectionString");
 
         }
-        public static List<SelectListItem> ministry_Dept(IFormFile myfile)
+        //public List<DeptRegistration> GetRegistration()
+        //{
+        //    List<DeptRegistration> Registrationlist = new List<DeptRegistration>();
+        //    try
+        //    {
+        //        using (SqlConnection con = new SqlConnection(connectionString))
+        //        {
+        //            using (SqlCommand cmd = new SqlCommand("[sscpost].[Reg_record]", con))
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.Parameters.AddWithValue("@post_name", department.post_name);
+        //                cmd.Parameters.AddWithValue("@pay_matrix", department.pay_matrix);
+        //            }
+        //            return Registrationlist;
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
+       
+        public string InsertpostData(DeptRegistration department)
         {
-            List<SelectListItem> items = new List<SelectListItem>();
+            var cRepo = new Ministryrepo();
+            var ministry = new DeptRegistration()
+            {
 
+                ministry_name = cRepo.Getrecord()
+            };
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[allvacancy_post]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Ministry", department.Ministry);
+                    cmd.Parameters.AddWithValue("@Department", department.Department);
+                    cmd.Parameters.AddWithValue("@Name", department.Name);
+                    cmd.Parameters.AddWithValue("@Mobile_no", department.Mobile_no);
+                    cmd.Parameters.AddWithValue("@Email", department.Email);
+                    cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
+                    con.Open();
+                    int xdvf = cmd.ExecuteNonQuery();
+                    //SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    //sda.Fill(dt);
+                    con.Close();
+                }
+            }
+            return "1";
+        }
+
+
+        public string get_ministry()
+        {
+          
+            DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[ministry_Dept]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ministry_name", myfile.ministry_name);
-
+                    
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    con.Close();
                 }
-
             }
-                return items;
+            return "1";
         }
     }
 
