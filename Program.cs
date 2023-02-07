@@ -9,8 +9,14 @@ var mvcBuilder = builder.Services.AddRazorPages();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<UserDepartmentDbContext>(options => 
-options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
+//builder.Services.AddDbContext<UserDepartmentDbContext>(options => 
+//options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
+
+//public void ConfigureServices(IServiceCollection services)
+//{
+//    services.AddDbContext<UserDepartmentDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Myconnection")));
+//    services.AddControllersWithViews();
+//}
 
 builder.Services.AddSession(options =>
 {
