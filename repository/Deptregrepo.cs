@@ -37,7 +37,7 @@ namespace ssc.repository
         //    }
         //}
        
-        public string InsertpostData(DeptRegistration department)
+        public string InsertdepReg(DeptRegistration department)
         {
             var cRepo = new Ministryrepo();
             //var ministry = new DeptRegistration()
@@ -48,7 +48,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[allvacancy_post]", con))
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[Reg_record]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Ministry", department.Ministry);

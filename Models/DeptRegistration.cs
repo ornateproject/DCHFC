@@ -23,7 +23,7 @@ namespace ssc.Models
         [Required(ErrorMessage = "*")]
 
         public string? Email { get; set; }
-        [Required(ErrorMessage = "*")]
+        //[Required(ErrorMessage = "*")]
 
         public IFormFile? Upload_doc { get; set; }
         //public IEnumerable<SelectListItem> ministry_name { get;  set; }

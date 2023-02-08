@@ -28,12 +28,12 @@ namespace ssc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(DeptRegistration department)
+        public async Task<IActionResult> Index(ManageDepreg department)
         {
 
             if (ModelState.IsValid)
             {
-                var asd = _deptregrepo.InsertpostData(department);
+                var asd = _deptregrepo.InsertdepReg(department.depreg);
 
                 return RedirectToAction("Index");
             }
