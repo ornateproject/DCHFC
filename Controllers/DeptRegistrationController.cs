@@ -55,9 +55,9 @@ namespace ssc.Controllers
             return View();
         }
 
-        public string getdepartment(int ministryID)
+        public string getdepartment(int id)
         {
-            var dep = _deptregrepo.get_deparment(1);
+            var dep = _deptregrepo.get_deparment(id);
             
             return JsonConvert.SerializeObject(dep);
         }

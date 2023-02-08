@@ -188,9 +188,9 @@
          var ministry = $('option:selected', this).val();
 
          $.ajax({
-                type: "POST",
-                url: "http://localhost:5027/DeptRegistration/getdepartment",
-                data: { ministryID: ministry}, 
+                type: "GET",
+                url: "http://localhost:5027/DeptRegistration/getdepartment?id=" + ministry,
+                //data: JSON.stringify(State),
                 dataType: "JSON",
                 contentType: "application/json; charset=utf-8",
                 
