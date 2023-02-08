@@ -28,17 +28,31 @@ namespace ssc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(DeptRegistration department)
+        public async Task<IActionResult> Index(ManageDepreg department)
         {
 
             if (ModelState.IsValid)
             {
-                var asd = _deptregrepo.InsertpostData(department);
+                var asd = _deptregrepo.InsertpostData(department.depreg);
 
                 return RedirectToAction("Index");
             }
-            return View();
+            var ministry = _deptregrepo.get_ministry();
+            ManageDepreg manageDepreg = new ManageDepreg();
+            manageDepreg.Ministries = JsonConvert.DeserializeObject<List<ministry>>(ministry);
 
+            return View(manageDepreg);
+
+        }
+
+        public async Task<IActionResult> GetPdfFile(int id)
+        {
+            //var deliveryUpload = await _deptregrepo.GetPdfFile.FindAsync(id);
+            //if (deliveryUpload == null)
+            //    return NotFound();
+
+            //return File(deliveryUpload.Files, "pdf", "delivery-upload.pdf");
+            return View();
         }
 
         public string getdepartment(int id)
