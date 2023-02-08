@@ -37,8 +37,22 @@ namespace ssc.Controllers
 
                 return RedirectToAction("Index");
             }
-            return View();
+            var ministry = _deptregrepo.get_ministry();
+            ManageDepreg manageDepreg = new ManageDepreg();
+            manageDepreg.Ministries = JsonConvert.DeserializeObject<List<ministry>>(ministry);
 
+            return View(manageDepreg);
+
+        }
+
+        public async Task<IActionResult> GetPdfFile(int id)
+        {
+            //var deliveryUpload = await _deptregrepo.GetPdfFile.FindAsync(id);
+            //if (deliveryUpload == null)
+            //    return NotFound();
+
+            //return File(deliveryUpload.Files, "pdf", "delivery-upload.pdf");
+            return View();
         }
 
         public string getdepartment(int id)

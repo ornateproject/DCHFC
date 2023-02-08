@@ -15,36 +15,10 @@ namespace ssc.repository
             connectionString = configuration.GetValue<string>("DBInfo:ConnectionString");
 
         }
-        //public List<DeptRegistration> GetRegistration()
-        //{
-        //    List<DeptRegistration> Registrationlist = new List<DeptRegistration>();
-        //    try
-        //    {
-        //        using (SqlConnection con = new SqlConnection(connectionString))
-        //        {
-        //            using (SqlCommand cmd = new SqlCommand("[sscpost].[Reg_record]", con))
-        //            {
-        //                cmd.CommandType = CommandType.StoredProcedure;
-        //                cmd.Parameters.AddWithValue("@post_name", department.post_name);
-        //                cmd.Parameters.AddWithValue("@pay_matrix", department.pay_matrix);
-        //            }
-        //            return Registrationlist;
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
+        
        
-        public string InsertdepReg(DeptRegistration department)
-        {
-            var cRepo = new Ministryrepo();
-            //var ministry = new DeptRegistration()
-            //{
-
-            //    ministry_name = cRepo.Getrecord()
-            //};
+        public string InsertpostData(DeptRegistration department)
+        {            
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -58,16 +32,14 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@Email", department.Email);
                     cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
                     con.Open();
-                    int xdvf = cmd.ExecuteNonQuery();
-                    //SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    //sda.Fill(dt);
+                    int xdvf = cmd.ExecuteNonQuery();                   
                     con.Close();
                 }
             }
-            return "1";
+            return "ok";
         }
 
-
+        
         public string get_ministry()
         {
           
