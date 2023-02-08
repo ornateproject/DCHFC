@@ -33,7 +33,7 @@ namespace ssc.Controllers
 
             if (ModelState.IsValid)
             {
-                var asd = _deptregrepo.InsertpostData(department.depreg);
+                var asd = _deptregrepo.InsertdepReg(department.depreg);
 
                 return RedirectToAction("Index");
             }
