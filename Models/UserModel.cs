@@ -12,4 +12,9 @@ namespace ssc.Models
         [Display(Prompt = "Password")]
         public string? Password { get; set; }
     }
+    //public class ministryModel
+    //{
+    //    public int ministry_id { get; set; }
+    //    public string? ministry_name { get; set; }
+    //}
 }
