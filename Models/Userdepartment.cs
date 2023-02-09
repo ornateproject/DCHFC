@@ -16,6 +16,7 @@ namespace ssc.Models
         public string? pay_matrix { get; set; }
 
         //[StringLength(100, ErrorMessage = "Enter a valid Post Class")]
+        [StringLength(100, ErrorMessage = "*")]
         [Required(ErrorMessage = "*")]
         public string? post_class { get; set; }
 

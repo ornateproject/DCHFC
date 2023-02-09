@@ -23,17 +23,19 @@
             <div class="col-lg-4">
               <div class="form-group">
 
-                        <label class="form-control-label tx-gray-700">Name of the Post </label>
+                        <label class="form-control-label tx-gray-700">Name of the Post  <span asp-validation-for="post_name" class="tx-danger"></span> </label>
 
-                <input  type="text" class="form-control">
+                <input   asp-for="post_name" type="text" class="form-control">
+                        
 
               </div>
             </div><!-- col-4 -->
             <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                        Pay Matrix (as per 7th CPC): <span class="tx-danger"></span></label>
-                <input  type="text" class="form-control">
+                            Pay Matrix (as per 7th CPC): <span asp-validation-for="pay_matrix" class="tx-danger"></span>
+                        </label>
+                <input  asp-for="pay_matrix"type="text" class="form-control">
                  
 
               </div>
@@ -41,24 +43,26 @@
             <div class="col-lg-4">
               <div class="form-group">
 
-                        <label class="form-control-label tx-gray-700">Age Limit </label>
+                        <label class="form-control-label tx-gray-700">
+                            Age Limit <span asp-validation-for="limit_age" class="tx-danger"></span> </label>
 
-                <input  type="text" class="form-control">
+                        <input asp-for="limit_age" type="text" class="form-control">
 
               </div>
             </div><!-- col-4 -->
             <div class="col-lg-4">
               <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            Classification of Post <span class="tx-danger"></span></label>
-                        <input type="text" class="form-control">
-                @*<select class="form-control select2"  data-placeholder="Exam" id="poNo">
+                            Classification of Post <span asp-validation-for="post_class" class="tx-danger"></span>
+                        </label>
+                       @* <input asp-for="post_class" type="text" class="form-control">*@
+                <select asp-for="post_class" class="form-control select2"  data-placeholder="Exam" id="poNo">
 
-                  <option>----Select----</option>
-                  <option>Group ‘B’ Non-Gazetted</option>
-                  <option>Group-‘C’, Non-Technica</option>
+                            <option value=" ">----Select----</option>
+                  <option value="Value1 ">Group ‘B’ Non-Gazetted</option>
+                  <option value="Value2 ">Group-‘C’, Non-Technica</option>
 
-                </select>*@
+                </select>
 
               </div>
             </div><!-- col-4 -->
@@ -66,16 +70,16 @@
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
                             Place of initial posting [name of the
-                            State(s)/UTs]. <span class="tx-danger"></span>
+                            State(s)/UTs]. <span asp-validation-for="liability_service" class="tx-danger"></span>
                         </label>
-                        <input type="text" class="form-control">
+                        <input asp-for="liability_service" type="text" class="form-control">
                         
 
                     </div>
                 </div><!-- col-4 -->
                 <!-- col-4 -->
             <!-- col-4 -->
-
+            
 
             <!-- col-4 -->
                 <div class="col-lg-4">
@@ -83,9 +87,9 @@
                         <label class="form-control-label tx-gray-700">
                             Whether All India Service Liability (AISL)
                             is involved?
-                             <span class="tx-danger"></span>
+                            <span asp-validation-for="arisen"  class="tx-danger"></span>
                         </label>
-                        <input type="text" class="form-control">
+                        <input asp-for="arisen" type="text" class="form-control">
 
 
                     </div>
@@ -99,9 +103,9 @@
                             due to failure to recruit by transfer/
                             deputation, the details may be indicated)
                           
-                            <span class="tx-danger"></span>
+                            <span asp-validation-for="arisen" class="tx-danger"></span>
                         </label>
-                        <input type="text" class="form-control">
+                        <input asp-for="arisen" type="text" class="form-control">
 
 
                     </div>
@@ -173,32 +177,40 @@
                 
 
 <div class="row mg-b-25">
-  <p class="tx-gray-800 mg-b-5">Whether the post is identified suitable for PwD Candidates 
-      <select class="form-control select2"  data-placeholder="Exam" id="poNo">
-
-                      <option>----Select----</option>
-                      <option>Yes</option>
-                      <option>No</option>
+    <div class="col-lg-6">
+    <div class="form-group">
+                <label class="form-control-label tx-gray-700">
+                    Whether the post is identified suitable for PwD Candidates <span asp-validation-for="disable" class="tx-danger"></span> </label>
+                    </div>
+                    </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                    <select asp-for=" disable" class="form-control select2" data-placeholder="Exam" id="poNo">
+                        <option value=" ">----Select----</option>
+                        <option value="Value1 ">Yes</option>
+                        <option value="Value2 ">No</option>
     
                     </select>
-                    </p>
+                    </div>
+                    </div>
+                   
 </div>
 <div class="row mg-b-25">
 
   <div class="col-lg-4">
     <div class="form-group">
 
-      <label class="form-control-label tx-gray-700">Type of Disability   <span class="tx-danger">*</span></label>
-       <select class="form-control select2"  data-placeholder="Exam" id="poNo">
+                        <label class="form-control-label tx-gray-700">Type of Disability   <span asp-validation-for="disability_type" class="tx-danger"></span></label>
+                        <select asp-for="disability_type" class="form-control select2" data-placeholder="Exam" id="poNo">
 
-                      <option>----Select----</option>
-                      <option>Blindness and low vision </option>
-                      <option>Deaf and hard of hearing </option>
-                          <option>Locomotor disability including cerebral palsy,<br /> leprosy cured,<br />dwarfism, acid attack victims and
+                            <option value=" ">----Select----</option>
+                            <option value="Value1">Blindness and low vision </option>
+                            <option value="Value2">Deaf and hard of hearing </option>
+                            <option value="Value3"> Locomotor disability including cerebral palsy,<br /> leprosy cured,<br />dwarfism, acid attack victims and
                     <br />muscular dystrophy </option>
 
-                    <option>Autism, intellectual disability, specific</br>learning disability and mental illness</option>
-                    <option>Multiple disabilities from amongst<br />persons under clauses (i) to (iv) above<br />including deaf, blindness</option>
+                    <option value="Value4">Autism, intellectual disability, specific</br>learning disability and mental illness</option>
+                    <option vlaue="Value5">Multiple disabilities from amongst<br />persons under clauses (i) to (iv) above<br />including deaf, blindness</option>
 
                     </select>
                     </p>
@@ -208,13 +220,12 @@
   <div class="col-lg-4">
     <div class="form-group">
       <label class="form-control-label tx-gray-700">Suitable
-        for PwD <span
-          class="tx-danger">*</span></label>
-          <select class="form-control select2"  data-placeholder="Exam" id="poNo">
+                            for PwD <span asp-validation-for="pwd_suitable" class="tx-danger"></span></label>
+                           <select asp-for= "pwd_suitable" class="form-control" data-placeholder="Exam" id="poNo">
 
-                      <option>----Select----</option>
-                      <option>Yes</option>
-                      <option>No</option>
+                            <option value=" ">----Select----</option>
+                            <option value="Value1 ">Yes</option>
+                            <option value="Value2 ">No</option>
     
                     </select>
      
@@ -224,9 +235,8 @@
   
   <div class="col-lg-4">
     <div class="form-group">
-      <label class="form-control-label tx-gray-700">Permissible disability* <span
-          class="tx-danger">*</span></label>
-              <input type="text"   class="form-control">
+                        <label class="form-control-label tx-gray-700">Permissible disability <span asp-validation-for="per_dis" class="tx-danger"></span></label>
+                        <input asp-for="per_dis" type="text" class="form-control">
      
 
     </div>
@@ -253,22 +263,21 @@ Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mention
                   <div class="col-lg-2">
                     <div class="form-group">
       
-                      <label class="form-control-label tx-gray-700">Category-wise (Vertical)  <span  class="tx-danger">*</span></label>
+                      <label class="form-control-label tx-gray-700">Category-wise (Vertical)  <span  class="tx-danger"></span></label>
                        
                     </div>
                   </div><!-- col-4 -->
                   <div class="col-lg-2">
                     <div class="form-group">
-                      <label class="form-control-label tx-gray-700">UR <span
-                          class="tx-danger">*</span></label>
-                     
+                        <label class="form-control-label tx-gray-700">UR <span asp-validation-for="ur_type" class="tx-danger"></span></label>
+                        
       
                     </div>
                   </div>
                   <div class="col-lg-2">
                     <div class="form-group">
                       <label class="form-control-label tx-gray-700">OBC <span
-                          class="tx-danger">*</span></label>
+                          class="tx-danger"></span></label>
                      
       
                     </div>
@@ -277,7 +286,7 @@ Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mention
                   <div class="col-lg-2">
                     <div class="form-group">
                       <label class="form-control-label tx-gray-700">SC <span
-                          class="tx-danger">*</span></label>
+                          class="tx-danger"></span></label>
                      
       
                     </div>
@@ -285,7 +294,7 @@ Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mention
                   <div class="col-lg-2">
                     <div class="form-group">
                       <label class="form-control-label tx-gray-700">ST <span
-                          class="tx-danger">*</span></label>
+                          class="tx-danger"></span></label>
                      
       
                     </div>
@@ -293,7 +302,7 @@ Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mention
                   <div class="col-lg-1">
                     <div class="form-group">
                       <label class="form-control-label tx-gray-700">EWS <span
-                          class="tx-danger">*</span></label>
+                          class="tx-danger"></span></label>
                      
       
                     </div>
@@ -301,7 +310,7 @@ Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mention
                   <div class="col-lg-1">
                     <div class="form-group">
                       <label class="form-control-label tx-gray-700">TOTAL <span
-                          class="tx-danger">*</span></label>
+                          class="tx-danger"></span></label>
                      
       
                     </div>
@@ -313,7 +322,7 @@ Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mention
           <div class="col-lg-2">
             <div class="form-group">
 
-              <label class="form-control-label tx-gray-700">No. of vacancies<span class="tx-danger">*</span></label>
+              <label class="form-control-label tx-gray-700">No. of vacancies<span class="tx-danger"></span></label>
                
             </div>
           </div><!-- col-4 -->
