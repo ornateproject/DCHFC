@@ -30,7 +30,7 @@ namespace ssc.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(ManageDepreg department)
         {
-
+           
             if (ModelState.IsValid)
             {
                 var asd = _deptregrepo.InsertpostData(department.depreg);
@@ -45,15 +45,18 @@ namespace ssc.Controllers
 
         }
 
-        public async Task<IActionResult> GetPdfFile(int id)
-        {
-            //var deliveryUpload = await _deptregrepo.GetPdfFile.FindAsync(id);
-            //if (deliveryUpload == null)
-            //    return NotFound();
+       
+            [HttpPost]
+            public async Task<IActionResult> SavePDF(IFormFile file)
+            {
+                if (file == null || file.Length == 0) { return BadRequest("File not found."); }
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "PDFs", file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                { await file.CopyToAsync(stream); }
+                return Ok("PDF file saved successfully.");
+            }
+        
 
-            //return File(deliveryUpload.Files, "pdf", "delivery-upload.pdf");
-            return View();
-        }
 
         public string getdepartment(int id)
         {
