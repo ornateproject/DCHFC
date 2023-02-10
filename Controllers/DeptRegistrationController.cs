@@ -33,7 +33,7 @@ namespace ssc.Controllers
            
             if (ModelState.IsValid)
             {
-                var asd = _deptregrepo.InsertdepReg(department.depreg);
+                var asd = _deptregrepo.InsertpostData(department.depreg);
 
                 return RedirectToAction("Index");
             }
@@ -46,16 +46,7 @@ namespace ssc.Controllers
         }
 
        
-            [HttpPost]
-            public async Task<IActionResult> SavePDF(IFormFile file)
-            {
-                if (file == null || file.Length == 0) { return BadRequest("File not found."); }
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "PDFs", file.FileName);
-                using (var stream = new FileStream(path, FileMode.Create))
-                { await file.CopyToAsync(stream); }
-                return Ok("PDF file saved successfully.");
-            }
-        
+            
 
 
         public string getdepartment(int id)

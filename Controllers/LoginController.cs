@@ -27,9 +27,13 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
-                var asd = _login.LoginCheck(model);
-
-                return RedirectToAction("Index", "UserDepartment");
+                var result = _login.LoginCheck(model);
+                if (result.Rows.Count>0)
+                {
+                    return RedirectToAction("Index", "UserDepartment");
+                }
+                TempData["error"] = "Please Enter Valid User Name And Password";
+                return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("Index", "Home");
         }

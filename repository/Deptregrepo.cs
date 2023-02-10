@@ -30,7 +30,7 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@Name", department.Name);
                     cmd.Parameters.AddWithValue("@Mobile_no", department.Mobile_no);
                     cmd.Parameters.AddWithValue("@Email", department.Email);
-                    cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
+                    //cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
                     con.Open();
                     int xdvf = cmd.ExecuteNonQuery();                   
                     con.Close();
