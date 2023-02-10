@@ -33,10 +33,43 @@ namespace ssc.Controllers
 
             if (ModelState.IsValid)
             {
-                var asd = _deptregrepo.InsertdepReg(department.depreg);
+                var asd = _deptregrepo.InsertpostData(department.depreg);
+                try
+
+                {
+
+                    
+
+                        string fileName = department.depreg.Upload_doc.FileName;
+
+                        var fileNames = Path.GetFileName(fileName);
+
+                        string uploadpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileNames);
+
+                        var stream = new FileStream(uploadpath, FileMode.Create);
+
+                        department.depreg.Upload_doc.CopyToAsync(stream);
+
+
+                    ViewBag.Message = "File uploaded successfully.";
+
+                }
+
+                catch
+
+                {
+
+                    ViewBag.Message = "Error while uploading the files.";
+
+                }
 
                 return RedirectToAction("Index");
             }
+            
+
+
+            //return RedirectToAction("Index");
+
             var ministry = _deptregrepo.get_ministry();
             ManageDepreg manageDepreg = new ManageDepreg();
             manageDepreg.Ministries = JsonConvert.DeserializeObject<List<ministry>>(ministry);
@@ -61,6 +94,9 @@ namespace ssc.Controllers
             
             return JsonConvert.SerializeObject(dep);
         }
+
+        //[HttpPost]
+        
 
 
 
