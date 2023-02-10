@@ -49,6 +49,13 @@ namespace ssc.Models
             public List<ministry>? Ministries { get; set; }
             public DeptRegistration? depreg { get; set; }
         }
-
+    public class userdetails
+    {
+        public string? name { get; set; }
+        public string? Mobile_no { get; set; }
+        public string? Email { get; set; }
+        public string? Upload_doc { get; set; }
+        public string? dep_name { get; set; }
+    }
     
 }
