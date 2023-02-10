@@ -14,7 +14,7 @@ namespace ssc.repository
             connectionString = configuration.GetValue<string>("DBInfo:ConnectionString");
 
         }
-        public string get_approval()
+        public string get_approval(int user_id)
         {
 
             DataTable dt = new DataTable();
@@ -23,13 +23,16 @@ namespace ssc.repository
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[getuserdata]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.Parameters.AddWithValue("@user_id", user_id);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
                     con.Close();
                 }
             }
+            var asfd = dt.Rows[0];
+            //var zsdf= JsonConvert.SerializeObject(dt.Rows);
+            //var szad= JsonConvert.SerializeObject(Convert.ToString(dt.Rows[0]));
             return JsonConvert.SerializeObject(dt);
         }
     }

@@ -1,4 +1,4 @@
-﻿@model ssc.Models.US1approvalpending
+﻿@model ssc.Models.DeptRegistration
 
 
 @*
@@ -28,27 +28,27 @@
                 <div class="form-group">
 
                   <label class="form-control-label tx-gray-700">Department: <span class="tx-danger">*</span></label>
-                 
+                 @Model.Department
                 </div>
               </div><!-- col-4 -->
               <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Name: <span class="tx-danger">*</span></label>
-				
+				@Model.Name
                   
                 </div>
               </div><!-- col-4 -->
 			  <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Mobile: <span class="tx-danger">*</span></label>
-				 
+				 @Model.Mobile_no
                   
                 </div>
               </div>
 			  <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Email: <span class="tx-danger">*</span></label>
-				
+				@Model.Email
                   
                 </div>
               </div>
@@ -56,7 +56,7 @@
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Nodal officer Doc upload: <span class="tx-danger">*</span></label>
 				  <a href="#"><img class="Pdficon1" src="img/PDF-icon.png" width="10%"></a>
-                  
+                  @Model.Upload_doc
                 </div>
               </div>
              
@@ -78,7 +78,7 @@
             </div><!-- row -->
 
             <div class="form-layout-footer text-center" "="">
-               <a href="US1_Approve.html"><button class="btn btn-red">Approved</button></a>
+               <a href="/US1approval/approval"><button class="btn btn-red">Approved</button></a>
 			   <a href="US1_Reject.html"><button class="btn btn-red">Rejected</button></a>
               <button class="btn btn-secondary">Cancel</button>
             </div><!-- form-layout-footer -->

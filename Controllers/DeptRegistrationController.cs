@@ -30,38 +30,10 @@ namespace ssc.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(ManageDepreg department)
         {
-
+           
             if (ModelState.IsValid)
             {
                 var asd = _deptregrepo.InsertpostData(department.depreg);
-                try
-
-                {
-
-                    
-
-                        string fileName = department.depreg.Upload_doc.FileName;
-
-                        var fileNames = Path.GetFileName(fileName);
-
-                        string uploadpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileNames);
-
-                        var stream = new FileStream(uploadpath, FileMode.Create);
-
-                        department.depreg.Upload_doc.CopyToAsync(stream);
-
-
-                    ViewBag.Message = "File uploaded successfully.";
-
-                }
-
-                catch
-
-                {
-
-                    ViewBag.Message = "Error while uploading the files.";
-
-                }
 
                 return RedirectToAction("Index");
             }
@@ -78,15 +50,9 @@ namespace ssc.Controllers
 
         }
 
-        public async Task<IActionResult> GetPdfFile(int id)
-        {
-            //var deliveryUpload = await _deptregrepo.GetPdfFile.FindAsync(id);
-            //if (deliveryUpload == null)
-            //    return NotFound();
+       
+            
 
-            //return File(deliveryUpload.Files, "pdf", "delivery-upload.pdf");
-            return View();
-        }
 
         public string getdepartment(int id)
         {

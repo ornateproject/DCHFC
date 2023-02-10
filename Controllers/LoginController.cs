@@ -6,6 +6,7 @@ namespace ssc.Controllers
 {
     public class LoginController : Controller
     {
+        UserModel depro = new UserModel();
 
         private readonly LoginRepo _login;
 
@@ -26,10 +27,15 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
-              //  var user = _login.getuser(model);
-               return RedirectToAction("Index");
+                var result = _login.LoginCheck(model);
+                if (result.Rows.Count>0)
+                {
+                    return RedirectToAction("Index", "UserDepartment");
+                }
+                TempData["error"] = "Please Enter Valid User Name And Password";
+                return RedirectToAction("Index", "Home");
             }
-                return View();
+            return RedirectToAction("Index", "Home");
         }
 
     }
