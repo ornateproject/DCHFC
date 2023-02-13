@@ -80,27 +80,27 @@ namespace ssc.Models
 
         
         [Required(ErrorMessage = "*")]
-        [RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public string? VH { get; set; }
+        //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
+        public int? VH { get; set; }
 
 
         [Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public string? HH { get; set; }
+        public int? HH { get; set; }
 
 
         [Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public string? OH { get; set; }
+        public int? OH { get; set; }
 
         [Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public string? OTHERS { get; set; }
+        public int? OTHERS { get; set; }
 
 
         [Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public string? Total_vacancy { get; set; }
+        public int? Total_vacancy { get; set; }
 
 
         [Required(ErrorMessage = "*")]

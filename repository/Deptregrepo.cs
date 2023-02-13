@@ -34,17 +34,17 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@Name", department.Name);
                     cmd.Parameters.AddWithValue("@Mobile_no", department.Mobile_no);
                     cmd.Parameters.AddWithValue("@Email", department.Email);
-                    string fileName = department.Upload_doc.FileName;
+                     cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
+                    //string fileName = department.Upload_doc.FileName;
 
-                    var fileNames = Path.GetFileName(fileName);
+                    //var fileNames = Path.GetFileName(fileName);
 
-                    string uploadpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileNames);
+                    //string uploadpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileNames);
 
 
-                   
-                    cmd.Parameters.AddWithValue("@Upload_doc", uploadpath);
+
+                    //cmd.Parameters.AddWithValue("@Upload_doc", uploadpath);
                     con.Open();
-                    //SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     int xdvf = cmd.ExecuteNonQuery();                   
                     con.Close();
                 }

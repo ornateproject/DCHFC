@@ -25,8 +25,8 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
-                var asd = _userDepRepo.InsertpostData(department);               
-
+                var asd = _userDepRepo.InsertpostData(department);
+                TempData["show"] = "Post created successfully";
                 return RedirectToAction("Index");
             }
             return View();

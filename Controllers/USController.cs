@@ -20,6 +20,8 @@ namespace ssc.Controllers
         {
             var usdata = _usrepo.get_deparment();
             List<DeptRegistration> deptRegistration = new List<DeptRegistration>();
+            //var szad= JsonConvert.SerializeObject(Convert.ToString(dt.Rows[0]));
+            //dep_reg = JsonConvert.DeserializeObject<List<DeptRegistration>>(usdata)[0];
             deptRegistration = JsonConvert.DeserializeObject<List<DeptRegistration>>(usdata);
             return View(deptRegistration);
         }

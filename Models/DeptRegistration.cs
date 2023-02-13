@@ -37,7 +37,7 @@ namespace ssc.Models
 
         // [Required(ErrorMessage = "*")]
    
-        public IFormFile? Upload_doc { get; set; }
+        public string ? Upload_doc { get; set; }
 
     }
     public class ministry

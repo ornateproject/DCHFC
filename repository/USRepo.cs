@@ -32,26 +32,7 @@ namespace ssc.repository
                 }
             }
             return JsonConvert.SerializeObject(dt);
-            //DataTable dt = new DataTable();
-            //using (SqlConnection con = new SqlConnection(connectionString))
-            //{
-            //    using (SqlCommand cmd = new SqlCommand("Get_deptregistration", con))
-            //    {
-            //        cmd.CommandType = CommandType.StoredProcedure;
-            //        cmd.Parameters.AddWithValue("@Ministry", deptRegistration.Ministry);
-            //        cmd.Parameters.AddWithValue("@Department", deptRegistration.Department);
-            //        cmd.Parameters.AddWithValue("@Name", deptRegistration.Name);
-            //        cmd.Parameters.AddWithValue("@Mobile_no", deptRegistration.Mobile_no);
-            //        cmd.Parameters.AddWithValue("@Email", deptRegistration.Email);
-            //        cmd.Parameters.AddWithValue("@Upload_doc", deptRegistration.Upload_doc);
-
-            //        con.Open();
-            //        SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            //        sda.Fill(dt);
-            //        con.Close();
-            //    }
-            //}
-            //return dt;
+           
         }
     }
 }
