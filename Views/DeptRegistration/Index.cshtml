@@ -68,7 +68,7 @@
                   <label class="form-control-label tx-gray-700">Ministry: <span asp-validation-for="depreg.Ministry" class="tx-danger"></span></label>
                   <select  class="form-control select2"  asp-for="depreg.Ministry"  data-placeholder="Choose Branch">
                     
-					<option>----Choose Ministry----</option>
+					<option value=" ">----Choose Ministry----</option>
                                     @foreach (var ministry in Model.Ministries)
                                     {
                                      <option value="@ministry.ministry_id"> @ministry.ministry_name</option>   
@@ -84,7 +84,7 @@
                   <label class="form-control-label tx-gray-700">Department: <span asp-validation-for="depreg.Department" class="tx-danger"></span></label>
                   <select class="form-control select2" asp-for="depreg.Department" data-placeholder="Choose Branch">
                     
-					<option>----Choose Department----</option>
+					<option value=" ">----Choose Department----</option>
                    
                     
                   </select>
@@ -113,10 +113,21 @@
 			  <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700" for="customFile">Nodal officer doc upload: <span asp-validation-for="depreg.Upload_doc" class="tx-danger"></span></label>
-				  <label class="custom-file">
-                <input  type="file" asp-for="depreg.Upload_doc" id="file2" class="custom-file-input">
-                <span class="custom-file-control custom-file-control-primary"></span>
-              </label>
+				  @*<label class="custom-file">
+                <input  type="file" asp-for="depreg.Upload_doc" id="inputGroupFile02" class="custom-file-input">*@
+
+                 @* <input type="file" asp-for="depreg.Upload_doc" class="form-control" id="customFile" />
+                
+                <span class="custom-file-control custom-file-control-primary">
+
+               </span>*@
+               <div class="form-group">
+        <input asp-for="depreg.Upload_doc"/>
+    </div>
+    <div class="form-group">
+        @*<button type="submit">Upload</button>*@
+    </div>
+              @*</label>*@
 <p class="text-center"><strong>(Brows PDF format invoce )</strong></p>
                 </div>
               </div>

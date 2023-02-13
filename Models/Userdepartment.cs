@@ -80,7 +80,7 @@ namespace ssc.Models
 
         
         [Required(ErrorMessage = "*")]
-        //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
+        [RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         public string? VH { get; set; }
 
 
