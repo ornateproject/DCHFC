@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 
 namespace ssc.Models
@@ -31,12 +34,13 @@ namespace ssc.Models
         [Required(ErrorMessage = "*")]
         [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail is not valid")]
         public string? Email { get; set; }
-        
-        [Required(ErrorMessage = "*")]
+
+        // [Required(ErrorMessage = "*")]
+   
         public IFormFile? Upload_doc { get; set; }
-        //public IEnumerable<SelectListItem> ministry_name { get;  set; }
+
     }
-        public class ministry
+    public class ministry
         {
            
             public int? ministry_id { get; set; }

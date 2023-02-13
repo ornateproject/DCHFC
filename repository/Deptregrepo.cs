@@ -3,13 +3,15 @@ using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
 using ssc.Models;
 using System.Data;
+using System.Web;
 
 namespace ssc.repository
 {
     public class Deptregrepo
     {
         private string connectionString;
-        
+       
+
         public Deptregrepo(IConfiguration configuration)
         {
             connectionString = configuration.GetValue<string>("DBInfo:ConnectionString");
@@ -18,7 +20,9 @@ namespace ssc.repository
         
        
         public string InsertpostData(DeptRegistration department)
-        {            
+        {
+           // string newFileName = "~/uploads";
+            
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -30,8 +34,17 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@Name", department.Name);
                     cmd.Parameters.AddWithValue("@Mobile_no", department.Mobile_no);
                     cmd.Parameters.AddWithValue("@Email", department.Email);
-                    //cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
+                    string fileName = department.Upload_doc.FileName;
+
+                    var fileNames = Path.GetFileName(fileName);
+
+                    string uploadpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileNames);
+
+
+                   
+                    cmd.Parameters.AddWithValue("@Upload_doc", uploadpath);
                     con.Open();
+                    //SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     int xdvf = cmd.ExecuteNonQuery();                   
                     con.Close();
                 }
@@ -39,7 +52,10 @@ namespace ssc.repository
             return "ok";
         }
 
-        
+
+       
+
+
         public string get_ministry()
         {
           
