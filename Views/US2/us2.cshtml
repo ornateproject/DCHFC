@@ -1,0 +1,222 @@
+﻿@model ssc.Models.UserDepartment
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+
+<div class="br-pageheader pd-y-15 pd-l-20">
+    <nav class="breadcrumb pd-0 mg-0 tx-12">
+        <a class="breadcrumb-item" href="US1.html">Dashboard</a>
+        <span class="breadcrumb-item active">Pending Approval</span>
+    </nav>
+</div><!-- br-pageheader -->
+<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+    <h4 class="tx-gray-800 mg-b-5">Pending Approval</h4>
+
+</div>
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+        <!-- d-flex -->
+        <div class="table-wrapper rounded table-responsive">
+            <table id="datatable1" class="table display responsive nowrap">
+                <thead>
+                    <tr>
+                        <th>Sr No.</th>
+                         <th>ID </th>
+ <th>post_name</th>
+<th>pay_matrix</th>
+<th>post_class</th>
+<th>post_nature</th>
+<th>initial_place</th>
+<th>aisl</th>
+<th>vacancy_ariesn</th>
+<th>UR</th>
+<th>OBC </th>
+<th> SC </th>
+<th> ST </th>
+ <th>EWS </th>
+<th>TOTAL</th>
+<th>identified_post</th>
+<th>disability_type</th>
+<th>suitable_pwd</th>
+<th>permissible</th> 
+ <th>VH </th>
+ <th>HH </th>
+ <th>OH </th>
+<th>OTHERS </th>
+<th>Total_vacancy </th>
+<th>reserved_vacancy</th> 
+<th>pwd_number</th>
+<th>pwdvertical_category</th>
+ <th>totalesm_number</th>
+ <th>esm_number</th>
+<th>esmvertical_category</th> 
+<th>probation1</th>
+<th>Essential</th>
+ <th>Desirable </th>
+ <th>Relaxation</th>
+ <th>Regional_office</th>
+ <th>Age_limit </th>
+ <th>Requirment</th>
+<th>Name</th>
+<th>Desigantion</th>
+<th>Address </th>
+ <th>Mobile_no </th>
+ <th>Email </th>
+ <th>subsequent_orders</th>
+<th>DOPT_letter </th>
+ <th>no_ofvacancy</th> 
+<th>pwd_esm</th>
+ <th>person_disabilities</th>        
+ <th>letter_no </th>
+ <th>office_department</th>
+        
+
+
+
+                    </tr>
+                </thead>
+                <tbody >
+                      
+                    <tr>
+                         <td>ID </td>
+ <td>post_name</td>
+<td>pay_matrix</td>
+<td>post_class</td>
+<td>post_nature</td>
+<td>initial_place</td>
+<td>aisl</td>
+<td>vacancy_ariesn</td>
+<td>UR</td>
+<td>OBC </td>
+<td> SC </td>
+<td> ST </td>
+ <td>EWS </td>
+<td>TOTAL</td>
+<td>identified_post</td>
+<td>disability_type</td>
+<td>suitable_pwd</td>
+<td>permissible</td> 
+ <td>VH </td>
+ <td>HH </td>
+ <td>OH </td>
+<td>OtdERS </td>
+<td>Total_vacancy </td>
+<td>reserved_vacancy</td> 
+<td>pwd_number</td>
+<td>pwdvertical_category</td>
+ <td>totalesm_number</td>
+ <td>esm_number</td>
+<td>esmvertical_category</td> 
+<td>probation1</td>
+<td>Essential</td>
+ <td>Desirable </td>
+ <td>Relaxation</td>
+ <td>Regional_office</td>
+ <td>Age_limit </td>
+ <td>Requirment</td>
+<td>Name</td>
+<td>Desigantion</td>
+<td>Address </td>
+ <td>Mobile_no </td>
+ <td>Email </td>
+ <td>subsequent_orders</td>
+<td>DOPT_letter </td>
+ <td>no_ofvacancy</td> 
+<td>pwd_esm</td>
+ <td>person_disabilities</td>        
+ <td>letter_no </td>
+ <td>office_department</td>
+        
+
+
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div><!-- bd -->
+
+
+
+
+    </div><!-- br-section-wrapper -->
+</div><!-- br-pagebody -->
+<!-- ########## END: MAIN PANEL ########## -->
+
+
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/popper.js/popper.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+<script src="lib/moment/moment.js"></script>
+<script src="lib/jquery-ui/jquery-ui.js"></script>
+<script src="lib/jquery-switchbutton/jquery.switchButton.js"></script>
+<script src="lib/peity/jquery.peity.js"></script>
+<script src="lib/highlightjs/highlight.pack.js"></script>
+<script src="lib/jquery.dataTables.js"></script>
+<script src="lib/dataTables.responsive.js"></script>
+<script src="lib/select2/js/select2.min.js"></script>
+
+<script src="js/bracket.js"></script>
+<script>
+    $(function(){
+      'use strict';
+
+      $('#datatable1').DataTable({
+        responsive: true,
+        language: {
+          searchPlaceholder: 'Search...',
+          sSearch: '',
+          lengthMenu: '_MENU_ items/page',
+        }
+      });
+
+      $('#datatable2').DataTable({
+        bLengthChange: false,
+        searching: false,
+        responsive: true
+      });
+
+      // Select2
+      $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
+
+    });
+</script>
+
+
+
+<script>
+    $(function(){
+      'use strict'
+
+      // FOR DEMO ONLY
+      // menu collapsed by default during first page load or refresh with screen
+      // having a size between 992px and 1299px. This is intended on this page only
+      // for better viewing of widgets demo.
+      $(window).resize(function(){
+        minimizeMenu();
+      });
+
+      minimizeMenu();
+
+      function minimizeMenu() {
+        if(window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
+          // show only the icons and hide left menu label by default
+          $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
+          $('body').addClass('collapsed-menu');
+          $('.show-sub + .br-menu-sub').slideUp();
+        } else if(window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
+          $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
+          $('body').removeClass('collapsed-menu');
+          $('.show-sub + .br-menu-sub').slideDown();
+        }
+      }
+    });
+</script>
