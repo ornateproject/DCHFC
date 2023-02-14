@@ -18,24 +18,24 @@ namespace ssc.Models
 
 
         [Required(ErrorMessage = "*")]
-        public string? limit_age { get; set; }
+        public string? age_limit { get; set; }
 
         [Required(ErrorMessage = "*")]
-        public string? post_class { get; set; }
+        public string? post_classification { get; set; }
 
         [Required(ErrorMessage = "*")]
-        public string? post_initial { get; set; }
+        public string? initial_post { get; set; }
 
         [Required(ErrorMessage = "*")]
-        public string? liability_service { get; set; }
-
-
-        [Required(ErrorMessage = "*")]
-        public string? arisen { get; set; }
+        public string? AISL { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? disable { get; set; }
+        public string? vacancy_ariesn { get; set; }
+
+
+        [Required(ErrorMessage = "*")]
+        public string? identified_post { get; set; }
 
 
         [Required(ErrorMessage = "*")]
@@ -43,122 +43,122 @@ namespace ssc.Models
 
 
         [Required(ErrorMessage = "*")]
-        public string? pwd_suitable { get; set; }
+        public string? PWD_suitable { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? per_dis { get; set; }
+        public string? permissible_disability { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? ur_type { get; set; }
+        public string? UR { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? obc_type { get; set; }
+        public string? OBC { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? sc_type { get; set; }
+        public string? SC { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? st_type { get; set; }
+        public string? ST { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? ews_type { get; set; }
+        public string? EWS { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? total_type { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        //[Required]
-        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? vh_type { get; set; }
-
-
+        public string? TOTAL { get; set; }
 
         [Required(ErrorMessage = "*")]
         //[Required]
         [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? hh_type { get; set; }
-
-
-        [Required(ErrorMessage = "*")]
-        //[Required]
-        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? oh_type { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        //[Required]
-        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? other_type { get; set; }
-
-
-        [Required(ErrorMessage = "*")]
-        //[Required]
-        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? vac_type { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        //[Required]
-        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? num_type { get; set; }
-
-
-        [Required(ErrorMessage = "*")]
-        public string? prob_type { get; set; }
-
-
-        [Required(ErrorMessage = "*")]
-        public string? essen_type { get; set; }
-
-
-
-        [Required(ErrorMessage = "*")]
-        public string? desirable_type { get; set; }
-
-
-        [Required(ErrorMessage = "*")]
-        public string? relaxation_type { get; set; }
-
-
-        [Required(ErrorMessage = "*")]
-        public string? rule_type { get; set; }
-
-
-        [Required(ErrorMessage = "*")]
-        public string? column_type { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        public string? order_type { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        public string? enclose_type { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        public string? subsequent_type { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        public string? worked_type { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        public string? complied_type { get; set; }
+        public string? VH { get; set; }
 
 
 
         [Required(ErrorMessage = "*")]
         //[Required]
         [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? office_type { get; set; }
+        public string? HH { get; set; }
 
 
         [Required(ErrorMessage = "*")]
         //[Required]
         [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? deptt_type { get; set; }
+        public string? OH { get; set; }
+
+        [Required(ErrorMessage = "*")]
+        //[Required]
+        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
+        public string? OTHERS { get; set; }
+
+
+        [Required(ErrorMessage = "*")]
+        //[Required]
+        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
+        public string? Total_vacancy { get; set; }
+
+        [Required(ErrorMessage = "*")]
+        //[Required]
+        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
+        public string? ESM_number { get; set; }
+
+
+        [Required(ErrorMessage = "*")]
+        public string? probation_period { get; set; }
+
+
+        [Required(ErrorMessage = "*")]
+        public string? Essential { get; set; }
+
+
+
+        [Required(ErrorMessage = "*")]
+        public string? desirable { get; set; }
+
+
+        [Required(ErrorMessage = "*")]
+        public string? relaxation { get; set; }
+
+
+        [Required(ErrorMessage = "*")]
+        public string? Age_requirment { get; set; }
+
+
+        [Required(ErrorMessage = "*")]
+        public string? other_requirment { get; set; }
+
+        [Required(ErrorMessage = "*")]
+        public string? subsequent_oders { get; set; }
+
+        [Required(ErrorMessage = "*")]
+        public string? CCS_rules { get; set; }
+
+        [Required(ErrorMessage = "*")]
+        public string? reserved_vacancies { get; set; }
+
+        [Required(ErrorMessage = "*")]
+        public string? DOPT_refrence { get; set; }
+
+        [Required(ErrorMessage = "*")]
+        public string? Persons_disabilities { get; set; }
+
+
+
+        [Required(ErrorMessage = "*")]
+        //[Required]
+       // [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
+        public string? Previous_requisition { get; set; }
+
+
+        [Required(ErrorMessage = "*")]
+        //[Required]
+        //[RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
+        public string? candidates_nominated { get; set; }
 
 
 

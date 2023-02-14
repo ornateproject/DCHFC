@@ -44,23 +44,23 @@
               <div class="form-group">
 
                         <label class="form-control-label tx-gray-700">
-                            Age Limit <span asp-validation-for="limit_age" class="tx-danger"></span> </label>
+                            Age Limit <span asp-validation-for="age_limit" class="tx-danger"></span> </label>
 
-                        <input asp-for="limit_age" type="text" class="form-control">
+                        <input asp-for="age_limit" type="text" class="form-control">
 
               </div>
             </div><!-- col-4 -->
             <div class="col-lg-4">
               <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            Classification of Post <span asp-validation-for="post_class" class="tx-danger"></span>
+                            Classification of Post <span asp-validation-for="post_classification" class="tx-danger"></span>
                         </label>
                        @* <input asp-for="post_class" type="text" class="form-control">*@
-                <select asp-for="post_class" class="form-control select2"  data-placeholder="Exam" id="poNo">
+                <select asp-for="post_classification" class="form-control select2"  data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
-                  <option value="Value1 ">Group ‘B’ Non-Gazetted</option>
-                  <option value="Value2 ">Group-‘C’, Non-Technica</option>
+                  <option>Group ‘B’ Non-Gazetted</option>
+                  <option >Group-‘C’, Non-Technica</option>
 
                 </select>
               </div>
@@ -69,9 +69,9 @@
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
                             Place of initial posting [name of the
-                            State(s)/UTs]. <span asp-validation-for="liability_service" class="tx-danger"></span>
+                            State(s)/UTs]. <span asp-validation-for="initial_post" class="tx-danger"></span>
                         </label>
-                        <input asp-for="liability_service" type="text" class="form-control">
+                        <input asp-for="initial_post" type="text" class="form-control">
                         
 
                     </div>
@@ -86,9 +86,9 @@
                         <label class="form-control-label tx-gray-700">
                             Whether All India Service Liability (AISL)
                             is involved?
-                            <span asp-validation-for="arisen"  class="tx-danger"></span>
+                            <span asp-validation-for="AISL"  class="tx-danger"></span>
                         </label>
-                        <input asp-for="arisen" type="text" class="form-control">
+                        <input asp-for="AISL" type="text" class="form-control">
 
 
                     </div>
@@ -102,9 +102,9 @@
                             due to failure to recruit by transfer/
                             deputation, the details may be indicated)
                           
-                            <span asp-validation-for="arisen" class="tx-danger"></span>
+                            <span asp-validation-for="vacancy_ariesn" class="tx-danger"></span>
                         </label>
-                        <input asp-for="arisen" type="text" class="form-control">
+                        <input asp-for="vacancy_ariesn" type="text" class="form-control">
 
 
                     </div>
@@ -112,79 +112,18 @@
             
           </div>
           
-          @*<div class="row mg-b-25">
-
-            <div class="col-lg-12">
-              <div class="form-group">
-
-                <label class="form-control-label tx-gray-700">How have the vacancies arisen?
-                  (Clearly specify, by promotion/resignation/
-                  death/ retirement etc. in case the vacancy is due
-                  to failure to recruit by transfer/deputation, the
-                  details thereof may also be indicated)
-                   <span  class="tx-danger"></span></label>
-
-                <input type="text"  class="form-control">
-
-              </div>
-            </div><!-- col-4 -->
-           
-            
-            <!-- col-4 -->
-
-
-           
-          </div>*@
-
-
-
-
-            @*<div class="row mg-b-25">
-                <p class="tx-gray-800 mg-b-5">
-                    Whether the post is identified suitable for PwD Candidates
-                    <select class="form-control select2" data-placeholder="Exam" id="poNo">
-
-                        <option>----Select----</option>
-                        <option>Yes</option>
-                        <option>No</option>
-
-                    </select>
-                </p>
-            </div>*@
-
-            @*<div class="col-lg-4">
-                <div class="form-group">
-
-                    <label class="form-control-label tx-gray-700">Type of Disability   <span class="tx-danger">*</span></label>
-                    <select class="form-control select2" data-placeholder="Exam" id="poNo">
-
-                        <option>----Select----</option>
-                        <option>Blindness and low vision </option>
-                        <option>Deaf and hard of hearing </option>
-                        <option>
-                            Locomotor disability including cerebral palsy,<br /> leprosy cured,<br />dwarfism, acid attack victims and
-                            <br />muscular dystrophy
-                        </option>
-
-                        <option>Autism, intellectual disability, specific</br>learning disability and mental illness</option>
-                        <option>Multiple disabilities from amongst<br />persons under clauses (i) to (iv) above<br />including deaf, blindness</option>
-
-                    </select>
-                    </p>
-                </div>
-            </div><!-- col-4 -->*@
-                
+        
 
 <div class="row mg-b-25">
     <div class="col-lg-6">
     <div class="form-group">
                 <label class="form-control-label tx-gray-700">
-                    Whether the post is identified suitable for PwD Candidates <span asp-validation-for="disable" class="tx-danger"></span> </label>
+                    Whether the post is identified suitable for PwD Candidates <span asp-validation-for="identified_post" class="tx-danger"></span> </label>
                     </div>
                     </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                    <select asp-for=" disable" class="form-control select2" data-placeholder="Exam" id="poNo">
+                    <select asp-for=" identified_post" class="form-control select2" data-placeholder="Exam" id="poNo">
                         <option value=" ">----Select----</option>
                         <option value="Value1 ">Yes</option>
                         <option value="Value2 ">No</option>
@@ -219,8 +158,8 @@
   <div class="col-lg-4">
     <div class="form-group">
       <label class="form-control-label tx-gray-700">Suitable
-                            for PwD <span asp-validation-for="pwd_suitable" class="tx-danger"></span></label>
-                           <select asp-for= "pwd_suitable" class="form-control" data-placeholder="Exam" id="poNo">
+                            for PwD <span asp-validation-for="PWD_suitable" class="tx-danger"></span></label>
+                           <select asp-for= "PWD_suitable" class="form-control" data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
                             <option value="Value1 ">Yes</option>
@@ -234,8 +173,8 @@
   
   <div class="col-lg-4">
     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">Permissible disability <span asp-validation-for="per_dis" class="tx-danger"></span></label>
-                        <input asp-for="per_dis" type="text" class="form-control">
+                        <label class="form-control-label tx-gray-700">Permissible disability <span asp-validation-for="permissible_disability" class="tx-danger"></span></label>
+                        <input asp-for="permissible_disability" type="text" class="form-control">
      
 
     </div>
@@ -268,14 +207,14 @@ Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mention
                   </div><!-- col-4 -->
                   <div class="col-lg-2">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">UR <span asp-validation-for="ur_type" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">UR <span asp-validation-for="UR" class="tx-danger"></span></label>
                         
       
                     </div>
                   </div>
                   <div class="col-lg-2">
                     <div class="form-group">
-                   <label class="form-control-label tx-gray-700">OBC <span asp-validation-for="obc_type" class="tx-danger"></span></label>
+                   <label class="form-control-label tx-gray-700">OBC <span asp-validation-for="OBC" class="tx-danger"></span></label>
                      
       
                     </div>
@@ -283,28 +222,28 @@ Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mention
                   
                   <div class="col-lg-2">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">SC <span asp-validation-for="sc_type" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">SC <span asp-validation-for="SC" class="tx-danger"></span></label>
                      
       
                     </div>
                   </div>
                   <div class="col-lg-2">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">ST<span asp-validation-for=" st_type" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">ST<span asp-validation-for=" ST" class="tx-danger"></span></label>
                      
       
                     </div>
                   </div>
                   <div class="col-lg-1">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">EWS<span asp-validation-for="ews_type" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">EWS<span asp-validation-for="EWS" class="tx-danger"></span></label>
                      
       
                     </div>
                   </div>
                   <div class="col-lg-1">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">TOTAL <span asp-validation-for="total_type " class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">TOTAL <span asp-validation-for="TOTAL " class="tx-danger"></span></label>
                      
       
                     </div>
@@ -322,33 +261,33 @@ Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mention
           </div><!-- col-4 -->
           <div class="col-lg-2">
             <div class="form-group">
-                        <input asp-for="ur_type" type="text" class="form-control">
+                        <input asp-for="UR" type="text" class="form-control">
             </div>
           </div>
           <div class="col-lg-2">
             <div class="form-group">
-                        <input asp-for="obc_type" type="text" class="form-control">
+                        <input asp-for="OBC" type="text" class="form-control">
             </div>
           </div>
           
           <div class="col-lg-2">
             <div class="form-group">
-                        <input asp-for="sc_type" type="text" class="form-control">
+                        <input asp-for="SC" type="text" class="form-control">
             </div>
           </div>
           <div class="col-lg-2">
             <div class="form-group">
-                        <input asp-for="st_type" type="text" class="form-control">
+                        <input asp-for="ST" type="text" class="form-control">
             </div>
           </div>
           <div class="col-lg-1">
             <div class="form-group">
-                        <input asp-for="ews_type" type="text" class="form-control">
+                        <input asp-for="EWS" type="text" class="form-control">
             </div>
           </div>
           <div class="col-lg-1">
             <div class="form-group">
-                        <input asp-for="total_type" type="text" class="form-control">
+                        <input asp-for="TOTAL" type="text" class="form-control">
             </div>
           </div>
  </div>
@@ -382,48 +321,48 @@ reserved for Persons with Disabilities (PwD):-</p>
   <div class="row mg-b-25">  
 <div class="col-lg-6">
     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">VH<span asp-validation-for="vh_type" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">VH<span asp-validation-for="VH" class="tx-danger"></span></label>
                     </div>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for="vh_type" type="text" class="form-control">
+                        <input asp-for="VH" type="text" class="form-control">
   </div>
   </div>
   </div>
     <div class="row mg-b-25">  
 <div class="col-lg-6">
     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">HH <span asp-validation-for=" hh_type " class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">HH <span asp-validation-for=" HH " class="tx-danger"></span></label>
                     </div>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for=" hh_type " type="text" class="form-control">
+                        <input asp-for=" HH " type="text" class="form-control">
   </div>
   </div>
   </div>
     <div class="row mg-b-25">  
 <div class="col-lg-6">
     <div class="form-group">
-    <label class="form-control-label tx-gray-700">OH <span asp-validation-for="oh_type" class="tx-danger"></span> </label>    
+    <label class="form-control-label tx-gray-700">OH <span asp-validation-for="OH" class="tx-danger"></span> </label>    
   </div>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for=" oh_type" type="text" class="form-control">
+                        <input asp-for="OH" type="text" class="form-control">
   </div>
   </div>
   </div>
     <div class="row mg-b-25">  
 <div class="col-lg-6">
     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">OTHERS  <span asp-validation-for="other_type" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">OTHERS  <span asp-validation-for="OTHERS" class="tx-danger"></span></label>
                     </div>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for="other_type" type="text" class="form-control">
+                        <input asp-for="OTHERS" type="text" class="form-control">
   </div>
   </div>
   </div>
@@ -431,13 +370,13 @@ reserved for Persons with Disabilities (PwD):-</p>
 <div class="col-lg-6">
     <div class="form-group">
     <label class="form-control-label tx-gray-700"><b>Total</b> vacancies reserved for Persons
-                            with Disabilities (PwD)<span asp-validation-for="vac_type" class="tx-danger"></span>
+                            with Disabilities (PwD)<span asp-validation-for="Total_vacancy" class="tx-danger"></span>
                         </label>
                     </div>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for="vac_type" type="text" class="form-control">
+                        <input asp-for="Total_vacancy" type="text" class="form-control">
   </div>
   </div>
   </div>
@@ -493,8 +432,8 @@ in the event of not finding candidates<br />from earmarked PwD category::</label
    </div>
  <div class="col-lg-6">
       <div class="form-group">
-                        <label class="form-control-label tx-gray-700">Number<span asp-validation-for="num_type" class="tx-danger"></span> </label>
-                        <input asp-for="num_type" type="text" class="form-control">
+                        <label class="form-control-label tx-gray-700">Number<span asp-validation-for="ESM_number" class="tx-danger"></span> </label>
+                        <input asp-for="ESM_number" type="text" class="form-control">
 
       </div>
  </div>
@@ -531,12 +470,12 @@ in the event of not finding candidates<br />from earmarked PwD category::</label
     <div class="row mg-b-25">  
 <div class="col-lg-6">
     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">Period of probation <span asp-validation-for="prob_type" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">Period of probation <span asp-validation-for="probation_period" class="tx-danger"></span></label>
                     </div>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for ="prob_type" type="text" class="form-control">
+                        <input asp-for ="probation_period" type="text" class="form-control">
   </div>
   </div>
   </div>
@@ -555,12 +494,12 @@ in the event of not finding candidates<br />from earmarked PwD category::</label
     <div class="row mg-b-25">  
 <div class="col-lg-6">
     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">Essential <span asp-validation-for="essen_type" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">Essential <span asp-validation-for="Essential" class="tx-danger"></span></label>
                     </div>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for="essen_type" type="text" class="form-control">
+                        <input asp-for="Essential" type="text" class="form-control">
   </div>
   </div>
   </div>
@@ -568,25 +507,25 @@ in the event of not finding candidates<br />from earmarked PwD category::</label
 <div class="col-lg-6">
     <div class="form-group">
     <label class="form-control-label tx-gray-700">Desirable (Please indicate ‘NIL’ if not
-                            specified in the Recruitment Rules)  <span asp-validation-for=" desirable_type" class="tx-danger"></span>
+                            specified in the Recruitment Rules)  <span asp-validation-for=" desirable" class="tx-danger"></span>
                         </label>
                     </div>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for=" desirable_type" type="text" class="form-control">
+                        <input asp-for=" desirable" type="text" class="form-control">
   </div>
   </div>
   </div>
      <div class="row mg-b-25">  
 <div class="col-lg-6">
     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">Relaxation, if any<span asp-validation-for=" relaxation_type " class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">Relaxation, if any<span asp-validation-for=" relaxation " class="tx-danger"></span></label>
                     </div>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for=" relaxation_type " type="text" class="form-control">
+                        <input asp-for=" relaxation " type="text" class="form-control">
   </div>
   </div>
   </div>
@@ -594,11 +533,11 @@ in the event of not finding candidates<br />from earmarked PwD category::</label
   
  <div class="row mg-b-25">  
       <div class="col-lg-6">
-                    <label class="form-control-label tx-gray-700">Age Limits as per Recruitment Rules :- <span asp-validation-for=" rule_type" class="tx-danger"></span></label>
+                    <label class="form-control-label tx-gray-700">Age Limits as per Recruitment Rules :- <span asp-validation-for=" Age_requirment" class="tx-danger"></span></label>
 </div>
 <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for=" rule_type" type="text" class="form-control">
+                        <input asp-for=" Age_requirment" type="text" class="form-control">
 
   </div>
   </div>
@@ -608,14 +547,14 @@ in the event of not finding candidates<br />from earmarked PwD category::</label
  <div class="col-lg-6">
     <div class="form-group">
         <label class="form-control-label tx-gray-700">Any other requirements or conditions not covered<br />
-                            by the above columns<span asp-validation-for=" column_type" class="tx-danger"></span>
+                            by the above columns<span asp-validation-for=" other_requirment" class="tx-danger"></span>
                         </label>
                                
   </div>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for=" column_type" type="text" class="form-control">
+                        <input asp-for=" other_requirment" type="text" class="form-control">
 
   </div>
   </div> 
@@ -629,13 +568,13 @@ in the event of not finding candidates<br />from earmarked PwD category::</label
                             from ban orders imposed by the M/o Finance vide their
                             O.M. Nos.F.7 (1)-E(Coord.)/84, dated 03.01.1984 and
                             F.7(3)/6/E. Coord/99, dated 05.08.1999 or any
-                            subsequent orders.<span asp-validation-for="order_type" class="tx-danger"></span>
+                            subsequent orders.<span asp-validation-for="subsequent_oders" class="tx-danger"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-6">
 
-                    <select asp-for="order_type " class="form-control select2" data-placeholder="Exam" id="poNo">
+                    <select asp-for="subsequent_oders " class="form-control select2" data-placeholder="Exam" id="poNo">
 
                         <option value=" ">----Select----</option>
                         <option value="Value1 ">Yes</option>
@@ -656,12 +595,12 @@ in the event of not finding candidates<br />from earmarked PwD category::</label
                             of Surplus Staff) Rules, 1990 notified vide DOPT
                             Notification No.1/14/89-CS.III dated 28.02.1990 and
                             DOPT letter No. 1/5/2000-CS.III, dated 10.11.2000 or
-                            any subsequent orders? Copy to be enclosed <span asp-validation-for=" enclose_type " class="tx-danger"></span>
+                            any subsequent orders? Copy to be enclosed <span asp-validation-for=" CCS_rules " class="tx-danger"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <select asp-for=" enclose_type " class="form-control select2" data-placeholder="Exam" id="poNo">
+                    <select asp-for=" CCS_rules " class="form-control select2" data-placeholder="Exam" id="poNo">
 
                         <option value=" ">----Select----</option>
                         <option value="Value1 ">Yes</option>
@@ -683,12 +622,12 @@ these Categories as per DOPT O.M. No.36012/2/96-
 Estt.(Res.), dated 02.07.1997 and DOPT O.M.
 No.36012/5/97-Estt.Vol.II, dated 20.07.2000 &
 DoP&T O.M. No. 36039/1/2019-Estt.(Res.) dated
-                            19/01/2019 or any subsequent orders? <span asp-validation-for="subsequent_type" class="tx-danger"></span>
+                            19/01/2019 or any subsequent orders? <span asp-validation-for="reserved_vacancies" class="tx-danger"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <select asp-for="subsequent_type" class="form-control select2" data-placeholder="Exam" id="poNo">
+                    <select asp-for="reserved_vacancies" class="form-control select2" data-placeholder="Exam" id="poNo">
 
                         <option value=" ">----Select----</option>
                         <option value="Value1 ">Yes</option>
@@ -707,13 +646,13 @@ DoP&T O.M. No. 36039/1/2019-Estt.(Res.) dated
 worked out with reference to DOPT O.M. No.
 36035/02/2017-Estt.(Res.), dated 15.01.2018 and
 36034/1/2014-Estt.(Res.), dated 14.08.2014
-                            respectively or any subsequent orders?<span asp-validation-for="worked_type" class="tx-danger"></span>
+                            respectively or any subsequent orders?<span asp-validation-for="DOPT_refrence" class="tx-danger"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-6">
 
-                    <select asp-for="worked_type" class="form-control select2" data-placeholder="Exam" id="poNo">
+                    <select asp-for="DOPT_refrence" class="form-control select2" data-placeholder="Exam" id="poNo">
 
                         <option value=" ">----Select----</option>
                         <option value="Value1 ">Yes</option>
@@ -729,13 +668,13 @@ worked out with reference to DOPT O.M. No.
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
                             Whether the provisions of ‘The Rights of Persons with
-                            Disabilities Act, 2016’ are complied with? <span asp-validation-for="complied_type" class="tx-danger"></span>
+                            Disabilities Act, 2016’ are complied with? <span asp-validation-for="Persons_disabilities" class="tx-danger"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-6">
 
-                    <select asp-for="complied_type"class="form-control select2" data-placeholder="Exam" id="poNo">
+                    <select asp-for="Persons_disabilities"class="form-control select2" data-placeholder="Exam" id="poNo">
 
                         <option value=" ">----Select----</option>
                         <option value="Value1">Yes</option>
@@ -753,14 +692,14 @@ worked out with reference to DOPT O.M. No.
                             Letter No. and date of the Previous requisition for the
                             same post (along with category-wise break-up of the
                             number of vacancies) placed with the SSC by your
-                            office.<span asp-validation-for="office_type" class="tx-danger"></span>
+                            office.<span asp-validation-for="Previous_requisition" class="tx-danger"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-6">
 
                       <div class="form-group">
-                        <input asp-for="office_type" type="text" class="form-control">
+                        <input asp-for="Previous_requisition" type="text" class="form-control">
 
       </div>
                 </div>
@@ -775,14 +714,14 @@ worked out with reference to DOPT O.M. No.
                             made earlier by SSC to your office for the same Posts
                             along with the no: of candidates nominated under each
                             category and No. of vacancies filled by your
-                            Office/Deptt.<span asp-validation-for="deptt_type" class="tx-danger"></span>
+                            Office/Deptt.<span asp-validation-for="candidates_nominated" class="tx-danger"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-6">
 
                     <div class="form-group">
-                        <input asp-for="deptt_type" type="text" class="form-control">
+                        <input asp-for="candidates_nominated" type="text" class="form-control">
 
                     </div>
                 </div>
