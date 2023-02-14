@@ -1,13 +1,13 @@
 ﻿@model ssc.Models.UserDepartment
 <script>
     function findTotal() {
-        var arr = document.getElementsByClassName('num');
+        var arr = document.getElementsByClassName('num1');
         var tot = 0;
         for (var i = 0; i < arr.length; i++) {
             if (parseFloat(arr[i].value))
                 tot += parseFloat(arr[i].value);
         }
-        document.getElementById('amount').value = tot;
+        document.getElementById('amounttotal').value = tot;
 
     }
      function totalFind() {
@@ -390,7 +390,7 @@ reserved for Persons with Disabilities (PwD):-</p>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input id="hh" onblur="findTotal()" type="text" asp-for="VH" class="num">
+                        <input id="hh" onblur="findTotal()" type="text" asp-for="VH" class="num1">
                        
   </div>
   </div>
@@ -403,7 +403,7 @@ reserved for Persons with Disabilities (PwD):-</p>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input id="hh" onblur="findTotal()" type="text" asp-for="HH" class="num ">
+                        <input id="hh" onblur="findTotal()" type="text" asp-for="HH" class="num1 ">
   </div>
   </div>
   </div>
@@ -415,7 +415,7 @@ reserved for Persons with Disabilities (PwD):-</p>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-    <input id="hh" onblur="findTotal()" type="text" asp-for="OH" class="num ">
+    <input id="hh" onblur="findTotal()" type="text" asp-for="OH" class="num1 ">
   </div>
   </div>
   </div>
@@ -427,7 +427,7 @@ reserved for Persons with Disabilities (PwD):-</p>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input id="hh" onblur="findTotal()" type="text" asp-for="OTHERS" class="num ">
+                        <input id="hh" onblur="findTotal()" type="text" asp-for="OTHERS" class="num1 ">
   </div>
   </div>
   </div>
@@ -440,7 +440,8 @@ with Disabilities (PwD)<span asp-validation-for=" Total_vacancy" class="tx-dange
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input type="text" id="amount" asp-for="Total_vacancy" class="form-control" readonly>
+                        <input type="text" id="amounttotal" asp-for="Total_vacancy" class="form-control" readonly>
+                        
   </div>
   </div>
   </div>
