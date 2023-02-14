@@ -852,7 +852,7 @@ by your office<br />
 </div>
   
   <div class="form-layout-footer" asp-action="index">
-            <button class="btn btn-red  btn btn-success" id="sbt" style="cursor:pointer" type="submit"> <span class="text-white">Submit</span></button>
+            <button onclick="ShowMessage('Post created successfully')" class="btn btn-red  btn btn-success" id="sbt" style="cursor:pointer" type="submit"> <span class="text-white">Submit</span></button>
             <button class="btn btn-secondary "  style="cursor:pointer" id="sbt" type='reset'>Cancel</button>
           </div><!-- form-layout-footer -->
         </div><!-- form-layout -->
@@ -861,3 +861,8 @@ by your office<br />
 </form>
 
    
+<script type="text/javascript">
+    function ShowMessage(message) {
+        alert(message);
+    }
+</script>
