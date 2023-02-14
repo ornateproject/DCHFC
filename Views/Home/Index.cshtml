@@ -229,7 +229,11 @@ a:hover {color: rgba(0,0,0,.2)}
  
   <nav>  
    <div class="text-center pd-y-10"><img src="~/img/logo.jpg" class="img-fluid"></div> 
-   
+  
+	   @if(!string.IsNullOrEmpty(Convert.ToString(@TempData["error"]))){
+		   <p class="danger">@TempData["error"]</p>
+	   }
+   </div>
   <label for="profile" class='fa fa-user-circle-o'>
      <p>Admin (RD)</p>
   </label>
@@ -277,10 +281,15 @@ a:hover {color: rgba(0,0,0,.2)}
               <!-- </div> -->
 			  
            <!--   <div class="form-group"><a href="#" class="tx-12">Forgot password?</a></div>-->
-<button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" id="btnlog">Login</button>
+     <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" id="btnlog">Login</button>
               <!-- <input type="submit" name="register" class="register" id="loginBtns" value="Login" /> -->
 			  <!-- <br/> <br/> <br/> -->
 			    <!-- <input type="submit" value="logdfsdfsdfsdfsdf" id="btnlogs"/> -->
+				 <div>
+	   @if(!string.IsNullOrEmpty(Convert.ToString(@TempData["error"]))){
+		   <h6  style="color:red;" class="danger">@TempData["error"]</h6>
+	   }
+   </div>
 			  
 			  </div>
               

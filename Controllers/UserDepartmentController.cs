@@ -25,11 +25,15 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
-                var asd = _userDepRepo.InsertpostData(department);
-                TempData["show"] = "Post created successfully";
+                // OB SC  ST EWS TOTAL
+                department.TOTAL = department.OBC + department.SC + department.ST + department.EWS;
+
+                department.Total_vacancy= department.VH + department.HH + department.OH + department.OTHERS;
+                var asd = _userDepRepo.InsertpostData(department);               
+
                 return RedirectToAction("Index");
             }
-            return View();
+                        return View();
         }
 
 
@@ -38,6 +42,7 @@ namespace ssc.Controllers
             return View();
         }
         
-        
     }
+
 }
+

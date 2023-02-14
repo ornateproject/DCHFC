@@ -6,6 +6,13 @@ namespace ssc.Controllers
 {
     public class MTSselectionController : Controller
     {
+        private readonly MTSrepo _mtsrepo;
+        public MTSselectionController(IConfiguration configuration)
+        {
+            _mtsrepo = new MTSrepo(configuration);
+        }
+
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
@@ -16,15 +23,19 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var asd = _userDepRepo.InsertpostData(department);
-
+                var asd = _mtsrepo.InsertpostData(department);
+              //  TempData["show"] = "Post created successfully";
                 return RedirectToAction("Index");
             }
             return View();
         }
+
+
         public IActionResult Privacy()
         {
             return View();
         }
+
+
     }
 }

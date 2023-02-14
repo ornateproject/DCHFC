@@ -38,28 +38,28 @@ namespace ssc.Models
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public string? UR { get; set; }
+        public int? UR { get; set; }
 
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public string? OBC { get; set; }
+        public int? OBC { get; set; }
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public string? SC { get; set; }
+        public int? SC { get; set; }
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public string? ST { get; set; }
+        public int? ST { get; set; }
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public string? EWS { get; set; }
+        public int? EWS { get; set; }
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public string? TOTAL { get; set; }
+        public int? TOTAL { get; set; }
 
 
         
@@ -98,7 +98,7 @@ namespace ssc.Models
         public int? OTHERS { get; set; }
 
 
-        [Required(ErrorMessage = "*")]
+        //[Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         public int? Total_vacancy { get; set; }
 
@@ -201,10 +201,10 @@ namespace ssc.Models
         
         [Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public string? letter_no { get; set; }
+        public int? letter_no { get; set; }
 
         [Required(ErrorMessage = "*")]
-        public string? office_department { get; set; }
+        public int? office_department { get; set; }
         
     }
     
