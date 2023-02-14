@@ -230,6 +230,10 @@ a:hover {color: rgba(0,0,0,.2)}
   <nav>  
    <div class="text-center pd-y-10"><img src="~/img/logo.jpg" class="img-fluid"></div> 
   
+	   @if(!string.IsNullOrEmpty(Convert.ToString(@TempData["error"]))){
+		   <p class="danger">@TempData["error"]</p>
+	   }
+   </div>
   <label for="profile" class='fa fa-user-circle-o'>
      <p>Admin (RD)</p>
   </label>
@@ -356,6 +360,11 @@ a:hover {color: rgba(0,0,0,.2)}
              <!-- <div class="form-group"><a href="#" class="tx-12">Forgot password?</a></div>-->
 
               <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" type="submit">Login</button>
+			  <div class="">
+	   @if(!string.IsNullOrEmpty(Convert.ToString(@TempData["error"]))){
+		   <p class="danger">@TempData["error"]</p>
+	   }
+   </div>
 		  
             </form>
 			  
