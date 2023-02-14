@@ -1,4 +1,4 @@
-﻿@model List<DeptRegistration>;
+﻿@model ssc.Models.UserDepartment
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -28,44 +28,116 @@
                 <thead>
                     <tr>
                         <th>Sr No.</th>
-                        <th>Department</th>
-                        <th>Name</th>
-                        <th>Mobile</th>
-                        <th>Email</th>
-                        <th>Nodal officer Doc upload</th>
-                        <th>Status</th>
-                        <th>Details</th>
+                         <th>ID </th>
+ <th>post_name</th>
+<th>pay_matrix</th>
+<th>post_class</th>
+<th>post_nature</th>
+<th>initial_place</th>
+<th>aisl</th>
+<th>vacancy_ariesn</th>
+<th>UR</th>
+<th>OBC </th>
+<th> SC </th>
+<th> ST </th>
+ <th>EWS </th>
+<th>TOTAL</th>
+<th>identified_post</th>
+<th>disability_type</th>
+<th>suitable_pwd</th>
+<th>permissible</th> 
+ <th>VH </th>
+ <th>HH </th>
+ <th>OH </th>
+<th>OTHERS </th>
+<th>Total_vacancy </th>
+<th>reserved_vacancy</th> 
+<th>pwd_number</th>
+<th>pwdvertical_category</th>
+ <th>totalesm_number</th>
+ <th>esm_number</th>
+<th>esmvertical_category</th> 
+<th>probation1</th>
+<th>Essential</th>
+ <th>Desirable </th>
+ <th>Relaxation</th>
+ <th>Regional_office</th>
+ <th>Age_limit </th>
+ <th>Requirment</th>
+<th>Name</th>
+<th>Desigantion</th>
+<th>Address </th>
+ <th>Mobile_no </th>
+ <th>Email </th>
+ <th>subsequent_orders</th>
+<th>DOPT_letter </th>
+ <th>no_ofvacancy</th> 
+<th>pwd_esm</th>
+ <th>person_disabilities</th>        
+ <th>letter_no </th>
+ <th>office_department</th>
+        
+
+
+
                     </tr>
                 </thead>
                 <tbody >
-                    @{
-                        foreach(var item in Model)
-                        {
-                            
-                        
+                      
                     <tr>
-                        <th scope="row">@item.ID</th>
-                          <td>@item.Department</td>
-                        <td>@item.Name</td>
-                        <td>@item.Mobile_no</td>
-                        <td>@item.Email</td>
-                        <td><a href="#"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>@item.Upload_doc</td>                      
-                      @*<td><a href="#"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a></td>*@
-                        <td><strong><span class="text-danger">Pending </span></strong></td>
-                        <td>
-                            <div class="modal-bootstrap modal-login-form">
-                                <a class="zoomInDown mg-t btn btn-red" href="/US1_pendingapproval/index/@item.ID">View Details</a>
-                            </div>
-                            <!-- BASIC MODAL -->
+                         <td>ID </td>
+ <td>post_name</td>
+<td>pay_matrix</td>
+<td>post_class</td>
+<td>post_nature</td>
+<td>initial_place</td>
+<td>aisl</td>
+<td>vacancy_ariesn</td>
+<td>UR</td>
+<td>OBC </td>
+<td> SC </td>
+<td> ST </td>
+ <td>EWS </td>
+<td>TOTAL</td>
+<td>identified_post</td>
+<td>disability_type</td>
+<td>suitable_pwd</td>
+<td>permissible</td> 
+ <td>VH </td>
+ <td>HH </td>
+ <td>OH </td>
+<td>OtdERS </td>
+<td>Total_vacancy </td>
+<td>reserved_vacancy</td> 
+<td>pwd_number</td>
+<td>pwdvertical_category</td>
+ <td>totalesm_number</td>
+ <td>esm_number</td>
+<td>esmvertical_category</td> 
+<td>probation1</td>
+<td>Essential</td>
+ <td>Desirable </td>
+ <td>Relaxation</td>
+ <td>Regional_office</td>
+ <td>Age_limit </td>
+ <td>Requirment</td>
+<td>Name</td>
+<td>Desigantion</td>
+<td>Address </td>
+ <td>Mobile_no </td>
+ <td>Email </td>
+ <td>subsequent_orders</td>
+<td>DOPT_letter </td>
+ <td>no_ofvacancy</td> 
+<td>pwd_esm</td>
+ <td>person_disabilities</td>        
+ <td>letter_no </td>
+ <td>office_department</td>
+        
 
-                        </td>
+
 
                     </tr>
-                    
-                    }
-                    }
-
-
                 </tbody>
 
             </table>
