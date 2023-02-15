@@ -1,6 +1,48 @@
 ﻿@model ssc.Models.MTSselection;
 
 
+<script>
+    function findAll() {
+        var arr = document.getElementsByClassName('num2');
+        var tot = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (parseFloat(arr[i].value))
+                tot += parseFloat(arr[i].value);
+        }
+        document.getElementById('amounttotal1').value = tot;
+
+    }
+    function findOne() {
+        var arr = document.getElementsByClassName('num3');
+        var tot = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (parseFloat(arr[i].value))
+                tot += parseFloat(arr[i].value);
+        }
+        document.getElementById('amounttotal2').value = tot;
+
+    }
+
+    </script>
+    <style>
+    #hh{
+          display: block;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: #495057;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+    }
+</style>
+
+
 <form asp-action="Index" asp-controller="MTSselection">
     <div class="br-pageheader pd-y-15 pd-l-20">
       <nav class="breadcrumb pd-0 mg-0 tx-12">
@@ -59,7 +101,7 @@
                 <select asp-for="post_classification" class="form-control select2"  data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
-                  <option>Group ‘B’ Non-Gazetted</option>
+                  
                   <option >Group-‘C’, Non-Technica</option>
 
                 </select>
@@ -261,33 +303,33 @@ Arm & One Leg affected, Both Arms affected, Low Vision, Blind etc. to be mention
           </div><!-- col-4 -->
           <div class="col-lg-2">
             <div class="form-group">
-                        <input asp-for="UR" type="text" class="form-control">
+                         <input id="hh" onblur="findOne()" type="text" asp-for="UR" class="num3">
             </div>
           </div>
           <div class="col-lg-2">
             <div class="form-group">
-                        <input asp-for="OBC" type="text" class="form-control">
+                         <input id="hh" onblur="findOne()" type="text" asp-for="OBC" class="num3">
             </div>
           </div>
           
           <div class="col-lg-2">
             <div class="form-group">
-                        <input asp-for="SC" type="text" class="form-control">
+                        <input id="hh" onblur="findOne()" type="text" asp-for="SC" class="num3">
             </div>
           </div>
           <div class="col-lg-2">
             <div class="form-group">
-                        <input asp-for="ST" type="text" class="form-control">
+                        <input id="hh" onblur="findOne()" type="text" asp-for="ST" class="num3">
             </div>
           </div>
           <div class="col-lg-1">
             <div class="form-group">
-                        <input asp-for="EWS" type="text" class="form-control">
+                         <input id="hh" onblur="findOne()" type="text" asp-for="EWS" class="num3">
             </div>
           </div>
           <div class="col-lg-1">
             <div class="form-group">
-                        <input asp-for="TOTAL" type="text" class="form-control">
+                                 <input type="text" id="amounttotal2" asp-for="Total_vacancy" class="form-control" readonly>
             </div>
           </div>
  </div>
@@ -326,7 +368,7 @@ reserved for Persons with Disabilities (PwD):-</p>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for="VH" type="text" class="form-control">
+                        <input id="hh" onblur="findAll()" type="text" asp-for="VH" class="num2">
   </div>
   </div>
   </div>
@@ -338,7 +380,7 @@ reserved for Persons with Disabilities (PwD):-</p>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for=" HH " type="text" class="form-control">
+                         <input id="hh" onblur="findAll()" type="text" asp-for="HH" class="num2">
   </div>
   </div>
   </div>
@@ -350,7 +392,7 @@ reserved for Persons with Disabilities (PwD):-</p>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for="OH" type="text" class="form-control">
+                         <input id="hh" onblur="findAll()" type="text" asp-for="OH" class="num2">
   </div>
   </div>
   </div>
@@ -362,7 +404,7 @@ reserved for Persons with Disabilities (PwD):-</p>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for="OTHERS" type="text" class="form-control">
+                        <input id="hh" onblur="findAll()" type="text" asp-for="OTHERS" class="num2">
   </div>
   </div>
   </div>
@@ -376,7 +418,7 @@ reserved for Persons with Disabilities (PwD):-</p>
   </div>
   <div class="col-lg-6">
     <div class="form-group">
-                        <input asp-for="Total_vacancy" type="text" class="form-control">
+                                 <input type="text" id="amounttotal1" asp-for="Total_vacancy" class="form-control" readonly>
   </div>
   </div>
   </div>
