@@ -28,13 +28,13 @@
                     <div class="form-group">
 
                         <label class="form-control-label tx-gray-700">Name Of the Post <span class="tx-danger">*</span></label>
-                       
+                       @Model.post_name
                     </div>
                 </div><!-- col-4 -->
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Pay Matrix (as per 7th CPC): <span class="tx-danger">*</span></label>
-                       
+                       @Model.pay_matrix
 
                     </div>
                 </div><!-- col-4 -->
@@ -42,14 +42,14 @@
                  <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Age Limit : <span class="tx-danger">*</span></label>
-                       
+                       @Model.age_limit
 
                     </div>
                 </div><!-- col-4 -->
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Classification of Post <span class="tx-danger">*</span></label>
-                        
+                        @Model.post_classification
 
                     </div>
                 </div>
@@ -60,20 +60,20 @@
                     <div class="form-group">
 
                         <label class="form-control-label tx-gray-700">Brief description <span class="tx-danger">*</span></label>
-                       
+                      // @Model.initial_post
                     </div>
                 </div><!-- col-4 -->
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Place of initial posting [name of the State(s)]. <span class="tx-danger">*</span></label>
-                       
+                       @Model.initial_post
 
                     </div>
                 </div><!-- col-4 -->
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Whether All India Service Liability (AISL) is involved?<span class="tx-danger">*</span></label>
-                        
+                        @Model.AISL
 
                     </div>
                 </div>
