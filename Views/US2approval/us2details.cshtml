@@ -28,14 +28,14 @@ For more information on enabling MVC for empty projects, visit https://go.micros
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">Name Of the Post <span class="tx-danger">*</span></label>
-
+             @Model.post_name
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-4">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Pay Matrix (as per 7th CPC): <span
                 class="tx-danger">*</span></label>
-
+                 @Model.pay_matrix
 
           </div>
         </div><!-- col-4 -->
@@ -44,7 +44,7 @@ For more information on enabling MVC for empty projects, visit https://go.micros
             <label class="form-control-label tx-gray-700">Classification of Post <span
                 class="tx-danger">*</span></label>
 
-
+                 @Model.post_class
           </div>
         </div>
       </div>
@@ -55,14 +55,14 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 
             <label class="form-control-label tx-gray-700">Brief description of the job requirements and nature of duties
               of the post <span class="tx-danger">*</span></label>
-
+           @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-4">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Place of initial posting [name of the State(s)]. <span
                 class="tx-danger">*</span></label>
-
+                 @Model.post_nature
 
           </div>
         </div><!-- col-4 -->
@@ -70,7 +70,7 @@ For more information on enabling MVC for empty projects, visit https://go.micros
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Whether All India Service Liability (AISL) is involved?<span
                 class="tx-danger">*</span></label>
-
+                 @Model.post_nature
 
           </div>
         </div>
@@ -82,7 +82,7 @@ For more information on enabling MVC for empty projects, visit https://go.micros
             <label class="form-control-label tx-gray-700">How have the vacancies arisen? (Clearly specify, by
               promotion/resignation/ death/ retirement etc. in case the vacancy is due to failure to recruit by
               transfer/deputation, the details thereof may also be indicated)<span class="tx-danger">*</span></label>
-
+               @Model.post_nature
           </div>
         </div>
       </div>
@@ -91,20 +91,20 @@ For more information on enabling MVC for empty projects, visit https://go.micros
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">UR <span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-2">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">OBC <span class="tx-danger">*</span></label>
 
-
+             @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-2">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">SC<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div>
@@ -112,41 +112,51 @@ For more information on enabling MVC for empty projects, visit https://go.micros
           <div class="form-group">
             <label class="form-control-label tx-gray-700">ST<span class="tx-danger">*</span></label>
 
-
+             @Model.post_nature
           </div>
         </div>
         <div class="col-lg-2">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">EWS<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div>
         <div class="col-lg-2">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Total<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div>
       </div>
       <div class="row mg-b-25">
+        <div class="col-lg-8">
+          <div class="form-group">
+
+            <label class="form-control-label tx-gray-700">Post is indentified suitable for PWD candidate<span class="tx-danger">*</span></label>
+             @Model.post_nature
+          </div>
+          </div>
+      <div class="row mg-b-25">
         <div class="col-lg-4">
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">Type of Disability<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-4">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">
               Suitable for PwD<span class="tx-danger">*</span></label>
+               @Model.post_nature
           </div>
         </div>
         <div class="col-lg-4">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Permissible disability<span class="tx-danger">*</span></label>
+             @Model.post_nature
           </div>
         </div>
       </div>
@@ -155,34 +165,34 @@ For more information on enabling MVC for empty projects, visit https://go.micros
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">VH <span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-2">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">HH<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-2">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">OH<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div>
         <div class="col-lg-2">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">OTHER<span class="tx-danger">*</span></label>
-
+            @Model.post_nature
 
           </div>
         </div>
         <div class="col-lg-2">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Total<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div>
@@ -197,7 +207,7 @@ may be filled through non-PwD
 candidates in the event of not finding
 candidates from earmarked PwD
 category: <span class="tx-danger">*</span></label>
-
+ @Model.post_nature
           </div>
           </div>
           </div>
@@ -212,13 +222,14 @@ candidates in the event of not finding
 candidates from earmarked PwD
 category: <span class="tx-danger">*</span></label>
 
+
           </div>
           </div>
            <div class="col-lg-4">
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">Number <span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
           </div>
            <div class="col-lg-4">
@@ -226,7 +237,7 @@ category: <span class="tx-danger">*</span></label>
 
             <label class="form-control-label tx-gray-700">
 Vertical Category<span class="tx-danger">*</span></label>
-
+ @Model.post_nature
           </div>
           </div>
           </div>
@@ -243,7 +254,7 @@ category: <span class="tx-danger">*</span></label>
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">Number <span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
           </div>
           </div>
@@ -264,14 +275,14 @@ from earmarked ESM category:<span class="tx-danger">*</span></label>
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">Number<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
           </div>
           <div class="col-lg-4">
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">Vertical Category<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
           </div>
           </div>
@@ -281,7 +292,7 @@ from earmarked ESM category:<span class="tx-danger">*</span></label>
 
             <label class="form-control-label tx-gray-700">
 Period of probation<span class="tx-danger">*</span></label>
-
+ @Model.post_nature
           </div>
           </div>
           </div>
@@ -289,21 +300,20 @@ Period of probation<span class="tx-danger">*</span></label>
         <div class="col-lg-4">
           <div class="form-group">
 
-            <label class="form-control-label tx-gray-700">Essential<span class="tx-danger">*</span></label>
-
+            <label class="form-control-label tx-gray-700">Essential<span class="tx-danger">*</span></label> @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-4">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Desirable<span class="tx-danger">*</span></label>
 
-
+             @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-4">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Relaxation, if any<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div>
@@ -313,13 +323,13 @@ Period of probation<span class="tx-danger">*</span></label>
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">EQ/Eligibility/Experience to any of the Regional Office(s) of SSC<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-4">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Age Limits as per Recruitment Rules<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div><!-- col-4 -->
@@ -327,7 +337,7 @@ Period of probation<span class="tx-danger">*</span></label>
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Any other requirements or conditions not covered
 by the above columns<span class="tx-danger">*</span></label>
-
+ @Model.post_nature
 
           </div>
         </div>
@@ -337,7 +347,7 @@ by the above columns<span class="tx-danger">*</span></label>
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">Name<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-4">
@@ -350,7 +360,7 @@ by the above columns<span class="tx-danger">*</span></label>
         <div class="col-lg-4">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Email<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div>
@@ -360,13 +370,13 @@ by the above columns<span class="tx-danger">*</span></label>
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">Address: <span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-4">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Designation:<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div><!-- col-4 -->
@@ -375,7 +385,7 @@ by the above columns<span class="tx-danger">*</span></label>
             <label class="form-control-label tx-gray-700">Whether the captioned post(s) has/have been
 exempted from ban orders imposed by the M/o<span class="tx-danger">*</span></label>
 
-
+ @Model.post_nature
           </div>
         </div>
        </div>
@@ -384,13 +394,13 @@ exempted from ban orders imposed by the M/o<span class="tx-danger">*</span></lab
           <div class="form-group">
 
             <label class="form-control-label tx-gray-700">Redeployment of Surplus Staff<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-4">
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Whether the number of vacancies reserved for SC, ST, OBC & EWS as mentioned in Column 5(a)<span class="tx-danger">*</span></label>
-
+             @Model.post_nature
 
           </div>
         </div><!-- col-4 -->
@@ -398,7 +408,7 @@ exempted from ban orders imposed by the M/o<span class="tx-danger">*</span></lab
           <div class="form-group">
             <label class="form-control-label tx-gray-700">Whether the vacancies for PwD and ESM have
 been worked out with reference to DOPT O.M<span class="tx-danger">*</span></label>
-
+ @Model.post_nature
 
           </div>
         </div>
@@ -409,7 +419,7 @@ been worked out with reference to DOPT O.M<span class="tx-danger">*</span></labe
 
             <label class="form-control-label tx-gray-700">Whether the provisions of ‘The Rights of Persons
 with Disabilities Act, 2016’ are complied with?<span class="tx-danger">*</span></label>
-
+ @Model.post_nature
           </div>
         </div><!-- col-4 -->
         <div class="col-lg-4">
@@ -417,7 +427,7 @@ with Disabilities Act, 2016’ are complied with?<span class="tx-danger">*</span
             <label class="form-control-label tx-gray-700">Letter No. and date of the Previous requisition for
 the same post placed with the SSC
 by your office<span class="tx-danger">*</span></label>
-
+ @Model.post_nature
 
           </div>
         </div><!-- col-4 -->
@@ -427,7 +437,7 @@ by your office<span class="tx-danger">*</span></label>
 made earlier by SSC to your office for the same
 Post and No. of vacancies filled by your
 Office/Deptt<span class="tx-danger">*</span></label>
-
+ @Model.post_nature
 
           </div>
         </div>
