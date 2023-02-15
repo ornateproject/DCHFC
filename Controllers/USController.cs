@@ -14,6 +14,7 @@ namespace ssc.Controllers
 
 
         }
+       
 
         [HttpGet]
         public IActionResult Index()

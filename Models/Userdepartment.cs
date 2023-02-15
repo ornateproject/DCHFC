@@ -38,28 +38,28 @@ namespace ssc.Models
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public int? UR { get; set; }
+        public string? UR { get; set; }
 
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public int? OBC { get; set; }
+        public string? OBC { get; set; }
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public int? SC { get; set; }
+        public string? SC { get; set; }
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public int? ST { get; set; }
+        public string? ST { get; set; }
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public int? EWS { get; set; }
+        public string? EWS { get; set; }
 
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
         [Required(ErrorMessage = "*")]
-        public int? TOTAL { get; set; }
+        public string? TOTAL { get; set; }
 
 
         
@@ -81,26 +81,26 @@ namespace ssc.Models
         
         [Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public int? VH { get; set; }
+        public string? VH { get; set; }
 
 
         [Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public int? HH { get; set; }
+        public string? HH { get; set; }
 
 
         [Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public int? OH { get; set; }
+        public string? OH { get; set; }
 
         [Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public int? OTHERS { get; set; }
+        public string? OTHERS { get; set; }
 
 
         //[Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public int? Total_vacancy { get; set; }
+        public string? Total_vacancy { get; set; }
 
 
         [Required(ErrorMessage = "*")]
@@ -201,10 +201,10 @@ namespace ssc.Models
         
         [Required(ErrorMessage = "*")]
         //[RegularExpression("[^0-9]", ErrorMessage = "Enter a valid number")]
-        public int? letter_no { get; set; }
+        public string? letter_no { get; set; }
 
         [Required(ErrorMessage = "*")]
-        public int? office_department { get; set; }
+        public string? office_department { get; set; }
         
     }
     

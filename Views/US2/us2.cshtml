@@ -1,4 +1,4 @@
-﻿@model ssc.Models.UserDepartment
+﻿@model List<UserDepartment>;
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -28,119 +28,132 @@
                 <thead>
                     <tr>
                         <th>Sr No.</th>
-                         <th>ID </th>
- <th>post_name</th>
-<th>pay_matrix</th>
-<th>post_class</th>
-<th>post_nature</th>
-<th>initial_place</th>
-<th>aisl</th>
-<th>vacancy_ariesn</th>
-<th>UR</th>
-<th>OBC </th>
-<th> SC </th>
-<th> ST </th>
- <th>EWS </th>
-<th>TOTAL</th>
-<th>identified_post</th>
-<th>disability_type</th>
-<th>suitable_pwd</th>
-<th>permissible</th> 
- <th>VH </th>
- <th>HH </th>
- <th>OH </th>
-<th>OTHERS </th>
-<th>Total_vacancy </th>
-<th>reserved_vacancy</th> 
-<th>pwd_number</th>
-<th>pwdvertical_category</th>
- <th>totalesm_number</th>
- <th>esm_number</th>
-<th>esmvertical_category</th> 
-<th>probation1</th>
-<th>Essential</th>
- <th>Desirable </th>
- <th>Relaxation</th>
- <th>Regional_office</th>
- <th>Age_limit </th>
- <th>Requirment</th>
-<th>Name</th>
-<th>Desigantion</th>
-<th>Address </th>
- <th>Mobile_no </th>
- <th>Email </th>
- <th>subsequent_orders</th>
-<th>DOPT_letter </th>
- <th>no_ofvacancy</th> 
-<th>pwd_esm</th>
- <th>person_disabilities</th>        
- <th>letter_no </th>
- <th>office_department</th>
-        
+                      
+                            <th>post_name</th>
+                           <th>pay_matrix</th>
+                           <th>post_class</th>
+                           <th>post_nature</th>
+                           <th>initial_place</th>
+                           <th>aisl</th>
+                           <th>vacancy_ariesn</th>
+                           <th>UR</th>
+                           <th>OBC </th>
+                           <th> SC </th>
+                           <th> ST </th>
+                            <th>EWS </th>
+                           <th>TOTAL</th>
+                           <th>identified_post</th>
+                           <th>disability_type</th>
+                           <th>suitable_pwd</th>
+                           <th>permissible</th> 
+                            <th>VH </th>
+                            <th>HH </th>
+                            <th>OH </th>
+                           <th>OTHERS </th>
+                           <th>Total_vacancy </th>
+                           <th>reserved_vacancy</th> 
+                           <th>pwd_number</th>
+                           <th>pwdvertical_category</th>
+                            <th>totalesm_number</th>
+                            <th>esm_number</th>
+                           <th>esmvertical_category</th> 
+                           <th>probation1</th>
+                           <th>Essential</th>
+                            <th>Desirable </th>
+                            <th>Relaxation</th>
+                            <th>Regional_office</th>
+                            <th>Age_limit </th>
+                            <th>Requirment</th>
+                           <th>Name</th>
+                           <th>Desigantion</th>
+                           <th>Address </th>
+                            <th>Mobile_no </th>
+                            <th>Email </th>
+                            <th>subsequent_orders</th>
+                           <th>DOPT_letter </th>
+                            <th>no_ofvacancy</th> 
+                           <th>pwd_esm</th>
+                            <th>person_disabilities</th>        
+                            <th>letter_no </th>
+                            <th>office_department</th>
+                                <th>Status</th>
+                        <th>Details</th>   
 
 
 
                     </tr>
                 </thead>
                 <tbody >
-                      
+                        @{
+                        foreach(var item in Model)
+                        {
                     <tr>
-                         <td>ID </td>
- <td>post_name</td>
-<td>pay_matrix</td>
-<td>post_class</td>
-<td>post_nature</td>
-<td>initial_place</td>
-<td>aisl</td>
-<td>vacancy_ariesn</td>
-<td>UR</td>
-<td>OBC </td>
-<td> SC </td>
-<td> ST </td>
- <td>EWS </td>
-<td>TOTAL</td>
-<td>identified_post</td>
-<td>disability_type</td>
-<td>suitable_pwd</td>
-<td>permissible</td> 
- <td>VH </td>
- <td>HH </td>
- <td>OH </td>
-<td>OtdERS </td>
-<td>Total_vacancy </td>
-<td>reserved_vacancy</td> 
-<td>pwd_number</td>
-<td>pwdvertical_category</td>
- <td>totalesm_number</td>
- <td>esm_number</td>
-<td>esmvertical_category</td> 
-<td>probation1</td>
-<td>Essential</td>
- <td>Desirable </td>
- <td>Relaxation</td>
- <td>Regional_office</td>
- <td>Age_limit </td>
- <td>Requirment</td>
-<td>Name</td>
-<td>Desigantion</td>
-<td>Address </td>
- <td>Mobile_no </td>
- <td>Email </td>
- <td>subsequent_orders</td>
-<td>DOPT_letter </td>
- <td>no_ofvacancy</td> 
-<td>pwd_esm</td>
- <td>person_disabilities</td>        
- <td>letter_no </td>
- <td>office_department</td>
-        
+                   
+                         <th scope="row">@item.ID</th>
+                            <td>@item.post_name</td>
+                           <td>@item.pay_matrix</td>
+                           <td>@item.post_class</td>
+                           <td>@item.post_nature</td>
+                           <td>@item.initial_place</td>
+                           <td>@item.aisl</td>
+                           <td>@item.vacancy_ariesn</td>
+                           <td>@item.UR</td>
+                           <td>@item.OBC </td>
+                           <td>@item.SC </td>
+                           <td> @item.ST </td>
+                            <td>@item.EWS </td>
+                           <td>@item.TOTAL</td>
+                           <td>@item.identified_post</td>
+                           <td>@item.disability_type</td>
+                           <td>@item.suitable_pwd</td>
+                           <td>@item.permissible</td> 
+                            <td>@item.VH </td>
+                            <td>@item.HH </td>
+                            <td>@item.OH </td>
+                           <td>@item.OTHERS </td>
+                           <td>@item.Total_vacancy </td>
+                           <td>@item.reserved_vacancy</td> 
+                           <td>@item.pwd_number</td>
+                           <td>@item.pwdvertical_category</td>
+                            <td>@item.totalesm_number</td>
+                            <td>@item.esm_number</td>
+                           <td>@item.esmvertical_category</td> 
+                           <td>@item.probation1</td>
+                           <td>@item.Essential</td>
+                            <td>@item.Desirable </td>
+                            <td>@item.Relaxation</td>
+                            <td>@item.Regional_office</td>
+                            <td>@item.Age_limit </td>
+                            <td>@item.Requirment</td>
+                           <td>@item.Name</td>
+                           <td>@item.Desigantion</td>
+                           <td>@item.Address </td>
+                            <td>@item.Mobile_no </td>
+                            <td>@item.Email </td>
+                            <td>@item.subsequent_orders</td>
+                           <td>@item.DOPT_letter </td>
+                            <td>@item.no_ofvacancy</td> 
+                           <td>@item.pwd_esm</td>
+                            <td>@item.person_disabilities</td>        
+                            <td>@item.letter_no </td>
+                            <td>@item.office_department</td>
+                              <td><strong><span class="text-danger">Pending </span></strong></td>
+                        <td>
+                            <div class="modal-bootstrap modal-login-form">
+                                <a class="zoomInDown mg-t btn btn-red" href="/US1_pendingapproval/index/@item.ID">View Details</a>
+                            </div>
+                            <!-- BASIC MODAL -->
+
+                        </td>      
 
 
 
                     </tr>
+                    }
+                    }
                 </tbody>
 
-            </table>
+      </table>
         </div><!-- bd -->
 
 
