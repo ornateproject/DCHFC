@@ -26,7 +26,7 @@ namespace ssc.Controllers
             if (ModelState.IsValid)
             {
                 // OB SC  ST EWS TOTAL
-                department.TOTAL = department.OBC + department.SC + department.ST + department.EWS;
+                department.TOTAL = department.UR +department.OBC + department.SC + department.ST + department.EWS;
 
                 department.Total_vacancy= department.VH + department.HH + department.OH + department.OTHERS;
                 var asd = _userDepRepo.InsertpostData(department);               

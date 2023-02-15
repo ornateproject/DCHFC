@@ -23,8 +23,15 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
+                
+                //  TempData["show"] = "Post created successfully";
+                department.TOTAL = department.UR + department.OBC + department.SC + department.ST + department.EWS;
+
+                department.Total_vacancy = department.VH + department.HH + department.OH + department.OTHERS;
+
                 var asd = _mtsrepo.InsertpostData(department);
-              //  TempData["show"] = "Post created successfully";
+
+
                 return RedirectToAction("Index");
             }
             return View();

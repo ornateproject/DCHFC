@@ -51,61 +51,61 @@ namespace ssc.Models
 
 
         [Required(ErrorMessage = "*")]
-        public string? UR { get; set; }
+        public int? UR { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? OBC { get; set; }
+        public int? OBC { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? SC { get; set; }
+        public int? SC { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? ST { get; set; }
+        public int? ST { get; set; }
 
 
         [Required(ErrorMessage = "*")]
-        public string? EWS { get; set; }
+        public int? EWS { get; set; }
 
 
-        [Required(ErrorMessage = "*")]
-        public string? TOTAL { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        //[Required]
-        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? VH { get; set; }
-
-
+        //[Required(ErrorMessage = "*")]
+        public int? TOTAL { get; set; }
 
         [Required(ErrorMessage = "*")]
         //[Required]
         [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? HH { get; set; }
+        public int? VH { get; set; }
+
 
 
         [Required(ErrorMessage = "*")]
         //[Required]
         [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? OH { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        //[Required]
-        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? OTHERS { get; set; }
+        public int? HH { get; set; }
 
 
         [Required(ErrorMessage = "*")]
         //[Required]
         [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? Total_vacancy { get; set; }
+        public int? OH { get; set; }
 
         [Required(ErrorMessage = "*")]
         //[Required]
         [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
-        public string? ESM_number { get; set; }
+        public int? OTHERS { get; set; }
+
+
+        [Required(ErrorMessage = "*")]
+        //[Required]
+        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
+        public int? Total_vacancy { get; set; }
+
+        [Required(ErrorMessage = "*")]
+        //[Required]
+        [RegularExpression("^[0-9]{1,12}$", ErrorMessage = "Enter Number")]
+        public int? ESM_number { get; set; }
 
 
         [Required(ErrorMessage = "*")]
