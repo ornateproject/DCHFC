@@ -1,4 +1,4 @@
-﻿@model ssc.Models.DeptRegistration
+﻿@model ssc.Models.UserDepartment
 
 
 @*
@@ -28,20 +28,20 @@
                 <div class="form-group">
 
                   <label class="form-control-label tx-gray-700">Name Of the Post <span class="tx-danger">*</span></label>
-                 
+                  @Model.post_name
                 </div>
               </div><!-- col-4 -->
               <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Pay Matrix (as per 7th CPC): <span class="tx-danger">*</span></label>
-				
+				 @Model.pay_matrix
                   
                 </div>
               </div><!-- col-4 -->
 			  <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Classification of Post <span class="tx-danger">*</span></label>
-				 
+				  @Model.post_class
                   
                 </div>
               </div>
@@ -52,20 +52,20 @@
                 <div class="form-group">
 
                   <label class="form-control-label tx-gray-700">Brief description of the job requirements and nature of duties of the post <span class="tx-danger">*</span></label>
-                 
+                  @Model.post_nature
                 </div>
               </div><!-- col-4 -->
               <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Place of initial posting [name of the State(s)]. <span class="tx-danger">*</span></label>
-				
+				 @Model.initial_place
                   
                 </div>
               </div><!-- col-4 -->
 			  <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Whether All India Service Liability (AISL) is involved?<span class="tx-danger">*</span></label>
-				 
+				  @Model.aisl
                   
                 </div>
               </div>
@@ -75,7 +75,7 @@
                 <div class="form-group">
 
                   <label class="form-control-label tx-gray-700">How have the vacancies arisen? (Clearly specify, by promotion/resignation/ death/ retirement etc. in case the vacancy is due to failure to recruit by transfer/deputation, the details thereof may also be indicated)<span class="tx-danger">*</span></label>
-                 
+                  @Model.vacancy_ariesn
                 </div>
                 </div>
                 </div>
