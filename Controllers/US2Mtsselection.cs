@@ -2,9 +2,9 @@
 
 namespace ssc.Controllers
 {
-    public class US2userdept : Controller
+    public class US2Mtsselection : Controller
     {
-        public IActionResult us2details()
+        public IActionResult us2mts()
         {
             return View();
         }
