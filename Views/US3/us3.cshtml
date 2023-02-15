@@ -1,0 +1,79 @@
+﻿@model List<MTSselection>;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="br-pageheader pd-y-15 pd-l-20">
+    <nav class="breadcrumb pd-0 mg-0 tx-12">
+        <a class="breadcrumb-item" href="US1.html">Dashboard</a>
+        <span class="breadcrumb-item active">Pending Approval</span>
+    </nav>
+</div><!-- br-pageheader -->
+<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+    <h4 class="tx-gray-800 mg-b-5">Pending Approval</h4>
+
+</div>
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+        <!-- d-flex -->
+        <div class="table-wrapper rounded table-responsive">
+            <table id="datatable1" class="table display responsive nowrap">
+                <thead>
+                    <tr>
+                        <th>Sr No.</th>
+                      
+                            <th>post_name</th>
+                           <th>pay_matrix</th>
+                           <th>age_limit</th>
+                           <th>post_classification</th>
+                           <th>initial_post</th>
+                               
+                            <th>candidates_nominated</th>
+                                <th>Status</th>
+                        <th>Details</th>   
+
+
+
+                    </tr>
+                </thead>
+                <tbody >
+                        @{
+                        foreach(var item in Model)
+                        {
+                    <tr>
+                   
+                         <th scope="row">@item.ID</th>
+                            <td>@item.post_name</td>
+                           <td>@item.pay_matrix</td>
+                           <td>@item.age_limit</td>
+                           <td>@item.post_classification</td>
+                           <td>@item.initial_post</td>
+                           
+                            <td>@item.candidates_nominated</td>
+                              <td><strong><span class="text-danger">Pending </span></strong></td>
+                        <td>
+                            <div class="modal-bootstrap modal-login-form">
+                                <a class="zoomInDown mg-t btn btn-red" href="/US1_pendingapproval/index/@item.ID">View Details</a>
+                            </div>
+                            <!-- BASIC MODAL -->
+
+                        </td>      
+
+
+
+                    </tr>
+                    }
+                    }
+                </tbody>
+
+      </table>
+        </div><!-- bd -->
+
+
+
+
+    </div><!-- br-section-wrapper -->
+</div><!-- br-pagebody -->
+<!-- ########## END: MAIN PANEL ########## -->
