@@ -46,6 +46,8 @@
 
                     </div>
                 </div><!-- col-4 -->
+                </div>
+                <div class="row mg-b-25">
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Classification of Post <span class="tx-danger">*</span></label>
@@ -56,16 +58,10 @@
             </div>
 
             <div class="row mg-b-25">
+                
                 <div class="col-lg-4">
                     <div class="form-group">
-
-                        <label class="form-control-label tx-gray-700">Brief description <span class="tx-danger">*</span></label>
-                      // @Model.initial_post
-                    </div>
-                </div><!-- col-4 -->
-                <div class="col-lg-4">
-                    <div class="form-group">
-                        <label class="form-control-label tx-gray-700">Place of initial posting [name of the State(s)]. <span class="tx-danger">*</span></label>
+                        <label class="form-control-label tx-gray-700">Place of initial posting <span class="tx-danger">*</span></label>
                        @Model.initial_post
 
                     </div>
@@ -77,9 +73,8 @@
 
                     </div>
                 </div>
-            </div>
-            <div class="row mg-b-25">
-                <div class="col-lg-12">
+            
+                <div class="col-lg-4">
                     <div class="form-group">
 
                         <label class="form-control-label tx-gray-700">How have the vacancies arisen?<span class="tx-danger">*</span></label>
@@ -244,7 +239,7 @@
 
             <div class="row mg-b-25">
 
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
                             Period of probation
@@ -254,11 +249,9 @@
 
                     </div>
                 </div><!-- col-4 -->
-            </div>
+            
 
-            <div class="row mg-b-25">
-
-                <div class="col-lg-12">
+             <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
                                           Essential 
@@ -268,13 +261,11 @@
 
                     </div>
                 </div><!-- col-4 -->
-            </div>
-            <div class="row mg-b-25">
-
-                <div class="col-lg-12">
+            
+                    <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            Desirable (Please indicate ‘NIL’ if not specified in the Recruitment Rules)
+                            Desirable (Please indicate ‘NIL’)
                             <span class="tx-danger">*</span>
                         </label>
                            @Model.desirable
@@ -284,7 +275,7 @@
             </div>
             <div class="row mg-b-25">
 
-                    <div class="col-lg-12">
+                    <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label tx-gray-700">
                                Relaxation, if any
@@ -294,10 +285,8 @@
 
                     </div>
                 </div><!-- col-4 -->
-                </div>
-            <div class="row mg-b-25">
-
-                <div class="col-lg-12">
+            
+                   <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
                             Age Limits as per Recruitment Rules :-
@@ -307,11 +296,9 @@
 
                     </div>
                 </div><!-- col-4 -->
-            </div>
+            
 
-            <div class="row mg-b-25">
-
-                <div class="col-lg-12">
+              <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label tx-gray-700">
                             Any other requirements
@@ -325,7 +312,7 @@
             </div>
             <div class="row mg-b-25">
 
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
                             Whether the captioned post(s) 
@@ -335,10 +322,8 @@
 
                     </div>
                 </div><!-- col-4 -->
-            </div>
-            <div class="row mg-b-25">
 
-                    <div class="col-lg-12">
+                    <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label tx-gray-700">
                             Whether a ‘No Objection Certificate’
@@ -348,14 +333,12 @@
 
                     </div>
                 </div><!-- col-4 -->
-                </div>
 
-            <div class="row mg-b-25">
 
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                           Whether the number of vacancies reserved for SC, ST, OBC & EWS 
+                           Whether the number of vacancies reserved 
                         </label>
                            @Model.reserved_vacancies
 
@@ -365,21 +348,18 @@
 
             <div class="row mg-b-25">
 
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            whether the vacancies for PwD and ESM have been worked out with reference to DOPT 
+                            whether the vacancies for PwD and ESM 
                             <span class="tx-danger">*</span>
                         </label>
                            @Model.DOPT_refrence
 
                     </div>
                 </div><!-- col-4 -->
-            </div>
 
-            <div class="row mg-b-25">
-
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
                              ‘The Rights of Persons with Disabilities Act, 2016’ 
@@ -389,13 +369,12 @@
 
                                 </div>
                     </div><!-- col-4 -->
-                </div>
-                <div class="row mg-b-25">
+            
 
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            Letter No. and date of the Previous requisition for the same post 
+                            Letter No. and date of the Previous requisition 
                             <span class="tx-danger">*</span>
                             </label>
                                @Model.Previous_requisition
