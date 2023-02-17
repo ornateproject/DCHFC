@@ -40,10 +40,10 @@ namespace ssc.repository
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "UPDATE StatusData SET Status = @Status WHERE Id = @Id";
+                string query = "UPDATE DeptRegistration SET Status = @Status WHERE Id = @Id";
                 SqlCommand command = new SqlCommand(query, con);
                 command.Parameters.AddWithValue("@Id", id);
-                command.Parameters.AddWithValue("@Status", status);
+                command.Parameters.AddWithValue("@Status", status== "Approved"?1:2);
                 con.Open();
                 command.ExecuteNonQuery();
             }

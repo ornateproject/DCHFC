@@ -31,14 +31,15 @@ namespace ssc.Controllers
         public ActionResult Approve(int id)
         {
             _usrepo.UpdateStatusData(id, "Approved");
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","US");
         }
 
         public ActionResult Reject(int id)
         {
             _usrepo.UpdateStatusData(id, "Rejected");
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","US");
         }
 
+       
     }
 }

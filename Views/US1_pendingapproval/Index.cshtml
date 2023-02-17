@@ -78,12 +78,12 @@
             <div class="form-layout-footer text-center" "="">
                  @if (Model.Status!= "Approved")
                     {
-                 <a href="@Url.Action("Approve", "Status", new { id = Model.ID })"><button class="btn btn-red">Approved</button></a>
+                 <a href="@Url.Action("Approve", "US1_pendingapproval", new { id = Model.ID })"><button class="btn btn-red">Approved</button></a>
                     }
                      @if (Model.Status!= "Approved")
                     {
 
-			   <a href="@Url.Action("Reject", "Status", new { id = Model.ID })"><button  class="btn btn-red">Rejected</button></a>
+			   <a href="@Url.Action("Reject", "US1_pendingapproval", new { id = Model.ID })"><button  class="btn btn-red">Rejected</button></a>
                     }  
               <button class="btn btn-secondary">Cancel</button>
             </div><!-- form-layout-footer -->

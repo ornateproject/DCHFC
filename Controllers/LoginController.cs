@@ -33,6 +33,7 @@ namespace ssc.Controllers
                     return RedirectToAction("Index", "UserDepartment");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
+              
                 return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("Index", "Home");
