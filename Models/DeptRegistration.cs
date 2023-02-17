@@ -55,11 +55,22 @@ namespace ssc.Models
         }
     public class userdetails
     {
+        public int ID { get; set; }
         public string? name { get; set; }
         public string? Mobile_no { get; set; }
         public string? Email { get; set; }
         public string? Upload_doc { get; set; }
         public string? dep_name { get; set; }
+
+        public string? Status { get; set; }
     }
     
+
+    public enum DataStatus
+    {
+     
+        Approved,
+        Rejected,
+        Cancel
+    }
 }

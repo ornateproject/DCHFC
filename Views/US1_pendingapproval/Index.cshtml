@@ -66,11 +66,9 @@
 
              <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Remark: <span class="tx-danger">*</span></label>
-				  <textarea id="w3review" name="w3review" rows="4" cols="150">
-</textarea>
-
-                  
+                  <label class="form-control-label tx-gray-700">Remark: <span class="tx-danger"></span></label>
+				  <textarea id="w3review" name="w3review" rows="4" cols="150"></textarea>
+                                   
                 </div>
               </div>
           
@@ -78,8 +76,11 @@
             </div><!-- row -->
 
             <div class="form-layout-footer text-center" "="">
-               <a href="/US1approval/approval/@item.id"><button id = timesheet.Id class="btn btn-red">Approved</button></a>
-			   <a href="/US1_status/Status"><button class="btn btn-red">Rejected</button></a>
+                
+               <a href="@Url.Action("Approve", "Status", new { id = Model.ID })"><button class="btn btn-red">Approved</button></a>
+                  
+			   <a href="@Url.Action("Reject", "Status", new { id = Model.ID })"><button  class="btn btn-red">Rejected</button></a>
+                    
               <button class="btn btn-secondary">Cancel</button>
             </div><!-- form-layout-footer -->
           </div><!-- form-layout -->

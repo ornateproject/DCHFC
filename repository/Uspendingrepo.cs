@@ -35,5 +35,20 @@ namespace ssc.repository
             //var szad= JsonConvert.SerializeObject(Convert.ToString(dt.Rows[0]));
             return JsonConvert.SerializeObject(dt);
         }
+
+        public void UpdateStatusData(int id, string status)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "UPDATE StatusData SET Status = @Status WHERE Id = @Id";
+                SqlCommand command = new SqlCommand(query, con);
+                command.Parameters.AddWithValue("@Id", id);
+                command.Parameters.AddWithValue("@Status", status);
+                con.Open();
+                command.ExecuteNonQuery();
+            }
+        }
     }
+
+
 }

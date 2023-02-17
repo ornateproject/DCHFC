@@ -24,5 +24,18 @@ namespace ssc.Controllers
             return View(dep_reg);
         }
 
+        public ActionResult Approve(int id)
+        {
+            _us2repo.UpdateStatusData(id, "Approved");
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Reject(int id)
+        {
+            _us2repo.UpdateStatusData(id, "Rejected");
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
