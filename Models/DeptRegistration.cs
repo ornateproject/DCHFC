@@ -39,6 +39,8 @@ namespace ssc.Models
    
         public string ? Upload_doc { get; set; }
 
+        public string? Status { get; set; }
+
     }
     public class ministry
         {
@@ -62,7 +64,7 @@ namespace ssc.Models
         public string? Upload_doc { get; set; }
         public string? dep_name { get; set; }
 
-        public string? Status { get; set; }
+        
     }
     
 
