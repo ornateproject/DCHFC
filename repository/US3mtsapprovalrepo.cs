@@ -34,5 +34,21 @@ namespace ssc.repository
             //var szad= JsonConvert.SerializeObject(Convert.ToString(dt.Rows[0]));
             return JsonConvert.SerializeObject(dt);
         }
+
+        public void UpdateStatusData(int id, string status)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                // string query = "UPDATE DeptRegistration SET Status = @Status WHERE Id = @Id";
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[approvmtsdata]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@Status", status == "Approved" ? 1 : 2);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

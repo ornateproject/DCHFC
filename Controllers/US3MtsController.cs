@@ -23,7 +23,18 @@ namespace ssc.Controllers
             dep_reg = JsonConvert.DeserializeObject<List<MTSselection>>(usdata)[0];
             return View(dep_reg);
         }
+        public ActionResult Approve(int id)
+        {
+            _us3repo.UpdateStatusData(id, "Approved");
+            return RedirectToAction("us3", "US3");
+        }
 
-        
+        public ActionResult Reject(int id)
+        {
+            _us3repo.UpdateStatusData(id, "Rejected");
+            return RedirectToAction("us3", "US");
+        }
+
+
     }
 }

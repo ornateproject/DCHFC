@@ -162,7 +162,7 @@ namespace ssc.Models
 
 
 
-
+        public string? Status { get; set; }
 
 
 

@@ -40,12 +40,15 @@ namespace ssc.repository
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "UPDATE DeptRegistration SET Status = @Status WHERE Id = @Id";
-                SqlCommand command = new SqlCommand(query, con);
-                command.Parameters.AddWithValue("@Id", id);
-                command.Parameters.AddWithValue("@Status", status== "Approved"?1:2);
-                con.Open();
-                command.ExecuteNonQuery();
+                // string query = "UPDATE DeptRegistration SET Status = @Status WHERE Id = @Id";
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[approvdept]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@Status", status == "Approved" ? 1 : 2);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
     }

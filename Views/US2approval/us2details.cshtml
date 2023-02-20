@@ -450,8 +450,14 @@ Office/Deptt<span class="tx-danger">*</span></label>
 
       </div>
       <div class="form-layout-footer text-center">
-        <a href="/US1approval/approval"><button class="btn btn-red">Approved</button></a>
-        <a href="/US1_status/Status"><button class="btn btn-red">Rejected</button></a>
+           @if (Model.Status!= "Approved")
+                    {
+        <a href="@Url.Action("Approve", "US2approval", new { id = Model.ID })"><button class="btn btn-red">Approved</button></a>
+                    }
+                     @if (Model.Status!= "Approved")
+                    {
+        <a href="@Url.Action("Reject", "US2approval", new { id = Model.ID })"><button class="btn btn-red">Rejected</button></a>
+                    }
         <button class="btn btn-secondary">Cancel</button>
       </div><!-- form-layout-footer -->
     </div><!-- form-layout -->
