@@ -51,7 +51,22 @@
                         <td>@item.Email</td>
                         <td><a href="#"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>@item.Upload_doc</td>                      
                       @*<td><a href="#"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a></td>*@
-                        <td><strong><span class="text-danger">Pending </span></strong></td>
+                        <td><strong>
+                                        
+                                     @if (@item.Status == "1")
+                                        {
+                                            <span class="text-danger">Approved </span>
+                                        }
+                                        else if (@item.Status == "2")
+                                        {
+                                            <span class="text-danger">Reject </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-danger">Pending </span>
+                                        }
+
+                        </strong></td>
                         <td>
                             <div class="modal-bootstrap modal-login-form">
                                 <a class="zoomInDown mg-t btn btn-red" href="/US1_pendingapproval/index/@item.ID">View Details</a>

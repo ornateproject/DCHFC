@@ -17,7 +17,10 @@ namespace ssc.repository
         }
         public string get_deparment()
         {
-            DataTable dt = new DataTable();
+                  
+            
+            
+         DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[Get_deptregistration]", con))

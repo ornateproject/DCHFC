@@ -47,7 +47,7 @@ namespace ssc.repository
             return "ok";
         }
 
-              
+            
 
         public string get_ministry()
         {
