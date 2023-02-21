@@ -17,7 +17,6 @@ namespace ssc.repository
         }
         public string get_deparment()
         {
-
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {

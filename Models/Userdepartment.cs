@@ -205,7 +205,9 @@ namespace ssc.Models
 
         [Required(ErrorMessage = "*")]
         public string? office_department { get; set; }
-        
+
+        public string? Status { get; set; }
+
     }
     
 }
