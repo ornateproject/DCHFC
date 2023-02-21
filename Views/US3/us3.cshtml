@@ -52,8 +52,22 @@
                            <td>@item.initial_post</td>
                            
                             <td>@item.candidates_nominated</td>
-                              <td><strong><span class="text-danger">Pending </span></strong></td>
-                        <td>
+ <td><strong>
+                                        
+                                     @if (@item.Status == "1")
+                                        {
+                                            <span class="text-danger">Approved </span>
+                                        }
+                                        else if (@item.Status == "2")
+                                        {
+                                            <span class="text-danger">Reject </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-danger">Pending </span>
+                                        }
+
+                        </strong></td>                        <td>
                             <div class="modal-bootstrap modal-login-form">
                                 <a class="zoomInDown mg-t btn btn-red" href="/US3mts/us3mtsapproval/@item.ID">View Details</a>
                             </div>
