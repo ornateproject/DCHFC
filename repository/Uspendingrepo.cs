@@ -16,8 +16,7 @@ namespace ssc.repository
         }
         public string get_approval(int user_id)
         {
-
-            DataTable dt = new DataTable();
+             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[getuserdata]", con))

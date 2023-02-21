@@ -36,14 +36,9 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@Email", department.Email);
                      cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
                     //string fileName = department.Upload_doc.FileName;
-
                     //var fileNames = Path.GetFileName(fileName);
-
                     //string uploadpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileNames);
-
-
-
-                    //cmd.Parameters.AddWithValue("@Upload_doc", uploadpath);
+                   //cmd.Parameters.AddWithValue("@Upload_doc", uploadpath);
                     con.Open();
                     int xdvf = cmd.ExecuteNonQuery();                   
                     con.Close();
@@ -52,9 +47,7 @@ namespace ssc.repository
             return "ok";
         }
 
-
-       
-
+              
 
         public string get_ministry()
         {
@@ -74,6 +67,7 @@ namespace ssc.repository
             }
             return JsonConvert.SerializeObject(dt);
         }
+
         public DataTable get_deparment(int ministryt_id)
         {
 
