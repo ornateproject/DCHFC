@@ -66,7 +66,15 @@ namespace ssc.Models
 
         
     }
-    
+     public class DepartmentData
+    {
+        public int? totalreg { get; set; }
+        public int? approved { get; set; }
+        public int? pending { get; set; }
+        public int? reject { get; set; }
+        public string? status { get; set; }
+
+    }
 
     public enum DataStatus
     {

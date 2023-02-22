@@ -5,26 +5,25 @@ using ssc.repository;
 
 namespace ssc.Controllers
 {
-    public class UserDeptDashboard : Controller
+    public class MTS_postDash : Controller
     {
-
-        private readonly UserDashrepo _usdashrepo;
-        public UserDeptDashboard(IConfiguration configuration)
+        private readonly MTSdash_Repo _mtsdahrepo;
+        public MTS_postDash(IConfiguration configuration)
         {
-            _usdashrepo = new UserDashrepo(configuration);
+            _mtsdahrepo = new MTSdash_Repo(configuration);
 
 
         }
 
         [HttpGet]
-        public IActionResult UserDeptDash()
+        public IActionResult Mtsdash()
         {
-            var usdata = _usdashrepo.get_listdata();
+            var usdata = _mtsdahrepo.get_listdata();
             List<DepartmentData> dept = new List<DepartmentData>();
             dept = JsonConvert.DeserializeObject<List<DepartmentData>>(usdata);
             return View(dept);
         }
-        
 
+        
     }
 }

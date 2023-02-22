@@ -1,4 +1,8 @@
-﻿ <div class="br-header">
+﻿
+@model List<DepartmentData>;
+
+
+ <div class="br-header">
       <div class="br-header-left">
         <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href="#"><i class="icon ion-navicon-round"></i></a></div>
         <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href="#"><i class="icon ion-navicon-round"></i></a></div>
@@ -39,7 +43,11 @@
       </div><!-- d-flex -->
 
       <div class="br-pagebody mg-t-5 pd-x-30">
+          @{
+                        foreach(var item in Model)
+                        {
        <div class="row mg-b-25">
+             
         <div class="col-lg-3" style="cursor:pointer">
             <div class="bg-teal rounded overflow-hidden">
                 <div class="pd-25 d-flex align-items-center">
@@ -48,8 +56,9 @@
                         <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-black mg-b-10">
                             Total Registration
                         </p>
-                        <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">01</p>
-
+                        
+                        <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">@item.totalreg</p>
+                                     
                     </div>
                 </div>
             </div>
@@ -63,8 +72,10 @@
                 <div class="mg-l-20">
                   <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-black mg-b-10">
 					Total Approved</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">01</p>
-                  
+                       
+                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">@item.approved</p>
+                        
+
                 </div>
               </div>
             </div>
@@ -78,7 +89,7 @@
                 <div class="mg-l-20">
                   <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-black mg-b-10">
 					Total Reject</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">01</p>
+                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">@item.pending</p>
                   
                 </div>
               </div>
@@ -93,14 +104,17 @@
                         <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-black mg-b-10">
                             Total Pending
                         </p>
-                        <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">01</p>
+                        <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">@item.reject</p>
 
                     </div>
                 </div>
             </div>
         </div>
+       
         
 		  </div>
+           }
+        }
 
       </div><!-- br-pagebody -->
 <div class="br-mainpanel"></div>
@@ -119,7 +133,7 @@
                         <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-black mg-b-10">
                            Total Registration
                         </p>
-                        <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">01</p>
+                        <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1"></p>
 
                     </div>
                 </div>
