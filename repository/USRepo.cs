@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using ssc.Models;
 using System.Data;
+using System.Text;
 
 namespace ssc.repository
 {
@@ -16,17 +17,15 @@ namespace ssc.repository
 
         }
         public string get_deparment()
-        {
-                
-            
-            
+        {               
+                       
          DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[Get_deptregistration]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                  
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);

@@ -21,8 +21,7 @@ namespace ssc.repository
        
         public string InsertpostData(DeptRegistration department)
         {
-           // string newFileName = "~/uploads";
-            
+                     
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
