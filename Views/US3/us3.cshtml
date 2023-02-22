@@ -52,10 +52,40 @@
                            <td>@item.initial_post</td>
                            
                             <td>@item.candidates_nominated</td>
-                              <td><strong><span class="text-danger">Pending </span></strong></td>
-                        <td>
+ <td><strong>
+                                        
+                                   @if (@item.Status == "1")
+                                        {
+                                            <span class="text" style="color:green">Approved </span>
+                                        }
+                                        else if (@item.Status == "2")
+                                        {
+                                            <span class="text"  style="color:blue">Reject </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-danger">Pending </span>
+                                        }
+
+                        </strong></td>                        <td>
                             <div class="modal-bootstrap modal-login-form">
-                                <a class="zoomInDown mg-t btn btn-red" href="/US3mts/us3mtsapproval/@item.ID">View Details</a>
+                                      @if (@item.Status == "1")
+                                        {
+                                            //<a class="zoomInDown mg-t btn btn-red" >View Details</a>
+                                            <button class="zoomInDown mg-t btn btn-red" disabled>View Details</button>
+
+                                        }
+                                        else if (@item.Status == "2")
+                                        {
+                                             
+                                             <button class="zoomInDown mg-t btn btn-red" disabled>View Details</button>
+                                            
+                                        }
+                                        else
+                                        {
+                                            <a class="zoomInDown mg-t btn btn-red" href="/US2approval/us2details/@item.ID">View Details</a>
+                                          
+                                        }
                             </div>
                             <!-- BASIC MODAL -->
 

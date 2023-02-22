@@ -36,7 +36,6 @@ namespace ssc.Controllers
                 var asd = _deptregrepo.InsertpostData(department.depreg);
                
             }
-           
             var ministry = _deptregrepo.get_ministry();
             ManageDepreg manageDepreg = new ManageDepreg();
             manageDepreg.Ministries = JsonConvert.DeserializeObject<List<ministry>>(ministry);
@@ -45,8 +44,7 @@ namespace ssc.Controllers
 
         }
 
-       
-            
+                 
 
 
         public string getdepartment(int id)
