@@ -16,7 +16,7 @@ namespace ssc.Controllers
         }
 
         [HttpGet]
-        public IActionResult Mtsdash()
+        public IActionResult MTSdash()
         {
             var usdata = _mtsdahrepo.get_listdata();
             List<DepartmentData> dept = new List<DepartmentData>();
