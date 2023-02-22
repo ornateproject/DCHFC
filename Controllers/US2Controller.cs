@@ -18,9 +18,7 @@ namespace ssc.Controllers
 
 
         [HttpGet]
-        public IActionResult us2()
-        
-        
+        public IActionResult us2()             
         
         {
             var usdata = _us2repo.get_deparment();
