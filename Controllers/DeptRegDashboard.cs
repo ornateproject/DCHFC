@@ -8,10 +8,10 @@ namespace ssc.Controllers
     public class DeptRegDashboard : Controller
     {
 
-        private readonly UserDashrepo _usdashrepo;
+        private readonly DeptDashrepo _usdashrepo;
         public DeptRegDashboard(IConfiguration configuration)
         {
-            _usdashrepo = new UserDashrepo(configuration);
+            _usdashrepo = new DeptDashrepo(configuration);
 
 
         }

@@ -1,16 +1,15 @@
 ﻿using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
-using ssc.Models;
 using System.Data;
 
 namespace ssc.repository
 {
-    public class UserDashrepo
+    public class UserDeptDsah_repo
     {
 
         private string connectionString;
 
-        public UserDashrepo(IConfiguration configuration)
+        public UserDeptDsah_repo(IConfiguration configuration)
         {
             connectionString = configuration.GetValue<string>("DBInfo:ConnectionString");
 
@@ -21,7 +20,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[getdeptreg]", con))
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[getuserdash]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 

@@ -1,12 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using ssc.Models;
+using ssc.repository;
 
 namespace ssc.Controllers
 {
     public class UserDeptDash : Controller
     {
-        public IActionResult UserDeptDash()
+        private readonly UserDeptDsah_repo _userdahrepo;
+        public UserDeptDash(IConfiguration configuration)
         {
-            return View();
+            _userdahrepo = new UserDeptDsah_repo(configuration);
+
+
         }
+
+        [HttpGet]
+        public IActionResult userdeptDash()
+        {
+            var usdata = _userdahrepo.get_listdata();
+            List<DepartmentData> dept = new List<DepartmentData>();
+            dept = JsonConvert.DeserializeObject<List<DepartmentData>>(usdata);
+            return View(dept);
+        }
+        
     }
 }

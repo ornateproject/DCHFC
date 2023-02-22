@@ -56,6 +56,9 @@
             <!-- d-flex -->
 
             <div class="br-pagebody mg-t-5 pd-x-30">
+                 @{
+                        foreach(var item in Model)
+                        {
                 <div class="row mg-b-25">
                     <div class="col-lg-3" style="cursor:pointer">
                         <div class="bg-teal rounded overflow-hidden">
@@ -65,7 +68,7 @@
                                     <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-black mg-b-10">
                                         Total Registration
                                     </p>
-                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">01</p>
+                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">@item.totalreg</p>
 
                                 </div>
                             </div>
@@ -80,7 +83,7 @@
                                     <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-black mg-b-10">
                                         Total Approved
                                     </p>
-                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">01</p>
+                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">@item.approved</p>
 
                                 </div>
                             </div>
@@ -94,9 +97,9 @@
                                 <i class="ion ion-android-document tx-60 lh-0 tx-white op-7"></i>
                                 <div class="mg-l-20">
                                     <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-black mg-b-10">
-                                        Total Reject
+                                        Total pending
                                     </p>
-                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">01</p>
+                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">@item.pending</p>
 
                                 </div>
                             </div>
@@ -109,15 +112,17 @@
                                 <i class="ion ion-android-document tx-60 lh-0 tx-white op-7"></i>
                                 <div class="mg-l-20">
                                     <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-black mg-b-10">
-                                        Total Pending
+                                        Total reject
                                     </p>
-                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">01</p>
+                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">@item.reject</p>
 
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                }
+                }
             </div>
             <script src="lib/jquery/jquery.js"></script>
             <script src="lib/popper.js/popper.js"></script>
