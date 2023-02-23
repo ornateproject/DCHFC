@@ -3,19 +3,10 @@
 *@
 @{
 }
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <!-- Meta -->
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>SSC(NR) - Dashboard</title>
+
 
     <!-- vendor css -->
     <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -30,7 +21,7 @@
     <link rel="stylesheet" href="~/css/bracket.css">
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
 	
 	<style>
 	button:disabled {
@@ -48,9 +39,6 @@
             $( "#datepicker-1" ).datepicker();
          });
       </script>
-  </head>
-
-  <body>
 
     <!-- ########## START: LEFT PANEL ########## -->
     <div class="br-logo"><a href="#"><img src="~/img/logo.jpg" class="img-fluid"><span>[</span> Dashboard<span>]</span></a></div>
@@ -122,7 +110,7 @@
 
 
     <!-- ########## START: MAIN PANEL ########## -->
-    <div class="br-mainpanel">
+    <div class="mainpanel">
       <div class="br-pageheader pd-y-15 pd-l-20">
         <nav class="breadcrumb pd-0 mg-0 tx-12">
           <a class="breadcrumb-item" href="DataUploadDashboard.html">Dashboard </a>
@@ -200,8 +188,8 @@
             </div><!-- row -->
 
             <div class="form-layout-footer">
-              <button class="btn btn-red" id="sbt"> <span class="text-white" >Submit</span></button>
-              <button class="btn btn-secondary">Cancel</button>
+              <button class="btn btn-red" id="sbt" style="cursor:pointer"> <span class="text-white" >Submit</span></button>
+              <button class="btn btn-secondary" style="cursor:pointer">Cancel</button>
             </div><!-- form-layout-footer -->
           </div><!-- form-layout -->
 
@@ -214,9 +202,4 @@
     </div><!-- br-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
 
-   
-
-  </body>
-
-</html>
-
+ 
