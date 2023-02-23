@@ -19,7 +19,7 @@ namespace ssc.Controllers
 
         [HttpGet]
         public IActionResult us2()             
-        
+               
         {
             var usdata = _us2repo.get_deparment();
             List<UserDepartment> dept = new List<UserDepartment>();
