@@ -1,0 +1,222 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Meta -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SSC(NR) - Dashboard</title>
+
+    <!-- vendor css -->
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="~/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+    <link href="~/lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
+    <link href="~/lib/highlightjs/github.css" rel="stylesheet">
+   
+     <link href="~/lib/jquery.dataTables.css" rel="stylesheet">
+     <link href="~/lib/select2/css/select2.min.css" rel="stylesheet">
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" href="~/css/bracket.css">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+	
+	<style>
+	button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;}
+	</style>
+	 <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+      <!-- Javascript -->
+      <script>
+         $(function() {
+            $( "#datepicker-1" ).datepicker();
+         });
+      </script>
+  </head>
+
+  <body>
+
+    <!-- ########## START: LEFT PANEL ########## -->
+    <div class="br-logo"><a href="#"><img src="~/img/logo.jpg" class="img-fluid"><span>[</span> Dashboard<span>]</span></a></div>
+    <div class="br-sideleft overflow-y-auto">
+      <label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
+      <div class="br-sideleft-menu">
+        <a href="DataUploadDashboard.html" class="br-menu-link active">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+            <span class="menu-item-label">Dashboard</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+       
+      
+       
+       
+        <a href="DataUploadNomination.html" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+            <span class="menu-item-label">Upload Nomination</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+        <a href="DataUploadNominationView.html" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+            <span class="menu-item-label">View Nomination</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+        
+       
+      </div><!-- br-sideleft-menu -->
+
+   <!-- info-lst -->
+
+      <br>
+    </div><!-- br-sideleft -->
+    <!-- ########## END: LEFT PANEL ########## -->
+
+    <!-- ########## START: HEAD PANEL ########## -->
+    <div class="br-header">
+      <div class="br-header-left">
+        <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href="#"><i class="icon ion-navicon-round"></i></a></div>
+        <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href="#"><i class="icon ion-navicon-round"></i></a></div>
+       <!-- input-group -->
+      </div><!-- br-header-left -->
+      <div class="br-header-right">
+        <nav class="nav">
+         
+         <div class="dropdown">
+            <a href="#" class="nav-link nav-link-profile" data-toggle="dropdown">
+              <span class="logged-name hidden-md-down">Welcome Data Upload</span>
+              <img src="~/img/img_avatar.png" class="wd-32 rounded-circle" alt="">
+              <span class="square-10 bg-success"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-header wd-200">
+              <ul class="list-unstyled user-profile-nav">
+                <li><a href="#"><i class="icon ion-ios-person"></i> Edit Profile</a></li>
+                <li><a href="#"><i class="icon ion-ios-gear"></i> Settings</a></li>
+                
+                <li><a href="login.html"><i class="icon ion-power"></i> Sign Out</a></li>
+              </ul>
+            </div><!-- dropdown-menu -->
+          </div><!-- dropdown -->
+        </nav>
+        
+      </div><!-- br-header-right -->
+    </div><!-- br-header -->
+    <!-- ########## END: HEAD PANEL ########## -->
+
+
+    <!-- ########## START: MAIN PANEL ########## -->
+    <div class="br-mainpanel">
+      <div class="br-pageheader pd-y-15 pd-l-20">
+        <nav class="breadcrumb pd-0 mg-0 tx-12">
+          <a class="breadcrumb-item" href="DataUploadDashboard.html">Dashboard </a>
+          <span class="breadcrumb-item active">Upload Nomination</span>
+        </nav>
+      </div><!-- br-pageheader -->
+      <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
+        <h4 class="tx-gray-800 mg-b-5 text-center">Upload Nomination</h4>
+    
+      </div>
+
+      <div class="br-pagebody">
+        <div class="br-section-wrapper">
+          
+          <div class="form-layout form-layout-1">
+            <div class="row mg-b-25">
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label tx-gray-700">Department: <span class="tx-danger">*</span></label>
+                  <select class="form-control select2" data-placeholder="Choose Department" id="branch">
+                    
+					<option>----Choose Department----</option>
+                    <option value="D1">Department 1</option>
+                    <option value="D2">Department 2</option>
+					<option value="D3">Department 3</option>
+					<option value="D4">Department 4</option>
+                    
+                  </select>
+                </div>
+              </div><!-- col-4 -->
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label tx-gray-700">Exam <span class="tx-danger">*</span></label>
+                  <select class="form-control select2" data-placeholder="Exam" id="poNo">
+                    
+																<option>----Select Exam----</option>
+																<option>CHSL</option>
+																<option>CGLE</option>
+																<option>MTS</option>
+																</select>
+               
+                </div>
+              </div><!-- col-4 -->
+			                <div class="col-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label tx-gray-700">Year <span class="tx-danger">*</span></label>
+                  <select class="form-control select2" data-placeholder="Year" id="poNo">
+                    
+																<option>----Select Year----</option>
+																<option>2021</option>
+																<option>2022</option>
+																</select>
+               
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label tx-gray-700">Nomination Upload: <span class="tx-danger">*</span></label>
+				  <label class="custom-file">
+                <input  type="file" id="file2" class="custom-file-input">
+                <span class="custom-file-control custom-file-control-primary"></span>
+              </label>
+<p class="text-center"><strong>(Brows Excel format )</strong></p>
+                </div>
+              </div><!-- col-4 -->
+              <!-- col-4 -->
+              
+
+             <!-- col-4 -->
+              <div class="col-lg-12"><hr>
+
+             
+         
+              </div>
+            </div><!-- row -->
+
+            <div class="form-layout-footer">
+              <button class="btn btn-red" id="sbt"> <span class="text-white" >Submit</span></button>
+              <button class="btn btn-secondary">Cancel</button>
+            </div><!-- form-layout-footer -->
+          </div><!-- form-layout -->
+
+          
+          
+
+        </div><!-- br-section-wrapper -->
+      </div><!-- br-pagebody -->
+       
+    </div><!-- br-mainpanel -->
+    <!-- ########## END: MAIN PANEL ########## -->
+
+   
+
+  </body>
+
+</html>
+
