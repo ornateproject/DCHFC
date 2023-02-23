@@ -32,7 +32,7 @@ namespace ssc.Controllers
         public ActionResult Reject(int id)
         {
             _us3repo.UpdateStatusData(id, "Rejected");
-            return RedirectToAction("us3", "US");
+            return RedirectToAction("us3", "US3");
         }
 
 
