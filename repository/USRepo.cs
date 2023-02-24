@@ -25,8 +25,8 @@ namespace ssc.repository
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[Get_deptregistration]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                  
-                    con.Open();
+                    con.Open();                 
+                                        
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
                     con.Close();
