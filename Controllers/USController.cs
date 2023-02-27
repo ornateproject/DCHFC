@@ -19,10 +19,11 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            
             var usdata = _usrepo.get_deparment();
             List<DeptRegistration> deptRegistration = new List<DeptRegistration>();           
             deptRegistration = JsonConvert.DeserializeObject<List<DeptRegistration>>(usdata);
-            return View(deptRegistration);
+            return View(usdata);
         }
     }
 }
