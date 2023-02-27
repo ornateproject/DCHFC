@@ -20,8 +20,7 @@ namespace ssc.repository
         
        
         public string InsertpostData(DeptRegistration department)
-        {
-                     
+        {                     
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {

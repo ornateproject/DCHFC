@@ -58,35 +58,6 @@ namespace ssc.Controllers
 
         }
 
-        [HttpPost]
-        public IActionResult UploadFile()
-        {
-            var file = Request.Form.Files.FirstOrDefault();
-            if (file == null || file.Length == 0)
-            {
-                return BadRequest("File not selected.");
-            }
-
-            byte[] fileBytes;
-            using (var memoryStream = new MemoryStream())
-            {
-                file.CopyTo(memoryStream);
-                fileBytes = memoryStream.ToArray();
-            }
-
-            var base64String = Convert.ToBase64String(fileBytes);
-            // do something with the base64 string here
-
-            return Ok();
-        }
-        
-
-
-
-
-
-
-
         public string getdepartment(int id)
         {
             var dep = _deptregrepo.get_deparment(id);
