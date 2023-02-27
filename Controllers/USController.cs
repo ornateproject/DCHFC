@@ -21,12 +21,9 @@ namespace ssc.Controllers
         {
             
             var usdata = _usrepo.get_deparment();
-            // List<DeptRegistration> deptRegistration = new List<DeptRegistration>();
-            //var content = response.Content;
-            var jsonResult = JsonConvert.DeserializeObject(usdata).ToString();
-            var result = JsonConvert.DeserializeObject<DeptRegistration>(jsonResult);
-            //deptRegistration = JsonConvert.DeserializeObject<List<DeptRegistration>>(usdata);
-            return View(result);
+            List<DeptRegistration> deptRegistration = new List<DeptRegistration>();
+            deptRegistration = JsonConvert.DeserializeObject<List<DeptRegistration>>(usdata);
+            return View(deptRegistration);
         }
     }
 }

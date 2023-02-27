@@ -404,12 +404,29 @@
         <div class="form-layout-footer text-center" "=" ">
             @if (Model.Status!= "Approved")
                     {
-                 <a href="@Url.Action("Approve", "US3mts", new { id = Model.ID })"><button  class="btn btn-success" style="cursor:pointer">Approved</button></a>
+                        @if (@Model.Status == "1")
+                {
+                                     <a href="@Url.Action("Approve", "US3mts", new { id = Model.ID })"><button  class="btn btn-success" disabled style="cursor:pointer">Approved</button></a>
+
+                }
+                else{
+                                     <a href="@Url.Action("Approve", "US3mts", new { id = Model.ID })"><button  class="btn btn-success" style="cursor:pointer">Approved</button></a>
+
+                }
                     }
                      @if (Model.Status!= "Approved")
                     {
+                         @if (@Model.Status == "1")
+                {
+                    			   <a href="@Url.Action("Reject", "US3mts", new { id = Model.ID })"><button  class="btn btn-red" disabled style="cursor:pointer" >Rejected</button></a>
 
-			   <a href="@Url.Action("Reject", "US3mts", new { id = Model.ID })"><button  class="btn btn-red" style="cursor:pointer" >Rejected</button></a>
+                }
+                else{
+                    			   <a href="@Url.Action("Reject", "US3mts", new { id = Model.ID })"><button  class="btn btn-red" style="cursor:pointer" >Rejected</button></a>
+
+                }
+
+
                     } 
             <button class="btn btn-secondary" style="cursor:pointer" >Cancel</button>
         </div><!-- form-layout-footer --><!-- form-layout -->

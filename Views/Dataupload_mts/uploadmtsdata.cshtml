@@ -39,17 +39,19 @@
                     </tr>
                 </thead>
                 <tbody >
-                        
+                         @{
+                        foreach(var item in Model)
+                        {
                     <tr>
                    
-                         <th scope="row">ID</th>
-                            <td>post_name</td>
-                           <td>pay_matrix</td>
-                           <td>age_limit</td>
-                           <td>post_classification</td>
-                           <td>initial_post</td>
+                         <th scope="row">@item.ID</th>
+                             <td>@item.post_name</td>
+                           <td>@item.pay_matrix</td>
+                           <td>@item.age_limit</td>
+                           <td>@item.post_classification</td>
+                           <td>@item.initial_post</td>
                            
-                            <td>candidates_nominated</td>
+                            <td>@item.candidates_nominated</td>
  <td><strong>
                                         
                                   
@@ -61,8 +63,8 @@
                             <div class="modal-bootstrap modal-login-form">
                                       
                                         
-                                            //<a class="zoomInDown mg-t btn btn-red" >View Details</a>
-                                            <button class="zoomInDown mg-t btn btn-red" disabled>View Details</button>
+
+                                            <a class="zoomInDown mg-t btn btn-red" href="/US3Mts/us3mtsapproval/@item.ID" >View Details</a>
 
                                                                                
                             </div>
@@ -73,7 +75,8 @@
 
 
                     </tr>
-                    
+                    }
+                    }
                     
                 </tbody>
 
