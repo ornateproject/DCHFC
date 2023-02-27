@@ -50,17 +50,19 @@
                     </tr>
                 </thead>
                 <tbody >
-                        
+                          @{
+                        foreach(var item in Model)
+                        {
                     <tr>
                    
-                         <th scope="row"></th>
-                            <td></td>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                           <td></td>
+                         <th scope="row">@item.ID</th>
+                            <td>@item.post_name</td>
+                           <td>@item.pay_matrix</td>
+                           <td>@item.post_class</td>
+                           <td>@item.post_nature</td>
+                           <td>@item.initial_place</td>
                            
-                            <td></td>
+                            <td>@item.office_department</td>
                              <td><strong>
                                         
                                     
@@ -75,9 +77,9 @@
                            
                                        
                                              
-                                             <button class="zoomInDown mg-t btn btn-red">View Details</button>
+                                             <a class="zoomInDown mg-t btn btn-red" href="/US2approval/us2details/@item.ID">View Details</a>
                                             
-                                        
+                                       
                                       
                                           
                                         
@@ -90,6 +92,8 @@
 
 
                     </tr>
+                    }
+                    }
                    
                 </tbody>
 
