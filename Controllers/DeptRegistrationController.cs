@@ -35,18 +35,28 @@ namespace ssc.Controllers
             if (ModelState.IsValid)
             {
                 var asd = _deptregrepo.InsertpostData(department.depreg);
-               
+                var file = Request.Form.Files.FirstOrDefault();
+                if (file == null || file.Length == 0)
+                {
+                    return BadRequest("File not selected.");
+                }
+
+                byte[] fileBytes;
+                using (var memoryStream = new MemoryStream())
+                {
+                    file.CopyTo(memoryStream);
+                    fileBytes = memoryStream.ToArray();
+                }
+
+                var base64String = Convert.ToBase64String(fileBytes);
+
             }
             var ministry = _deptregrepo.get_ministry();
             ManageDepreg manageDepreg = new ManageDepreg();
             manageDepreg.Ministries = JsonConvert.DeserializeObject<List<ministry>>(ministry);
-
             return View(manageDepreg);
 
         }
-
-                 
-
 
         public string getdepartment(int id)
         {
