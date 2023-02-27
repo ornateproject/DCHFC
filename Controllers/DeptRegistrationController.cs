@@ -34,6 +34,8 @@ namespace ssc.Controllers
            
             if (ModelState.IsValid)
             {
+                //string fileName = Path.GetFileName(postedFile.FileName);
+                //string contentType = postedFile.ContentType;
                 var asd = _deptregrepo.InsertpostData(department.depreg);
                 var file = Request.Form.Files.FirstOrDefault();
                 if (file == null || file.Length == 0)

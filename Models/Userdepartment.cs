@@ -209,6 +209,16 @@ namespace ssc.Models
         public string? Status { get; set; }
 
     }
+    public class dataupload
+    {
+        public string? Department { get; set; }
+        public string? Exam { get; set; }
+        public string? Year { get; set; }
+        public string? upload_nomination { get; set; }
+        
+
+    }
+    
     
 }
 
