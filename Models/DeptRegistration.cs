@@ -42,6 +42,10 @@ namespace ssc.Models
         public string? Status { get; set; }
 
     }
+    public class departmentReg : DeptRegistration
+    {
+        public string FilePath { get; set; }
+    }
     public class ministry
         {
            

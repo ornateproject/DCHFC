@@ -1,5 +1,7 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using ClosedXML.Excel;
+using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
+using ssc.Models;
 using System.Data;
 
 namespace ssc.repository
@@ -33,5 +35,7 @@ namespace ssc.repository
             return JsonConvert.SerializeObject(dt);
 
         }
+
+       
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ClosedXML.Excel;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
 using ssc.Models;
 using ssc.repository;
@@ -23,6 +25,7 @@ namespace ssc.Controllers
             dept = JsonConvert.DeserializeObject<List<DepartmentData>>(usdata);
             return View(dept);
         }
+
         
     }
 }
