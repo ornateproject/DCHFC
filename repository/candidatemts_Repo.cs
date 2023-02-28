@@ -23,8 +23,9 @@ namespace ssc.repository
                 {
                     
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.Parameters.AddWithValue("@id", id);
                     con.Open();
+                   
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
                     con.Close();

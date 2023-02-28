@@ -19,9 +19,9 @@ namespace ssc.Controllers
 
 
         [HttpGet]
-        public IActionResult candidateuserdata()
+        public IActionResult candidateuserdata(int id)
         {
-            var usdata = _us2repo.get_deparment();
+            var usdata = _us2repo.get_deparment(id);
 
             List<UserDepartment> dept = JsonConvert.DeserializeObject<List<UserDepartment>>(usdata);
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
