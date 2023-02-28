@@ -18,8 +18,6 @@ namespace ssc.Controllers
 
         }
 
-
-
         [HttpGet]
         public IActionResult uploaduserdata()
         {
@@ -31,12 +29,6 @@ namespace ssc.Controllers
             
         }
 
-        //[HttpPost]
-        //public IActionResult uploaduserdata(UserDepartment department)
-        //{
-        //    var asd = _us2repo.candidatedata(department);
-        //    return View();
-        //}
 
     }
 }

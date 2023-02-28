@@ -1,163 +1,158 @@
 ﻿@model List<MTSselection>;
-@*
+    @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<div class="br-pageheader pd-y-15 pd-l-20">
-    <nav class="breadcrumb pd-0 mg-0 tx-12">
-        <a class="breadcrumb-item" href="US1.html">Dashboard</a>
-        <span class="breadcrumb-item active">Pending Approval</span>
-    </nav>
-</div><!-- br-pageheader -->
-<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
-    <h4 class="tx-gray-800 mg-b-5">Pending Approval</h4>
+    *@
+    @{
+    }
+    <div class="br-pageheader pd-y-15 pd-l-20">
+        <nav class="breadcrumb pd-0 mg-0 tx-12">
+            <a class="breadcrumb-item" href="US1.html">Dashboard</a>
+            <span class="breadcrumb-item active">Pending Approval</span>
+        </nav>
+    </div><!-- br-pageheader -->
+    <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+        <h4 class="tx-gray-800 mg-b-5">Pending Approval</h4>
 
-</div>
+    </div>
 
-<div class="br-pagebody">
-    <div class="br-section-wrapper">
-        <!-- d-flex -->
-        <div class="table-wrapper rounded table-responsive">
-            <table id="datatable1" class="table display responsive nowrap">
-                <thead>
-                    <tr>
-                        <th>Sr No.</th>
-                      
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+            <!-- d-flex -->
+            <div class="table-wrapper rounded table-responsive">
+                <table id="datatable1" class="table display responsive nowrap">
+                    <thead>
+                        <tr>
+                            <th>Sr No.</th>
+
                             <th>post_name</th>
-                           <th>pay_matrix</th>
-                           <th>age_limit</th>
-                           <th>post_classification</th>
-                           <th>initial_post</th>
-                               
+                            <th>pay_matrix</th>
+                            <th>age_limit</th>
+                            <th>post_classification</th>
+                            <th>initial_post</th>
+
                             <th>candidates_nominated</th>
-                                <th>Status</th>
-                        <th>Details</th>   
+                            <th>Status</th>
+                            <th>Details</th>
 
 
 
-                    </tr>
-                </thead>
-                <tbody >
-                         @{
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
                         foreach(var item in Model)
                         {
-                    <tr>
-                   
-                         <th scope="row">@item.ID</th>
-                             <td>@item.post_name</td>
-                           <td>@item.pay_matrix</td>
-                           <td>@item.age_limit</td>
-                           <td>@item.post_classification</td>
-                           <td>@item.initial_post</td>
-                           
+                        <tr>
+
+                            <th scope="row">@item.ID</th>
+                            <td>@item.post_name</td>
+                            <td>@item.pay_matrix</td>
+                            <td>@item.age_limit</td>
+                            <td>@item.post_classification</td>
+                            <td>@item.initial_post</td>
+
                             <td>@item.candidates_nominated</td>
-                           <td><strong>
-                                        
-                                  
-                                            <span class="text" style="color:green">Approved </span>
-                                        
-                                       
+                            <td><strong>
+                            <span class="text" style="color:green">Approved </span>
+                                  </strong></td>
+                            <td>
+                                <div class="modal-bootstrap modal-login-form">
 
-                        </strong></td>                        <td>
-                            <div class="modal-bootstrap modal-login-form">
-                                      
-                                        
 
-                                            <a class="zoomInDown mg-t btn btn-red" href="/Candidatemtsdata/candidatemts/@item.ID" >Upload Candidate </a>
+                                    <a class="zoomInDown mg-t btn btn-red"
+                                        href="/Candidatemtsdata/candidatemts/@item.ID">Upload Candidate </a>
 
-                                                                               
-                            </div>
-                            <!-- BASIC MODAL -->
 
-                        </td>      
+                                </div>
+                                <!-- BASIC MODAL -->
+
+                            </td>
 
 
 
-                    </tr>
-                    }
-                    }
-                    
-                </tbody>
+                        </tr>
+                        }
+                        }
 
-      </table>
-        </div><!-- bd -->
+                    </tbody>
+
+                </table>
+            </div><!-- bd -->
 
 
 
 
-    </div><!-- br-section-wrapper -->
-</div><!-- br-pagebody -->
-<!-- ########## END: MAIN PANEL ########## -->
+        </div><!-- br-section-wrapper -->
+    </div><!-- br-pagebody -->
+    <!-- ########## END: MAIN PANEL ########## -->
 
 
-<script src="lib/jquery/jquery.js"></script>
-<script src="lib/popper.js/popper.js"></script>
-<script src="lib/bootstrap.js"></script>
-<script src="lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-<script src="lib/moment/moment.js"></script>
-<script src="lib/jquery-ui/jquery-ui.js"></script>
-<script src="lib/jquery-switchbutton/jquery.switchButton.js"></script>
-<script src="lib/peity/jquery.peity.js"></script>
-<script src="lib/highlightjs/highlight.pack.js"></script>
-<script src="lib/jquery.dataTables.js"></script>
-<script src="lib/dataTables.responsive.js"></script>
-<script src="lib/select2/js/select2.min.js"></script>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/popper.js/popper.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/jquery-ui/jquery-ui.js"></script>
+    <script src="lib/jquery-switchbutton/jquery.switchButton.js"></script>
+    <script src="lib/peity/jquery.peity.js"></script>
+    <script src="lib/highlightjs/highlight.pack.js"></script>
+    <script src="lib/jquery.dataTables.js"></script>
+    <script src="lib/dataTables.responsive.js"></script>
+    <script src="lib/select2/js/select2.min.js"></script>
 
-<script src="js/bracket.js"></script>
-<script>
-    $(function () {
-        'use strict';
+    <script src="js/bracket.js"></script>
+    <script>
+        $(function () {
+            'use strict';
 
-        $('#datatable1').DataTable({
-            responsive: true,
-            language: {
-                searchPlaceholder: 'Search...',
-                sSearch: '',
-                lengthMenu: '_MENU_ items/page',
-            }
+            $('#datatable1').DataTable({
+                responsive: true,
+                language: {
+                    searchPlaceholder: 'Search...',
+                    sSearch: '',
+                    lengthMenu: '_MENU_ items/page',
+                }
+            });
+
+            $('#datatable2').DataTable({
+                bLengthChange: false,
+                searching: false,
+                responsive: true
+            });
+
+            // Select2
+            $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
+
         });
-
-        $('#datatable2').DataTable({
-            bLengthChange: false,
-            searching: false,
-            responsive: true
-        });
-
-        // Select2
-        $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
-
-    });
-</script>
+    </script>
 
 
 
-<script>
-    $(function () {
-        'use strict'
+    <script>
+        $(function () {
+            'use strict'
 
-        // FOR DEMO ONLY
-        // menu collapsed by default during first page load or refresh with screen
-        // having a size between 992px and 1299px. This is intended on this page only
-        // for better viewing of widgets demo.
-        $(window).resize(function () {
+            // FOR DEMO ONLY
+            // menu collapsed by default during first page load or refresh with screen
+            // having a size between 992px and 1299px. This is intended on this page only
+            // for better viewing of widgets demo.
+            $(window).resize(function () {
+                minimizeMenu();
+            });
+
             minimizeMenu();
-        });
 
-        minimizeMenu();
-
-        function minimizeMenu() {
-            if (window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
-                // show only the icons and hide left menu label by default
-                $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
-                $('body').addClass('collapsed-menu');
-                $('.show-sub + .br-menu-sub').slideUp();
-            } else if (window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
-                $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
-                $('body').removeClass('collapsed-menu');
-                $('.show-sub + .br-menu-sub').slideDown();
+            function minimizeMenu() {
+                if (window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
+                    // show only the icons and hide left menu label by default
+                    $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
+                    $('body').addClass('collapsed-menu');
+                    $('.show-sub + .br-menu-sub').slideUp();
+                } else if (window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
+                    $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
+                    $('body').removeClass('collapsed-menu');
+                    $('.show-sub + .br-menu-sub').slideDown();
+                }
             }
-        }
-    });
-</script>
-
+        });
+    </script>
