@@ -17,11 +17,11 @@ namespace ssc.Controllers
         }
 
         [HttpGet]
-        public IActionResult candidatemts()
+        public IActionResult candidatemts(int id)
 
 
         {
-            var usdata = _us2repo.get_deparment();
+            var usdata = _us2repo.get_deparment(id);
             List<MTSselection> dept = new List<MTSselection>();
             dept = JsonConvert.DeserializeObject<List<MTSselection>>(usdata);
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;

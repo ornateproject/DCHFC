@@ -13,13 +13,13 @@ namespace ssc.repository
             connectionString = configuration.GetValue<string>("DBInfo:ConnectionString");
 
         }
-        public string get_deparment()
+        public string get_deparment(int id)
         {
 
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[candidatemtsdata]", con))
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[getmtsuser]", con))
                 {
                     
                     cmd.CommandType = CommandType.StoredProcedure;
