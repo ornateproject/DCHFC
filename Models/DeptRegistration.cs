@@ -37,12 +37,12 @@ namespace ssc.Models
 
         // [Required(ErrorMessage = "*")]
    
-        public IFormFile ? Upload_doc { get; set; }
+        public IFormFile?  Upload_doc { get; set; }
 
         public string? Status { get; set; }
 
     }
-    public class departmentReg : DeptRegistration
+    public class departmentReg 
     {
         public string FilePath { get; set; }
     }

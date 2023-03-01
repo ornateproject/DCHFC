@@ -34,24 +34,7 @@ namespace ssc.Controllers
            
             if (ModelState.IsValid)
             {
-                //string fileName = Path.GetFileName(postedFile.FileName);
-                //string contentType = postedFile.ContentType;
-                var asd = _deptregrepo.InsertpostData(department.depreg);
-                var file = Request.Form.Files.FirstOrDefault();
-                if (file == null || file.Length == 0)
-                {
-                    return BadRequest("File not selected.");
-                }
-
-                byte[] fileBytes;
-                using (var memoryStream = new MemoryStream())
-                {
-                    file.CopyTo(memoryStream);
-                    fileBytes = memoryStream.ToArray();
-                }
-
-                var base64String = Convert.ToBase64String(fileBytes);
-
+             var asd = _deptregrepo.InsertpostData(department.depreg);
             }
             var ministry = _deptregrepo.get_ministry();
             ManageDepreg manageDepreg = new ManageDepreg();

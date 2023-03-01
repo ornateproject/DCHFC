@@ -20,28 +20,27 @@ namespace ssc.repository
         
        
         public string InsertpostData(DeptRegistration department )
-        {                     
+        {
             DataTable dt = new DataTable();
             
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand("[sscpost].[Reg_record]", con))
                     {
-                       
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Ministry", department.Ministry);
                         cmd.Parameters.AddWithValue("@Department", department.Department);
                         cmd.Parameters.AddWithValue("@Name", department.Name);
                         cmd.Parameters.AddWithValue("@Mobile_no", department.Mobile_no);
                         cmd.Parameters.AddWithValue("@Email", department.Email);
-                    // cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
-                    string fileName = department.Upload_doc.FileName;
-                    var fileNames = Path.GetFileName(fileName);
-                    string uploadpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileNames);
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@Upload_doc", uploadpath);
-                   
-                    int xdvf = cmd.ExecuteNonQuery();
+                        // cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
+                        string fileName = department.Upload_doc.FileName;
+                        var fileNames = Path.GetFileName(fileName);
+                        string uploadpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileNames);
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@Upload_doc", uploadpath);
+                        
+                        int xdvf = cmd.ExecuteNonQuery();
                         con.Close();
                     }
                 }
@@ -53,7 +52,6 @@ namespace ssc.repository
 
         public string get_ministry()
         {
-          
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -72,7 +70,7 @@ namespace ssc.repository
 
         public DataTable get_deparment(int ministryt_id)
         {
-
+           
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
