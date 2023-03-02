@@ -10,7 +10,6 @@ namespace ssc.Controllers
 {
     public class DeptRegistrationController : Controller
     {
-      //  private readonly string wwwrootDirectry = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
         private readonly Deptregrepo _deptregrepo;
 
         public DeptRegistrationController(IConfiguration configuration)
@@ -22,8 +21,7 @@ namespace ssc.Controllers
         public IActionResult Index()
         {
              var ministry= _deptregrepo.get_ministry();
-            ManageDepreg manageDepreg = new ManageDepreg();
-    
+            ManageDepreg manageDepreg = new ManageDepreg();    
             manageDepreg.Ministries = JsonConvert.DeserializeObject<List<ministry>>(ministry);
             return View(manageDepreg);
         }

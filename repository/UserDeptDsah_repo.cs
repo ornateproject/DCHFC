@@ -18,7 +18,6 @@ namespace ssc.repository
         }
         public string get_listdata()
         {
-
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {

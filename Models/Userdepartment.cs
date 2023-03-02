@@ -154,8 +154,6 @@ namespace ssc.Models
         public string? Name { get; set; }
 
 
-
-
         [Required(ErrorMessage = "*")]
         //[StringLength(100, ErrorMessage = "Enter a valid Destination")]
         public string? Desigantion { get; set; }

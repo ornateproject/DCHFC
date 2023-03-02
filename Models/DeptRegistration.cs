@@ -37,7 +37,7 @@ namespace ssc.Models
 
         // [Required(ErrorMessage = "*")]
    
-        public IFormFile?  Upload_doc { get; set; }
+        public IFormFile? Upload_doc { get; set; }
 
         public string? Status { get; set; }
 
@@ -58,7 +58,9 @@ namespace ssc.Models
         {
             public List<ministry>? Ministries { get; set; }
             public DeptRegistration? depreg { get; set; }
+       
         }
+
     public class userdetails
     {
         public int ID { get; set; }
