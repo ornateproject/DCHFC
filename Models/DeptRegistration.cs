@@ -47,12 +47,12 @@ namespace ssc.Models
         public string FilePath { get; set; }
     }
     public class ministry
-        {
+    {
            
             public int? ministry_id { get; set; }
 
             public string? ministry_name { get; set; }
-        }
+    }
 
         public class ManageDepreg
         {
