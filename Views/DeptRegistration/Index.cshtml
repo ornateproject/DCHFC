@@ -139,7 +139,7 @@
 
              
           <label class="ckbox">
-                <input type="checkbox" id="terms"><span>Have you checked <span><a class="zoomInDown mg-t" href="#" data-toggle="modal" data-target="#modaldemo9">Terms and Conditions</a></span> before submitting?</span>
+                <input type="checkbox" required id="terms"><span>Have you checked <span><a class="zoomInDown mg-t" href="#" data-toggle="modal" data-target="#modaldemo9">Terms and Conditions</a></span> before submitting?</span>
 				<!-- BASIC MODAL -->
                   <div id="modaldemo9" class="modal fade">
                     <div class="modal-dialog modal-dialog-vertical-center" role="document">
@@ -173,7 +173,7 @@
             <div class="form-layout-footer">
 @*                               <a href="/US1approval/approval"><button class="btn btn-red">Approved</button></a>
 *@
-              <a href="/deptregistration_status/deptstatus"><button  class="btn btn-red" >Submit</button></a>
+                        <a href="/deptregistration_status/deptstatus"><button onclick="DocUpload()" class="btn btn-red">Submit</button></a>
               <button class="btn btn-secondary">Cancel</button>
             </div><!-- form-layout-footer -->
           </div><!-- form-layout -->
@@ -196,6 +196,23 @@
     </form>
 
     <script>
+
+
+        function DocUpload(){
+            const allowedTypes = 'pdf';
+
+            const fileInput = document.querySelector('input[type="file"]');
+            const filePath = fileInput.value;
+
+            const fileExtension = filePath.split('.').pop().toLowerCase();
+
+            if (!allowedTypes.includes(fileExtension)) {
+                alert('Invalid file format. Only PDF are allowed.');
+                fileInput.value = ''; // reset the file input to clear the selected file
+            }
+
+
+        }
 
         $(document).ready(function () {
             //alert();
