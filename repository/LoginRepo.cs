@@ -35,7 +35,7 @@ namespace ssc.repository
               
         }
 
-        public DataTable userlogin()
+        public DataTable userlogin(UserModel model)
         {
             DataTable dt = new DataTable();
 

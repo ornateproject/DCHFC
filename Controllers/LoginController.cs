@@ -39,12 +39,18 @@ namespace ssc.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet]
+        public IActionResult login()
+        {
+            return View();
+        }
+
         [HttpPost]
-        public async Task<IActionResult> Index(UserModel model)
+        public async Task<IActionResult> login(UserModel model)
         {
             if (ModelState.IsValid)
             {
-                var result = _login.loginuser(model);
+                var result = _login.userlogin(model);
                 if (result.Rows.Count > 0)
                 {
                     return RedirectToAction("Index", "UserDepartment");
@@ -53,7 +59,7 @@ namespace ssc.Controllers
 
                 return RedirectToAction("Index", "Home");
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("login", "Home");
         }
 
     }
