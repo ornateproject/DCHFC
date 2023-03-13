@@ -40,6 +40,7 @@ namespace ssc.Models
         // [Required(ErrorMessage = "*")]
    
         public IFormFile? Upload_doc { get; set; }
+        public string? Doc_path { get; set; }
 
         public string? Status { get; set; }
 
@@ -49,12 +50,12 @@ namespace ssc.Models
         public string FilePath { get; set; }
     }
     public class ministry
-        {
+    {
            
             public int? ministry_id { get; set; }
 
             public string? ministry_name { get; set; }
-        }
+    }
 
         public class ManageDepreg
         {

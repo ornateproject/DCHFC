@@ -15,7 +15,6 @@ namespace ssc.Controllers
         {
             _us2repo = new uploaduserdata_repo(configuration);
 
-
         }
 
         [HttpGet]
@@ -23,7 +22,7 @@ namespace ssc.Controllers
         {
             var usdata = _us2repo.get_deparment();
             List<UserDepartment> dept = new List<UserDepartment>();
-          dept = JsonConvert.DeserializeObject<List<UserDepartment>>(usdata);
+            dept = JsonConvert.DeserializeObject<List<UserDepartment>>(usdata);
 
             return View(dept);
             

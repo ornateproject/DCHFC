@@ -12,8 +12,6 @@ namespace ssc.Controllers
         public DeptRegDashboard(IConfiguration configuration)
         {
             _usdashrepo = new DeptDashrepo(configuration);
-
-
         }
 
         [HttpGet]
