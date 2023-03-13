@@ -39,5 +39,22 @@ namespace ssc.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Index(UserModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = _login.loginuser(model);
+                if (result.Rows.Count > 0)
+                {
+                    return RedirectToAction("Index", "UserDepartment");
+                }
+                TempData["error"] = "Please Enter Valid User Name And Password";
+
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }

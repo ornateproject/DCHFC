@@ -35,5 +35,26 @@ namespace ssc.repository
               
         }
 
+        public DataTable userlogin()
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[logindept]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserName", model.UserName);
+                    cmd.Parameters.AddWithValue("@Password", model.Password);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    con.Close();
+                }
+            }
+            return dt;
+
+        }
+
     }
 }
