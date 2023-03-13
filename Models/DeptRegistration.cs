@@ -38,6 +38,7 @@ namespace ssc.Models
         // [Required(ErrorMessage = "*")]
    
         public IFormFile? Upload_doc { get; set; }
+        public string? Doc_path { get; set; }
 
         public string? Status { get; set; }
 

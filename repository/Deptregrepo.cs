@@ -36,7 +36,8 @@ namespace ssc.repository
                         // cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
                         string fileName = department.Upload_doc.FileName;
                         var fileNames = Path.GetFileName(fileName);
-                        string uploadpath = Path.Combine(Directory.GetCurrentDirectory(),  fileNames);
+                        string uploadpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileNames);
+                         con.Open();
                         cmd.Parameters.AddWithValue("@Upload_doc", uploadpath);
                         int xdvf = cmd.ExecuteNonQuery();
                         con.Close();
