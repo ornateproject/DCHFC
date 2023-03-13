@@ -230,9 +230,6 @@ a:hover {color: rgba(0,0,0,.2)}
   <nav>  
    <div class="text-center pd-y-10"><img src="~/img/logo.jpg" class="img-fluid"></div> 
   
-	   @if(!string.IsNullOrEmpty(Convert.ToString(@TempData["error"]))){
-		   <p class="danger">@TempData["error"]</p>
-	   }
    </div>
   <label for="profile" class='fa fa-user-circle-o'>
      <p>Admin (RD)</p>
@@ -266,25 +263,9 @@ a:hover {color: rgba(0,0,0,.2)}
                 <input type="password" asp-for="Password" class="form-control pd-y-12" placeholder="Password" id="password">
               </div><!-- form-group -->
 				
-			<!-- <div class="form-group"> -->
-                 <!-- <select class="form-control select2" data-placeholder="Choose Branch" id="branch"> -->
-                    
-					<!-- <option>----Choose Login----</option> -->
-                    <!-- <option value="D1">SSC Admin (RD)</option> -->
-                    <!-- <option value="D2">US 1</option> -->
-					<!-- <option value="D3">US 2</option> -->
-					<!-- <option value="D4">US 3</option> -->
-                    <!-- <option value="D5">Data upload</option> -->
-					<!-- <option value="D6">User Department</option> -->
-                  <!-- </select> -->
-                  
-              <!-- </div> -->
-			  
-           <!--   <div class="form-group"><a href="#" class="tx-12">Forgot password?</a></div>-->
+			
      <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" id="btnlog">Login</button>
-              <!-- <input type="submit" name="register" class="register" id="loginBtns" value="Login" /> -->
-			  <!-- <br/> <br/> <br/> -->
-			    <!-- <input type="submit" value="logdfsdfsdfsdfsdf" id="btnlogs"/> -->
+              
 				 <div>
 	   @if(!string.IsNullOrEmpty(Convert.ToString(@TempData["error"]))){
 		   <h6  style="color:red;" class="danger">@TempData["error"]</h6>
@@ -311,37 +292,10 @@ a:hover {color: rgba(0,0,0,.2)}
 		    document.getElementById(cityName).style.display = "block";
 		    evt.currentTarget.className += " active";
 		}
-
-		// Get the element with id="defaultOpen" and click on it
-		// document.getElementById("defaultOpen").click(); 
-		//$(document).ready(function(){
-		//$("#btnlog").click(function(){
-		
-		//var user=$("#full_name").val();
-		//var password=$("#password").val();
-		//if(user=="Admin" && password=="Admin@123"){window.location.href='Admin_RD_Dashboard.html'}
-		
-		
-		//});
-		//});
 		
 	</script>
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			<!-- dropdown-menu -->
+		<!-- dropdown-menu -->
           
   </article>
   <article class='dos1 abc3'>
@@ -361,9 +315,10 @@ a:hover {color: rgba(0,0,0,.2)}
 
               <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" type="submit">Login</button>
 			  <div class="">
-	   @if(!string.IsNullOrEmpty(Convert.ToString(@TempData["error"]))){
-		   <p class="danger">@TempData["error"]</p>
-	   }
+						@if (!string.IsNullOrEmpty(Convert.ToString(@TempData["error"])))
+						{
+							<h6 style="color:red;" class="danger">@TempData["error"]</h6>
+						}
    </div>
 		  
             </form>
@@ -371,12 +326,7 @@ a:hover {color: rgba(0,0,0,.2)}
 			  </div>
               
             
-           
-             
-			
-			
-			
-			<script type="text/javascript">
+           <script type="text/javascript">
 		function openCity(evt, cityName) {
 		    var i, tabcontent, tablinks;
 		    tabcontent = document.getElementsByClassName("tabcontent");
@@ -391,50 +341,13 @@ a:hover {color: rgba(0,0,0,.2)}
 		    evt.currentTarget.className += " active";
 		}
 
-		// Get the element with id="defaultOpen" and click on it
-		//document.getElementById("defaultOpen").click();
-		//$(document).ready(function(){
-		//$("#btnlogv").click(function(){
-		
-		//var user=$("#full_namev").val();
-		//var password=$("#passwordv").val();
-		//if(user=="US1" && password=="US1@123"){window.location.href='US1.html'}
-		
-		
-		//});
-		//});
 		
 	</script>
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-	<!-- dropdown-menu -->
+<!-- dropdown-menu -->
           
   </article>
-  
-  
+ 
   <article class='tres abc1'>
    <div class="dropdown-menu bg-white pd-20 pd-xs-40 wd-xs-550 pos-static ft-none shadow-base show">
              <h6 class="tx-gray-800 tx-uppercase tx-bold mg-b-25 text-center">User Department</h6>
@@ -450,6 +363,10 @@ a:hover {color: rgba(0,0,0,.2)}
               <div class="form-group"><a href="ForgetPassword.html" class="tx-12">Forgot password?</a></div>
 
               <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" id="btnlog2">Login</button>
+				@if (!string.IsNullOrEmpty(Convert.ToString(@TempData["error"])))
+				{
+					<h6 style="color:red;" class="danger">@TempData["error"]</h6>
+				}
 		
 		      <div class="form-group"><a href="/DeptRegistration/index" class="tx-12">Department Registration</a></div>
 @*	      <div class="form-group"><a href="~/Views/Home/index.cshtml" class="tx-12">Department Registration</a></div>
@@ -458,11 +375,7 @@ a:hover {color: rgba(0,0,0,.2)}
 *@            </div>
 			<script type="text/javascript">
 
-				
-
-
-
-		function openCity(evt, cityName) {
+			function openCity(evt, cityName) {
 		    var i, tabcontent, tablinks;
 		    tabcontent = document.getElementsByClassName("tabcontent");
 		    for (i = 0; i < tabcontent.length; i++) {
@@ -476,18 +389,7 @@ a:hover {color: rgba(0,0,0,.2)}
 		    evt.currentTarget.className += " active";
 		}
 
-		// Get the element with id="defaultOpen" and click on it
-		// document.getElementById("defaultOpen").click(); 
 		
-		//$("#btnlog2").click(function(){
-		
-		//var user=$("#full_name2").val();
-		//var password=$("#password2").val();
-		
-		//if(user=="UD" && password=="UD@123"){window.location.href='UserDeptDashboard.html'}
-		
-		
-		//});
 		
 	</script><!-- dropdown-menu -->
           
@@ -509,7 +411,10 @@ a:hover {color: rgba(0,0,0,.2)}
 
               <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" id="btnlog3">Login</button>
 
-              
+				@if (!string.IsNullOrEmpty(Convert.ToString(@TempData["error"])))
+				{
+					<h6 style="color:red;" class="danger">@TempData["error"]</h6>
+				}
             </div>
 			<script type="text/javascript">
 		function openCity(evt, cityName) {
@@ -526,19 +431,6 @@ a:hover {color: rgba(0,0,0,.2)}
 		    evt.currentTarget.className += " active";
 		}
 
-		// Get the element with id="defaultOpen" and click on it
-		//document.getElementById("defaultOpen").click();
-		//$(function(){
-		//$("#btnlog3").click(function(){
-		
-		//var user=$("#full_name3").val();
-		//var password=$("#password3").val();
-		
-		//if(user=="DU" && password=="DU@123"){window.location.href='DataUploadDashboard.html'}
-		
-		//});
-		//});
-		
 	</script><!-- dropdown-menu -->
           <!-- dropdown -->
   </article>
