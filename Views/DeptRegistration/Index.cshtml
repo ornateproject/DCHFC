@@ -173,7 +173,7 @@
             <div class="form-layout-footer">
 @*                               <a href="/US1approval/approval"><button class="btn btn-red">Approved</button></a>
 *@
-              <a href="/deptregistration_status/deptstatus"><button  class="btn btn-red" >Submit</button></a>
+                        <a href="/deptregistration_status/deptstatus"><button onclick="DocUpload()" class="btn btn-red">Submit</button></a>
               <button class="btn btn-secondary">Cancel</button>
             </div><!-- form-layout-footer -->
           </div><!-- form-layout -->
@@ -196,6 +196,23 @@
     </form>
 
     <script>
+
+
+        function DocUpload(){
+            const allowedTypes = 'pdf';
+
+            const fileInput = document.querySelector('input[type="file"]');
+            const filePath = fileInput.value;
+
+            const fileExtension = filePath.split('.').pop().toLowerCase();
+
+            if (!allowedTypes.includes(fileExtension)) {
+                alert('Invalid file format. Only PDF are allowed.');
+                fileInput.value = ''; // reset the file input to clear the selected file
+            }
+
+
+        }
 
         $(document).ready(function () {
             //alert();
