@@ -218,10 +218,11 @@
   var file = input.files[0];
 
   // Check if the file is a PDF and has a valid type
-  if (file.type == "application/pdf") {
-    // Do something to validate the PDF, such as checking its metadata
-    alert("PDF is valid!");
-  } else {
+  //if (file.type == "application/pdf") {
+  //  // Do something to validate the PDF, such as checking its metadata
+  //  alert("PDF is valid!");
+  //} 
+  if(file.type!="application/pdf") {
     // Show an error message if the file is not a valid PDF
     alert("Please select a valid PDF file!");
     // Clear the input field to prevent further submission
