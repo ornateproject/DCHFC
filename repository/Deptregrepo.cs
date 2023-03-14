@@ -10,17 +10,17 @@ namespace ssc.repository
     public class Deptregrepo
     {
         private string connectionString;
-       
+
 
         public Deptregrepo(IConfiguration configuration)
         {
             connectionString = configuration.GetValue<string>("DBInfo:ConnectionString");
 
         }
-        
-       
-        public string InsertpostData(DeptRegistration department )
-        {                     
+
+
+        public string InsertpostData(DeptRegistration department)
+        {
             DataTable dt = new DataTable();
             try
             {
@@ -56,7 +56,7 @@ namespace ssc.repository
             {
                 if (ex.Number == 2601 || ex.Number == 2627) //catch duplicate key error
                 {
-                   // ModelState.AddModelError("Email", "Email address already exists");
+                    // ModelState.AddModelError("Email", "Email address already exists");
                 }
                 else
                 {
@@ -72,14 +72,14 @@ namespace ssc.repository
 
         public string get_ministry()
         {
-          
+
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[ministry_Dept]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    
+
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
@@ -92,7 +92,7 @@ namespace ssc.repository
 
         public DataTable get_deparment(int ministryt_id)
         {
-           
+
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -111,4 +111,3 @@ namespace ssc.repository
     }
 
 }
-
