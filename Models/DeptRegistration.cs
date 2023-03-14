@@ -31,7 +31,7 @@ namespace ssc.Models
         //public string? Mobile_no { get; set; }
         [Required(ErrorMessage = "Mobile number is required")]
         [RegularExpression(@"^[6-9]{1}[0-9]{9}$", ErrorMessage = "Invalid phone number.")]
-        public string Mobile_no { get; set; }
+        public string? Mobile_no { get; set; }
 
         [Required(ErrorMessage = "*")]
         [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail is not valid")]

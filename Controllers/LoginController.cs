@@ -30,13 +30,13 @@ namespace ssc.Controllers
                 var result = _login.LoginCheck(model);
                 if (result.Rows.Count>0)
                 {
-                    return RedirectToAction("Index", "UserDepartment");
+                    return RedirectToAction("Index", "US");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
               
                 return RedirectToAction("Index", "Home");
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "US");
         }
 
         [HttpGet]
@@ -53,13 +53,14 @@ namespace ssc.Controllers
                 var result = _login.userlogin(model);
                 if (result.Rows.Count > 0)
                 {
-                    return RedirectToAction("Index", "UserDepartment");
+                    return RedirectToAction("us2", "US2");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
 
                 return RedirectToAction("Index", "Home");
+                
             }
-            return RedirectToAction("login", "Home");
+            return RedirectToAction("us2", "US2");
         }
 
     }

@@ -48,6 +48,7 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@Password", model.Password);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    //int xdvf = cmd.ExecuteNonQuery();
                     sda.Fill(dt);
                     con.Close();
                 }

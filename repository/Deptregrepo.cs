@@ -82,6 +82,7 @@ namespace ssc.repository
                     
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
                     sda.Fill(dt);
                     con.Close();
                 }
