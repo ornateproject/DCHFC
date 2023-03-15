@@ -15,6 +15,7 @@ namespace ssc.Controllers
 
         public IActionResult Index()
         {
+            //var active_tab = TempData["tab"];
             return View();
         }
 

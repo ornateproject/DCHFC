@@ -37,11 +37,11 @@ namespace ssc.Controllers
                     return RedirectToAction("dashboard", "US");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
-              
+                TempData["tab"] = "US";
                 return RedirectToAction("Index", "Home");
             }
-           // TempData["error"] = "Please Enter Valid User Name And Password";
-
+            // TempData["error"] = "Please Enter Valid User Name And Password";
+            TempData["tab"] = "US";
             return RedirectToAction("Index", "Home");
         }
 
