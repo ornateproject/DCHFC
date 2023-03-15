@@ -101,7 +101,7 @@
 			  <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Mobile: <span asp-validation-for="depreg.Mobile_no" class="tx-danger"></span></label>
-				  <input type="text" asp-for="depreg.Mobile_no"  class="form-control" id="mob" >
+				  <input type="text" asp-for="depreg.Mobile_no"  class="form-control" id="mob" maxlength="10" >
                 </div>
               </div>
 			  <div class="col-lg-4">
@@ -173,7 +173,7 @@
             <div class="form-layout-footer">
 @*                               <a href="/US1approval/approval"><button class="btn btn-red">Approved</button></a>
 *@
-                        <a href="/deptregistration_status/deptstatus"><button onclick="DocUpload()" class="btn btn-red">Submit</button></a>
+                       <button  class="btn btn-red">Submit</button>
               <button class="btn btn-secondary">Cancel</button>
             </div><!-- form-layout-footer -->
           </div><!-- form-layout -->

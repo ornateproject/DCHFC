@@ -39,12 +39,14 @@
                     </tr>
                 </thead>
                 <tbody >
-                        @{
+                    @{
+                        int i = 0;
                         foreach(var item in Model)
                         {
-                    <tr>
+                            i++;
+                            <tr>
                    
-                         <th scope="row">@item.ID</th>
+                         <th scope="row">@i</th>
                             <td>@item.post_name</td>
                            <td>@item.pay_matrix</td>
                            <td>@item.age_limit</td>
@@ -69,23 +71,10 @@
 
                         </strong></td>                        <td>
                             <div class="modal-bootstrap modal-login-form">
-                                      @if (@item.Status == "1")
-                                        {
-                                            //<a class="zoomInDown mg-t btn btn-red" >View Details</a>
-                                            <button class="zoomInDown mg-t btn btn-red" disabled>View Details</button>
-
-                                        }
-                                        else if (@item.Status == "2")
-                                        {
-                                             
-                                             <button class="zoomInDown mg-t btn btn-red" disabled>View Details</button>
-                                            
-                                        }
-                                        else
-                                        {
+                                      
                                             <a class="zoomInDown mg-t btn btn-red" href="/US3Mts/us3mtsapproval/@item.ID">View Details</a>
                                           
-                                        }
+                                        
                             </div>
                             <!-- BASIC MODAL -->
 
