@@ -36,14 +36,42 @@ namespace ssc.repository
                         cmd.Parameters.AddWithValue("@Mobile_no", department.Mobile_no);
                         cmd.Parameters.AddWithValue("@Email", department.Email);
                         // cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
-                        string fileName = department.Upload_doc.FileName;
-                        var fileNames = Path.GetFileName(fileName);
-                        string uploadpath = Path.Combine("pdf", fileNames);
-                        con.Open();
-                        cmd.Parameters.AddWithValue("@Upload_doc", uploadpath);
-                        var stream = new FileStream(uploadpath, FileMode.Create);
+                        //string fileName = department.Upload_doc.FileName;
+                        //var fileNames = Path.GetFileName(fileName);
+                        //string uploadpath = Path.Combine("wwwroot/pdf", fileNames);
+                       // con.Open();
+                       
+                        //var stream = new FileStream(uploadpath, FileMode.Create);
 
-                        department.Upload_doc.CopyToAsync(stream);
+                        //department.Upload_doc.CopyToAsync(stream);
+                        //stream.Close();
+
+                        //......................file upload start...........................
+
+
+                        var fileName = Path.GetFileName(department.Upload_doc?.FileName);
+
+                        var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
+
+                        var extension = Path.GetExtension(fileName);
+                        string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+                       
+
+
+                        var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
+
+                        //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/pdf", newfilenamewithoutextension + extension);
+                        FileInfo file = new FileInfo(Path.Combine(path));
+                        var stream = new FileStream(path, FileMode.Create);
+                        department.Upload_doc.CopyTo(stream);
+                        stream.Close();
+
+                        //........................file upload end................................
+
+                        cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
+
+                        con.Open();
                         int xdvf = cmd.ExecuteNonQuery();
                         con.Close();
                     }

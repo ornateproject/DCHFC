@@ -2,7 +2,7 @@
 
 namespace ssc.Controllers
 {
-    public class Regsuccess : Controller
+    public class RegsuccessController : Controller
     {
         public IActionResult regsuccess()
         {

@@ -8,476 +8,496 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 }
 
 <div class="br-pageheader pd-y-15 pd-l-20">
-  <nav class="breadcrumb pd-0 mg-0 tx-12">
-    <a class="breadcrumb-item" href="US1.html">Dashboard</a>
-    <span class="breadcrumb-item active">Pending Approval View</span>
-  </nav>
+    <nav class="breadcrumb pd-0 mg-0 tx-12">
+        <a class="breadcrumb-item" href="US1.html">Dashboard</a>
+        <span class="breadcrumb-item active">Pending Approval View</span>
+    </nav>
 </div><!-- br-pageheader -->
 <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
-  <h4 class="tx-gray-800 mg-b-5">Pending Approval View</h4>
+    <h4 class="tx-gray-800 mg-b-5">Pending Approval View</h4>
 
 </div>
 
 <div class="br-pagebody">
-  <div class="br-section-wrapper">
+    <div class="br-section-wrapper">
 
-    <div class="form-layout form-layout-1">
+        <div class="form-layout form-layout-1">
 
-      <div class="row mg-b-25">
-        <div class="col-lg-4">
-          <div class="form-group">
+            <div class="row mg-b-25">
+                <div class="col-lg-4">
+                    <div class="form-group">
 
-            <label class="form-control-label tx-gray-700">Name Of the Post <span class="tx-danger">*</span></label>
-             @Model.post_name
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Pay Matrix (as per 7th CPC): <span
-                class="tx-danger">*</span></label>
-                 @Model.pay_matrix
+                        <label class="form-control-label tx-gray-700">Name Of the Post <span class="tx-danger">*</span></label>
+                        @Model.post_name
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Pay Matrix (as per 7th CPC): <span class="tx-danger">*</span>
+                        </label>
+                        @Model.pay_matrix
 
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Classification of Post <span
-                class="tx-danger">*</span></label>
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Classification of Post <span class="tx-danger">*</span>
+                        </label>
 
-                 @Model.post_class
-          </div>
+                        @Model.post_class
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mg-b-25">
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">
+                            Brief description of the job requirements and nature of duties
+                            of the post <span class="tx-danger">*</span>
+                        </label>
+                        @Model.post_nature
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Place of initial posting [name of the State(s)]. <span class="tx-danger">*</span>
+                        </label>
+                        @Model.initial_place
+
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Whether All India Service Liability (AISL) is involved?<span class="tx-danger">*</span>
+                        </label>
+                        @Model.aisl
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-12">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">
+                            How have the vacancies arisen? (Clearly specify, by
+                            promotion/resignation/ death/ retirement etc. in case the vacancy is due to failure to recruit by
+                            transfer/deputation, the details thereof may also be indicated)<span class="tx-danger">*</span>
+                        </label>
+                        @Model.vacancy_ariesn
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-2">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">UR <span class="tx-danger">*</span></label>
+                        @Model.UR
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">OBC <span class="tx-danger">*</span></label>
+
+                        @Model.OBC
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">SC<span class="tx-danger">*</span></label>
+                        @Model.SC
+
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">ST<span class="tx-danger">*</span></label>
+                        @Model.ST
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">EWS<span class="tx-danger">*</span></label>
+                        @Model.EWS
+
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Total<span class="tx-danger">*</span></label>
+                        @Model.TOTAL
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-3">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Post is indentified suitable for PWD candidate<span class="tx-danger">*</span></label>
+                        @Model.identified_post
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Type of Disability <span class="tx-danger">*</span></label>
+                        @Model.disability_type
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700"> Suitable for PwD <span class="tx-danger">*</span></label>
+                        @Model.suitable_pwd
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Permissible disability <span class="tx-danger">*</span></label>
+                        @Model.permissible
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-3">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">VH <span class="tx-danger">*</span></label>
+                        @Model.VH
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-3">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">HH <span class="tx-danger">*</span></label>
+                        @Model.HH
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">OH <span class="tx-danger">*</span></label>
+                        @Model.OH
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">OTHERS <span class="tx-danger">*</span></label>
+                        @Model.OTHERS
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Total <span class="tx-danger">*</span></label>
+                        @Model.Total_vacancy
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-12">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">
+                            Out of Total reserved PwD vacancies in
+                            5(c) above, number of vacancies which
+                            may be filled through non-PwD
+                            candidates in the event of not finding
+                            candidates from earmarked PwD
+                            category: <span class="tx-danger">*</span>
+                        </label>
+                        @Model.reserved_vacancy
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">
+                            Out of Total reserved PwD vacancies in
+                            5(c) above, number of vacancies which
+                            may be filled through non-PwD
+                            candidates in the event of not finding
+                            candidates from earmarked PwD
+                            category: <span class="tx-danger">*</span>
+                        </label>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Number <span class="tx-danger">*</span></label>
+                        @Model.pwd_number
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">
+                            Vertical Category<span class="tx-danger">*</span>
+                        </label>
+                        @Model.pwdvertical_category
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-8">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">
+                            vacancies reserved for ExServiceman (ESM)
+                            category: <span class="tx-danger">*</span>
+                        </label>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Number <span class="tx-danger">*</span></label>
+                        @Model.totalesm_number
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">
+                            Out of Total ESM vacancies as
+                            mentioned in 5(d) above, number of
+                            vacancies and corresponding Vertical
+                            category which should be left unfilled
+                            in the event of not finding candidates
+                            from earmarked ESM category:<span class="tx-danger">*</span>
+                        </label>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Number<span class="tx-danger">*</span></label>
+                        @Model.esm_number
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Vertical Category<span class="tx-danger">*</span></label>
+                        @Model.esmvertical_category
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+
+
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Period of probation<span class="tx-danger">*</span></label>
+                        @Model.probation1
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Essential<span class="tx-danger">*</span></label>
+                        @Model.Essential
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Desirable<span class="tx-danger">*</span></label>
+
+                        @Model.Desirable
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Relaxation, if any<span class="tx-danger">*</span></label>
+                        @Model.Relaxation
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mg-b-25">
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">EQ/Eligibility/Experience to any of the Regional Office(s) of SSC<span class="tx-danger">*</span></label>
+                        @Model.Regional_office
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Age Limits as per Recruitment Rules<span class="tx-danger">*</span></label>
+                        @Model.Age_limit
+
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Any other requirements or conditions not covered
+                            by the above columns<span class="tx-danger">*</span>
+                        </label>
+                        @Model.Requirment
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Name<span class="tx-danger">*</span></label>
+                        @Model.Name
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Tel/Mobile <span class="tx-danger">*</span></label>
+
+                        @Model.Mobile_no
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Email<span class="tx-danger">*</span></label>
+                        @Model.Email
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Address: <span class="tx-danger">*</span></label>
+                        @Model.Address
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Designation:<span class="tx-danger">*</span></label>
+                        @Model.Desigantion
+
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Whether the captioned post(s) has/have been
+                            exempted from ban orders imposed by the M/o<span class="tx-danger">*</span>
+                        </label>
+
+                        @Model.subsequent_orders
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Redeployment of Surplus Staff<span class="tx-danger">*</span></label>
+                        @Model.DOPT_letter
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Whether the number of vacancies reserved for SC, ST, OBC & EWS as mentioned in Column 5(a)<span class="tx-danger">*</span></label>
+                        @Model.no_ofvacancy
+
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Whether the vacancies for PwD and ESM have
+                            been worked out with reference to DOPT O.M<span class="tx-danger">*</span>
+                        </label>
+                        @Model.pwd_esm
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">
+                            Whether the provisions of ‘The Rights of Persons
+                            with Disabilities Act, 2016’ are complied with?<span class="tx-danger">*</span>
+                        </label>
+                        @Model.person_disabilities
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Letter No. and date of the Previous requisition for
+                            the same post placed with the SSC
+                            by your office<span class="tx-danger">*</span>
+                        </label>
+                        @Model.letter_no
+
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Letter No. and date by which nomination has been
+                            made earlier by SSC to your office for the same
+                            Post and No. of vacancies filled by your
+                            Office/Deptt<span class="tx-danger">*</span>
+                        </label>
+                        @Model.office_department
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
         </div>
-      </div>
-
-      <div class="row mg-b-25">
-        <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Brief description of the job requirements and nature of duties
-              of the post <span class="tx-danger">*</span></label>
-           @Model.post_nature
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Place of initial posting [name of the State(s)]. <span
-                class="tx-danger">*</span></label>
-                 @Model.initial_place
-
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Whether All India Service Liability (AISL) is involved?<span
-                class="tx-danger">*</span></label>
-                 @Model.aisl
-
-          </div>
-        </div>
-      </div>
-      <div class="row mg-b-25">
-        <div class="col-lg-12">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">How have the vacancies arisen? (Clearly specify, by
-              promotion/resignation/ death/ retirement etc. in case the vacancy is due to failure to recruit by
-              transfer/deputation, the details thereof may also be indicated)<span class="tx-danger">*</span></label>
-               @Model.vacancy_ariesn
-          </div>
-        </div>
-      </div>
-      <div class="row mg-b-25">
-        <div class="col-lg-2">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">UR <span class="tx-danger">*</span></label>
-             @Model.UR
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-2">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">OBC <span class="tx-danger">*</span></label>
-
-             @Model.OBC
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-2">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">SC<span class="tx-danger">*</span></label>
-             @Model.SC
-
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">ST<span class="tx-danger">*</span></label>
-            @Model.ST
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">EWS<span class="tx-danger">*</span></label>
-             @Model.EWS
-
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Total<span class="tx-danger">*</span></label>
-             @Model.TOTAL
-
-          </div>
-        </div>
-      </div>       
-      <div class="row mg-b-25">
-           <div class="col-lg-3">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Post is indentified suitable for PWD candidate<span class="tx-danger">*</span></label>
-             @Model.identified_post
-          </div>
-          </div>
-          <div class="col-lg-3">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Type of Disability <span class="tx-danger">*</span></label>
-             @Model.disability_type
-          </div>
-        </div>
-         <div class="col-lg-3">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700"> Suitable for PwD <span class="tx-danger">*</span></label>
-             @Model.suitable_pwd
-          </div>
-        </div>
-         <div class="col-lg-3">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Permissible disability <span class="tx-danger">*</span></label>
-             @Model.permissible
-          </div>
-        </div>
-      </div>
-       <div class="row mg-b-25">
-        <div class="col-lg-3">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">VH <span class="tx-danger">*</span></label>
-             @Model.VH
-          </div>
-        </div><!-- col-4 -->
-          <div class="col-lg-3">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">HH <span class="tx-danger">*</span></label>
-             @Model.HH
-          </div>
-        </div>
-         <div class="col-lg-3">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">OH <span class="tx-danger">*</span></label>
-             @Model.OH
-          </div>
-        </div>
-         <div class="col-lg-2">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">OTHERS <span class="tx-danger">*</span></label>
-             @Model.OTHERS
-          </div>
-        </div>
-          <div class="col-lg-1">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Total <span class="tx-danger">*</span></label>
-             @Model.Total_vacancy
-          </div>
-        </div>
-        </div>
-        <div class="row mg-b-25">
-        <div class="col-lg-12">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Out of Total reserved PwD vacancies in
-5(c) above, number of vacancies which
-may be filled through non-PwD
-candidates in the event of not finding
-candidates from earmarked PwD
-category: <span class="tx-danger">*</span></label>
- @Model.reserved_vacancy
-          </div>
-          </div>
-          </div>
-           <div class="row mg-b-25">
-        <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Out of Total reserved PwD vacancies in
-5(c) above, number of vacancies which
-may be filled through non-PwD
-candidates in the event of not finding
-candidates from earmarked PwD
-category: <span class="tx-danger">*</span></label>
+        <div class="form-layout-footer text-center">
 
 
-          </div>
-          </div>
-           <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Number <span class="tx-danger">*</span></label>
-             @Model.pwd_number
-          </div>
-          </div>
-           <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">
-Vertical Category<span class="tx-danger">*</span></label>
- @Model.pwdvertical_category
-          </div>
-          </div>
-          </div>
-           <div class="row mg-b-25">
-        <div class="col-lg-8">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700"> vacancies reserved for ExServiceman (ESM)
-category: <span class="tx-danger">*</span></label>
-
-          </div>
-          </div>
-           <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Number <span class="tx-danger">*</span></label>
-             @Model.totalesm_number
-          </div>
-          </div>
-          </div>
-           <div class="row mg-b-25">
-        <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Out of Total ESM vacancies as
-mentioned in 5(d) above, number of
-vacancies and corresponding Vertical
-category which should be left unfilled
-in the event of not finding candidates
-from earmarked ESM category:<span class="tx-danger">*</span></label>
-
-          </div>
-          </div>
-          <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Number<span class="tx-danger">*</span></label>
-             @Model.esm_number
-          </div>
-          </div>
-          <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Vertical Category<span class="tx-danger">*</span></label>
-             @Model.esmvertical_category
-          </div>
-          </div>
-          </div>
-           <div class="row mg-b-25">
-            
-        
-          
-               <div class="col-lg-3">
-              <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Period of probation<span class="tx-danger">*</span></label>
-              @Model.probation1
-          </div>
-          </div>
-        <div class="col-lg-3">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Essential<span class="tx-danger">*</span></label> 
-            @Model.Essential
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-3">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Desirable<span class="tx-danger">*</span></label>
-
-             @Model.Desirable
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-3">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Relaxation, if any<span class="tx-danger">*</span></label>
-             @Model.Relaxation
-
-          </div>
-        </div>
-        </div>
-        
-        <div class="row mg-b-25">
-        <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">EQ/Eligibility/Experience to any of the Regional Office(s) of SSC<span class="tx-danger">*</span></label>
-             @Model.Regional_office
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Age Limits as per Recruitment Rules<span class="tx-danger">*</span></label>
-             @Model.Age_limit
-
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Any other requirements or conditions not covered
-by the above columns<span class="tx-danger">*</span></label>
- @Model.Requirment
-
-          </div>
-        </div>
-        </div>
-        <div class="row mg-b-25">
-        <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Name<span class="tx-danger">*</span></label>
-             @Model.Name
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Tel/Mobile <span class="tx-danger">*</span></label>
-
-             @Model.Mobile_no
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Email<span class="tx-danger">*</span></label>
-             @Model.Email
-
-          </div>
-        </div>
-       </div>
-       <div class="row mg-b-25">
-        <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Address: <span class="tx-danger">*</span></label>
-             @Model.Address
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Designation:<span class="tx-danger">*</span></label>
-             @Model.Desigantion
-
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Whether the captioned post(s) has/have been
-exempted from ban orders imposed by the M/o<span class="tx-danger">*</span></label>
-
- @Model.subsequent_orders
-          </div>
-        </div>
-       </div>
-       <div class="row mg-b-25">
-        <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Redeployment of Surplus Staff<span class="tx-danger">*</span></label>
-             @Model.DOPT_letter
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Whether the number of vacancies reserved for SC, ST, OBC & EWS as mentioned in Column 5(a)<span class="tx-danger">*</span></label>
-             @Model.no_ofvacancy
-
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Whether the vacancies for PwD and ESM have
-been worked out with reference to DOPT O.M<span class="tx-danger">*</span></label>
- @Model.pwd_esm
-
-          </div>
-        </div>
-       </div>
-       <div class="row mg-b-25">
-        <div class="col-lg-4">
-          <div class="form-group">
-
-            <label class="form-control-label tx-gray-700">Whether the provisions of ‘The Rights of Persons
-with Disabilities Act, 2016’ are complied with?<span class="tx-danger">*</span></label>
- @Model.person_disabilities
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Letter No. and date of the Previous requisition for
-the same post placed with the SSC
-by your office<span class="tx-danger">*</span></label>
- @Model.letter_no
-
-          </div>
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label class="form-control-label tx-gray-700">Letter No. and date by which nomination has been
-made earlier by SSC to your office for the same
-Post and No. of vacancies filled by your
-Office/Deptt<span class="tx-danger">*</span></label>
- @Model.office_department
-
-          </div>
-        </div>
-       </div>
-      
-
-
-
-
-      </div>
-      <div class="form-layout-footer text-center">
-            @if (Model.Status != "Approved")
+            @if (@Model.Status != "1" && @Model.Status != "2")
             {
-                @if (@Model.Status == "1")
-                {
-                    <a href="@Url.Action("Approve", "US2approval", new { id = Model.ID })"><button class="btn btn-red" disabled style="cursor:pointer">Approved</button></a>
-                }
-                else
-                {
-                                     <a href="@Url.Action("Approve", "US2approval", new { id = Model.ID })"><button class="btn btn-red"  style="cursor:pointer">Approved</button></a>
-   
-                }
+
+                <a href="@Url.Action("Approve", "US2approval", new { id = Model.ID })"><button class="btn btn-red" style="cursor:pointer">Approved</button></a>
+
+
+
+
+                <a href="@Url.Action("Reject", "US2approval", new { id = Model.ID })"><button class="btn btn-red" disabled style="cursor:pointer">Rejected</button></a>
+
+
             }
-            @if (Model.Status!= "Approved")
-                    {
-                         @if (@Model.Status == "1")
-                {
-        <a href="@Url.Action("Reject", "US2approval", new { id = Model.ID })"><button class="btn btn-red" disabled style="cursor:pointer">Rejected</button></a>
-                }
-                else
-                {
-        <a href="@Url.Action("Reject", "US2approval", new { id = Model.ID })"><button class="btn btn-red" style="cursor:pointer">Rejected</button></a>
-   
-                }
-                    }
-        <button class="btn btn-secondary" style="cursor:pointer">Cancel</button>
-      </div><!-- form-layout-footer -->
+
+            <button class="btn btn-secondary" style="cursor:pointer">Cancel</button>
+        </div><!-- form-layout-footer -->
     </div><!-- form-layout -->
-  </div>
+</div>
 
 
 

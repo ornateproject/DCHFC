@@ -33,6 +33,8 @@ namespace ssc.Controllers
             if (ModelState.IsValid)
             {
              var asd = _deptregrepo.InsertpostData(department.depreg);
+
+               return RedirectToAction("regsuccess", "Regsuccess");
             }
             var ministry = _deptregrepo.get_ministry();
             ManageDepreg manageDepreg = new ManageDepreg();

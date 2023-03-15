@@ -5,11 +5,9 @@ using ssc.repository;
 
 namespace ssc.Controllers
 {
-    public class DeptRegDashboardController : Controller
     {
 
         private readonly DeptDashrepo _usdashrepo;
-        public DeptRegDashboardController(IConfiguration configuration)
         {
             _usdashrepo = new DeptDashrepo(configuration);
         }

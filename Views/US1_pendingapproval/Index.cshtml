@@ -55,8 +55,8 @@
               <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label tx-gray-700">Nodal officer Doc upload: <span class="tx-danger">*</span></label>
-				  <a href="#"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>
-                  @Model.Upload_doc
+				  <a target="_blank" href="~/pdf/@Model.Doc_path"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>
+                 
                 </div>
               </div>
              
@@ -77,16 +77,15 @@
             </div><!-- row -->
 
             <div class="form-layout-footer text-center" "="">
-                 @if (Model.Status!= "Approved")
+                 @if (Model.Status!= "1" && Model.Status!= "2")
                     {
                  <a href="@Url.Action("Approve", "US1_pendingapproval", new { id = Model.ID })"><button  class="btn btn-success" style="cursor:pointer">Approve</button></a>
-                    }
-                     @if (Model.Status!= "Approved")
-                    {
+                    
+
 
 			   <a href="@Url.Action("Reject", "US1_pendingapproval", new { id = Model.ID })"><button  class="btn btn-red" style="cursor:pointer">Rejecte</button></a>
                     }  
-              <button class="btn btn-secondary" style="cursor:pointer">Cancel</button>
+                <a href="@Url.Action("Index", "US")"><button class="btn btn-secondary" style="cursor:pointer">Cancel</button></a>
             </div><!-- form-layout-footer -->
           </div><!-- form-layout -->
 

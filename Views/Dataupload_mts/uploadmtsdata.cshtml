@@ -3,48 +3,50 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
     *@
     @{
-    }
-    <div class="br-pageheader pd-y-15 pd-l-20">
-        <nav class="breadcrumb pd-0 mg-0 tx-12">
-            <a class="breadcrumb-item" href="US1.html">Dashboard</a>
-            <span class="breadcrumb-item active">Pending Approval</span>
-        </nav>
-    </div><!-- br-pageheader -->
-    <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
-        <h4 class="tx-gray-800 mg-b-5">Pending Approval</h4>
+}
+<div class="br-pageheader pd-y-15 pd-l-20">
+    <nav class="breadcrumb pd-0 mg-0 tx-12">
+        <a class="breadcrumb-item" href="US1.html">US</a>
+        <span class="breadcrumb-item active">Upload MTS Post</span>
+    </nav>
+</div><!-- br-pageheader -->
+<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+    <h4 class="tx-gray-800 mg-b-5">Upload MTS Post</h4>
 
-    </div>
+</div>
 
-    <div class="br-pagebody">
-        <div class="br-section-wrapper">
-            <!-- d-flex -->
-            <div class="table-wrapper rounded table-responsive">
-                <table id="datatable1" class="table display responsive nowrap">
-                    <thead>
-                        <tr>
-                            <th>Sr No.</th>
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+        <!-- d-flex -->
+        <div class="table-wrapper rounded table-responsive">
+            <table id="datatable1" class="table display responsive nowrap">
+                <thead>
+                    <tr>
+                        <th>Sr No.</th>
 
-                            <th>post_name</th>
-                            <th>pay_matrix</th>
-                            <th>age_limit</th>
-                            <th>post_classification</th>
-                            <th>initial_post</th>
+                        <th>post_name</th>
+                        <th>pay_matrix</th>
+                        <th>age_limit</th>
+                        <th>post_classification</th>
+                        <th>initial_post</th>
 
-                            <th>candidates_nominated</th>
-                            <th>Status</th>
-                            <th>Details</th>
+                        <th>candidates_nominated</th>
+                        <th>Status</th>
+                        <th>Details</th>
 
 
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 0;
                         foreach(var item in Model)
                         {
-                        <tr>
+                            i++;
+                            <tr>
 
-                            <th scope="row">@item.ID</th>
+                            <th scope="row">@i</th>
                             <td>@item.post_name</td>
                             <td>@item.pay_matrix</td>
                             <td>@item.age_limit</td>
@@ -60,7 +62,7 @@
 
 
                                     <a class="zoomInDown mg-t btn btn-red"
-                                        href="/Candidatemtsdata/candidatemts/@item.ID">Upload Candidate </a>
+                                        href="#">Upload Candidate </a>
 
 
                                 </div>
