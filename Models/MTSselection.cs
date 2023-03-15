@@ -18,6 +18,7 @@ namespace ssc.Models
 
 
         [Required(ErrorMessage = "*")]
+        [Range(18, 27, ErrorMessage = "Age must be between 18 to 27")]
         public string? age_limit { get; set; }
 
         [Required(ErrorMessage = "*")]
@@ -126,6 +127,7 @@ namespace ssc.Models
 
 
         [Required(ErrorMessage = "*")]
+        [Range(18, 27, ErrorMessage="Age must be between 18 to 27")]
         public string? Age_requirment { get; set; }
 
 
