@@ -9,6 +9,8 @@ var mvcBuilder = builder.Services.AddRazorPages();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//Session
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 //builder.Services.AddDbContext<UserDepartmentDbContext>(options => 
 //options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
 
@@ -43,7 +45,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -30,13 +30,19 @@ namespace ssc.Controllers
                 var result = _login.LoginCheck(model);
                 if (result.Rows.Count>0)
                 {
-                    return RedirectToAction("Index", "US");
+                    HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
+                    HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["usertype"]));
+                    //HttpContext.Session.SetString("emp_name", Convert.ToString(dt.Rows[0][1]));
+                    //HttpContext.Session.SetString("emp_email", Convert.ToString(dt.Rows[0][2]));
+                    return RedirectToAction("dashboard", "US");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
-              
+                TempData["tab"] = "US";
                 return RedirectToAction("Index", "Home");
             }
-            return RedirectToAction("Index", "US");
+            // TempData["error"] = "Please Enter Valid User Name And Password";
+            TempData["tab"] = "US";
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
@@ -53,14 +59,17 @@ namespace ssc.Controllers
                 var result = _login.userlogin(model);
                 if (result.Rows.Count > 0)
                 {
-                    return RedirectToAction("us2", "US2");
+                    HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
+                    HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["UserType"]));
+                    // return RedirectToAction("us2", "US2");
+                    return RedirectToAction("dashboard", "US");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
 
                 return RedirectToAction("Index", "Home");
                 
             }
-            return RedirectToAction("us2", "US2");
+            return RedirectToAction("Index", "Home");
         }
 
     }

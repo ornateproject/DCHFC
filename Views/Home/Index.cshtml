@@ -143,7 +143,8 @@ input {
  display: none;
 }
 label {
-  width: 25%;
+ /* width: 25%;*/
+  width: 33.3%;
   float: left;
   /*color: #BEE3D1;*/
   text-align: center;
@@ -220,11 +221,11 @@ a:hover {color: rgba(0,0,0,.2)}
   <body>
 
 <section>
-<input type="radio" id="profile" value="1" name="tractor" checked='checked' />    
+<input type="radio" id="profile" value="1" name="tractor" checked=''  />    
 <input type="radio" id="settings" value="2" name="tractor" />      
 <input type="radio" id="posts" value="3" name="tractor" />
 <input type="radio" id="books" value="4" name="tractor" />
-<input type="radio" id="books1" value="4" name="tractor" /> 
+<input type="radio" id="books1" value="4" name="tractor"  checked=@TempData["tab"]=="US"? 'checked':'' /> 
 <input type="radio" id="books2" value="4" name="tractor" /> 
  
   <nav>  
@@ -237,15 +238,8 @@ a:hover {color: rgba(0,0,0,.2)}
    <label for="books1" class='fa fa-user-circle'>
        <p>US </p>
   </label>
-  <!-- <label for="settings" class='fa fa-user-circle'> -->
-      <!-- <p>US 2</p> -->
-  <!-- </label> -->
-  <!-- <label for="books1" class='fa fa-user-circle'> -->
-       <!-- <p>US 3</p> -->
-  <!-- </label> -->
-  <label for="books" class='fa fa-id-badge'>
-       <p>Data upload</p>
-  </label>
+
+ 
   <label for="posts" class='fa fa-group'>
        <p>User Department</p>
   </label>
@@ -267,9 +261,7 @@ a:hover {color: rgba(0,0,0,.2)}
      <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" id="btnlog">Login</button>
               
 				 <div>
-	   @if(!string.IsNullOrEmpty(Convert.ToString(@TempData["error"]))){
-		   <h6  style="color:red;" class="danger">@TempData["error"]</h6>
-	   }
+	 
    </div>
 			  
 			  </div>
@@ -278,22 +270,7 @@ a:hover {color: rgba(0,0,0,.2)}
            
 			
 			
-			<script type="text/javascript">
-		function openCity(evt, cityName) {
-		    var i, tabcontent, tablinks;
-		    tabcontent = document.getElementsByClassName("tabcontent");
-		    for (i = 0; i < tabcontent.length; i++) {
-		        tabcontent[i].style.display = "none";
-		    }
-		    tablinks = document.getElementsByClassName("tablinks");
-		    for (i = 0; i < tablinks.length; i++) {
-		        tablinks[i].className = tablinks[i].className.replace(" active", "");
-		    }
-		    document.getElementById(cityName).style.display = "block";
-		    evt.currentTarget.className += " active";
-		}
-		
-	</script>
+			
 			
 		<!-- dropdown-menu -->
           
@@ -327,23 +304,7 @@ a:hover {color: rgba(0,0,0,.2)}
 			  </div>
               
             
-           <script type="text/javascript">
-		function openCity(evt, cityName) {
-		    var i, tabcontent, tablinks;
-		    tabcontent = document.getElementsByClassName("tabcontent");
-		    for (i = 0; i < tabcontent.length; i++) {
-		        tabcontent[i].style.display = "none";
-		    }
-		    tablinks = document.getElementsByClassName("tablinks");
-		    for (i = 0; i < tablinks.length; i++) {
-		        tablinks[i].className = tablinks[i].className.replace(" active", "");
-		    }
-		    document.getElementById(cityName).style.display = "block";
-		    evt.currentTarget.className += " active";
-		}
-
-		
-	</script>
+      
 			
 <!-- dropdown-menu -->
           
@@ -371,74 +332,14 @@ a:hover {color: rgba(0,0,0,.2)}
 				}
 		
 		      <div class="form-group"><a href="/DeptRegistration/index" class="tx-12">Department Registration</a></div>
-@*	      <div class="form-group"><a href="~/Views/Home/index.cshtml" class="tx-12">Department Registration</a></div>
-*@
-@*             @Html.ActionLink("Department Registration","DeptRegistration/Index")
-  
-*@            
+            
       </form>
           </div>
-			<script type="text/javascript">
-
-			function openCity(evt, cityName) {
-		    var i, tabcontent, tablinks;
-		    tabcontent = document.getElementsByClassName("tabcontent");
-		    for (i = 0; i < tabcontent.length; i++) {
-		        tabcontent[i].style.display = "none";
-		    }
-		    tablinks = document.getElementsByClassName("tablinks");
-		    for (i = 0; i < tablinks.length; i++) {
-		        tablinks[i].className = tablinks[i].className.replace(" active", "");
-		    }
-		    document.getElementById(cityName).style.display = "block";
-		    evt.currentTarget.className += " active";
-		}
-
-		
-		
-	</script><!-- dropdown-menu -->
+			
           
   </article>
   
-  <article class='cuatro abc'>
-    <div class="dropdown-menu bg-white pd-20 pd-xs-40 wd-xs-550 pos-static ft-none shadow-base show">
-              <h6 class="tx-gray-800 tx-uppercase tx-bold mg-b-25 text-center">Data upload</h6>
-             
-              <div class="form-group">
-                <input asp-for="UserName" class="form-control pd-y-12" placeholder="Username" id="full_name3">
-              </div><!-- form-group -->
-
-              <div class="form-group">
-                <input type="password" asp-for="Password" class="form-control pd-y-12" placeholder="Password" id="password3">
-              </div><!-- form-group -->
-
-             <!-- <div class="form-group"><a href="#" class="tx-12">Forgot password?</a></div> -->
-
-              <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" id="btnlog3">Login</button>
-
-				@if (!string.IsNullOrEmpty(Convert.ToString(@TempData["error"])))
-				{
-					<h6 style="color:red;" class="danger">@TempData["error"]</h6>
-				}
-            </div>
-			<script type="text/javascript">
-		function openCity(evt, cityName) {
-		    var i, tabcontent, tablinks;
-		    tabcontent = document.getElementsByClassName("tabcontent");
-		    for (i = 0; i < tabcontent.length; i++) {
-		        tabcontent[i].style.display = "none";
-		    }
-		    tablinks = document.getElementsByClassName("tablinks");
-		    for (i = 0; i < tablinks.length; i++) {
-		        tablinks[i].className = tablinks[i].className.replace(" active", "");
-		    }
-		    document.getElementById(cityName).style.display = "block";
-		    evt.currentTarget.className += " active";
-		}
-
-	</script><!-- dropdown-menu -->
-          <!-- dropdown -->
-  </article>
+  
 </section>
      <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/popper.js/popper.js"></script>

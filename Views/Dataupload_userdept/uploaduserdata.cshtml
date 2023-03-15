@@ -17,12 +17,12 @@
 
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
-        <a class="breadcrumb-item" href="US1.html">Dashboard</a>
-        <span class="breadcrumb-item active">Pending Approval</span>
+        <a class="breadcrumb-item" href="US1.html">US</a>
+        <span class="breadcrumb-item active">Upload Selection Post</span>
     </nav>
 </div><!-- br-pageheader -->
 <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
-    <h4 class="tx-gray-800 mg-b-5">Pending Approval</h4>
+    <h4 class="tx-gray-800 mg-b-5">Upload Selection Post</h4>
 
 </div>
 
@@ -49,12 +49,14 @@
                     </tr>
                 </thead>
                 <tbody >
-                          @{
+                    @{
+                        int i = 0;
                         foreach(var item in Model)
                         {
-                    <tr>
+                            i++;
+                            <tr>
                    
-                         <th scope="row">@item.ID</th>
+                         <th scope="row">@i</th>
                             <td>@item.post_name</td>
                            <td>@item.pay_matrix</td>
                            <td>@item.post_class</td>
@@ -76,7 +78,7 @@
                            
                                        
                                              
-                                             <a class="zoomInDown mg-t btn btn-red" href="/Candidateuserdata/candidateuserdata/@item.ID">Upload Candidate </a>
+                                             <a class="zoomInDown mg-t btn btn-red" href="#">Upload Candidate </a>
 
                
 
