@@ -66,14 +66,21 @@ namespace ssc.Models
             public string? ministry_name { get; set; }
     }
 
-        public class ManageDepreg
+    public class phases
+    {
+
+        public int? id { get; set; }
+
+        public string? phase_name { get; set; }
+    }
+    public class ManageDepreg
         {
             public List<ministry>? Ministries { get; set; }
             public DeptRegistration? depreg { get; set; }
-            
 
+        public List<phases>? phases_post { get; set; }
 
-        }
+    }
 
     public class userdetails
     {
