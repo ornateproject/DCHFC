@@ -152,17 +152,15 @@
            
                   <label class="form-control-label tx-gray-700">Reg For: <span  class="tx-danger"></span></label>
                   
-                  <select   id="TheForm"  name="ID"  class="form-control select2"  data-placeholder="Choose Branch" >
-              
-                      <option value="">--Select One--</option>
-						
-                                <option value="">MTS</option>
-						 
-                    <option value="">Selection Post</option>
-						
+                 
+              <select id="select1" name="ID"  class="form-control select2"  data-placeholder="Choose1 Branch">
+  <option value="">Select a value</option>
+  <option value="option1">Option 1</option>
+  <option value="option2">Option 2</option>
+</select>
                    
 
-               </select>
+               
                  
                 </div>
                  </div>
@@ -172,26 +170,14 @@
 
                             <label class="form-control-label tx-gray-700">Reg For: <span class="tx-danger"></span></label>
 
-                            <select id="TheForm" name="ID" class="form-control select2" data-placeholder="Choose Branch">
+        
 
-                                <option value="">Year</option>
-
-                                <option value="">2020</option>
-                                    <option value="">2021</option>
-                                    <option value="">2022</option>
-                                    <option value="">2023</option>
-                                     <option value="">2024</option>
-                                    <option value="">2025</option>
-                                    <option value="">2026</option>
-                                    <option value="">2027</option>
-                                    <option value="">2028</option>
-                                    <option value="">2029</option>
-
-                                <option value="">Selection Post</option>
+             <select id="select2" name="ID" class="form-control select2" data-placeholder="Choose Branch">
+                                          <option value="">Select a year</option>
+                                          </select>
 
 
-
-                            </select>
+                           
 
                         </div>
                     </div>
@@ -320,6 +306,39 @@
             });
         });
     });
+
+
+
+const select1 = document.getElementById("select1");
+const select2 = document.getElementById("select2");
+
+select1.addEventListener("change", () => {
+  // Clear the options in the second dropdown menu
+  select2.innerHTML = "<option value=''>Select a year</option>";
+  
+  // Get the selected value from the first dropdown menu
+  const selectedValue = select1.options[select1.selectedIndex].value;
+  
+  // Create options for the second dropdown menu based on the selected value
+  if (selectedValue === "option1") {
+    // Add options for years from 2022 to 1990
+    for (let year = 2022; year >= 1990; year--) {
+      const option = document.createElement("option");
+      option.value = year;
+      option.textContent = year;
+      select2.appendChild(option);
+    }
+  } else if (selectedValue === "option2") {
+    // Add options for years from 2025 to 2010
+    for (let year = 1; year <= 5; year++) {
+      const option = document.createElement("option");
+      option.value = "Phase"+year;
+      option.textContent = "Phase"+year;
+      select2.appendChild(option);
+    }
+  }
+});
+
 	
 
     </script>
