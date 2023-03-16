@@ -105,7 +105,7 @@
               </div><!-- col-4 -->
 			  <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Name: <span asp-validation-for="depreg.Name" class="tx-danger"></span></label>
+                  <label class="form-control-label tx-gray-700">Name of Nodal Officer: <span asp-validation-for="depreg.Name" class="tx-danger"></span></label>
 				  <input type="text" asp-for="depreg.Name"  class="form-control" id="name" >
                   
                 </div>
@@ -154,9 +154,9 @@
                   
                  
               <select id="select1" name="ID"  class="form-control select2"  data-placeholder="Choose1 Branch">
-  <option value="">Select a value</option>
-  <option value="option1">Option 1</option>
-  <option value="option2">Option 2</option>
+  <option value="">Selecte</option>
+  <option value="MTS">MTS</option>
+  <option value="selectionpost">Selection Post </option>
 </select>
                    
 
@@ -167,14 +167,20 @@
                         <div class="col-lg-3">
                             <div class="form-group">
 
+       <label class="form-control-label tx-gray-700">Reg For: <span  class="tx-danger"></span></label>
+                                                <div id="input-field" style="display: none;">
+  
+  <input type="number"  id="input1" class="form-control"   min="1945" max="9999" pattern="\d{4}"/>
+</div>
 
-                            <label class="form-control-label tx-gray-700">Reg For: <span class="tx-danger"></span></label>
+<div id="select2-field" style="display: none;">
 
-        
-
-             <select id="select2" name="ID" class="form-control select2" data-placeholder="Choose Branch">
-                                          <option value="">Select a year</option>
-                                          </select>
+  <select id="select2" class="form-control select2" data-placeholder="Choose Branch">
+    <option value="">Select an option</option>
+    <option value="suboption1">Suboption 1</option>
+    <option value="suboption2">Suboption 2</option>
+  </select>
+</div>
 
 
                            
@@ -187,7 +193,8 @@
               <div class="form-group">
 			  <div class="col-lg-12">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700" for="customFile">Name of nodal officer  <span asp-validation-for="depreg.Upload_doc" class="tx-danger"></span></label>
+                  <label class="form-control-label tx-gray-700" for="customFile">
+                      Nodal Officer Authorization Letter<span asp-validation-for="depreg.Upload_doc" class="tx-danger"></span></label>
 				  @*<label class="custom-file">
                 <input  type="file" asp-for="depreg.Upload_doc" id="inputGroupFile02" class="custom-file-input">*@
 
@@ -310,32 +317,23 @@
 
 
 const select1 = document.getElementById("select1");
+const inputField = document.getElementById("input-field");
+const select2Field = document.getElementById("select2-field");
 const select2 = document.getElementById("select2");
 
 select1.addEventListener("change", () => {
-  // Clear the options in the second dropdown menu
-  select2.innerHTML = "<option value=''>Select a year</option>";
+  // Hide both input field and second dropdown menu by default
+  inputField.style.display = "none";
+  select2Field.style.display = "none";
   
   // Get the selected value from the first dropdown menu
   const selectedValue = select1.options[select1.selectedIndex].value;
   
-  // Create options for the second dropdown menu based on the selected value
-  if (selectedValue === "option1") {
-    // Add options for years from 2022 to 1990
-    for (let year = 2022; year >= 1990; year--) {
-      const option = document.createElement("option");
-      option.value = year;
-      option.textContent = year;
-      select2.appendChild(option);
-    }
-  } else if (selectedValue === "option2") {
-    // Add options for years from 2025 to 2010
-    for (let year = 1; year <= 5; year++) {
-      const option = document.createElement("option");
-      option.value = "Phase"+year;
-      option.textContent = "Phase"+year;
-      select2.appendChild(option);
-    }
+  // Show the input field or second dropdown menu based on the selected value
+  if (selectedValue === "MTS") {
+    inputField.style.display = "block";
+  } else if (selectedValue === "selectionpost") {
+    select2Field.style.display = "block";
   }
 });
 

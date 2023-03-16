@@ -72,5 +72,11 @@ namespace ssc.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet]
+        public IActionResult logincandidate()
+        {
+            return View();
+        }
+
     }
 }
