@@ -2,4 +2,373 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = null;
 }
+@model ssc.Models.UserModel
+@{
+    ViewData["Title"] = "Login Page";
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SSC(NR) - Dashboard</title>
+    <!-- vendor css -->
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="~/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+    <link href="~/lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
+    <link href="~/lib/highlightjs/github.css" rel="stylesheet">
+
+    <link href="~/lib/jquery.dataTables.css" rel="stylesheet">
+    <link href="~/lib/select2/css/select2.min.css" rel="stylesheet">
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" href="~/css/bracket.css">
+
+    <!-- vendor css -->
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="~/css/bracket.css" rel="stylesheet">
+    <style type="text/css">
+        @@import url(https://fonts.googleapis.com/css?family=Dosis:600,200|Great+Vibes);
+
+        *, *:after, *:before {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0 none;
+            position: relative;
+        }
+
+        [class="fa"]:before {
+            font-family: 'fontawesome', sans-serif;
+        }
+
+        section {
+            background: #F44336;
+            width: 80vw;
+            max-width: 38rem;
+            min-width: 430px;
+            height: 39rem;
+            margin: 2rem auto;
+            box-shadow: 0 0 6px rgba(0,0,0,.4);
+        }
+
+        article {
+            position: absolute;
+            left: 0;
+            top: 12rem;
+            right: 0;
+            bottom: 0;
+            padding: 2rem 2rem 0;
+            overflow: auto;
+            transition: .7s;
+            transform: scale(0);
+            transform-origin: center right;
+            transition-delay: .1s;
+        }
+
+            article:before {
+                color: rgba(0,0,0,.2);
+                font-size: 4rem;
+                font-weight: 100;
+                position: absolute;
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            color: rgba(0,0,0,.6);
+        }
+
+        body > h2 {
+            height: auto;
+        }
+
+        h2 img {
+            width: 120px;
+            height: auto;
+            background: #f9f9f9;
+            border: 5px solid rgba(0,0,0,.7);
+            border-radius: 50%;
+            padding: 5px;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 0 7px rgba(0,0,0,.5);
+        }
+
+        h2 span {
+            font-family: Great Vibes;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            width: 100%;
+            color: #037B49;
+        }
+
+        footer li {
+            list-style-type: none;
+            float: left;
+            width: 20%;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 100;
+        }
+
+            footer li::before {
+                display: block;
+                text-align: center;
+                font-size: 3rem;
+                font-weight: 100;
+            }
+
+        p, dl, ol {
+            line-height: 1.5;
+            font-size: 1.3rem;
+        }
+
+            ol li {
+                margin: 0 0 .5rem 1rem;
+            }
+
+        dt {
+            font-size: 1.6rem;
+            font-weight: 600;
+            text-indent: 1.5rem;
+        }
+
+        nav {
+            background: #fff;
+            width: 100%;
+            height: 12.8rem;
+            box-shadow: 0 0 6px rgba(0,0,0,.4);
+        }
+
+            nav:after {
+                content: '';
+                width: 25%;
+                height: 5rem;
+                /*background: #BEE3D1;*/
+                position: absolute;
+                transition: .5s;
+            }
+
+        input {
+            display: none;
+        }
+
+        label {
+            /* width: 25%;*/
+            width: 33.3%;
+            float: left;
+            /*color: #BEE3D1;*/
+            text-align: center;
+            cursor: pointer;
+            padding: 12px;
+            transition: .5s;
+            z-index: 2;
+            background: #eee;
+        }
+
+            label:hover {
+                color: #1E6743;
+            }
+
+            label:before {
+                display: block;
+                font-size: 1.4rem;
+                /*line-height: 2.7rem;*/
+                z-index: 2;
+                color: #3c3c3c;
+            }
+
+        #profile:checked ~ nav [for='profile'],
+        #settings:checked ~ nav [for='settings'],
+        #posts:checked ~ nav [for='posts'],
+        #books1:checked ~ nav [for='books1']
+        #books:checked ~ nav [for='books'] {
+            color: #1E6743;
+            font-weight: 600;
+        }
+
+        #settings:checked ~ nav [for='settings'] {
+        }
+
+        #profile:checked ~ nav [for='profile'] {
+        }
+
+        #profile:checked ~ nav:after {
+            left: 0;
+        }
+
+        #settings:checked ~ nav:after {
+            left: 25%;
+            border-top: 0 none;
+        }
+
+        #posts:checked ~ nav:after {
+            left: 50%;
+        }
+
+        #books:checked ~ nav:after {
+            left: 75%;
+        }
+
+        #profile:checked ~ .uno,
+        #settings:checked ~ .dos,
+        #posts:checked ~ .tres,
+        #books1:checked ~ .dos1,
+        #books:checked ~ .cuatro {
+            display: block;
+            transform: scale(1);
+            transition-delay: .5s;
+        }
+
+        a {
+            color: rgba(0,0,0,.4)
+        }
+
+            a:hover {
+                color: rgba(0,0,0,.2)
+            }
+
+        .fa p {
+            font-family: roboto;
+            font-weight: 700;
+            color: #F44336;
+            font-size: 16px;
+            padding-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        .btn-black {
+            background: #3c3c3c;
+        }
+
+        .ckbox {
+            width: 100%;
+            background: none;
+        }
+
+            .ckbox input {
+                opacity: 1 !important;
+                display: inline;
+            }
+
+        button:disabled {
+            cursor: not-allowed;
+            pointer-events: all !important;
+        }
+    </style>
+    <style>
+        button:disabled {
+            cursor: not-allowed;
+            pointer-events: all !important;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <section>
+        <input type="radio" id="profile" value="1" name="tractor" checked='' />
+        <input type="radio" id="settings" value="2" name="tractor" />
+        <input type="radio" id="posts" value="3" name="tractor" />
+        <input type="radio" id="books" value="4" name="tractor" />
+        <input type="radio" id="books1" value="4" name="tractor" checked='checked' />
+        <input type="radio" id="books2" value="4" name="tractor" />
+
+        <nav >
+            <div class="text-center pd-y-10"><img src="~/img/logo.jpg" class="img-fluid"></div>
+
+            
+            <label for="books1"style="display: contents" class='fa fa-user-circle'>
+                <p style="text-align: center;">Candidate login </p>
+            </label>
+            
+
+
+            
+        </nav>
+
+       
+
+        <article class='dos1 abc3'>
+            <div class="dropdown-menu bg-white pd-20 pd-xs-40 wd-xs-550 pos-static ft-none shadow-base show">
+                <form asp-controller="Login" asp-action="Index">
+                    <h6 class="tx-gray-800 tx-uppercase tx-bold mg-b-25 text-center">Candidate Login</h6>
+
+                    <div class="form-group">
+                        <input asp-for="UserName" class="form-control pd-y-12" placeholder="Registration Number" id="full_namev">
+                    </div><!-- form-group -->
+
+                    <div class="form-group">
+                        <input type="date" asp-for="Password" class="form-control pd-y-12" placeholder="Date Of Birth" id="myDate">
+                    </div><!-- form-group -->
+                    <!-- <div class="form-group"><a href="#" class="tx-12">Forgot password?</a></div>-->
+
+                    <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" type="submit">Login</button>
+                    <div class="">
+                        <div class="form-group"><a href="ForgetPassword.html" class="tx-12">Forgot password?</a></div>
+                        @if (!string.IsNullOrEmpty(Convert.ToString(@TempData["error"])))
+                        {
+                            <h6 style="color:red;" class="danger">@TempData["error"]</h6>
+                        }
+                    </div>
+
+                </form>
+
+            </div>
+      <!-- dropdown-menu -->
+
+
+        </article>
+
+
+    </section>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/popper.js/popper.js"></script>
+    <script src="~/lib/bootstrap.js"></script>
+    <script src="~/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+    <script src="~/lib/moment/moment.js"></script>
+    <script src="~/lib/jquery-ui/jquery-ui.js"></script>
+    <script src="~/lib/jquery-switchbutton/jquery.switchButton.js"></script>
+    <script src="~/lib/peity/jquery.peity.js"></script>
+    <script src="~/lib/highlightjs/highlight.pack.js"></script>
+    <script src="~/lib/jquery.dataTables.js"></script>
+    <script src="~/lib/dataTables.responsive.js"></script>
+    <script src="~/lib/select2/js/select2.min.js"></script>
+    <script>
+
+        const currentDate = new Date().toISOString().split('T')[0];
+        const dateInput = document.getElementById('myDate');
+
+        dateInput.setAttribute('max', currentDate);
+    </script>
+</body>
+
+
+</html>
+
