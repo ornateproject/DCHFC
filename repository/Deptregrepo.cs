@@ -36,12 +36,15 @@ namespace ssc.repository
                         cmd.Parameters.AddWithValue("@Mobile_no", department.Mobile_no);
 
                         cmd.Parameters.AddWithValue("@Email", department.Email + "@"+department.Emailtype);
+                        cmd.Parameters.AddWithValue("@phases",  department.phases);
+                        cmd.Parameters.AddWithValue("@Year", department.Year);
+                        cmd.Parameters.AddWithValue("@post", department.post);
                         // cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
                         //string fileName = department.Upload_doc.FileName;
                         //var fileNames = Path.GetFileName(fileName);
                         //string uploadpath = Path.Combine("wwwroot/pdf", fileNames);
-                       // con.Open();
-                       
+                        // con.Open();
+
                         //var stream = new FileStream(uploadpath, FileMode.Create);
 
                         //department.Upload_doc.CopyToAsync(stream);
@@ -119,6 +122,25 @@ namespace ssc.repository
             return JsonConvert.SerializeObject(dt);
         }
 
+        public string selection_post()
+        {
+
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[post_selection]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                    sda.Fill(dt);
+                    con.Close();
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
+        }
         public DataTable get_deparment(int ministryt_id)
         {
 

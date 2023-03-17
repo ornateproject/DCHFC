@@ -153,10 +153,10 @@
                   <label class="form-control-label tx-gray-700">Reg For: <span  class="tx-danger"></span></label>
                   
                  
-              <select id="select1" name="ID"  class="form-control select2"  data-placeholder="Choose1 Branch">
-  <option value="">Selecte</option>
+              <select id="select1" name="ID"  asp-for="depreg.post" class="form-control select2"  data-placeholder="Choose1 Branch">
+  <option value="">Select</option>
   <option value="MTS">MTS</option>
-  <option value="selectionpost">Selection Post </option>
+  <option value="selectionpost">selectionpost</option>
 </select>
                    
 
@@ -170,15 +170,17 @@
        <label class="form-control-label tx-gray-700">Reg For: <span  class="tx-danger"></span></label>
                                                 <div id="input-field" style="display: none;">
   
-  <input type="number"  id="input1" class="form-control"   min="1945" max="9999" pattern="\d{4}"/>
+  <input type="number"  asp-for="depreg.Year" id="input1" class="form-control"  min="1945" max="9999" pattern="\d{4}"/>
 </div>
 
 <div id="select2-field" style="display: none;">
 
-  <select id="select2" class="form-control select2" data-placeholder="Choose Branch">
-    <option value="">Select an option</option>
-    <option value="suboption1">Suboption 1</option>
-    <option value="suboption2">Suboption 2</option>
+  <select id="select2" class="form-control select2" asp-for="depreg.phases" data-placeholder="Choose Branch">
+    <option value="" >Select an option</option>
+      @foreach (var item in Model.phases_post)
+                                    {
+                                     <option value="@item.phase_name"> @item.phase_name</option>   
+                                    }
   </select>
 </div>
 

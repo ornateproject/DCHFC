@@ -21,9 +21,12 @@ namespace ssc.Controllers
         public IActionResult Index()
         {
              var ministry= _deptregrepo.get_ministry();
+            var phases = _deptregrepo.selection_post();
             ManageDepreg manageDepreg = new ManageDepreg();    
             manageDepreg.Ministries = JsonConvert.DeserializeObject<List<ministry>>(ministry);
+            manageDepreg.phases_post = JsonConvert.DeserializeObject<List<phases>>(phases);
             return View(manageDepreg);
+            
         }
 
         [HttpPost]
@@ -37,8 +40,10 @@ namespace ssc.Controllers
                return RedirectToAction("regsuccess", "Regsuccess");
             }
             var ministry = _deptregrepo.get_ministry();
+            var phases = _deptregrepo.selection_post();
             ManageDepreg manageDepreg = new ManageDepreg();
             manageDepreg.Ministries = JsonConvert.DeserializeObject<List<ministry>>(ministry);
+            manageDepreg.phases_post = JsonConvert.DeserializeObject<List<phases>>(phases);
             return View(manageDepreg);
 
         }

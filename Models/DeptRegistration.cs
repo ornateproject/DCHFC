@@ -50,14 +50,13 @@ namespace ssc.Models
 
         public string? Status { get; set; }
 
-        
-          
+        public string? phases { get; set; }
 
+       public string? post { get; set; }
+
+        public string? Year { get; set; }
     }
-    public class departmentReg 
-    {
-        public string FilePath { get; set; }
-    }
+   
     public class ministry
     {
            
