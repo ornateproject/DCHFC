@@ -5,15 +5,18 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 @{
 }
 
-<div>
+
+
+
+
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
         <a class="breadcrumb-item" href="US1.html">US</a>
-        <span class="breadcrumb-item active">Candidate Upload</span>
+        <span class="breadcrumb-item active">Registration</span>
     </nav>
 </div><!-- br-pageheader -->
 <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
-    <h4 class="tx-gray-800 mg-b-5">Candidate Upload</h4>
+    <h4 class="tx-gray-800 mg-b-5">Registration</h4>
 
 </div>
 
@@ -25,37 +28,41 @@ For more information on enabling MVC for empty projects, visit https://go.micros
                 <thead>
                     <tr>
                         <th>Sr No.</th>
-                        <th>Department Name</th>
-                        <th>post_id</th>
-                        <th>post_name</th>
-                        
-                        <th>Check BOx</th>
-                        <th>Document</th>
-                       
+                        <th>Department</th>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Nodal officer Doc upload</th>
+                        <th>Status</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
-                <tbody>
-
-
+                <tbody >
+             
                     <tr>
-                        <th scope="row"></th>
-                        <td>Department</td>
+                        <th scope="row">S NO.</th>
+                          <td>Department</td>
                         <td>Name</td>
                         <td>Mobile_no</td>
-                        
-                        <td><strong>
-                            <span class="text"><input  class="myCheckbox" type="checkbox" id="myCheckbox"/></span>
-                          </strong></td>
+                        <td>Email</td>
                         <td>
-                          <div class="modal-bootstrap modal-login-form">
-                            <input type="file" class="" id="myFileUpload" onChange="validatePDF(this)" id="customFile" disabled accept=".pdf" />
-                          </div>
-                          <!-- BASIC MODAL -->
-            
-                        </td>
-                    </tr>
+                                                                       <input type="checkbox" id="upload-checkbox" onchange="toggleUpload()" /></td>                      
+                   
+                       
+                        <td>
+                            <div class="modal-bootstrap modal-login-form">
+                                      
+                                <input type="file" id="file-input" disabled  accept=".pdf" onChange="validatePDF(this)"/>
+                                          
+                                       
+                            </div>
+                            <!-- BASIC MODAL -->
 
+                        </td>
+
+                    </tr>
                     
+                   
 
 
                 </tbody>
@@ -63,8 +70,8 @@ For more information on enabling MVC for empty projects, visit https://go.micros
             </table>
         </div><!-- bd -->
 
-    </div>
-    </div>
+
+
 
     </div><!-- br-section-wrapper -->
 </div><!-- br-pagebody -->
@@ -86,27 +93,27 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 
 <script src="js/bracket.js"></script>
 <script>
-    $(function () {
-        'use strict';
+    $(function(){
+      'use strict';
 
-        $('#datatable1').DataTable({
-            responsive: true,
-            "bDestroy": true
-            language: {
-                searchPlaceholder: 'Search...',
-                sSearch: '',
-                lengthMenu: '_MENU_ items/page',
-            }
-        });
+      $('#datatable1').DataTable({
+        responsive: true,
+        "bDestroy": true
+        language: {
+          searchPlaceholder: 'Search...',
+          sSearch: '',
+          lengthMenu: '_MENU_ items/page',
+        }
+      });
 
-        $('#datatable2').DataTable({
-            bLengthChange: false,
-            searching: false,
-            responsive: true
-        });
+      $('#datatable2').DataTable({
+        bLengthChange: false,
+        searching: false,
+        responsive: true
+      });
 
-        // Select2
-        $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
+      // Select2
+      $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
 
     });
 </script>
@@ -114,59 +121,58 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 
 
 <script>
-    $(function () {
-        'use strict'
+    $(function(){
+      'use strict'
 
-        // FOR DEMO ONLY
-        // menu collapsed by default during first page load or refresh with screen
-        // having a size between 992px and 1299px. This is intended on this page only
-        // for better viewing of widgets demo.
-        $(window).resize(function () {
-            minimizeMenu();
-        });
-
+      // FOR DEMO ONLY
+      // menu collapsed by default during first page load or refresh with screen
+      // having a size between 992px and 1299px. This is intended on this page only
+      // for better viewing of widgets demo.
+      $(window).resize(function(){
         minimizeMenu();
+      });
 
-        function minimizeMenu() {
-            if (window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
-                // show only the icons and hide left menu label by default
-                $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
-                $('body').addClass('collapsed-menu');
-                $('.show-sub + .br-menu-sub').slideUp();
-            } else if (window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
-                $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
-                $('body').removeClass('collapsed-menu');
-                $('.show-sub + .br-menu-sub').slideDown();
-            }
+      minimizeMenu();
+
+      function minimizeMenu() {
+        if(window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
+          // show only the icons and hide left menu label by default
+          $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
+          $('body').addClass('collapsed-menu');
+          $('.show-sub + .br-menu-sub').slideUp();
+        } else if(window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
+          $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
+          $('body').removeClass('collapsed-menu');
+          $('.show-sub + .br-menu-sub').slideDown();
         }
+      }
     });
-    const checkboxes = document.querySelectorAll('.myCheckbox');
-const fileUploads = document.querySelectorAll('input[type="file"]');
+    function toggleUpload() {
+  const checkbox = document.getElementById("upload-checkbox");
+  const fileInput = document.getElementById("file-input");
 
-checkboxes.forEach(function(checkbox, index) {
-  checkbox.addEventListener('change', function() {
-    if (checkbox.checked) {
-      fileUploads[index].disabled = false;
-    } else {
-      fileUploads[index].disabled = true;
-    }
-  });
-});
-
- function validatePDF(input) {
-  // Get the uploaded file object
-  var file = input.files[0];
-
-  // Check if the file is a PDF and has a valid type
-  //if (file.type == "application/pdf") {
-  //  // Do something to validate the PDF, such as checking its metadata
-  //  alert("PDF is valid!");
-  //} 
-  if(file.type!="application/pdf") {
-    // Show an error message if the file is not a valid PDF
-    alert("Please select a valid PDF file!");
-    // Clear the input field to prevent further submission
-    input.value = null;
+  if (checkbox.checked) {
+    fileInput.removeAttribute("disabled");
+  } else {
+    fileInput.setAttribute("disabled", true);
   }
 }
+
+const fileInput = document.getElementById("file-input");
+fileInput.addEventListener("change", function() {
+  const checkbox = document.getElementById("upload-checkbox");
+  checkbox.setAttribute("disabled", true);
+});
+ function validatePDF(input) {
+
+          var file = input.files[0];
+
+         
+          if(file.type!="application/pdf") {
+               alert("Please select a valid PDF file!");
+
+            input.value = null;
+          }
+        }
+
 </script>
