@@ -36,6 +36,7 @@ namespace ssc.repository
                         cmd.Parameters.AddWithValue("@Mobile_no", department.Mobile_no);
 
                         cmd.Parameters.AddWithValue("@Email", department.Email + "@"+department.Emailtype);
+
                         cmd.Parameters.AddWithValue("@phases",  department.phases);
                         cmd.Parameters.AddWithValue("@Year", department.Year);
                         cmd.Parameters.AddWithValue("@post", department.post);

@@ -342,9 +342,7 @@ a:hover {color: rgba(0,0,0,.2)}
 
   <select id="select2" class="form-control select2"  asp-for="loginuser.phases" data-placeholder="Choose Branch">
     <option value="" >Select an option</option>
-     <option value="MTS">MTS1</option>
-     <option value="MTS">MTS12</option>
-     <option value="MTS">MTS123</option>
+     
          @*  @foreach (var item in Model.phase_post)
                                     {
                                      <option value="@item.phase_name"> @item.phase_name</option>   
@@ -393,26 +391,7 @@ a:hover {color: rgba(0,0,0,.2)}
     <script src="~/lib/select2/js/select2.min.js"></script>
 
     <script>
-        const select1 = document.getElementById("select1");
-const inputField = document.getElementById("input-field");
-const select2Field = document.getElementById("select2-field");
-const select2 = document.getElementById("select2");
-
-select1.addEventListener("change", () => {
-  // Hide both input field and second dropdown menu by default
-  inputField.style.display = "none";
-  select2Field.style.display = "none";
-  
-  // Get the selected value from the first dropdown menu
-  const selectedValue = select1.options[select1.selectedIndex].value;
-  
-  // Show the input field or second dropdown menu based on the selected value
-  if (selectedValue === "MTS") {
-    inputField.style.display = "block";
-  } else if (selectedValue === "selectionpost") {
-    select2Field.style.display = "block";
-  }
-});
+       
 
 
     </script>
