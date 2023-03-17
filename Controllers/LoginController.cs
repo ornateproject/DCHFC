@@ -83,5 +83,10 @@ namespace ssc.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult usview()
+        {
+            return View();
+        }
     }
 }

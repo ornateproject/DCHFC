@@ -90,6 +90,29 @@
                         <span class="menu-item-label">CandidateUpload</span>
                     </div><!-- menu-item -->
                 </a>
+                 <a asp-action="usview" asp-controller="Login" class="br-menu-link">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+                        <span class="menu-item-label">usview</span>
+                    </div><!-- menu-item -->
+                </a>
+                <a asp-action="getcandidatedata" asp-controller="Candidatedata" class="br-menu-link">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+                        <span class="menu-item-label">dept</span>
+                    </div><!-- menu-item -->
+                </a>
+
+            }
+             else if(@usertype == "4")
+            {
+               
+                <a asp-action="candidate" asp-controller="Candidatedata" class="br-menu-link">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+                        <span class="menu-item-label">CandidateUpload</span>
+                    </div><!-- menu-item -->
+                </a>
 
             }
 
@@ -144,6 +167,10 @@
                         @if (@usertype == "2")
                         {
                             <span class="logged-name hidden-md-down">US</span>
+                        }
+                         else if(@usertype == "4")
+                        {
+                            <span class="logged-name hidden-md-down">Candidate</span>
                         }
                         else
                         {
