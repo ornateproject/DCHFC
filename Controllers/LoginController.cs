@@ -20,7 +20,7 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-
+            var sdffgd = "sdfsdgf";
             return View();
 
         }
