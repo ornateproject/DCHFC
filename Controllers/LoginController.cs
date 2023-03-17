@@ -20,18 +20,18 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-          
+
             return View();
-           
+
         }
 
         [HttpPost]
-        public async Task <IActionResult> Index(managepost model)
+        public async Task<IActionResult> Index(managepost model)
         {
             if (ModelState.IsValid)
             {
                 var result = _login.LoginCheck(model.loginuser);
-                if (result.Rows.Count>0)
+                if (result.Rows.Count > 0)
                 {
                     HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
                     HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["usertype"]));
@@ -58,8 +58,8 @@ namespace ssc.Controllers
         [HttpPost]
         public async Task<IActionResult> login(UserModel model)
         {
-               if (ModelState.IsValid)
-               {
+            if (ModelState.IsValid)
+            {
                 var result = _login.userlogin(model);
                 if (result.Rows.Count > 0)
                 {
@@ -88,5 +88,6 @@ namespace ssc.Controllers
         {
             return View();
         }
+
     }
 }
