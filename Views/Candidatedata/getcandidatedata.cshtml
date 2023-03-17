@@ -1,15 +1,18 @@
-﻿@model ssc.Models.ManageDepreg
+﻿@model List<DeptRegistration>;
+
 @*
-For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
 
 
+
+
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
         <a class="breadcrumb-item" href="US1.html">US</a>
-        <span class="breadcrumb-item active">Candidate Data</span>
+        <span class="breadcrumb-item active">Registration</span>
     </nav>
 </div><!-- br-pageheader -->
 <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
@@ -25,11 +28,12 @@ For more information on enabling MVC for empty projects, visit https://go.micros
                 <thead>
                     <tr>
                         <th>Sr No.</th>
-                        <th>Department Name</th>
-                        <th>post_id</th>
+                        <th>Post_Id</th>
                         <th>post_name</th>
-                        <th>Email</th>
-                        <th> Doc upload</th>
+                        <th>Department</th>
+                        <th>Name</th>
+                        <th>Nodal officer Doc upload</th>
+                        <th>Status</th>
                         <th>Details</th>
                     </tr>
                 </thead>
@@ -42,14 +46,14 @@ For more information on enabling MVC for empty projects, visit https://go.micros
                         <td>Name</td>
                         <td>Mobile_no</td>
                         <td>Email</td>
-                        <td><a target="_blank" href="~/pdf/Doc_path"><img class="Pdficon1" src="~/img/PDF-icon.png"
-                                    width="10%"></a></td>
-                      
+                        <td><a target="_blank" href="~/pdf/Doc_path"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>Upload_doc</td>
+                        @*<td><a href="#"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a></td>*@
+                        <td>
+                        </td>
                         <td>
                             <div class="modal-bootstrap modal-login-form">
 
-                                <a class="zoomInDown mg-t btn btn-red" href="/US1_pendingapproval/index/ID">View
-                                    Details</a>
+                                <a class="zoomInDown mg-t btn btn-red" href="/US1_pendingapproval/index/ID">View Details</a>
 
 
                             </div>
@@ -59,7 +63,9 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 
                     </tr>
 
-                   
+
+
+
 
                 </tbody>
 
@@ -95,7 +101,7 @@ For more information on enabling MVC for empty projects, visit https://go.micros
         $('#datatable1').DataTable({
             responsive: true,
             "bDestroy": true
-            language: {
+                language: {
                 searchPlaceholder: 'Search...',
                 sSearch: '',
                 lengthMenu: '_MENU_ items/page',
