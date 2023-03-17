@@ -12,11 +12,12 @@ namespace ssc.Models
         //[Display(Prompt = "Password")]
         public string? Password { get; set; }
 
-        public string? phases { get; set; }
+        public string? phase { get; set; }
         
         public string? post { get; set; }
 
         public string? Year { get; set; }
+        public string? loginfor { get; set; }
 
     }
     public class phase
@@ -29,6 +30,6 @@ namespace ssc.Models
     {
         public UserModel? loginuser { get; set; }
 
-      public List<phase>? phase_post { get; set; }
+      public List<phase>? phases_post { get; set; }
     }
 }

@@ -56,20 +56,22 @@ namespace ssc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> login(UserModel model)
+        public async Task<IActionResult> login(managepost model)
         {
             if (ModelState.IsValid)
             {
-                var result = _login.userlogin(model);
+                var result = _login.userlogin(model.loginuser);
                 if (result.Rows.Count > 0)
                 {
                     HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
                     HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["UserType"]));
                     // return RedirectToAction("us2", "US2");
+                    HttpContext.Session.SetString("phase", Convert.ToString(result.Rows[0]["phase"]));
+                    HttpContext.Session.SetString("post", Convert.ToString(result.Rows[0]["post"]));
                     return RedirectToAction("dashboard", "US");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
-                TempData["tab"] = "US2";
+                TempData["tab"] = "US";
                 return RedirectToAction("Index", "Home");
             }
 
