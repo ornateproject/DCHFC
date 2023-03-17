@@ -20,10 +20,8 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var phase = _login.selection_post();
-            managepost manageDepreg = new managepost();
-            manageDepreg.phase_post = JsonConvert.DeserializeObject<List<phase>>(phase);
-            return View(manageDepreg);
+          
+            return View();
            
         }
 
@@ -60,8 +58,8 @@ namespace ssc.Controllers
         [HttpPost]
         public async Task<IActionResult> login(UserModel model)
         {
-            if (ModelState.IsValid)
-            {
+               if (ModelState.IsValid)
+               {
                 var result = _login.userlogin(model);
                 if (result.Rows.Count > 0)
                 {
@@ -71,10 +69,11 @@ namespace ssc.Controllers
                     return RedirectToAction("dashboard", "US");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
-
+                TempData["tab"] = "US2";
                 return RedirectToAction("Index", "Home");
-                
             }
+
+            TempData["tab"] = "US2";
             return RedirectToAction("Index", "Home");
         }
 
