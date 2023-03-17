@@ -3,8 +3,8 @@
 *@
 @{
 }
+@model List<UserDepartment>
 
-@model List<UserDepartment>;
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,166 +12,61 @@
 @{
 }
 
-
-
-
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
-        <a class="breadcrumb-item" href="US1.html">US</a>
-        <span class="breadcrumb-item active">Upload Selection Post</span>
+        <a class="breadcrumb-item" href="US1.html">Dashboard</a>
+        <span class="breadcrumb-item active">Candidate data Upload</span>
     </nav>
 </div><!-- br-pageheader -->
 <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
-    <h4 class="tx-gray-800 mg-b-5">Upload Selection Post</h4>
+    <h4 class="tx-gray-800 mg-b-5">Candidate data upload</h4>
 
 </div>
 
 <div class="br-pagebody">
     <div class="br-section-wrapper">
-        <!-- d-flex -->
-        <div class="table-wrapper rounded table-responsive">
-            <table id="datatable1" class="table display responsive nowrap">
-                <thead>
-                    <tr>
-                        <th>Sr No.</th>
-                      
-                            <th>post_name</th>
-                           <th>pay_matrix</th>
-                           <th>post_class</th>
-                           <th>post_nature</th>
-                           <th>initial_place</th>                               
-                            <th>office_department</th>
-                                <th>Status</th>
-                        <th>Details</th>   
 
+        <div class="form-layout form-layout-1">
 
-
-                    </tr>
-                </thead>
-                <tbody >
-                    @{
-                        int i = 0;
-                        foreach(var item in Model)
-                        {
-                            i++;
-                            <tr>
-                   
-                         <th scope="row">@i</th>
-                            <td>@item.post_name</td>
-                           <td>@item.pay_matrix</td>
-                           <td>@item.post_class</td>
-                           <td>@item.post_nature</td>
-                           <td>@item.initial_place</td>
-                           
-                            <td>@item.office_department</td>
-                             <td><strong>
-                                        
-                                    
-                                            <span class="text" style="color:green">Approved </span>
-                                        
+            <div class="row mg-b-25">
+                <div class="col-lg-6">
+                    <div class="form-group">
+<select id="select2" class="form-control select2"  data-placeholder="Choose Branch">
+                                        <option value=" ">Select an option</option>
                                        
-                                      
+                                            <option value="phase_name"> phase_name</option>
+                                        
+                                    </select>
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700"><input type='file' class="form-control" type="text" /></label>
+                        
 
-                        </strong></td>
-                        <td>
-                            <div class="modal-bootstrap modal-login-form">
-                           
-                                       
-                                             
-                                             <a class="zoomInDown mg-t btn btn-red" href="#">Upload Candidate </a>
-
-               
-
-                            </div>
-                            <!-- BASIC MODAL -->
-
-                        </td>      
-
-
-
-                    </tr>
-                    }
-                    }
+                    </div>
                    
-                </tbody>
-
-      </table>
-        </div><!-- bd -->
-
-
+              
+            </div><!-- row -->
+             
+                   
 
 
     </div><!-- br-section-wrapper -->
+    <div class="row mg-b-25">
+     <div class="form-layout-footer">
+                            @*                               <a href="/US1approval/approval"><button class="btn btn-red">Approved</button></a>
+                            *@
+                            <button class="btn btn-red" style="cursor:pointer">Submit</button>
+                            <button class="btn btn-secondary" style="cursor:pointer">Cancel</button>
+                        </div><!-- form-layout-footer -->
+                        </div><!-- form-layout-footer -->
+
+   
 </div><!-- br-pagebody -->
-<!-- ########## END: MAIN PANEL ########## -->
+  
 
 
-<script src="lib/jquery/jquery.js"></script>
-<script src="lib/popper.js/popper.js"></script>
-<script src="lib/bootstrap.js"></script>
-<script src="lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-<script src="lib/moment/moment.js"></script>
-<script src="lib/jquery-ui/jquery-ui.js"></script>
-<script src="lib/jquery-switchbutton/jquery.switchButton.js"></script>
-<script src="lib/peity/jquery.peity.js"></script>
-<script src="lib/highlightjs/highlight.pack.js"></script>
-<script src="lib/jquery.dataTables.js"></script>
-<script src="lib/dataTables.responsive.js"></script>
-<script src="lib/select2/js/select2.min.js"></script>
+</div>
 
-<script src="js/bracket.js"></script>
-<script>
-    $(function(){
-      'use strict';
-
-      $('#datatable1').DataTable({
-        responsive: true,
-        language: {
-          searchPlaceholder: 'Search...',
-          sSearch: '',
-          lengthMenu: '_MENU_ items/page',
-        }
-      });
-
-      $('#datatable2').DataTable({
-        bLengthChange: false,
-        searching: false,
-        responsive: true
-      });
-
-      // Select2
-      $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
-
-    });
-</script>
-
-
-
-<script>
-    $(function(){
-      'use strict'
-
-      // FOR DEMO ONLY
-      // menu collapsed by default during first page load or refresh with screen
-      // having a size between 992px and 1299px. This is intended on this page only
-      // for better viewing of widgets demo.
-      $(window).resize(function(){
-        minimizeMenu();
-      });
-
-      minimizeMenu();
-
-      function minimizeMenu() {
-        if(window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
-          // show only the icons and hide left menu label by default
-          $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
-          $('body').addClass('collapsed-menu');
-          $('.show-sub + .br-menu-sub').slideUp();
-        } else if(window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
-          $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
-          $('body').removeClass('collapsed-menu');
-          $('.show-sub + .br-menu-sub').slideDown();
-        }
-      }
-    });
-</script>
+</div>
