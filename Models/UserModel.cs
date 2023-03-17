@@ -12,7 +12,7 @@ namespace ssc.Models
         //[Display(Prompt = "Password")]
         public string? Password { get; set; }
 
-        public string? phases { get; set; }
+        public string? phase { get; set; }
 
         public string? post { get; set; }
 

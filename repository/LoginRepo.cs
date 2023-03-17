@@ -65,6 +65,7 @@ namespace ssc.repository
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserName", model.UserName);
                     cmd.Parameters.AddWithValue("@Password", model.Password);
+                    cmd.Parameters.AddWithValue("@phase", model.phase);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     //int xdvf = cmd.ExecuteNonQuery();

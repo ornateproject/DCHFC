@@ -20,17 +20,17 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var sdffgd = "sdfsdgf";
+           
             return View();
 
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(managepost model)
+        public async Task<IActionResult> Index(UserModel model)
         {
             if (ModelState.IsValid)
             {
-                var result = _login.LoginCheck(model.loginuser);
+                var result = _login.LoginCheck(model);
                 if (result.Rows.Count > 0)
                 {
                     HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
