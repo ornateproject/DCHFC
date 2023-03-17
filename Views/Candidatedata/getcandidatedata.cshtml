@@ -1,188 +1,152 @@
-﻿@model ssc.Models.ManageDepreg
+﻿@model List<DeptRegistration>;
+
 @*
-For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
 
 
+
+
 <div class="br-pageheader pd-y-15 pd-l-20">
-  <nav class="breadcrumb pd-0 mg-0 tx-12">
-    <a class="breadcrumb-item" href="US1.html">Dashboard</a>
-    <span class="breadcrumb-item active"> Upload Data</span>
-  </nav>
+    <nav class="breadcrumb pd-0 mg-0 tx-12">
+        <a class="breadcrumb-item" href="US1.html">US</a>
+        <span class="breadcrumb-item active">Registration</span>
+    </nav>
 </div><!-- br-pageheader -->
 <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
-  <h4 class="tx-gray-800 mg-b-5"> Upload Data</h4>
+    <h4 class="tx-gray-800 mg-b-5">Candidate Data</h4>
 
 </div>
 
 <div class="br-pagebody">
-  <div class="br-section-wrapper">
-    <!-- d-flex -->
-    <div class="table-wrapper rounded table-responsive">
-        <div>
-      <table id="datatable1" class="table display responsive nowrap">
-        <thead>
-          <tr>
-            <th>Sr No.</th>
-            <th>Post Id</th>
-            <th>Post Name</th>
-            <th>Department</th>
-           <th>Name</th>
-            <th>Registration</th>
-           
-          </tr>
-        </thead>
-        <tbody>
+    <div class="br-section-wrapper">
+        <!-- d-flex -->
+        <div class="table-wrapper rounded table-responsive">
+            <table id="datatable1" class="table display responsive nowrap">
+                <thead>
+                    <tr>
+                        <th>Sr No.</th>
+                        <th>Post_Id</th>
+                        <th>post_name</th>
+                        <th>Department</th>
+                        <th>Name</th>
+                        <th>Nodal officer Doc upload</th>
+                        <th>Status</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
 
 
-          <tr>
-            <th scope="row">ID</th>
-            <td>Roll NO</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td>
-                xyz
-             <td>
-              <div class="modal-bootstrap modal-login-form">
-                            
-             <a class="zoomInDown mg-t btn btn-red" style="color:black; cursor:pointer">View Details</a>
-                                          
-                                       
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Department</td>
+                        <td>Name</td>
+                        <td>Mobile_no</td>
+                        <td>Email</td>
+                        <td><a target="_blank" href="~/pdf/Doc_path"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>Upload_doc</td>
+                        @*<td><a href="#"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a></td>*@
+                        <td>
+                        </td>
+                        <td>
+                            <div class="modal-bootstrap modal-login-form">
+
+                                <a class="zoomInDown mg-t btn btn-red" href="/US1_pendingapproval/index/ID">View Details</a>
+
+
                             </div>
                             <!-- BASIC MODAL -->
 
                         </td>
 
-
-          </tr>
-           <tr>
-            <th scope="row">ID</th>
-            <td>Roll NO</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td><strong>
-                <span class="text"><input  class="myCheckbox" type="checkbox" id="myCheckbox"/></span>
-              </strong></td>
-            <td>
-              <div class="modal-bootstrap modal-login-form">
-                <input type="file" class="" id="myFileUpload" onChange="validatePDF(this)" id="customFile" disabled accept=".pdf" />
-              </div>
-              <!-- BASIC MODAL -->
-
-            </td>
-
-          </tr>
-
-        </tbody>
-
-      </table>
-    </div><!-- bd -->
-
-    </div>
+                    </tr>
 
 
-  </div><!-- br-section-wrapper -->
+
+
+
+                </tbody>
+
+            </table>
+        </div><!-- bd -->
+
+
+
+
+    </div><!-- br-section-wrapper -->
 </div><!-- br-pagebody -->
 <!-- ########## END: MAIN PANEL ########## -->
 
 
-<script src="~/lib/jquery/jquery.js"></script>
-<script src="~/lib/popper.js/popper.js"></script>
-<script src="~/lib/bootstrap.js"></script>
-<script src="~/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-<script src="~/lib/moment/moment.js"></script>
-<script src="~/lib/jquery-ui/jquery-ui.js"></script>
-<script src="~/lib/jquery-switchbutton/jquery.switchButton.js"></script>
-<script src="~/lib/peity/jquery.peity.js"></script>
-<script src="~/lib/highlightjs/highlight.pack.js"></script>
-<script src="~/lib/jquery.dataTables.js"></script>
-<script src="~/lib/dataTables.responsive.js"></script>
-<script src="~/lib/select2/js/select2.min.js"></script>
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/popper.js/popper.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+<script src="lib/moment/moment.js"></script>
+<script src="lib/jquery-ui/jquery-ui.js"></script>
+<script src="lib/jquery-switchbutton/jquery.switchButton.js"></script>
+<script src="lib/peity/jquery.peity.js"></script>
+<script src="lib/highlightjs/highlight.pack.js"></script>
+<script src="lib/jquery.dataTables.js"></script>
+<script src="lib/dataTables.responsive.js"></script>
+<script src="lib/select2/js/select2.min.js"></script>
 
-<script src="~/js/bracket.js"></script>
+<script src="js/bracket.js"></script>
 <script>
-  $(function () {
-    'use strict';
+    $(function () {
+        'use strict';
 
-    $('#datatable1').DataTable({
-      responsive: true,
-      language: {
-        searchPlaceholder: 'Search...',
-        sSearch: '',
-        lengthMenu: '_MENU_ items/page',
-      }
+        $('#datatable1').DataTable({
+            responsive: true,
+            "bDestroy": true
+                language: {
+                searchPlaceholder: 'Search...',
+                sSearch: '',
+                lengthMenu: '_MENU_ items/page',
+            }
+        });
+
+        $('#datatable2').DataTable({
+            bLengthChange: false,
+            searching: false,
+            responsive: true
+        });
+
+        // Select2
+        $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
+
     });
-
-    $('#datatable2').DataTable({
-      bLengthChange: false,
-      searching: false,
-      responsive: true
-    });
-
-    // Select2
-    $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
-
-  });
 </script>
 
 
 
 <script>
-  $(function () {
-    'use strict'
+    $(function () {
+        'use strict'
 
-    // FOR DEMO ONLY
-    // menu collapsed by default during first page load or refresh with screen
-    // having a size between 992px and 1299px. This is intended on this page only
-    // for better viewing of widgets demo.
-    $(window).resize(function () {
-      minimizeMenu();
+        // FOR DEMO ONLY
+        // menu collapsed by default during first page load or refresh with screen
+        // having a size between 992px and 1299px. This is intended on this page only
+        // for better viewing of widgets demo.
+        $(window).resize(function () {
+            minimizeMenu();
+        });
+
+        minimizeMenu();
+
+        function minimizeMenu() {
+            if (window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
+                // show only the icons and hide left menu label by default
+                $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
+                $('body').addClass('collapsed-menu');
+                $('.show-sub + .br-menu-sub').slideUp();
+            } else if (window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
+                $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
+                $('body').removeClass('collapsed-menu');
+                $('.show-sub + .br-menu-sub').slideDown();
+            }
+        }
     });
-
-    minimizeMenu();
-
-    function minimizeMenu() {
-      if (window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
-        // show only the icons and hide left menu label by default
-        $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
-        $('body').addClass('collapsed-menu');
-        $('.show-sub + .br-menu-sub').slideUp();
-      } else if (window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
-        $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
-        $('body').removeClass('collapsed-menu');
-        $('.show-sub + .br-menu-sub').slideDown();
-      }
-    }
-  });
-const checkboxes = document.querySelectorAll('.myCheckbox');
-const fileUploads = document.querySelectorAll('input[type="file"]');
-
-checkboxes.forEach(function(checkbox, index) {
-  checkbox.addEventListener('change', function() {
-    if (checkbox.checked) {
-      fileUploads[index].disabled = false;
-    } else {
-      fileUploads[index].disabled = true;
-    }
-  });
-});
-
- function validatePDF(input) {
-  // Get the uploaded file object
-  var file = input.files[0];
-
-  // Check if the file is a PDF and has a valid type
-  //if (file.type == "application/pdf") {
-  //  // Do something to validate the PDF, such as checking its metadata
-  //  alert("PDF is valid!");
-  //} 
-  if(file.type!="application/pdf") {
-    // Show an error message if the file is not a valid PDF
-    alert("Please select a valid PDF file!");
-    // Clear the input field to prevent further submission
-    input.value = null;
-  }
-}
 </script>

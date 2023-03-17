@@ -1,0 +1,120 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ssc.Models.DeptRegistration
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="br-pageheader pd-y-15 pd-l-20">
+    <nav class="breadcrumb pd-0 mg-0 tx-12">
+        <a class="breadcrumb-item" href="US1.html">Dashboard</a>
+        <span class="breadcrumb-item active">Candidate Data</span>
+    </nav>
+</div><!-- br-pageheader -->
+<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+    <h4 class="tx-gray-800 mg-b-5">Candidate Data</h4>
+
+</div>
+
+<div class="br-pagebody">
+    <div class="br-section-wrapper">
+
+        <div class="form-layout form-layout-1">
+
+            <div class="row mg-b-25">
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Sr.No: <span class="tx-danger">*</span></label>
+                        
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Registration number: <span class="tx-danger">*</span></label>
+                        
+
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Name: <span class="tx-danger">*</span></label>
+                      
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">DOB: <span class="tx-danger">*</span></label>
+                      
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Email: <span class="tx-danger">*</span></label>
+
+
+                    </div>
+                </div>
+             
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Mobile No: <span class="tx-danger">*</span></label>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Adress: <span class="tx-danger">*</span></label>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Document: <span class="tx-danger">*</span></label>
+                        <a target="_blank" href="~/pdf/"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>
+
+                    </div>
+                </div>
+                <!-- col-4 -->
+
+                <div class="row mg-b-25">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label tx-gray-700">Remark: <span class="tx-danger"></span></label>
+                            <textarea id="w3review" name="w3review" rows="4" cols="132"></textarea>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div><!-- row -->
+
+            <div class="form-layout-footer text-center" "=" ">
+               
+                <a href="@Url.Action("Approve", "US1_pendingapproval", new{})"><button class="btn btn-success" style="cursor:pointer">Approve</button></a>
+
+
+
+                <a href="@Url.Action("Reject", "US1_pendingapproval", new{})"><button class="btn btn-red" style="cursor:pointer">Reject</button></a>
+                
+                <a href="@Url.Action("Index", "US")"><button class="btn btn-secondary" style="cursor:pointer">Cancel</button></a>
+            </div><!-- form-layout-footer -->
+        </div><!-- form-layout -->
+
+
+
+
+    </div><!-- br-section-wrapper -->
+</div><!-- br-pagebody -->

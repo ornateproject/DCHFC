@@ -19,5 +19,9 @@ namespace ssc.Controllers
         {
             return View();
         }
+        public IActionResult getcandidatedatadept()
+        {
+            return View();
+        }
     }
 }
