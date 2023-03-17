@@ -11,7 +11,7 @@ namespace ssc.Controllers
 
 
         [HttpGet]
-        public IActionResult candidatemts()
+        public IActionResult candidate()
         {
             return View();
         }

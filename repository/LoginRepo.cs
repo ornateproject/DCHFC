@@ -35,6 +35,25 @@ namespace ssc.repository
               
         }
 
+        public string selection_post()
+        {
+
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[post_selection]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                    sda.Fill(dt);
+                    con.Close();
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
+        }
         public DataTable userlogin(UserModel model)
         {
             DataTable dt = new DataTable();

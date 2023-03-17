@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ssc.Models;
 using ssc.repository;
 
@@ -19,19 +20,24 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var phase = _login.selection_post();
+            managepost manageDepreg = new managepost();
+            manageDepreg.phase_post = JsonConvert.DeserializeObject<List<phase>>(phase);
+            return View(manageDepreg);
+           
         }
 
         [HttpPost]
-        public async Task <IActionResult> Index(UserModel model)
+        public async Task <IActionResult> Index(managepost model)
         {
             if (ModelState.IsValid)
             {
-                var result = _login.LoginCheck(model);
+                var result = _login.LoginCheck(model.loginuser);
                 if (result.Rows.Count>0)
                 {
                     HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
                     HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["usertype"]));
+                    //HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["usertype"]));
                     //HttpContext.Session.SetString("emp_name", Convert.ToString(dt.Rows[0][1]));
                     //HttpContext.Session.SetString("emp_email", Convert.ToString(dt.Rows[0][2]));
                     return RedirectToAction("dashboard", "US");
