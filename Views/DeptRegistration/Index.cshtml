@@ -150,13 +150,11 @@
                                 <label class="form-control-label tx-gray-700">Reg For: <span class="tx-danger"></span></label>
 
 
-                                <select id="select1" name="ID" asp-for="depreg.post" class="form-control select2" data-placeholder="Choose1 Branch">
+                                <select asp-for="depreg.post" class="form-control select2" data-placeholder="Choose1 Branch">
                                     <option value="">Select</option>
                                     <option value="MTS">MTS</option>
                                     <option value="selectionpost">selectionpost</option>
                                 </select>
-
-
 
 
                             </div>
@@ -180,9 +178,6 @@
                                         }
                                     </select>
                                 </div>
-
-
-
 
                             </div>
                         </div>
@@ -317,7 +312,7 @@
 
 
         
-        $("#select1").change(function() {
+        $("#depreg_post").change(function() {
 
                  var applied = $('option:selected', this).val();
 

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ssc.Models;
+using ssc.repository;
 using System.Diagnostics;
 
 namespace ssc.Controllers
@@ -7,16 +9,20 @@ namespace ssc.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly LoginRepo _login;
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _login = new LoginRepo(configuration);
         }
 
         public IActionResult Index()
         {
             //var active_tab = TempData["tab"];
-            return View();
+            var phases = _login.selection_post();
+            ManageDepreg manageDepreg = new ManageDepreg();
+            manageDepreg.phases_post = JsonConvert.DeserializeObject<List<phases>>(phases);
+            return View(manageDepreg);
         }
 
         public IActionResult Privacy()

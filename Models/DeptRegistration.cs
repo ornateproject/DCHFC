@@ -73,10 +73,10 @@ namespace ssc.Models
         public string? phase_name { get; set; }
     }
     public class ManageDepreg
-        {
+    {
             public List<ministry>? Ministries { get; set; }
             public DeptRegistration? depreg { get; set; }
-
+        public UserModel? loginuser { get; set; }
         public List<phases>? phases_post { get; set; }
 
     }

@@ -1,4 +1,4 @@
-﻿@model ssc.Models.UserModel
+﻿@model ssc.Models.ManageDepreg
 @{
     ViewData["Title"] = "Home Page";
 	Layout=null;
@@ -226,7 +226,7 @@ a:hover {color: rgba(0,0,0,.2)}
 <input type="radio" id="posts" value="3" name="tractor" />
 <input type="radio" id="books" value="4" name="tractor" />
 <input type="radio" id="books1" value="4" name="tractor"  checked=@TempData["tab"]=="US"? 'checked':'' /> 
-<input type="radio" id="books2" value="4" name="tractor" /> 
+<input type="radio" id="books2" value="4" name="tractor"  checked=@TempData["tab"]=="user department"? 'checked':''/> 
  
   <nav>  
    <div class="text-center pd-y-10"><img src="~/img/logo.jpg" class="img-fluid"></div> 
@@ -250,11 +250,11 @@ a:hover {color: rgba(0,0,0,.2)}
               <h6 class="tx-gray-800 tx-uppercase tx-bold mg-b-25 text-center">Admin (RD)</h6>
              
               <div class="form-group">
-                <input asp-for="UserName" class="form-control pd-y-12" placeholder="Username" id="full_name">
+                <input asp-for="loginuser.UserName" class="form-control pd-y-12" placeholder="Username" id="full_name">
               </div><!-- form-group -->
 
               <div class="form-group">
-                <input type="password" asp-for="Password" class="form-control pd-y-12" placeholder="Password" id="password">
+                <input type="password" asp-for="loginuser.Password" class="form-control pd-y-12" placeholder="Password" id="password">
               </div><!-- form-group -->
 				
 			
@@ -282,11 +282,11 @@ a:hover {color: rgba(0,0,0,.2)}
              <h6 class="tx-gray-800 tx-uppercase tx-bold mg-b-25 text-center">US</h6>
              
               <div class="form-group">
-                <input asp-for="UserName" class="form-control pd-y-12" placeholder="Username" id="full_namev">
+                <input asp-for="loginuser.UserName" class="form-control pd-y-12" placeholder="Username" id="full_namev">
               </div><!-- form-group -->
 
               <div class="form-group">
-                <input type="password" asp-for="Password" class="form-control pd-y-12" placeholder="Password" id="passwordv">
+                <input type="password" asp-for="loginuser.Password" class="form-control pd-y-12" placeholder="Password" id="passwordv">
               </div><!-- form-group -->
 
              <!-- <div class="form-group"><a href="#" class="tx-12">Forgot password?</a></div>-->
@@ -317,14 +317,14 @@ a:hover {color: rgba(0,0,0,.2)}
              <h6 class="tx-gray-800 tx-uppercase tx-bold mg-b-25 text-center">User Department</h6>
              
               <div class="form-group">
-                <input asp-for="UserName" class="form-control pd-y-12" placeholder="Username" id="full_name2">
+                <input asp-for="loginuser.UserName" class="form-control pd-y-12" placeholder="Username" id="full_name2">
               </div><!-- form-group -->
 
               <div class="form-group">
-                <input type="password" asp-for="Password" class="form-control pd-y-12" placeholder="Password" id="password2">
+                <input type="password" asp-for="loginuser.Password" class="form-control pd-y-12" placeholder="Password" id="password2">
               </div><!-- form-group -->
               <div class="form-group">
-                <select id="select1" name="ID" asp-for="post"  class="form-control select2"  data-placeholder="Choose1 Branch">
+                <select  asp-for="loginuser.post"  class="form-control select2"  data-placeholder="Choose1 Branch">
   <option value="">Selectet</option>
   <option value="MTS">MTS</option>
   <option value="selectionpost">selectionpost</option>
@@ -337,21 +337,17 @@ a:hover {color: rgba(0,0,0,.2)}
   
   
 </div>
+ <div id="select2-field" style="display: none;">
 
-<div id="select2-field" style="display: none;">
-
-  <select id="select2" class="form-control select2"  asp-for="phases" data-placeholder="Choose Branch">
-    <option value="" >Select an option</option>
-     
-         @*  @foreach (var item in Model.phase_post)
-                                    {
-                                     <option value="@item.phase_name"> @item.phase_name</option>   
-                                    }*@
-
-     
-  </select>
- 
-</div>
+                                    <select id="select2" class="form-control select2" asp-for="loginuser.phase" data-placeholder="Choose Branch">
+                                        <option value=" ">Select an option</option>
+                                      
+                                        @foreach (var item in Model.phases_post)
+                                        {
+                                            <option value="@item.phase_name"> @item.phase_name</option>
+                                        }
+                                    </select>
+                                </div>
 
 
                            
@@ -362,11 +358,10 @@ a:hover {color: rgba(0,0,0,.2)}
               <div class="form-group"><a href="ForgetPassword.html" class="tx-12">Forgot password?</a></div>
 
               <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" id="btnlog2">Login</button>
-				@if (!string.IsNullOrEmpty(Convert.ToString(@TempData["error"])))
-				{
-					<h6 style="color:red;" class="danger">@TempData["error"]</h6>
-				}
-		
+					@if (!string.IsNullOrEmpty(Convert.ToString(@TempData["error"])))
+						{
+							<h6 style="color:red;" class="danger">@TempData["error"]</h6>
+						}
 		      <div class="form-group"><a href="/DeptRegistration/index" class="tx-12">Department Registration</a></div>
             
       </form>
@@ -391,7 +386,7 @@ a:hover {color: rgba(0,0,0,.2)}
     <script src="~/lib/select2/js/select2.min.js"></script>
 
     <script>
-        $("#select1").change(function() {
+        $("#loginuser_post").change(function() {
 
                  var applied = $('option:selected', this).val();
 
@@ -409,7 +404,8 @@ a:hover {color: rgba(0,0,0,.2)}
           }
         })
 
-
+          
+       
 
     </script>
   </body>

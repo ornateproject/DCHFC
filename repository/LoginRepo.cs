@@ -35,25 +35,25 @@ namespace ssc.repository
               
         }
 
-        //public string selection_post()
-        //{
+        public string selection_post()
+        {
 
-        //    DataTable dt = new DataTable();
-        //    using (SqlConnection con = new SqlConnection(connectionString))
-        //    {
-        //        using (SqlCommand cmd = new SqlCommand("[sscpost].[post_selection]", con))
-        //        {
-        //            cmd.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[post_selection]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-        //            con.Open();
-        //            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
-        //            sda.Fill(dt);
-        //            con.Close();
-        //        }
-        //    }
-        //    return JsonConvert.SerializeObject(dt);
-        //}
+                    sda.Fill(dt);
+                    con.Close();
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
+        }
         public DataTable userlogin(UserModel model)
         {
             DataTable dt = new DataTable();
@@ -65,10 +65,13 @@ namespace ssc.repository
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserName", model.UserName);
                     cmd.Parameters.AddWithValue("@Password", model.Password);
-                    cmd.Parameters.AddWithValue("@phase", model.phases);
+                    cmd.Parameters.AddWithValue("@phase", model.phase);
+                    
+                  
+                    cmd.Parameters.AddWithValue("@loginfor", model.post);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    //int xdvf = cmd.ExecuteNonQuery();
+                    int xdvf = cmd.ExecuteNonQuery();
                     sda.Fill(dt);
                     con.Close();
                 }

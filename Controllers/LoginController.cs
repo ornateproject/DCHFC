@@ -26,11 +26,11 @@ namespace ssc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(UserModel model)
+        public async Task<IActionResult> Index(ManageDepreg model)
         {
             if (ModelState.IsValid)
             {
-                var result = _login.LoginCheck(model);
+                var result = _login.LoginCheck(model.loginuser);
                 if (result.Rows.Count > 0)
                 {
                     HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
@@ -52,24 +52,29 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult login()
         {
-            return View();
+            var phases = _login.selection_post();
+            ManageDepreg manageDepreg = new ManageDepreg();
+            manageDepreg.phases_post = JsonConvert.DeserializeObject<List<phases>>(phases);
+            return View(manageDepreg);
         }
 
         [HttpPost]
-        public async Task<IActionResult> login(UserModel model)
+        public async Task<IActionResult> login(ManageDepreg model)
         {
             if (ModelState.IsValid)
             {
-                var result = _login.userlogin(model);
+                var result = _login.userlogin(model.loginuser);
                 if (result.Rows.Count > 0)
                 {
                     HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
                     HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["UserType"]));
                     // return RedirectToAction("us2", "US2");
+                    HttpContext.Session.SetString("department", Convert.ToString(result.Rows[0]["department"]));
+                    HttpContext.Session.SetString("reg_id", Convert.ToString(result.Rows[0]["reg_id"]));
                     return RedirectToAction("dashboard", "US");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
-                TempData["tab"] = "US2";
+                TempData["tab"] = "user department";
                 return RedirectToAction("Index", "Home");
             }
 

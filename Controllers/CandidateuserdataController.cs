@@ -24,7 +24,7 @@ namespace ssc.Controllers
             var usdata = _us2repo.get_deparment(id);
 
             List<UserDepartment> dept = JsonConvert.DeserializeObject<List<UserDepartment>>(usdata);
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+           // ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (var excelPackage = new ExcelPackage())
             {
                 //var p = new ExcelPackage();

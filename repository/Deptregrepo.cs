@@ -24,7 +24,6 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             try
             {
-
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand("[sscpost].[Reg_record]", con))

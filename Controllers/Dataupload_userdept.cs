@@ -10,23 +10,33 @@ namespace ssc.Controllers
     public class Dataupload_userdept : Controller
     {
 
-        private readonly uploaduserdata_repo _us2repo;
+        private readonly uploaduserdata_repo _uploadrepo;
         public Dataupload_userdept(IConfiguration configuration)
         {
-            _us2repo = new uploaduserdata_repo(configuration);
+            _uploadrepo = new uploaduserdata_repo(configuration);
 
         }
 
         [HttpGet]
-        public IActionResult uploaduserdata()
+        public IActionResult uploaduserdata( )
         {
-            var usdata = _us2repo.get_deparment();
-            List<UserDepartment> dept = new List<UserDepartment>();
-            dept = JsonConvert.DeserializeObject<List<UserDepartment>>(usdata);
-
-            return View(dept);
+            
+            return View();
             
         }
+
+        [HttpPost]
+        public async Task<IActionResult> uploaduserdata(uploadcandidate model)
+        {
+            if (ModelState.IsValid)
+            {
+                var asd = _uploadrepo.InsertpostData(model);
+            }
+            
+            return View();
+
+        }
+
 
 
     }
