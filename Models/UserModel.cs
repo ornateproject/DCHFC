@@ -12,24 +12,24 @@ namespace ssc.Models
         //[Display(Prompt = "Password")]
         public string? Password { get; set; }
 
-        public string? phase { get; set; }
-        
+            
         public string? post { get; set; }
 
+        public string? phase { get; set; }
         public string? Year { get; set; }
         public string? loginfor { get; set; }
 
     }
-    public class phase
-    {
-        public int? id { get; set; }
+    //public class phase
+    //{
+    //    public int? id { get; set; }
 
-        public string? phase_name { get; set; }
-    }
-    public class managepost
-    {
-        public UserModel? loginuser { get; set; }
+    //    public string? phase_name { get; set; }
+    //}
+    //public class managepost
+    //{
+    //    public UserModel? loginuser { get; set; }
 
-      public List<phase>? phases_post { get; set; }
-    }
+    //  public List<phase>? phases_post { get; set; }
+    //}
 }

@@ -1,4 +1,4 @@
-﻿@model ssc.Models.managepost
+﻿@model ssc.Models.ManageDepreg
 @{
     ViewData["Title"] = "Home Page";
 	Layout=null;
@@ -226,7 +226,7 @@ a:hover {color: rgba(0,0,0,.2)}
 <input type="radio" id="posts" value="3" name="tractor" />
 <input type="radio" id="books" value="4" name="tractor" />
 <input type="radio" id="books1" value="4" name="tractor"  checked=@TempData["tab"]=="US"? 'checked':'' /> 
-<input type="radio" id="books2" value="4" name="tractor" /> 
+<input type="radio" id="books2" value="4" name="tractor"  checked=@TempData["tab"]=="user department"? 'checked':''/> 
  
   <nav>  
    <div class="text-center pd-y-10"><img src="~/img/logo.jpg" class="img-fluid"></div> 
@@ -337,21 +337,17 @@ a:hover {color: rgba(0,0,0,.2)}
   
   
 </div>
+ <div id="select2-field" style="display: none;">
 
-<div id="select2-field" style="display: none;">
-
-  <select id="select2" class="form-control select2"  asp-for="loginuser.phase" data-placeholder="Choose Branch">
-    <option value="" >Select an option</option>
-     <option value="phase11" >phase11</option>
-     <option value="phase12" >phase12</option>
-         @*@foreach (var result in Model.phase_post)
+                                    <select id="select2" class="form-control select2" asp-for="loginuser.phase" data-placeholder="Choose Branch">
+                                        <option value=" ">Select an option</option>
+                                      
+                                        @foreach (var item in Model.phases_post)
                                         {
-                                            <option value="@result.phase_name"> @result.phase_name</option>
+                                            <option value="@item.phase_name"> @item.phase_name</option>
                                         }
-     *@
-  </select>
- 
-</div>
+                                    </select>
+                                </div>
 
 
                            
@@ -408,7 +404,8 @@ a:hover {color: rgba(0,0,0,.2)}
           }
         })
 
-
+          
+       
 
     </script>
   </body>
