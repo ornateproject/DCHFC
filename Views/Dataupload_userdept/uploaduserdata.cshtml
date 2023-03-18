@@ -1,5 +1,5 @@
 ﻿
-@model ssc.Models.uploadcandidate
+@model ssc.Models.ManageDepreg
 
 <form asp-controller=Dataupload_userdept asp-action="uploaduserdata" enctype="multipart/form-data">
 <div class="br-pageheader pd-y-15 pd-l-20">
@@ -21,17 +21,20 @@
             <div class="row mg-b-25">
                 <div class="col-lg-6">
                     <div class="form-group">
-<select id="select2" class="form-control select2"  asp-for="post" data-placeholder="Choose Branch">
-                                        <option value=" ">Select an option</option>
-                                       
-                                            <option value="phase11"> phase11</option>
-                                        
-                                    </select>
+<select id="select2" class="form-control select2"  asp-for="upload_data.post" data-placeholder="Choose Branch">
+                                         <option value=" ">Select an option</option>
+                                      
+                                        @foreach (var item in Model.phases_post)
+                                        {
+                                            <option value="@item.phase_name"> @item.phase_name</option>
+                                          
+                                        }
+                                          </select>
                     </div>
                 </div><!-- col-4 -->
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700"><input type='file' class="form-control" asp-for="Upload_doc"></label>
+                        <label class="form-control-label tx-gray-700"><input type='file' class="form-control" asp-for="upload_data.Upload_doc"></label>
                         
 
                     </div>

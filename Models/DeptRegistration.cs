@@ -78,6 +78,7 @@ namespace ssc.Models
             public DeptRegistration? depreg { get; set; }
         public UserModel? loginuser { get; set; }
         public List<phases>? phases_post { get; set; }
+        public uploadcandidate? upload_data { get; set; }
 
     }
 
