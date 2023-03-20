@@ -88,11 +88,31 @@ namespace ssc.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> logincandidate(ManageDepreg model)
+        {
+            if (ModelState.IsValid)
+            {
+               var result = _login.candidatelogin(model.loginuser);
+                if (result.Rows.Count > 0)
+                {
+                    HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
+                    HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["UserType"]));
+
+                    return RedirectToAction("logincandidate", "Login");
+                }
+                return RedirectToAction("logincandidate", "Login");
+
+            }
+            return RedirectToAction("logincandidate", "Login");
+        }
+
         [HttpGet]
         public IActionResult usview()
         {
             return View();
         }
 
+       
     }
 }

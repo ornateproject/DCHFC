@@ -34,9 +34,9 @@
                 </div><!-- col-4 -->
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700"><input type='file' class="form-control" asp-for="upload_data.Upload_doc"></label>
+                        <label class="form-control-label tx-gray-700">
+                         <input type='file' class="form-control" id="excelFileInput"  asp-for="upload_data.Upload_doc" accept=".xlsx, .xls" onchange="validateExcelFile()"> </label>
                         
-
                     </div>
                    
               
@@ -64,3 +64,18 @@
 
 </div>
 </form>
+<script>
+
+
+    function validateExcelFile() {
+    const fileInput = document.getElementById('excelFileInput');
+    const fileName = fileInput.value;
+    const allowedExtensions = /(\.xlsx|\.xls)$/i;
+
+    if (!allowedExtensions.exec(fileName)) {
+        alert('Invalid file type. Only Excel files are allowed.');
+        fileInput.value = '';
+    }
+}
+
+</script>
