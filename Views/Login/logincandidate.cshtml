@@ -3,7 +3,7 @@
 }
 @model ssc.Models.ManageDepreg
 @{
-    ViewData["Title"] = "Login Page";
+    //ViewData["Title"] = "Login Page";
     Layout = null;
 
 }
@@ -314,15 +314,15 @@
 
         <article class='dos1 abc3'>
             <div class="dropdown-menu bg-white pd-20 pd-xs-40 wd-xs-550 pos-static ft-none shadow-base show">
-                <form asp-controller="Login" asp-action="Index">
+                <form asp-controller="Login" asp-action="logincandidate">
                     <h6 class="tx-gray-800 tx-uppercase tx-bold mg-b-25 text-center">Candidate Login</h6>
 
                     <div class="form-group">
-                        <input asp-for="loginuser.UserName" class="form-control pd-y-12" placeholder="Registration Number" id="full_namev">
+                        <input asp-for="candidatelogin.Reg_no" class="form-control pd-y-12" placeholder="Registration Number" id="full_namev">
                     </div><!-- form-group -->
 
                     <div class="form-group">
-                        <input type="text" asp-for="loginuser.Password" class="form-control pd-y-12" placeholder="Date Of Birth" >
+                        <input type="text" asp-for="candidatelogin.DOB" class="form-control pd-y-12" placeholder="Date Of Birth" >
                     </div><!-- form-group -->
                     <!-- <div class="form-group"><a href="#" class="tx-12">Forgot password?</a></div>-->
 
