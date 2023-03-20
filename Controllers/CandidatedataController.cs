@@ -27,7 +27,15 @@ namespace ssc.Controllers
             return View(dept);
         }
 
-      
+        [HttpGet]
+        public IActionResult usview()
+        {
+            var usdata = _candidaterepo.get_postdata();
+            List<getpost> dept = new List<getpost>();
+            dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
+            return View(dept);
+           
+        }
         public IActionResult getcandidatedata()
         {
             return View();
@@ -36,5 +44,13 @@ namespace ssc.Controllers
         {
             return View();
         }
+
+        public IActionResult getcandidatelist()
+        {
+            return View();
+        }
+        public IActionResult getuscandidatelist()
+        {
+            return View();
+        }
     }
-}

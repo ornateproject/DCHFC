@@ -108,11 +108,7 @@ namespace ssc.Controllers
             return RedirectToAction("logincandidate", "Login");
         }
 
-        [HttpGet]
-        public IActionResult usview()
-        {
-            return View();
-        }
+        
 
         [HttpGet]
         public IActionResult usviewback()
