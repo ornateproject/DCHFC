@@ -113,6 +113,11 @@ namespace ssc.Controllers
             return View();
         }
 
-       
+        [HttpGet]
+        public IActionResult usviewback()
+        {
+            return View();
+        }
+
     }
 }
