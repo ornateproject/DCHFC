@@ -20,6 +20,14 @@ namespace ssc.Models
         public string? loginfor { get; set; }
 
     }
+
+    public class candidate
+    {
+        public string? Reg_no { get; set; }
+
+        public string? DOB { get; set; }
+
+    }
     //public class phase
     //{
     //    public int? id { get; set; }

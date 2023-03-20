@@ -93,25 +93,22 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
-               var result = _login.candidatelogin(model.loginuser);
+               var result = _login.candidatelogin(model.candidatelogin);
                 if (result.Rows.Count > 0)
                 {
-                    HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
-                    HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["UserType"]));
+                    HttpContext.Session.SetString("Reg_no", Convert.ToString(result.Rows[0]["Reg_no"]));
+                    HttpContext.Session.SetString("DOB", Convert.ToString(result.Rows[0]["DOB"]));
 
-                    return RedirectToAction("logincandidate", "Login");
+                    return RedirectToAction("dashboard", "US");
                 }
+                TempData["error"] = "Please Enter Valid User Name And Password";
+                TempData["tab"] = "US";
                 return RedirectToAction("logincandidate", "Login");
-
             }
             return RedirectToAction("logincandidate", "Login");
         }
 
-        [HttpGet]
-        public IActionResult usview()
-        {
-            return View();
-        }
+        
 
         [HttpGet]
         public IActionResult usviewback()

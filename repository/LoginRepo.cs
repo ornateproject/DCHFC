@@ -79,17 +79,17 @@ namespace ssc.repository
         }
 
 
-        public DataTable candidatelogin(UserModel model)
+        public DataTable candidatelogin(candidate model)
         {
             DataTable dt = new DataTable();
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[loginpage]", con))
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[candidatelogin]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@UserName", model.UserName);
-                    cmd.Parameters.AddWithValue("@Password", model.Password);
+                    cmd.Parameters.AddWithValue("@Reg_no", model.Reg_no);
+                    cmd.Parameters.AddWithValue("@DOB", model.DOB);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);

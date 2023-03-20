@@ -1,5 +1,6 @@
-﻿@model ssc.Models.ManageDepreg
-@*
+﻿@model List<getpost>;
+@*@model ssc.Models.ManageDepreg
+*@@*
 For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -28,42 +29,49 @@ For more information on enabling MVC for empty projects, visit https://go.micros
                 <thead>
                     <tr>
                         <th>Sr No.</th>
-                        <th>Department</th>
-                        <th>Name</th>
-                        <th>Mobile</th>
-                        <th>Email</th>
-                        <th>Nodal officer Doc upload</th>
+                        <th>Post ID</th>
+                        <th>Post Name</th>
+                        <th>Department</th>                        
+                        <th>Check box</th>
+                        <th>Document</th>
                         <th>Status</th>
-                        <th>Details</th>
                     </tr>
                 </thead>
                 <tbody >
-             
-                    <tr>
-                        <th scope="row">S NO.</th>
-                          <td>Department</td>
-                        <td>Name</td>
-                        <td>Mobile_no</td>
-                        <td>Email</td>
-                        <td>
-                                                                       <input type="checkbox" id="upload-checkbox" onchange="toggleUpload()" /></td>                      
-                   
-                       
-                        <td>
-                            <div class="modal-bootstrap modal-login-form">
-                                      
-                                <input type="file" id="file-input" disabled  accept=".pdf" onChange="validatePDF(this)"/>
-                                          
-                                       
-                            </div>
-                            <!-- BASIC MODAL -->
+                    @{
+                        int i = 0;
+                        foreach (var item in Model)
+                        {
+                            i++;
+
+                            <tr>
+                                <th scope="row">@i</th>
+                                <td>@item.postcode_reg</td>
+                                <td>@item.post_name</td>
+                                <td>@item.Department</td>
+
+                                <td>
+                                    <input type="checkbox" id="upload-checkbox" onchange="toggleUpload()" /></td>                      
+
+
+                                <td>
+                                    <div class="modal-bootstrap modal-login-form">
+
+                                        <input type="file" id="file-input" disabled  accept=".pdf" onChange="validatePDF(this)"/>
+
+
+                                    </div>
+                                    <!-- BASIC MODAL -->
 
                         </td>
 
-                    </tr>
-                    
-                   
+                            </tr>
 
+                        }
+                        }
+
+|                  
+                    }
 
                 </tbody>
 

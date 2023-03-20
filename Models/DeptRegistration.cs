@@ -67,7 +67,6 @@ namespace ssc.Models
 
     public class phases
     {
-
         public int? id { get; set; }
 
         public string? phase_name { get; set; }
@@ -77,11 +76,12 @@ namespace ssc.Models
             public List<ministry>? Ministries { get; set; }
             public DeptRegistration? depreg { get; set; }
         public UserModel? loginuser { get; set; }
+        public candidate? candidatelogin { get; set; }
         public List<phases>? phases_post { get; set; }
         public uploadcandidate? upload_data { get; set; }
 
     }
-
+    
     public class userdetails
     {
         public int ID { get; set; }
@@ -93,7 +93,18 @@ namespace ssc.Models
 
         
     }
-     public class DepartmentData
+    public class getpost
+    {
+        public int ID { get; set; }
+        public string? Department { get; set; }
+        public string? post_name { get; set; }
+        public string? postcode_reg { get; set; }
+        public string? Upload_doc { get; set; }
+        public string? dep_name { get; set; }
+
+
+    }
+    public class DepartmentData
     {
         public int? totalreg { get; set; }
         public int? approved { get; set; }

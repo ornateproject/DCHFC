@@ -8,12 +8,33 @@ namespace ssc.Controllers
 {
     public class CandidatedataController : Controller
     {
+        private readonly candidatedata_repo _candidaterepo;
+        public CandidatedataController(IConfiguration configuration)
+        {
+            _candidaterepo = new candidatedata_repo(configuration);
+           // _usdashrepo = new DeptDashrepo(configuration);
+
+
+        }
 
 
         [HttpGet]
         public IActionResult candidate()
         {
-            return View();
+            var usdata = _candidaterepo.get_postdata();
+            List<getpost> dept = new List<getpost>();
+            dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
+            return View(dept);
+        }
+
+        [HttpGet]
+        public IActionResult usview()
+        {
+            var usdata = _candidaterepo.get_postdata();
+            List<getpost> dept = new List<getpost>();
+            dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
+            return View(dept);
+           
         }
         public IActionResult getcandidatedata()
         {
@@ -23,5 +44,13 @@ namespace ssc.Controllers
         {
             return View();
         }
+
+        public IActionResult getcandidatelist()
+        {
+            return View();
+        }
+        public IActionResult getuscandidatelist()
+        {
+            return View();
+        }
     }
-}
