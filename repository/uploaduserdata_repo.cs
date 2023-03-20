@@ -134,17 +134,52 @@ namespace ssc.repository
 
                     //errortable.Rows.Add(errorrow);
                 }
-                for (int j = 1; j < dt.Rows.Count; j++)
+                for (int j = 0; j < dt.Rows.Count; j++)
                 {
-
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        using (SqlCommand cmd = new SqlCommand("[sscpost].[candidate_data]", con))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@Reg_no",Convert.ToString(dt.Rows[j]["Reg_no"]));
+                            cmd.Parameters.AddWithValue("@Name", Convert.ToString(dt.Rows[j]["Name"]));
+                            cmd.Parameters.AddWithValue("@DOB", Convert.ToString(dt.Rows[j]["DOB"]));
+                            cmd.Parameters.AddWithValue("@Email", Convert.ToString(dt.Rows[j]["Email"]));
+                            cmd.Parameters.AddWithValue("@Mobile_no", Convert.ToString(dt.Rows[j]["Mobile_no"]));
+                            cmd.Parameters.AddWithValue("@Address", Convert.ToString(dt.Rows[j]["Address"]));
+                            cmd.Parameters.AddWithValue("@post",model.post);
+                            con.Open();
+                            int xdvf = cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                    }
 
                 }
+                return "ok";
 
 
-                return "";
             }
                 
             
+        }
+        public string selection_post()
+        {
+
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[post_selection]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                    sda.Fill(dt);
+                    con.Close();
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
         }
     }
 }

@@ -46,6 +46,7 @@ namespace ssc.repository
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     con.Open();
+                    //con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
                     sda.Fill(dt);
@@ -60,18 +61,37 @@ namespace ssc.repository
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[logindept]", con))
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[candidate_data]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserName", model.UserName);
                     cmd.Parameters.AddWithValue("@Password", model.Password);
-                    cmd.Parameters.AddWithValue("@phase", model.phase);
                     
-                  
-                    cmd.Parameters.AddWithValue("@loginfor", model.post);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     int xdvf = cmd.ExecuteNonQuery();
+                    sda.Fill(dt);
+                    con.Close();
+                }
+            }
+            return dt;
+
+        }
+
+
+        public DataTable candidatelogin(UserModel model)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[loginpage]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserName", model.UserName);
+                    cmd.Parameters.AddWithValue("@Password", model.Password);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
                     con.Close();
                 }

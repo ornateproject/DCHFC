@@ -74,11 +74,11 @@ namespace ssc.Controllers
                     return RedirectToAction("dashboard", "US");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
-                TempData["tab"] = "user department";
+                TempData["tab"] = "US";
                 return RedirectToAction("Index", "Home");
             }
 
-            TempData["tab"] = "US2";
+            TempData["tab"] = "US";
             return RedirectToAction("Index", "Home");
         }
 
@@ -88,8 +88,33 @@ namespace ssc.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> logincandidate(ManageDepreg model)
+        {
+            if (ModelState.IsValid)
+            {
+               var result = _login.candidatelogin(model.loginuser);
+                if (result.Rows.Count > 0)
+                {
+                    HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
+                    HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["UserType"]));
+
+                    return RedirectToAction("logincandidate", "Login");
+                }
+                return RedirectToAction("logincandidate", "Login");
+
+            }
+            return RedirectToAction("logincandidate", "Login");
+        }
+
         [HttpGet]
         public IActionResult usview()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult usviewback()
         {
             return View();
         }

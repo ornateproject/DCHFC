@@ -20,17 +20,20 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult uploaduserdata( )
         {
-            
-            return View();
-            
+
+            var phases = _uploadrepo.selection_post();
+            ManageDepreg manageDepreg = new ManageDepreg();
+            manageDepreg.phases_post = JsonConvert.DeserializeObject<List<phases>>(phases);
+            return View(manageDepreg);
+
         }
 
         [HttpPost]
-        public async Task<IActionResult> uploaduserdata(uploadcandidate model)
+        public async Task<IActionResult> uploaduserdata(ManageDepreg model)
         {
             if (ModelState.IsValid)
             {
-                var asd = _uploadrepo.InsertpostData(model);
+                var asd = _uploadrepo.InsertpostData(model.upload_data);
             }
             
             return View();
