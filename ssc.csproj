@@ -36,6 +36,7 @@
   <ItemGroup>
     <Folder Include="pdf\" />
     <Folder Include="wwwroot\document\PDF\" />
+    <Folder Include="wwwroot\document\" />
     <Folder Include="wwwroot\pdf\" />
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>

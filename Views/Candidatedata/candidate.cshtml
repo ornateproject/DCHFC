@@ -1,14 +1,4 @@
 ﻿@model List<getpost>;
-@*@model ssc.Models.ManageDepreg
-*@@*
-For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-
-
-
 
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
@@ -20,11 +10,12 @@ For more information on enabling MVC for empty projects, visit https://go.micros
     <h4 class="tx-gray-800 mg-b-5">Registration</h4>
 
 </div>
-
+<form  id=myForm asp-action="candidate" asp-controller="Candidatedata" enctype="multipart/form-data" method="post" >
 <div class="br-pagebody">
     <div class="br-section-wrapper">
         <!-- d-flex -->
         <div class="table-wrapper rounded table-responsive">
+            
             <table id="datatable1" class="table display responsive nowrap">
                 <thead>
                     <tr>
@@ -48,16 +39,16 @@ For more information on enabling MVC for empty projects, visit https://go.micros
                                 <th scope="row">@i</th>
                                 <td>@item.postcode_reg</td>
                                 <td>@item.post_name</td>
-                                <td>@item.Department</td>
+                                <td>@item.dep_name</td>
 
                                 <td>
                                     <input type="checkbox" id="upload-checkbox" onchange="toggleUpload()" /></td>                      
 
 
                                 <td>
-                                    <div class="modal-bootstrap modal-login-form">
-
-                                        <input type="file" id="file-input" disabled  accept=".pdf" onChange="validatePDF(this)"/>
+                                    <div class="modal-bootstrap modal-login-form" for="customFile">
+                                   
+                                        <input type="file"  asp-for="@item.Upload_doc"  accept=".pdf" onChange="validatePDF(this)"/>
 
 
                                     </div>
@@ -71,35 +62,38 @@ For more information on enabling MVC for empty projects, visit https://go.micros
                         }
 
 |                  
-                    }
+ 
 
                 </tbody>
 
             </table>
+            <button type="submit">Submit</button>
         </div><!-- bd -->
 
 
 
 
     </div><!-- br-section-wrapper -->
+    
 </div><!-- br-pagebody -->
+</form>
 <!-- ########## END: MAIN PANEL ########## -->
 
 
-<script src="lib/jquery/jquery.js"></script>
-<script src="lib/popper.js/popper.js"></script>
-<script src="lib/bootstrap.js"></script>
-<script src="lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-<script src="lib/moment/moment.js"></script>
-<script src="lib/jquery-ui/jquery-ui.js"></script>
-<script src="lib/jquery-switchbutton/jquery.switchButton.js"></script>
-<script src="lib/peity/jquery.peity.js"></script>
-<script src="lib/highlightjs/highlight.pack.js"></script>
-<script src="lib/jquery.dataTables.js"></script>
-<script src="lib/dataTables.responsive.js"></script>
-<script src="lib/select2/js/select2.min.js"></script>
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/popper.js/popper.js"></script>
+<script src="~/lib/bootstrap.js"></script>
+<script src="~/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+<script src="~/lib/moment/moment.js"></script>
+<script src="~/lib/jquery-ui/jquery-ui.js"></script>
+<script src="~/lib/jquery-switchbutton/jquery.switchButton.js"></script>
+<script src="~/lib/peity/jquery.peity.js"></script>
+<script src="~/lib/highlightjs/highlight.pack.js"></script>
+<script src="~/lib/jquery.dataTables.js"></script>
+<script src="~/lib/dataTables.responsive.js"></script>
+<script src="~/lib/select2/js/select2.min.js"></script>
 
-<script src="js/bracket.js"></script>
+<script src="~/js/bracket.js"></script>
 <script>
     $(function(){
       'use strict';
@@ -123,12 +117,18 @@ For more information on enabling MVC for empty projects, visit https://go.micros
       // Select2
       $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
 
-    });
+    });      
+       
 </script>
 
 
+<script>
+
+</script>
+
 
 <script>
+
     $(function(){
       'use strict'
 

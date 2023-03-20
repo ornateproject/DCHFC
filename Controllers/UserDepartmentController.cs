@@ -30,9 +30,10 @@ namespace ssc.Controllers
                 department.TOTAL = Convert.ToString(abc);
                 int myint = Convert.ToInt32(department.VH) + Convert.ToInt32(department.HH) + Convert.ToInt32(department.OH) + Convert.ToInt32(department.OTHERS);
                 department.Total_vacancy = Convert.ToString(myint);
+                department.ID = Convert.ToInt32(HttpContext.Session.GetString("department"));
                 var asd = _userDepRepo.InsertpostData(department);               
 
-                return RedirectToAction("Index");
+                return RedirectToAction("us2details","US2approval");
             }
                         return View();
         }

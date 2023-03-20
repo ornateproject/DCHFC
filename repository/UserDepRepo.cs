@@ -70,7 +70,8 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@person_disabilities", department.person_disabilities);
                     cmd.Parameters.AddWithValue("@letter_no", department.letter_no);
                     cmd.Parameters.AddWithValue("@office_department", department.office_department);
-                    
+                    cmd.Parameters.AddWithValue("@dep", department.ID);
+
 
                     con.Open();
                     int xdvf=cmd.ExecuteNonQuery();

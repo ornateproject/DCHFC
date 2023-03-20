@@ -1,9 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model ssc.Models.DeptRegistration
+﻿@model ssc.Models.candidate;
 
 
 @*
@@ -39,28 +34,28 @@
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Registration number: <span class="tx-danger">*</span></label>
-                        
+                        @Model.Reg_no
 
                     </div>
                 </div><!-- col-4 -->
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Name: <span class="tx-danger">*</span></label>
-                      
+                       @Model.Name
 
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">DOB: <span class="tx-danger">*</span></label>
-                      
+                       @Model.DOB
 
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Email: <span class="tx-danger">*</span></label>
-
+                         @Model.Email
 
                     </div>
                 </div>
@@ -68,21 +63,21 @@
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Mobile No: <span class="tx-danger">*</span></label>
-
+                    @Model.Mobile_no
 
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Adress: <span class="tx-danger">*</span></label>
-
+                         @Model.Address
 
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Document: <span class="tx-danger">*</span></label>
-                        <a target="_blank" href="~/pdf/"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>
+                        <a target="_blank" href="~/document/@Model.Upload_doc"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>
 
                     </div>
                 </div>

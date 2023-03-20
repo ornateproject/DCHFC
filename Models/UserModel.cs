@@ -24,9 +24,12 @@ namespace ssc.Models
     public class candidate
     {
         public string? Reg_no { get; set; }
-
+        public string? Name { get; set; }
         public string? DOB { get; set; }
-
+        public string? Email { get; set; }
+        public string? Mobile_no { get; set; }
+        public string? Address { get; set; }
+        public string? Upload_doc { get; set; }
     }
     //public class phase
     //{

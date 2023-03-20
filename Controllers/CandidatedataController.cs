@@ -12,7 +12,7 @@ namespace ssc.Controllers
         public CandidatedataController(IConfiguration configuration)
         {
             _candidaterepo = new candidatedata_repo(configuration);
-           // _usdashrepo = new DeptDashrepo(configuration);
+            // _usdashrepo = new DeptDashrepo(configuration);
 
 
         }
@@ -26,6 +26,19 @@ namespace ssc.Controllers
             dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
             return View(dept);
         }
+       
+        [HttpPost]
+        public async Task<IActionResult> candidate(getpost data)
+        {
+
+            if (ModelState.IsValid)
+            {
+               var asd = _candidaterepo.InsertpostData(data);
+                return RedirectToAction("dashboard", "US");
+            }
+            return View();
+        }
+
 
         [HttpGet]
         public IActionResult usview()
@@ -34,23 +47,31 @@ namespace ssc.Controllers
             List<getpost> dept = new List<getpost>();
             dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
             return View(dept);
-           
+
         }
+        [HttpGet]
         public IActionResult getcandidatedata()
         {
-            return View();
+         return View();
         }
+        [HttpGet]
         public IActionResult getcandidatedatadept()
         {
-            return View();
+            var usdata = _candidaterepo.get_postdata();
+            List<candidate> dept = new List<candidate>();
+            dept = JsonConvert.DeserializeObject<List<candidate>>(usdata);
+            return View(dept);
+           // return View();
         }
-
+        [HttpGet]
         public IActionResult getcandidatelist()
         {
             return View();
         }
+        [HttpGet]
         public IActionResult getuscandidatelist()
         {
             return View();
         }
     }
+}

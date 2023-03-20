@@ -61,15 +61,17 @@ namespace ssc.repository
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[candidate_data]", con))
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[logindept]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserName", model.UserName);
                     cmd.Parameters.AddWithValue("@Password", model.Password);
-                    
+                    cmd.Parameters.AddWithValue("@phase", model.phase);
+                    cmd.Parameters.AddWithValue("@loginfor", model.post);
+
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    int xdvf = cmd.ExecuteNonQuery();
+                   // int xdvf = cmd.ExecuteNonQuery();
                     sda.Fill(dt);
                     con.Close();
                 }

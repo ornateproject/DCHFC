@@ -1,4 +1,4 @@
-﻿@model List<DeptRegistration>;
+﻿@model List<getpost>;
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -35,13 +35,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    @{
+                        int i = 0;
+                        foreach (var item in Model)
+                        {
+                            i++;
 
                             <tr>
-                                <th scope="row"></th>
-                                <td>ID</td>
-                                <td>Name</td>
-                                <td>Department</td>
+                           <th scope="row">@i</th>
+                                <td>@item.postcode_reg</td>
+                                <td>@item.post_name</td>
+                                <td>@item.dep_name</td>
+                                
                                 <td>
                                     <div class="modal-bootstrap modal-login-form">
 
@@ -55,7 +60,9 @@
 
                             </tr>
 
-               
+               }
+               }
+               }
                     
 
 
