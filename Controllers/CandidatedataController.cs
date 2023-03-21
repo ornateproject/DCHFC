@@ -55,7 +55,7 @@ namespace ssc.Controllers
          return View();
         }
         [HttpGet]
-        public IActionResult getcandidatedatadept()
+        public IActionResult getcandidatedatadept(int id)
         {
             var usdata = _candidaterepo.get_postdata();
             List<candidate> dept = new List<candidate>();

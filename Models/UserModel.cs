@@ -23,6 +23,7 @@ namespace ssc.Models
 
     public class candidate
     {
+        public string? id { get; set; }
         public string? Reg_no { get; set; }
         public string? Name { get; set; }
         public string? DOB { get; set; }
