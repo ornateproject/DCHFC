@@ -99,7 +99,7 @@ namespace ssc.Controllers
                     HttpContext.Session.SetString("Reg_no", Convert.ToString(result.Rows[0]["Reg_no"]));
                     HttpContext.Session.SetString("DOB", Convert.ToString(result.Rows[0]["DOB"]));
 
-                    return RedirectToAction("dashboard", "US");
+                    return RedirectToAction("candidate_dashboard", "Candidatedata");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
                 TempData["tab"] = "US";

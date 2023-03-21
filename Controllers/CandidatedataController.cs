@@ -57,7 +57,7 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult getcandidatedatadept(int id)
         {
-            var usdata = _candidaterepo.get_postdata();
+            var usdata = _candidaterepo.get_data();
             List<candidate> dept = new List<candidate>();
             dept = JsonConvert.DeserializeObject<List<candidate>>(usdata);
             return View(dept);
@@ -73,5 +73,12 @@ namespace ssc.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult candidate_dashboard()
+        {
+            return View();
+        }
+
     }
 }
