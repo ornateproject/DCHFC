@@ -1,5 +1,5 @@
 ﻿
-@model List<DeptRegistration>;
+@model List<getpost>;
 
 
 
@@ -24,22 +24,32 @@
                 <thead>
                     <tr>
                         <th>Sr No.</th>
+                        <th>Post Code</th>
+                          <th>Post_name</th>
                         <th>Registration Number</th>
                         <th>Candidate Name</th>
                         <th>Details</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @{
+                        int i = 0;
+                        foreach (var item in Model)
+                        {
+                            i++;
 
 
                     <tr>
-                        <th scope="row"></th>
-                        <td>Number</td>
-                        <td>Name</td>
+                        <th scope="row">@i</th>
+                        <th>@item.post_id</th>
+                        <th>@item.post_name</th>
+                        <th>@item.Reg_no</th>
+                        <th>@item.Name </th>
+                      
                         <td>
                             <div class="modal-bootstrap modal-login-form">
 
-                                <a class="zoomInDown mg-t btn btn-red" href="/US1_pendingapproval/index/ID">View Details</a>
+                                <a class="zoomInDown mg-t btn btn-red" href="/Login/usviewback">View Details</a>
 
 
                             </div>
@@ -49,7 +59,8 @@
 
                     </tr>
 
-
+                  }
+                  }
 
 
 

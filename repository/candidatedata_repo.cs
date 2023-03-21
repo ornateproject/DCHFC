@@ -33,6 +33,28 @@ namespace ssc.repository
             return JsonConvert.SerializeObject(dt);
 
         }
+
+        public string getcandidatelist()
+        {
+
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[candidate_data]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@callval", 2);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    
+                    con.Close();
+
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
+
+        }
         public string get_data()
         {
 
@@ -63,27 +85,27 @@ namespace ssc.repository
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    var fileName = Path.GetFileName(data.Upload_doc?.FileName);
+                    //var fileName = Path.GetFileName(data.Upload_doc?.FileName);
 
-                    var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
+                    //var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
 
-                    var extension = Path.GetExtension(fileName);
-                    string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+                    //var extension = Path.GetExtension(fileName);
+                    //string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
 
 
 
-                    var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
+                    //var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
 
-                    //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextension + extension);
-                    FileInfo file = new FileInfo(Path.Combine(path));
-                    var stream = new FileStream(path, FileMode.Create);
-                    data.Upload_doc.CopyTo(stream);
-                    stream.Close();
+                    ////var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
+                    //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextension + extension);
+                    //FileInfo file = new FileInfo(Path.Combine(path));
+                    //var stream = new FileStream(path, FileMode.Create);
+                    //data.Upload_doc.CopyTo(stream);
+                    //stream.Close();
 
                     //........................file upload end................................
 
-                    cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
+                   // cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
                     con.Open();
                     int xdvf = cmd.ExecuteNonQuery();

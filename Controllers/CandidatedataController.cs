@@ -13,10 +13,7 @@ namespace ssc.Controllers
         {
             _candidaterepo = new candidatedata_repo(configuration);
             // _usdashrepo = new DeptDashrepo(configuration);
-
-
         }
-
 
         [HttpGet]
         public IActionResult candidate()
@@ -55,18 +52,23 @@ namespace ssc.Controllers
          return View();
         }
         [HttpGet]
-        public IActionResult getcandidatedatadept(int id)
+        public IActionResult getcandidatedatadept()
         {
-            var usdata = _candidaterepo.get_data();
-            List<candidate> dept = new List<candidate>();
-            dept = JsonConvert.DeserializeObject<List<candidate>>(usdata);
-            return View(dept);
-           // return View();
+            //var usdata = _candidaterepo.get_data();
+            //List<candidate> dept = new List<candidate>();
+            //dept = JsonConvert.DeserializeObject<List<candidate>>(usdata);
+            //return View(dept);
+          return View();
         }
+
         [HttpGet]
         public IActionResult getcandidatelist()
         {
-            return View();
+            var usdata = _candidaterepo.getcandidatelist();
+            List<getpost> dept = new List<getpost>();
+            dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
+            return View(dept);
+            
         }
         [HttpGet]
         public IActionResult getuscandidatelist()
