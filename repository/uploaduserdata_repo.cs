@@ -148,6 +148,7 @@ namespace ssc.repository
                             cmd.Parameters.AddWithValue("@Mobile_no", Convert.ToString(dt.Rows[j]["Mobile_no"]));
                             cmd.Parameters.AddWithValue("@Address", Convert.ToString(dt.Rows[j]["Address"]));
                             cmd.Parameters.AddWithValue("@post",model.post);
+                            cmd.Parameters.AddWithValue("@callval", 1); 
                             con.Open();
                             int xdvf = cmd.ExecuteNonQuery();
                             con.Close();
