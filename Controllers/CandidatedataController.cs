@@ -31,7 +31,7 @@ namespace ssc.Controllers
             if (ModelState.IsValid)
             {
                var asd = _candidaterepo.InsertpostData(data);
-                return RedirectToAction("dashboard", "US");
+                return View("candidate_dashboard", "Candidatedata");
             }
             return View();
         }
@@ -79,7 +79,7 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult candidate_dashboard()
         {
-            return View();
+            return View("candidate_dashboard", "Candidatedata");
         }
 
     }
