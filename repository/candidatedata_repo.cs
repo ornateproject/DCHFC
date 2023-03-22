@@ -92,8 +92,6 @@ namespace ssc.repository
                     //var extension = Path.GetExtension(fileName);
                     //string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
 
-
-
                     //var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
 
                     ////var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
