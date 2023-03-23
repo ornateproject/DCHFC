@@ -1,8 +1,11 @@
-﻿
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
 @model ssc.Models.getpost
 
 
-
+ @{
+        var usertype = @Accessor.HttpContext.Session.GetString("userType").ToString();
+    }
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
         <a class="breadcrumb-item" href="US1.html">Dashboard</a>
@@ -78,11 +81,19 @@
             <div class="row mg-b-25">
                 <div class="col-lg-12">
             <div class="modal-bootstrap modal-login-form">
-          
-                 <a href="@Url.Action("Reject", "Login", new{ id = @Model.id })"><button class="btn btn-red" style="cursor:pointer">Reject</button></a>                
+                        @if (@usertype=="2")
+                        {
+                            <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-red" style="cursor:pointer" " text-center">Back</button></a>
+
+                        }
+                        else
+                        {
+                             <a href="@Url.Action("Reject", "Login", new{ id = @Model.id })"><button class="btn btn-red" style="cursor:pointer">Reject</button></a>                
          
                  <a href="@Url.Action("Approve", "Login", new{ id = Model.id })"><button class="btn btn-success" style="cursor:pointer">Approve</button></a>
-              <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-red" style="cursor:pointer" " text-center">Back</button></a>
+    
+                        }
+                       
             </div><!-- form-layout-footer -->
         </div><!-- form-layout -->
         </div>

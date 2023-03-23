@@ -1,4 +1,6 @@
-﻿@model ssc.Models.UserDepartment
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model ssc.Models.UserDepartment
 
 
 @*
@@ -6,7 +8,9 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 *@
 @{
 }
-
+@{
+        var usertype = @Accessor.HttpContext.Session.GetString("userType").ToString();
+    }
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
         <a class="breadcrumb-item" href="US1.html">Dashboard</a>
@@ -480,8 +484,9 @@ For more information on enabling MVC for empty projects, visit https://go.micros
         </div>
         <div class="form-layout-footer text-center">
 
-
-            @if (@Model.Status != "1" && @Model.Status != "2")
+            @if (@usertype=="2")
+            {
+                 @if (@Model.Status != "1" && @Model.Status != "2")
             {
 
                 <a href="@Url.Action("Approve", "US2approval", new { id = Model.ID })"><button class="btn btn-red" style="cursor:pointer">Approved</button></a>
@@ -489,12 +494,17 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 
 
 
-                <a href="@Url.Action("Reject", "US2approval", new { id = Model.ID })"><button class="btn btn-red" disabled style="cursor:pointer">Rejected</button></a>
-
+                <a href="@Url.Action("Reject", "US2approval", new { id = Model.ID })"><button class="btn btn-red"  style="cursor:pointer">Rejected</button></a>
+                <button class="btn btn-secondary" style="cursor:pointer">Cancel</button>
+                }
+            }
+            else
+            {
+                                            <a href="@Url.Action("us2", "US2")"><button class="btn btn-red" style="cursor:pointer" " text-center">Back</button></a>
 
             }
 
-            <button class="btn btn-secondary" style="cursor:pointer">Cancel</button>
+            
         </div><!-- form-layout-footer -->
     </div><!-- form-layout -->
 </div>
