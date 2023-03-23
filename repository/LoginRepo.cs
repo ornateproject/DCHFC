@@ -80,7 +80,42 @@ namespace ssc.repository
 
         }
 
+        public string getdatelist(int id)
+        {
 
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[canddata]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                   cmd.Parameters.AddWithValue("@id", id);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    con.Close();
+
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
+
+        }
+
+        public void UpdatecandidateStatus(int id, string status)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                // string query = "UPDATE DeptRegistration SET Status = @Status WHERE Id = @Id";
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[candidate_status]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@status", status == "Approved" ? 1 : 2);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
         public DataTable candidatelogin(candidate model)
         {
             DataTable dt = new DataTable();
