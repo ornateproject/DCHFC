@@ -118,6 +118,7 @@ namespace ssc.repository
         }
         public DataTable candidatelogin(candidate model)
         {
+            
             DataTable dt = new DataTable();
 
             using (SqlConnection con = new SqlConnection(connectionString))

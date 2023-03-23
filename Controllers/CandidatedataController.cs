@@ -66,7 +66,7 @@ namespace ssc.Controllers
         {
            var usdata = _candidaterepo.getcandidatelist(id);
             List<getpost> dept = new List<getpost>();
-         dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
+           dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
             return View(dept);            
         }
         [HttpGet]

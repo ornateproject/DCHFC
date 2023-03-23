@@ -323,7 +323,7 @@
 
                     <div class="form-group">
  
-            <input id="txtDate" asp-for="candidatelogin.DOB" placeholder="dd/mm/yyyy" type="text" class="form-control date-input"  />
+            <input  asp-for="candidatelogin.DOB"  type="text" class="form-control"  />
                  
                       
                     </div><!-- form-group -->
@@ -367,15 +367,7 @@
 
         dateInput.setAttribute('max', currentDate);
     </script>
-     <script type="text/javascript">
-        $(function () {
-            $('#txtDate').datepicker({
-                format: "dd/mm/yyyy"
-
-                
-            });
-        });
-    </script>
+     
 </body>
 
 

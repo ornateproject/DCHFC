@@ -26,9 +26,9 @@ namespace ssc.Models
         public string? id { get; set; }
         public string? Reg_no { get; set; }
         public string? Name { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0:dd/mm/yyyy}",ApplyFormatInEditMode =true)]
-        public DateTime? DOB { get; set; }
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString ="{0:dd/mm/yyyy}",ApplyFormatInEditMode =true)]
+        public string? DOB { get; set; }
         public string? Email { get; set; }
         public string? Mobile_no { get; set; }
         public string? Address { get; set; }

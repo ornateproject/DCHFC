@@ -24,7 +24,7 @@
                         <th>Post Code</th>
                           <th>Post_name</th>
                         <th>Registration Number</th>
-                        <th>Candidate Name</th>
+                        <th>Status</th>
                         <th>Details</th>
                     </tr>
                 </thead>
@@ -40,9 +40,24 @@
                         <th scope="row">@i</th>
                         <th>@item.post_id</th>
                         <th>@item.post_name</th>
-                        <th>@item.Reg_no</th>
-                        <th>@item.Name </th>
-                      
+                        <th>@item.Reg_no</th>                    
+                       <td><strong>
+                                        
+                                @if (@item.status == "1")
+                                        {
+                                            <span class="text" style="color:green">Approved </span>
+                                        }
+                                        else if (@item.status == "2")
+                                        {
+                                            <span class="text"  style="color:blue">Reject </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-danger">Pending </span>
+                                        }
+
+                        </strong></td>
+                            
                         <td>
                             <div class="modal-bootstrap modal-login-form">
 
