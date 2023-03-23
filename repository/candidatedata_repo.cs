@@ -34,7 +34,7 @@ namespace ssc.repository
 
         }
 
-        public string getcandidatelist()
+        public string getcandidatelist( string post_id)
         {
 
             DataTable dt = new DataTable();
@@ -44,6 +44,7 @@ namespace ssc.repository
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@callval", 2);
+                    cmd.Parameters.AddWithValue("@post_id", post_id);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
@@ -91,8 +92,6 @@ namespace ssc.repository
 
                     //var extension = Path.GetExtension(fileName);
                     //string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
-
-
 
                     //var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
 

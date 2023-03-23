@@ -2,9 +2,6 @@
 @model List<getpost>;
 
 
-
-
-
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
         <a class="breadcrumb-item" href="US1.html">US</a>
@@ -49,8 +46,7 @@
                         <td>
                             <div class="modal-bootstrap modal-login-form">
 
-                                <a class="zoomInDown mg-t btn btn-red" href="/Login/usviewback/@item.ID">View Details</a>
-
+                              <a class="zoomInDown mg-t btn btn-red" asp-action="usviewback" asp-controller="Login" asp-route-id="@item.id">View Details</a>
 
                             </div>
                             <!-- BASIC MODAL -->

@@ -95,7 +95,8 @@ namespace ssc.Models
     }
     public class getpost
     {
-        public int ID { get; set; }
+        public int id { get; set; }
+        public string? Reg_no { get; set; }
         public string? Name { get; set; }
         public string? DOB { get; set; }
         public string? Email { get; set; }
@@ -104,7 +105,7 @@ namespace ssc.Models
         public string? post_name { get; set; }
         public string? post_id { get; set; }      
         public string? dep_name { get; set; }
-        public string? Reg_no { get; set; }
+       
        // public string? Name { get; set; }
         public string? Upload_doc { get; set; }
 
