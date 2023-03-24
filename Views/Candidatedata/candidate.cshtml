@@ -36,10 +36,10 @@
                 </thead>
                 <tbody >
                     @{
-                        //int i = 0;
+                        
                         for(var i=0;i< Model.Count;i++ )
                         {
-                           // i++;
+                          
 
                             <tr>
                                 <th scope="row">@i</th>
@@ -49,7 +49,7 @@
                                 <td><label >@Model[i].dep_name</label> <input type="hidden" asp-for="@Model[i].dep_name" class="form-control"/> </td>
 
                                 <td>
-                                    <input type="checkbox" id="upload-checkbox" /></td>                      
+                                    <input type="checkbox" id="upload-checkbox_@i"  /></td>                      
 
 
                                 <td>
@@ -63,7 +63,8 @@
 
                         </td>
 
-                            </tr>
+                                </tr>
+                              
 
                         }
                         }

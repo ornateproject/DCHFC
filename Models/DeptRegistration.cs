@@ -104,8 +104,7 @@ namespace ssc.Models
         public string? Address { get; set; }
         public string? post_name { get; set; }
         public string? post_id { get; set; }      
-        public string? dep_name { get; set; }
-       
+        public string? dep_name { get; set; }       
         public string? status { get; set; }
         public IFormFile? Upload_doc { get; set; }
 

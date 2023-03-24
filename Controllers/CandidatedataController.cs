@@ -28,11 +28,16 @@ namespace ssc.Controllers
         [HttpPost]
         public async Task<IActionResult> candidate(IList<getpost> data)
         {
-
             if (ModelState.IsValid)
             {
-              // var asd = _candidaterepo.InsertpostData(data);
-                return View("candidate_dashboard", "Candidatedata");
+               // IList<getpost> post = new List<getpost>();
+               // List<getpost> postList = <getpost>();
+                foreach (getpost posts in data)
+                {
+                    var asd = _candidaterepo.InsertpostData(posts);
+                    return View("candidate_dashboard", "Candidatedata");
+                }
+                return View();
             }
             return View();
         }
