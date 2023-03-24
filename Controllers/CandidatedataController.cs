@@ -30,14 +30,15 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
-               // IList<getpost> post = new List<getpost>();
-               // List<getpost> postList = <getpost>();
-                foreach (getpost posts in data)
+                var reg_no = HttpContext.Session.GetString("Reg_no").ToString();             
+
+                foreach (getpost posts in data) 
                 {
-                    var asd = _candidaterepo.InsertpostData(posts);
-                    return View("candidate_dashboard", "Candidatedata");
+                 
+                    var asd = _candidaterepo.InsertpostData(posts, reg_no);
                 }
-                return View();
+                return View("candidate_dashboard", "Candidatedata");
+
             }
             return View();
         }
