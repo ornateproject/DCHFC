@@ -21,16 +21,17 @@ namespace ssc.Controllers
             var usdata = _candidaterepo.get_postdata();
             List<getpost> dept = new List<getpost>();
             dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
+            
             return View(dept);
         }
        
         [HttpPost]
-        public async Task<IActionResult> candidate(getpost data)
+        public async Task<IActionResult> candidate(IList<getpost> data)
         {
 
             if (ModelState.IsValid)
             {
-               var asd = _candidaterepo.InsertpostData(data);
+              // var asd = _candidaterepo.InsertpostData(data);
                 return View("candidate_dashboard", "Candidatedata");
             }
             return View();

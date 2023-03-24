@@ -1,4 +1,4 @@
-﻿@model List<getpost>;
+﻿@model IList<getpost>;
 @{
     Layout = "~/Views/Shared/_LayoutCandidate.cshtml";
   
@@ -14,7 +14,7 @@
     <h4 class="tx-gray-800 mg-b-5">Apply Post</h4>
 
 </div>
-<form  id=myForm asp-action="candidate" asp-controller="Candidatedata" enctype="multipart/form-data" method="post" >
+<form asp-action="candidate" asp-controller="Candidatedata" enctype="multipart/form-data" method="post" asp-antiforgery="false" >
 <div class="br-pagebody">
     <div class="br-section-wrapper">
         <!-- d-flex -->
@@ -34,25 +34,26 @@
                 </thead>
                 <tbody >
                     @{
-                        int i = 0;
-                        foreach (var item in Model)
+                        //int i = 0;
+                        for(var i=0;i< Model.Count;i++ )
                         {
-                            i++;
+                           // i++;
 
                             <tr>
                                 <th scope="row">@i</th>
-                                <td>@item.post_id</td>
-                                <td>@item.post_name</td>
-                                <td>@item.dep_name</td>
+                                
+                                <td><label >@Model[i].post_id</label> <input type="hidden" asp-for="@Model[i].post_id" class="form-control"> </td>
+                                <td><label >@Model[i].post_name</label> <input type="hidden" asp-for="@Model[i].post_name" class="form-control"/> </td>
+                                <td><label >@Model[i].dep_name</label> <input type="hidden" asp-for="@Model[i].dep_name" class="form-control"/> </td>
 
                                 <td>
-                                    <input type="checkbox" id="upload-checkbox" onchange="toggleUpload()" /></td>                      
+                                    <input type="checkbox" id="upload-checkbox" /></td>                      
 
 
                                 <td>
                                     <div class="modal-bootstrap modal-login-form" for="customFile">
                                    
-                                        <input type="file"  asp-for="@item.Upload_doc"  accept=".pdf" onChange="validatePDF(this)"/>
+                                        <input type="file"  asp-for="@Model[i].Upload_doc"  accept=".pdf" onChange="validatePDF(this)"/>
 
 
                                     </div>

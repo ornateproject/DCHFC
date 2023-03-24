@@ -107,7 +107,7 @@ namespace ssc.Models
         public string? dep_name { get; set; }
        
         public string? status { get; set; }
-        public string? Upload_doc { get; set; }
+        public IFormFile? Upload_doc { get; set; }
 
 
     }
