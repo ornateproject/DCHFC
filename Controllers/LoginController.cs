@@ -44,7 +44,7 @@ namespace ssc.Controllers
                 TempData["tab"] = "US";
                 return RedirectToAction("Index", "Home");
             }
-            // TempData["error"] = "Please Enter Valid User Name And Password";
+            TempData["error"] = "Please Enter Valid User Name And Password";
             TempData["tab"] = "US";
             return RedirectToAction("Index", "Home");
         }
@@ -78,7 +78,7 @@ namespace ssc.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            TempData["tab"] = "US";
+           TempData["tab"] = "US";
             return RedirectToAction("Index", "Home");
         }
 

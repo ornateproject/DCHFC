@@ -68,7 +68,6 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@Password", model.Password);
                     cmd.Parameters.AddWithValue("@phase", model.phase);
                     cmd.Parameters.AddWithValue("@loginfor", model.post);
-
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                    // int xdvf = cmd.ExecuteNonQuery();

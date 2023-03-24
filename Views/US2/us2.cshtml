@@ -1,11 +1,14 @@
-﻿@model List<UserDepartment>;
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model List<UserDepartment>;
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+
+
 @{
-}
+        var usertype = @Accessor.HttpContext.Session.GetString("userType").ToString();
+    }
 
+   
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
         <a class="breadcrumb-item" href="US1.html">US</a>
@@ -19,9 +22,14 @@
 
 <div class="br-pagebody">
     <div class="br-section-wrapper">
-<div class="text-right">
+
+        @if (@usertype=="3")
+        {
+            <div class="text-right">
          <a class="zoomInDown  mg-t btn btn-red" style="margin-bottom:10px" href="/userDepartment/index">Add New Post</a>
          </div>
+        }
+        
         <!-- d-flex -->
         <div class="table-wrapper rounded table-responsive">
             <table id="datatable1"  class="table display responsive nowrap">
