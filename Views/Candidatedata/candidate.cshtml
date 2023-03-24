@@ -19,6 +19,24 @@
 <form asp-action="candidate" asp-controller="Candidatedata" enctype="multipart/form-data" method="post" asp-antiforgery="false" >
 <div class="br-pagebody">
     <div class="br-section-wrapper">
+<div style="display:flex;justify-content:space-between;margin-bottom:15px">
+    <span>
+
+
+                    <label  style="color:black"class="form-label" for="customFile"><b>Upload Aadhar Card</b></label>
+                    <input type="file" class="form-control" id="customFile" />
+
+
+    </span>
+                <span>
+
+
+                    <label style="color:black" class="form-label" for="customFile"><b>Upload Matric Certificate</b></label>
+                    <input type="file" class="form-control" id="customFile" />
+
+
+                </span>
+</div>
         <!-- d-flex -->
         <div class="table-wrapper rounded table-responsive">
             
@@ -69,17 +87,17 @@
                         }
                         }
 
-|                  
- 
-
                 </tbody>
 
             </table>
-            <button class="btn btn-primary btn-block" type="submit">Submit</button>
+           
         </div><!-- bd -->
 
 
+            <div class="col-md-12 text-center">
+                <button type="button" style='cursor:pointer' class="btn btn-primary">Submit</button>
 
+            </div>
 
     </div><!-- br-section-wrapper -->
     
