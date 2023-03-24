@@ -79,7 +79,7 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult candidate_dashboard()
         {
-            return View("candidate_dashboard", "Candidatedata");
+            return View();
         }
 
     }
