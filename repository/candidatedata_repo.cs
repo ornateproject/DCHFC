@@ -76,7 +76,7 @@ namespace ssc.repository
 
         }
 
-        public string InsertpostData(getpost data)
+        public string InsertpostData(getpost data, string reg_no)
         {
             DataTable dt = new DataTable();
            
@@ -85,25 +85,32 @@ namespace ssc.repository
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[candidate_document]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    if (data.Upload_doc!=null)
+                    {
+                        var fileName = Path.GetFileName(data.Upload_doc?.FileName);
 
-                    var fileName = Path.GetFileName(data.Upload_doc?.FileName);
+                        var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
 
-                    var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
+                        var extension = Path.GetExtension(fileName);
+                        string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
 
-                    var extension = Path.GetExtension(fileName);
-                    string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+                        var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
 
-                    var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
-
-                    //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextension + extension);
-                    FileInfo file = new FileInfo(Path.Combine(path));
-                    var stream = new FileStream(path, FileMode.Create);
-                    data.Upload_doc.CopyTo(stream);
-                    stream.Close();
+                        //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextension + extension);
+                        FileInfo file = new FileInfo(Path.Combine(path));
+                        var stream = new FileStream(path, FileMode.Create);
+                        data.Upload_doc.CopyTo(stream);
+                        stream.Close();
+                        cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
+                    }
+                    cmd.Parameters.AddWithValue("@post_id", data.post_id);
 
                     //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
+                    cmd.Parameters.AddWithValue("@post_name", data.post_name);
+                    cmd.Parameters.AddWithValue("@Reg_no", reg_no);
+                    //cmd.Parameters.AddWithValue("@post_id", data.post_id);
                     con.Open();
                     int xdvf = cmd.ExecuteNonQuery();
                     con.Close();
