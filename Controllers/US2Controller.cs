@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using ssc.Models;
 using ssc.repository;
 
+
 namespace ssc.Controllers
 {
     public class US2Controller : Controller
@@ -20,12 +21,17 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult us2()
         {
-            var usdata = _us2repo.get_deparment();
-            List<UserDepartment> dept = new List<UserDepartment>();
-            dept = JsonConvert.DeserializeObject<List<UserDepartment>>(usdata);
-            return View(dept);
+            {
+                         
+                var department = HttpContext.Session.GetString("department").ToString();
+                var postdata = _us2repo.getpost_data(department);
+                var usdata = _us2repo.get_deparment();
+                List<UserDepartment> dept = new List<UserDepartment>();
+                dept = JsonConvert.DeserializeObject<List<UserDepartment>>(usdata);
+                dept = JsonConvert.DeserializeObject<List<UserDepartment>>(postdata);
+                return View(dept);
+            }
         }
-
 
     }
 }
