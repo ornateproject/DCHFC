@@ -122,13 +122,13 @@ namespace ssc.Controllers
         public ActionResult Approve(int id)
         {
             _login.UpdatecandidateStatus(id, "Approved");
-            return RedirectToAction("getcandidatelist", "Candidatedata");
+            return RedirectToAction("candidate", "Candidatedata");
         }
 
         public ActionResult Reject(int id)
         {
             _login.UpdatecandidateStatus(id, "Rejected");
-            return RedirectToAction("getcandidatelist", "Candidatedata");
+            return RedirectToAction("candidate", "Candidatedata");
         }
 
         [HttpGet]

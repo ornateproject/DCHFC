@@ -108,7 +108,7 @@ namespace ssc.Models
         public string? status { get; set; }
         public IFormFile? Upload_doc { get; set; }
 
-
+        public string? Doc_path { get; set; }
     }
     public class DepartmentData
     {
