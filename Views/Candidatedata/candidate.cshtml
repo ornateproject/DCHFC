@@ -49,13 +49,13 @@
                                 <td><label >@Model[i].dep_name</label> <input type="hidden" asp-for="@Model[i].dep_name" class="form-control"/> </td>
 
                                 <td>
-                                    <input type="checkbox" id="upload-checkbox_@i"  /></td>                      
+                                    <input type="checkbox" id="checkbox_@i"  /></td>                      
 
 
                                 <td>
                                     <div class="modal-bootstrap modal-login-form" for="customFile">
                                    
-                                        <input type="file"  asp-for="@Model[i].Upload_doc"  accept=".pdf" onChange="validatePDF(this)"/>
+                                        <input type="file"  asp-for="@Model[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled/>
 
 
                                     </div>
@@ -192,3 +192,17 @@ fileInput.addEventListener("change", function() {
         }
 
 </script>
+<script>
+		$(document).ready(function() {
+			$("input[type='checkbox']").click(function() {
+				var checkboxId = $(this).attr("id");
+				var fileUploadId = checkboxId.replace("checkbox_", "fileUpload_");
+
+				if ($(this).is(":checked")) {
+					$("#" + fileUploadId).prop("disabled", false);
+				} else {
+					$("#" + fileUploadId).prop("disabled", true);
+				}
+			});
+		});
+	</script>
