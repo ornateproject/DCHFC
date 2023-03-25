@@ -107,7 +107,11 @@ namespace ssc.Models
         public string? dep_name { get; set; }       
         public string? status { get; set; }
         public IFormFile? Upload_doc { get; set; }
+        public IFormFile? adhar_card { get; set; }
 
+        public IFormFile? marksheet { get; set; }
+        public string? Adhar { get; set; }
+        public string? certificate { get; set; }
         public string? Doc_path { get; set; }
     }
     public class DepartmentData

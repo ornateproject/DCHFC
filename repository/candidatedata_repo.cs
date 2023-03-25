@@ -102,7 +102,45 @@ namespace ssc.repository
                         var stream = new FileStream(path, FileMode.Create);
                         data.Upload_doc.CopyTo(stream);
                         stream.Close();
-                        cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
+                        cmd.Parameters.AddWithValue("@Doc_path", newfilenamewithoutextension + extension);
+                    }
+                    if (data.adhar_card != null)
+                    {
+                        var fileName = Path.GetFileName(data.Upload_doc?.FileName);
+
+                        var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
+
+                        var extension = Path.GetExtension(fileName);
+                        string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+
+                        var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
+
+                        //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextension + extension);
+                        FileInfo file = new FileInfo(Path.Combine(path));
+                        var stream = new FileStream(path, FileMode.Create);
+                        data.adhar_card.CopyTo(stream);
+                        stream.Close();
+                        cmd.Parameters.AddWithValue("@adhar_card", newfilenamewithoutextension + extension);
+                    }
+                    if (data.marksheet != null)
+                    {
+                        var fileName = Path.GetFileName(data.Upload_doc?.FileName);
+
+                        var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
+
+                        var extension = Path.GetExtension(fileName);
+                        string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+
+                        var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
+
+                        //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextension + extension);
+                        FileInfo file = new FileInfo(Path.Combine(path));
+                        var stream = new FileStream(path, FileMode.Create);
+                        data.marksheet.CopyTo(stream);
+                        stream.Close();
+                        cmd.Parameters.AddWithValue("@marksheet", newfilenamewithoutextension + extension);
                     }
                     cmd.Parameters.AddWithValue("@post_id", data.post_id);
 

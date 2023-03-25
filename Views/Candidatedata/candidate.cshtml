@@ -24,7 +24,7 @@
 
 
                     <label  style="color:black"class="form-label" for="customFile"><b>Upload Aadhar Card</b></label>
-                    <input type="file" class="form-control" id="customFile" />
+                    <input type="file" asp-for="@Model[0].adhar_card"  class="form-control" id="customFile" />
 
 
     </span>
@@ -32,7 +32,7 @@
 
 
                     <label style="color:black" class="form-label" for="customFile"><b>Upload Matric Certificate</b></label>
-                    <input type="file" class="form-control" id="customFile" />
+                    <input type="file" asp-for="@Model[0].marksheet" class="form-control" id="customFile" />
 
 
                 </span>
@@ -73,7 +73,7 @@
                                 <td>
                                     <div class="modal-bootstrap modal-login-form" for="customFile">
                                    
-                                        <input type="file"  asp-for="@Model[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled/>
+                                        <input type="file"  asp-for="@Model[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled />
 
 
                                     </div>
@@ -90,15 +90,15 @@
                 </tbody>
 
             </table>
-           
-        </div><!-- bd -->
-
-
-            <div class="col-md-12 text-center">
-                <button type="button" style='cursor:pointer' class="btn btn-primary">Submit</button>
+               <div class="col-md-12 text-center">
+                <button type="submit" style='cursor:pointer' class="btn btn-primary">Submit</button>
 
             </div>
 
+        </div><!-- bd -->
+
+
+        
     </div><!-- br-section-wrapper -->
     
 </div><!-- br-pagebody -->
