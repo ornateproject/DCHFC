@@ -18,25 +18,26 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult candidate()
         {
+           // var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
             var usdata = _candidaterepo.get_postdata();
-            List<getpost> dept = new List<getpost>();
-            dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
+           
+            managecandidatedata managecandidatedata = new managecandidatedata();
+
+            managecandidatedata.getposts = JsonConvert.DeserializeObject<IList<getpost>>(usdata);
             
-            return View(dept);
+            return View(managecandidatedata);
         }
        
         [HttpPost]
-        public async Task<IActionResult> candidate(IList<getpost> data)
+        public async Task<IActionResult> candidate(managecandidatedata data)
         {
             if (ModelState.IsValid)
             {
-                var reg_no = HttpContext.Session.GetString("Reg_no").ToString();             
-
-                foreach (getpost posts in data) 
-                {
-                 
-                    var asd = _candidaterepo.InsertpostData(posts, reg_no);
-                }
+                var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
+               
+                    var asd = _candidaterepo.InsertpostData(data, reg_no);            
+                                             
+               
                 return View("candidate_dashboard", "Candidatedata");
 
             }
@@ -47,6 +48,7 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult usview()
         {
+           // var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
             var usdata = _candidaterepo.get_postdata();
             List<getpost> dept = new List<getpost>();
             dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);

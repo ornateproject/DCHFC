@@ -88,12 +88,16 @@
                         }
                         else
                         {  @if (@Model.status != "1" && @Model.status != "2")
-            {
-
-                            <a href="@Url.Action("Reject", "Login", new{ id = @Model.id })"><button class="btn btn-red" style="cursor:pointer">Reject</button></a>                
-         
-                            <a href="@Url.Action("Approve", "Login", new{ id = Model.id })"><button class="btn btn-success" style="cursor:pointer">Approve</button></a>
-            }
+                            {
+                             <a href="@Url.Action("Reject", "Login", new{ id = @Model.id })"><button class="btn btn-red" style="cursor:pointer">Reject</button></a>                
+                             <a href="@Url.Action("Approve", "Login", new{ id = Model.id })"><button class="btn btn-success" style="cursor:pointer">Approve</button></a>
+                             <button class="btn btn-secondary" style="cursor:pointer">Cancel</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-red" disabled style="cursor:pointer">Reject</button>             
+                                <button class="btn btn-success" disabled style="cursor:pointer">Approve</button>                              
+                            }
                         }
                        
             </div><!-- form-layout-footer -->

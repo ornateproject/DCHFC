@@ -23,6 +23,7 @@ namespace ssc.repository
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[Getpost_data]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@reg_no", reg_no);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
@@ -76,86 +77,95 @@ namespace ssc.repository
 
         }
 
-        public string InsertpostData(getpost data, string reg_no)
+        public string InsertpostData(managecandidatedata data, string reg_no)
         {
             DataTable dt = new DataTable();
            
-           using (SqlConnection con = new SqlConnection(connectionString))
-           {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[candidate_document]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    if (data.Upload_doc!=null)
+                    foreach (getpost posts in data.getposts)
                     {
-                        var fileName = Path.GetFileName(data.Upload_doc?.FileName);
+                        if (posts.Upload_doc != null)
+                        {
+                            var doc_fileName = Path.GetFileName(posts.Upload_doc?.FileName);
 
-                        var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
+                            var doc_filenamewithoutextension = Path.GetFileNameWithoutExtension(doc_fileName);
 
-                        var extension = Path.GetExtension(fileName);
-                        string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+                            var doc_extension = Path.GetExtension(doc_fileName);
+                            string varDatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
 
-                        var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
+                            var newfilenamewithoutextensiondoc = varDatetime + doc_filenamewithoutextension;
 
-                        //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
-                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextension + extension);
-                        FileInfo file = new FileInfo(Path.Combine(path));
-                        var stream = new FileStream(path, FileMode.Create);
-                        data.Upload_doc.CopyTo(stream);
-                        stream.Close();
-                        cmd.Parameters.AddWithValue("@Doc_path", newfilenamewithoutextension + extension);
+                            //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
+                            var doc_path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextensiondoc + doc_extension);
+                            FileInfo doc_file = new FileInfo(Path.Combine(doc_path));
+                            var doc_stream = new FileStream(doc_path, FileMode.Create);
+                            posts.Upload_doc.CopyTo(doc_stream);
+                            doc_stream.Close();
+                            cmd.Parameters.AddWithValue("@Doc_path", newfilenamewithoutextensiondoc + doc_extension);
+
+
+                            cmd.Parameters.AddWithValue("@post_id", posts.post_id);
+
+                            //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
+
+                            cmd.Parameters.AddWithValue("@post_name", posts.post_name);
+                            cmd.Parameters.AddWithValue("@Reg_no", reg_no);
+
+                        }
+
+
                     }
-                    if (data.adhar_card != null)
-                    {
-                        var fileName = Path.GetFileName(data.Upload_doc?.FileName);
+                    //........................marksheet upload started................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
-                        var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
+                    var fileName = Path.GetFileName(data.candetails.adhar_card?.FileName);
 
-                        var extension = Path.GetExtension(fileName);
-                        string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+                    var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
 
-                        var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
+                    var extension = Path.GetExtension(fileName);
+                    string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
 
-                        //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
-                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextension + extension);
-                        FileInfo file = new FileInfo(Path.Combine(path));
-                        var stream = new FileStream(path, FileMode.Create);
-                        data.adhar_card.CopyTo(stream);
-                        stream.Close();
-                        cmd.Parameters.AddWithValue("@adhar_card", newfilenamewithoutextension + extension);
-                    }
-                    if (data.marksheet != null)
-                    {
-                        var fileName = Path.GetFileName(data.Upload_doc?.FileName);
+                    var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
 
-                        var filenamewithoutextension = Path.GetFileNameWithoutExtension(fileName);
-
-                        var extension = Path.GetExtension(fileName);
-                        string vardatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
-
-                        var newfilenamewithoutextension = vardatetime + filenamewithoutextension;
-
-                        //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
-                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextension + extension);
-                        FileInfo file = new FileInfo(Path.Combine(path));
-                        var stream = new FileStream(path, FileMode.Create);
-                        data.marksheet.CopyTo(stream);
-                        stream.Close();
-                        cmd.Parameters.AddWithValue("@marksheet", newfilenamewithoutextension + extension);
-                    }
-                    cmd.Parameters.AddWithValue("@post_id", data.post_id);
-
+                    //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/adharcard", newfilenamewithoutextension + extension);
+                    FileInfo file = new FileInfo(Path.Combine(path));
+                    var stream = new FileStream(path, FileMode.Create);
+                    data.candetails.adhar_card.CopyTo(stream);
+                    stream.Close();
                     //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
-                    cmd.Parameters.AddWithValue("@post_name", data.post_name);
-                    cmd.Parameters.AddWithValue("@Reg_no", reg_no);
-                    //cmd.Parameters.AddWithValue("@post_id", data.post_id);
-                    con.Open();
+                    cmd.Parameters.AddWithValue("@adhar_card", newfilenamewithoutextension + extension);
+
+                    //........................ upload adharcard started................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
+
+                    var markfile = Path.GetFileName(data.candetails.marksheet?.FileName);
+
+                    var marksheetfilename = Path.GetFileNameWithoutExtension(markfile);
+
+                    var filenameextension = Path.GetExtension(markfile);
+                    string datetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+
+                    var newmarksheetfilename = markfile + filenameextension;
+
+                    var filepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/marksheet", newmarksheetfilename + filenameextension);
+                    FileInfo File = new FileInfo(Path.Combine(filepath));
+                    var Stream = new FileStream(path, FileMode.Create);
+                    data.candetails.marksheet.CopyTo(Stream);
+                    stream.Close();
+                    //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
+
+                    cmd.Parameters.AddWithValue("@marksheet", newmarksheetfilename + filenameextension);
                     int xdvf = cmd.ExecuteNonQuery();
                     con.Close();
                 }
                 return "ok";
-           }
-                
+            }                 
             
 
         }

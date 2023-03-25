@@ -1,4 +1,4 @@
-﻿@model IList<getpost>;
+﻿@model managecandidatedata;
 @{
     Layout = "~/Views/Shared/_LayoutCandidate.cshtml";
   
@@ -17,24 +17,20 @@
 
 </div>
 <form asp-action="candidate" asp-controller="Candidatedata" enctype="multipart/form-data" method="post" asp-antiforgery="false" >
-<div class="br-pagebody">
+ 
+    <div class="br-pagebody">
     <div class="br-section-wrapper">
-<div style="display:flex;justify-content:space-between;margin-bottom:15px">
+ <div style="display:flex;justify-content:space-between;margin-bottom:15px">
     <span>
 
-
-                    <label  style="color:black"class="form-label" for="customFile"><b>Upload Aadhar Card</b></label>
-                    <input type="file" asp-for="@Model[0].adhar_card"  class="form-control" id="customFile" />
+                           <label  style="color:black"class="form-label" for="customFile"><b>Upload Aadhar Card</b></label>
+                    <input type="file" asp-for="@Model.candetails.adhar_card" accept=".pdf" class="form-control" id="customFile" />
 
 
     </span>
                 <span>
-
-
                     <label style="color:black" class="form-label" for="customFile"><b>Upload Matric Certificate</b></label>
-                    <input type="file" asp-for="@Model[0].marksheet" class="form-control" id="customFile" />
-
-
+                    <input type="file" asp-for="@Model.candetails.marksheet" accept=".pdf" class="form-control" id="customFile" />
                 </span>
 </div>
         <!-- d-flex -->
@@ -55,16 +51,14 @@
                 <tbody >
                     @{
                         
-                        for(var i=0;i< Model.Count;i++ )
-                        {
-                          
+                        for(var i=0;i< Model.getposts.Count;i++ )
+                        {                         
 
                             <tr>
-                                <th scope="row">@i</th>
-                                
-                                <td><label >@Model[i].post_id</label> <input type="hidden" asp-for="@Model[i].post_id" class="form-control"> </td>
-                                <td><label >@Model[i].post_name</label> <input type="hidden" asp-for="@Model[i].post_name" class="form-control"/> </td>
-                                <td><label >@Model[i].dep_name</label> <input type="hidden" asp-for="@Model[i].dep_name" class="form-control"/> </td>
+                                <th scope="row">@i</th>                                
+                                <td><label >@Model.getposts[i].post_id</label> <input type="hidden" asp-for="@Model.getposts[i].post_id" class="form-control"> </td>
+                                <td><label >@Model.getposts[i].post_name</label> <input type="hidden" asp-for="@Model.getposts[i].post_name" class="form-control"/> </td>
+                                <td><label >@Model.getposts[i].dep_name</label> <input type="hidden" asp-for="@Model.getposts[i].dep_name" class="form-control"/> </td>
 
                                 <td>
                                     <input type="checkbox" id="checkbox_@i"  /></td>                      
@@ -73,14 +67,14 @@
                                 <td>
                                     <div class="modal-bootstrap modal-login-form" for="customFile">
                                    
-                                        <input type="file"  asp-for="@Model[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled />
+                                        <input type="file"  asp-for="@Model.getposts[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled />
 
 
                                     </div>
                                     <!-- BASIC MODAL -->
 
                         </td>
-                                <td><label >@Model[i].status</label> <input type="hidden" asp-for="@Model[i].status" class="form-control"/> </td>
+                                <td><label >@Model.getposts[i].status</label> <input type="hidden" asp-for="@Model.getposts[i].status" class="form-control"/> </td>
                                 </tr>
                               
 
@@ -92,7 +86,6 @@
             </table>
                <div class="col-md-12 text-center">
                 <button type="submit" style='cursor:pointer' class="btn btn-primary">Submit</button>
-
             </div>
 
         </div><!-- bd -->
