@@ -16,7 +16,7 @@
     <h4 class="tx-gray-800 mg-b-5">Apply Post</h4>
 
 </div>
-<form asp-action="candidate" asp-controller="Candidatedata" enctype="multipart/form-data" method="post" asp-antiforgery="false" >
+<form asp-action="candidate_preview" asp-controller="Candidatedata" enctype="multipart/form-data" method="post" asp-antiforgery="false" >
  
     <div class="br-pagebody">
     <div class="br-section-wrapper">
@@ -24,13 +24,13 @@
     <span>
 
                            <label  style="color:black"class="form-label" for="customFile"><b>Upload Aadhar Card</b></label>
-                    <input type="file" asp-for="@Model.candetails.adhar_card" accept=".pdf" class="form-control" id="customFile" />
+                       <a target="_blank" href="~/document/@Model.candetails.adhar_card"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>
 
 
     </span>
                 <span>
                     <label style="color:black" class="form-label" for="customFile"><b>Upload Matric Certificate</b></label>
-                    <input type="file" asp-for="@Model.candetails.marksheet" accept=".pdf" class="form-control" id="customFile" />
+                       <a target="_blank" href="~/document/@Model.candetails.marksheet"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>
                 </span>
 </div>
         <!-- d-flex -->
@@ -43,7 +43,7 @@
                         <th>Post ID</th>
                         <th>Post Name</th>
                         <th>Department</th>                        
-                        <th>Check box</th>
+                   
                         <th>Document</th>
                         <th>Status</th>
                     </tr>
@@ -61,13 +61,9 @@
                                 <td><label >@Model.getposts[i].dep_name</label> <input type="hidden" asp-for="@Model.getposts[i].dep_name" class="form-control"/> </td>
 
                                 <td>
-                                    <input type="checkbox" id="checkbox_@i"  /></td>                      
-
-
-                                <td>
                                     <div class="modal-bootstrap modal-login-form" for="customFile">
                                    
-                                        <input type="file"  asp-for="@Model.getposts[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled />
+                       <a target="_blank" href=""><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>
 
 
                                     </div>
@@ -85,49 +81,16 @@
 
             </table>
                <div class="col-md-12 text-center">
-               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Save
-</button>
+                <button type="submit" style='cursor:pointer' class="btn btn-primary">Submit</button>
             </div>
-             
+          
 
         </div><!-- bd -->
 
-    </div><!-- br-section-wrapper -->   
-</div>
-<!-- Button trigger modal -->
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Post Apply</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-    <div class="table-wrapper rounded table-responsive">
-            
-            <table id="datatable1" class="table display responsive nowrap">
-                <thead>
-                    <tr>
-                        <th>Sr No.</th>
-                        <th>Post ID</th>
-                        <th>Post Name</th>
-                       
-                    </tr>
-                </thead>
-                <tbody >
-                </table>
-                </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </div>
+
+        
+    </div><!-- br-section-wrapper -->
+    
 </div><!-- br-pagebody -->
 </form>
 <!-- ########## END: MAIN PANEL ########## -->
