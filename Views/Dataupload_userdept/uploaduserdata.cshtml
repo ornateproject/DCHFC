@@ -22,7 +22,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                
-          <select id="select2" class="form-control select2" asp-for="depreg.phases" data-placeholder="Choose Branch">
+              <select id="select2" class="form-control select2" asp-for="upload_data.phases" data-placeholder="Choose Branch">
                                         <option value=" ">Select an option</option>
                                         @foreach (var item in Model.phases_post)
                                         {
@@ -34,7 +34,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                         <input type='file' class="form-control" id="excelFileInput"  asp-for="depreg.Upload_doc" accept=".xlsx, .xls" onchange="validateExcelFile()"> </label>
+                         <input type='file' class="form-control" id="excelFileInput"  asp-for="upload_data.Upload_doc" accept=".xlsx, .xls" onchange="validateExcelFile()"> </label>
                         
                     </div>
                    

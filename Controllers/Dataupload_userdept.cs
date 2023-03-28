@@ -35,7 +35,7 @@ namespace ssc.Controllers
             {
                 
                 var asd = _uploadrepo.InsertpostData(model.upload_data);
-                
+                return RedirectToAction("dashboard", "US");
             }
             
             return View();
