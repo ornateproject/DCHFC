@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using iTextSharp.text.pdf;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using OfficeOpenXml;
 using ssc.Models;
 using ssc.repository;
+using System.Reflection.Metadata;
 
 namespace ssc.Controllers
 {
@@ -18,12 +20,12 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult candidate()
         {
-           var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
-            var usdata = _candidaterepo.get_postdata();
+          var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
+            var usdata = _candidaterepo.get_postcanddata(reg_no);
            
             managecandidatedata managecandidatedata = new managecandidatedata();
 
-            managecandidatedata.getposts = JsonConvert.DeserializeObject<IList<getpost>>(usdata);
+           managecandidatedata.getposts = JsonConvert.DeserializeObject<IList<getpost>>(usdata);
             
             return View(managecandidatedata);
         }
@@ -43,16 +45,35 @@ namespace ssc.Controllers
             }
             return View();
         }
+        public ActionResult MergePDFs()
+        {
+            return View();
+        }
 
 
         [HttpGet]
         public IActionResult usview()
         {
-           // var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
-            var usdata = _candidaterepo.get_postdata();
-            List<getpost> dept = new List<getpost>();
-            dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
-            return View(dept);
+            // var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
+
+            var user = HttpContext.Session.GetString("userType").ToString();
+            if (@user == "2")
+            {
+                var usdata = _candidaterepo.get_uspostdata();
+                List<getpost> deptm = new List<getpost>();
+                deptm = JsonConvert.DeserializeObject<List<getpost>>(usdata);
+                return View(deptm);
+            }
+            else if (@user=="3")
+            {
+                var depart = HttpContext.Session.GetString("department").ToString();
+                var usdata = _candidaterepo.get_postdata(depart);
+                List<getpost> dept = new List<getpost>();
+                dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);
+                return View(dept);
+            }
+
+            return View();
 
         }
 
@@ -91,7 +112,10 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult candidate_preview()
         {
-            var usdata = _candidaterepo.get_postdata();
+            //  var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
+           var dept= HttpContext.Session.GetString("department").ToString();
+
+            var usdata = _candidaterepo.get_postdata(dept);
 
             managecandidatedata managecandidatedata = new managecandidatedata();
 

@@ -34,16 +34,14 @@ namespace ssc.Models
         public string? Mobile_no { get; set; }
 
         [Required(ErrorMessage = "*")]
-        //[RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail is not valid")]
-        [RegularExpression(@"^[a-zA-Z0-9._%+-]+[a-zA-Z0-9.-]+[a-zA-Z]{2,}$", ErrorMessage = "Please enter a valid email address.")]
-
+        [RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = "Please enter a valid email address.")]
         public string? Email { get; set; }
 
         //[Required(ErrorMessage = "*")]
         //[RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail is not valid")]
         public string? Emailtype { get; set; }
 
-        // [Required(ErrorMessage = "*")]
+        [Required(ErrorMessage = "Please  upload doc")]
 
         public IFormFile? Upload_doc { get; set; }
         public string? Doc_path { get; set; }
@@ -73,8 +71,8 @@ namespace ssc.Models
     }
     public class ManageDepreg
     {
-            public List<ministry>? Ministries { get; set; }
-            public DeptRegistration? depreg { get; set; }
+        public List<ministry>? Ministries { get; set; }
+        public DeptRegistration? depreg { get; set; }
         public UserModel? loginuser { get; set; }
         public candidate? candidatelogin { get; set; }
         public List<phases>? phases_post { get; set; }

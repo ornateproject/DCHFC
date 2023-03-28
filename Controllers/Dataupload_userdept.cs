@@ -33,7 +33,9 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 var asd = _uploadrepo.InsertpostData(model.upload_data);
+                
             }
             
             return View();
