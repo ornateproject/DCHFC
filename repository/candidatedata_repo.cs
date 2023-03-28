@@ -14,7 +14,7 @@ namespace ssc.repository
             connectionString = configuration.GetValue<string>("DBInfo:ConnectionString");
 
         }
-        public string get_postdata()
+        public string get_postdata(string depart)
         {
 
             DataTable dt = new DataTable();
@@ -23,7 +23,9 @@ namespace ssc.repository
                 using (SqlCommand cmd = new SqlCommand("[sscpost].[Getpost_data]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    //cmd.Parameters.AddWithValue("@reg_no", reg_no);
+                    cmd.Parameters.AddWithValue("@Department", depart);
+                    cmd.Parameters.AddWithValue("@callval", 2);
+                    // cmd.Parameters.AddWithValue("@Reg_no", reg_no);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
@@ -34,7 +36,48 @@ namespace ssc.repository
             return JsonConvert.SerializeObject(dt);
 
         }
+        public string get_uspostdata()
+        {
 
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[Getpost_data]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@callval", 1);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    con.Close();
+
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
+
+        }
+        public string get_postcanddata(string reg_no)
+        {
+
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[sscpost].[Getpost_data]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                   // cmd.Parameters.AddWithValue("@Department", depart);
+                    cmd.Parameters.AddWithValue("@Reg_no", reg_no);
+                    cmd.Parameters.AddWithValue("@callval", 3);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    con.Close();
+
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
+
+        }
         public string getcandidatelist( string post_id)
         {
 

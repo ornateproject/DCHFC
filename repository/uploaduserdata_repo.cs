@@ -17,6 +17,7 @@ namespace ssc.repository
             connectionString = configuration.GetValue<string>("DBInfo:ConnectionString");
 
         }
+
         public string InsertpostData(uploadcandidate model)
         {
             var fileName = Path.GetFileName(model.Upload_doc.FileName);

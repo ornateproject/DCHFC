@@ -162,13 +162,14 @@
                         <div class="col-lg-3">
                             <div class="form-group">
 
-                                <label class="form-control-label tx-gray-700">Reg For: <span class="tx-danger"></span></label>
                                 <div id="input-field" style="display: none;">
+                                <label class="form-control-label tx-gray-700">Year<span class="tx-danger"></span></label>
 
                                     <input type="text" asp-for="depreg.Year" id="input1" class="form-control" />
                                 </div>
 
                                 <div id="select2-field" style="display: none;">
+                                      <label class="form-control-label tx-gray-700">Phases<span class="tx-danger"></span></label>
 
                                     <select id="select2" class="form-control select2" asp-for="depreg.phases" data-placeholder="Choose Branch">
                                         <option value=" ">Select an option</option>
@@ -188,7 +189,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-control-label tx-gray-700" for="customFile">
-                                        Nodal Officer Authorization Letter<span asp-validation-for="depreg.Upload_doc" class="tx-danger"></span>
+                                        Nodal Officer Authorization Letter:-<span asp-validation-for="depreg.Upload_doc" class="tx-danger"></span>
                                     </label>
                                     @*<label class="custom-file">
                                         <input  type="file" asp-for="depreg.Upload_doc" id="inputGroupFile02" class="custom-file-input">*@

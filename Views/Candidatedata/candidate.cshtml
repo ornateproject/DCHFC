@@ -68,71 +68,74 @@
                                    
                                         <input type="file"  asp-for="@Model.getposts[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled />
 
-
                                     </div>
                                     <!-- BASIC MODAL -->
 
                         </td>
                                 <td><label >@Model.getposts[i].status</label> <input type="hidden" asp-for="@Model.getposts[i].status" class="form-control"/> </td>
                                 </tr>
-                              
 
+
+                            }
                         }
-                        }
 
-                </tbody>
+                    </tbody>
 
-            </table>
-               <div class="col-md-12 text-center">
-               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Next
-</button>
-            </div>
-             
+                </table>
+                <div class="col-md-12 text-center">
+                    <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        Next
+                    </button>
+                </div>
 
-        </div><!-- bd -->
 
-    </div><!-- br-section-wrapper -->   
-</div>
-<!-- Button trigger modal -->
-<!-- Modal -->
+            </div><!-- bd -->
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Post Apply</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-    <div class="table-wrapper rounded table-responsive">
-            
-            <table id="datatable1" class="table display responsive nowrap">
-                <thead>
-                    <tr>
-                        <th>Sr No.</th>
-                        <th>Post ID</th>                        
-                        <th>Post Name</th>
-                       
-                    </tr>
-                </thead>
-                <tbody >
-             
-                    <tr>
-                        <th scope="row">1</th>                                
-                                <td><label >@Model.getposts[0].post_id</label> <input type="hidden" asp-for="@Model.getposts[0].post_id" class="form-control"> </td>
-                                <td><label >@Model.getposts[0].post_name</label> <input type="hidden" asp-for="@Model.getposts[0].post_name" class="form-control"/> </td>
-                       
-                      </tr>
-               
-                       
-                   
+        </div><!-- br-section-wrapper -->   
+    </div>
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Post Apply</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-wrapper rounded table-responsive">
+
+                        <table id="datatable1" class="table display responsive nowrap">
+                            <thead>
+                                <tr>
+                                    <th>Sr No.</th>
+                                    <th>Post ID</th>                        
+                                    <th>Post Name</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                @{
+                                    int j = 0;
+                                    foreach(var item in Model.getposts)
+                                    {
+                                        j++;
+                                        <tr>
+                                            <th scope="row" id="checkbox_@j" >@j</th>                                
+                                            <td>@item.post_id</td>
+                                            <td>@item.post_name</td>
+                                        </tr>
+                                    }
+
+                            }
+                                        
+   
                 
                 </tbody>
                 </table>
-                 <a target="_blank" href=""><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>                   
+                 <a target="_blank" href=""><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>                 
                      
                        
                 </div>

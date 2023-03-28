@@ -219,6 +219,8 @@ namespace ssc.Models
     public class uploadcandidate
     {
         public string? post { get; set; }
+
+        public string? phases { get; set; }
         public IFormFile? Upload_doc { get; set; }
        
         public string? Reg_no { get; set; }

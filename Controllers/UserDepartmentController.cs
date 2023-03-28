@@ -33,7 +33,7 @@ namespace ssc.Controllers
                 department.ID = Convert.ToInt32(HttpContext.Session.GetString("department"));
                 var asd = _userDepRepo.InsertpostData(department);               
 
-                return RedirectToAction("us2details","US2approval");
+                return RedirectToAction("us2","US2");
             }
                         return View();
         }
