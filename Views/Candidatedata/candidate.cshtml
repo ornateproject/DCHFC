@@ -85,7 +85,7 @@
             </table>
                <div class="col-md-12 text-center">
                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Save
+  Next
 </button>
             </div>
              
@@ -119,13 +119,14 @@
                     </tr>
                 </thead>
                 <tbody >
-               foreach (var items in Model){
+             
                     <tr>
-                        <th>Sr_no</th>
-                        <th>post_name</th>
-                        <th>Post Name</th>                       
+                        <th scope="row">1</th>                                
+                                <td><label >@Model.getposts[0].post_id</label> <input type="hidden" asp-for="@Model.getposts[0].post_id" class="form-control"> </td>
+                                <td><label >@Model.getposts[0].post_name</label> <input type="hidden" asp-for="@Model.getposts[0].post_name" class="form-control"/> </td>
+                       
                       </tr>
-                }  
+               
                        
                    
                 
@@ -138,7 +139,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>

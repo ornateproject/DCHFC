@@ -18,7 +18,8 @@ namespace ssc.Controllers
         public IActionResult us2()
         {
             {
-               var user= HttpContext.Session.GetString("userType").ToString();
+               
+                    var user= HttpContext.Session.GetString("userType").ToString();
                 if (@user=="2")
                 {
                     var usdata = _us2repo.get_deparment();
