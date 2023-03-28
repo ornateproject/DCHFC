@@ -61,9 +61,8 @@
                                 <td><label >@Model.getposts[i].dep_name</label> <input type="hidden" asp-for="@Model.getposts[i].dep_name" class="form-control"/> </td>
 
                                 <td>
-                                    <input type="checkbox" id="checkbox_@i"  /></td>                      
-
-
+                                    <input type="checkbox" id="checkbox_@i"  />
+                                </td>                      
                                 <td>
                                     <div class="modal-bootstrap modal-login-form" for="customFile">
                                    
@@ -97,6 +96,7 @@
 </div>
 <!-- Button trigger modal -->
 <!-- Modal -->
+
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -113,20 +113,22 @@
                 <thead>
                     <tr>
                         <th>Sr No.</th>
-                        <th>Post ID</th>
+                        <th>Post ID</th>                        
                         <th>Post Name</th>
                        
                     </tr>
                 </thead>
                 <tbody >
-                <tr>
-                        <th>Sr No.</th>
-                        <th>Post ID</th>
-                        <th>Post Name</th>
-                         
+               foreach (var items in Model){
+                    <tr>
+                        <th>Sr_no</th>
+                        <th>post_name</th>
+                        <th>Post Name</th>                       
+                      </tr>
+                }  
                        
-                       
-                    </tr>
+                   
+                
                 </tbody>
                 </table>
                  <a target="_blank" href=""><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>                   

@@ -55,6 +55,7 @@ namespace ssc.Controllers
             return View(dept);
 
         }
+
         [HttpGet]
         public IActionResult getcandidatedata()
         {
