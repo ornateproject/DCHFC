@@ -18,7 +18,7 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult candidate()
         {
-           // var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
+           var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
             var usdata = _candidaterepo.get_postdata();
            
             managecandidatedata managecandidatedata = new managecandidatedata();
@@ -55,6 +55,7 @@ namespace ssc.Controllers
             return View(dept);
 
         }
+
         [HttpGet]
         public IActionResult getcandidatedata()
         {

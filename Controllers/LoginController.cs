@@ -89,7 +89,7 @@ namespace ssc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> logincandidate(ManageDepreg model)
+        public async Task<IActionResult>logincandidate(ManageDepreg model)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +98,6 @@ namespace ssc.Controllers
                 {
                     HttpContext.Session.SetString("Reg_no", Convert.ToString(result.Rows[0]["Reg_no"]));
                     HttpContext.Session.SetString("DOB", Convert.ToString(result.Rows[0]["DOB"]));
-
                     return RedirectToAction("candidate_dashboard", "Candidatedata");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";

@@ -13,8 +13,6 @@ namespace ssc.Controllers
         public UserDeptDash(IConfiguration configuration)
         {
             _userdahrepo = new UserDeptDsah_repo(configuration);
-
-
         }
 
         [HttpGet]

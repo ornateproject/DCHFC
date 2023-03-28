@@ -61,9 +61,8 @@
                                 <td><label >@Model.getposts[i].dep_name</label> <input type="hidden" asp-for="@Model.getposts[i].dep_name" class="form-control"/> </td>
 
                                 <td>
-                                    <input type="checkbox" id="checkbox_@i"  /></td>                      
-
-
+                                    <input type="checkbox" id="checkbox_@i"  />
+                                </td>                      
                                 <td>
                                     <div class="modal-bootstrap modal-login-form" for="customFile">
                                    
@@ -86,7 +85,7 @@
             </table>
                <div class="col-md-12 text-center">
                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Save
+  Next
 </button>
             </div>
              
@@ -97,6 +96,7 @@
 </div>
 <!-- Button trigger modal -->
 <!-- Modal -->
+
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -113,20 +113,23 @@
                 <thead>
                     <tr>
                         <th>Sr No.</th>
-                        <th>Post ID</th>
+                        <th>Post ID</th>                        
                         <th>Post Name</th>
                        
                     </tr>
                 </thead>
                 <tbody >
-                <tr>
-                        <th>Sr No.</th>
-                        <th>Post ID</th>
-                        <th>Post Name</th>
-                         
+             
+                    <tr>
+                        <th scope="row">1</th>                                
+                                <td><label >@Model.getposts[0].post_id</label> <input type="hidden" asp-for="@Model.getposts[0].post_id" class="form-control"> </td>
+                                <td><label >@Model.getposts[0].post_name</label> <input type="hidden" asp-for="@Model.getposts[0].post_name" class="form-control"/> </td>
                        
+                      </tr>
+               
                        
-                    </tr>
+                   
+                
                 </tbody>
                 </table>
                  <a target="_blank" href=""><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>                   
@@ -136,7 +139,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>
