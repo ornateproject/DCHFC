@@ -1,11 +1,17 @@
 ﻿using iTextSharp.text.pdf;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using OfficeOpenXml;
+//using OfficeOpenXml;
 using ssc.Models;
 using ssc.repository;
 using iTextSharp.text;
-using System.Reflection.Metadata;
+//using System.Reflection.Metadata;
+
+
+
+//using System.Collections.Generic;
+//using System.IO;
+//using SelectPdf;
 
 namespace ssc.Controllers
 {
@@ -34,44 +40,43 @@ namespace ssc.Controllers
         [HttpPost]
         public async Task<IActionResult> candidate(managecandidatedata data)
         {
-            if (ModelState.IsValid)
-            {
-                var reg_no = HttpContext.Session.GetString("Reg_no").ToString();               
-                  //  var asd = _candidaterepo.InsertpostData(data, reg_no);
-               // return View("candidate_dashboard", "Candidatedata");
-            }
+            var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
             List<getpost> getpostList = new List<getpost>();
             getpostList = data.getposts.Where(x => x.is_checked == "true").ToList();
-
             data.getposts = getpostList;
+           var savedfiles= _candidaterepo.savepdf(data);
+
+
+
+            //....................itext sharp
+
+           // string outputFilePath = "wwwroot/document/finalpdf_"+"1125.pdf";
+            var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document/FinalDocument", reg_no + ".pdf");
+
+
+            using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
+            {
+                Document document = new Document();
+                PdfCopy pdf = new PdfCopy(document, stream);
+                document.Open();
+
+                foreach (string pdfFile in savedfiles)
+                {
+                    PdfReader reader = new PdfReader(pdfFile);
+                    pdf.AddDocument(reader);
+                    reader.Close();
+                }
+
+                pdf.Close();
+                document.Close();
+            }
+
+             data.candetails.regNo= reg_no+".pdf";
             return View("~/Views/Candidatedata/candidate_preview.cshtml", data);
 
-
-
+            //var asd = _candidaterepo.InsertpostData(data, reg_no);
+            //return View("candidate_dashboard", "Candidatedata");
         }
-        //public ActionResult MergePDFs(List<string> pdfFiles)
-        //{
-        //    string outputFilePath = "mergedFile.pdf";
-
-        //    using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
-        //    {
-        //        Document document = new Document();
-        //        PdfCopy pdf = new PdfCopy(document, stream);
-        //        document.Open();
-
-        //        foreach (string pdfFile in pdfFiles)
-        //        {
-        //            PdfReader reader = new PdfReader(pdfFile);
-        //            pdf.AddDocument(reader);
-        //            reader.Close();
-        //        }
-
-        //        pdf.Close();
-        //        document.Close();
-        //    }
-
-        //    return File(outputFilePath, "application/pdf", "MergedFile.pdf");
-        //}
         public ActionResult MergePDFs()
         {
             return View();

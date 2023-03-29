@@ -31,13 +31,15 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.11" />
+    <PackageReference Include="Select.Pdf.NetCore" Version="22.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="pdf\" />
+    <Folder Include="wwwroot\document\finalpdf\" />
     <Folder Include="wwwroot\document\PDF\" />
-    <Folder Include="wwwroot\document\" />
     <Folder Include="wwwroot\marksheet\" />
     <Folder Include="wwwroot\adharcard\" />
     <Folder Include="wwwroot\pdf\" />

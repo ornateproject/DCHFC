@@ -116,6 +116,7 @@ namespace ssc.Models
         public IFormFile? adhar_card { get; set; }
 
         public IFormFile? marksheet { get; set; }
+        public string? regNo { get; set; }
     }
 
     public class managecandidatedata

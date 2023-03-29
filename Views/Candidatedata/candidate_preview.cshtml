@@ -8,12 +8,12 @@
 }
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
-        <a class="breadcrumb-item" href="US1.html">Candidate</a>
-        <span class="breadcrumb-item active">Apply Post</span>
+        <a class="breadcrumb-item">Candidate</a>
+        <span class="breadcrumb-item active">Preview</span>
     </nav>
 </div><!-- br-pageheader -->
 <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
-    <h4 class="tx-gray-800 mg-b-5">Apply Post</h4>
+    <h4 class="tx-gray-800 mg-b-5">Preview</h4>
 
 </div>
 <form asp-action="candidate_preview" asp-controller="Candidatedata" enctype="multipart/form-data" method="post" asp-antiforgery="false" >
@@ -30,10 +30,6 @@
                         <th>Sr No.</th>
                         <th>Post ID</th>
                         <th>Post Name</th>
-                        <th>Department</th>                        
-                   
-                        <th>Document</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody >
@@ -46,18 +42,8 @@
                                 <th scope="row">@i</th>                                
                                 <td><label >@Model.getposts[i].post_id</label> <input type="hidden" asp-for="@Model.getposts[i].post_id" class="form-control"> </td>
                                 <td><label >@Model.getposts[i].post_name</label> <input type="hidden" asp-for="@Model.getposts[i].post_name" class="form-control"/> </td>
-                                <td><label >@Model.getposts[i].dep_name</label> <input type="hidden" asp-for="@Model.getposts[i].dep_name" class="form-control"/> </td>
+                                
 
-                                <td>
-                                    <div class="modal-bootstrap modal-login-form" for="customFile">
-                                   
-                       <a target="_blank" href=""><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>
-
-
-                                    </div>
-                                    <!-- BASIC MODAL -->
-
-                        </td>
                                 <td><label >@Model.getposts[i].status</label> <input type="hidden" asp-for="@Model.getposts[i].status" class="form-control"/> </td>
                                 </tr>
                               
@@ -68,7 +54,12 @@
                 </tbody>
 
             </table>
+             <span class="col-md-12">
+              <p style="color:black;font-weight:200" >  <b> View Document</b></p>
+               <a target="_blank" href="~/document/FinalDocument/@Model.candetails.regNo"><img class="Pdficon1" src="~/img/PDF-icon.png" width="75px"></a>
+            </span>
                <div class="col-md-12 text-center">
+                    <a href="/Candidatedata/candidate" type="button"  style='cursor:pointer' class="btn btn-primary">Back</a>
                 <button type="submit" style='cursor:pointer' class="btn btn-primary">Submit</button>
             </div>
           
