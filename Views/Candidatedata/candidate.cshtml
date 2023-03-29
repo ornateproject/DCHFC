@@ -23,13 +23,13 @@
  <div style="display:flex;justify-content:space-between;margin-bottom:15px">
     <span>
 
-                           <label  style="color:black"class="form-label" for="customFile"><b>Upload Aadhar Card</b></label>
+                    <label  style="color:black"class="form-label" for="customFile"><b>Upload Aadhar Card</b></label>
                     <input type="file" asp-for="@Model.candetails.adhar_card" accept=".pdf" class="form-control" id="customFile" />
 
 
     </span>
                 <span>
-                    <label style="color:black" class="form-label" for="customFile"><b>Upload Matric Certificate</b></label>
+                    <label style="color:black" class="form-label" for="customFile"><b>Upload 10th Certificate</b></label>
                     <input type="file" asp-for="@Model.candetails.marksheet" accept=".pdf" class="form-control" id="customFile" />
                 </span>
 </div>
@@ -61,7 +61,8 @@
                                 <td><label >@Model.getposts[i].dep_name</label> <input type="hidden" asp-for="@Model.getposts[i].dep_name" class="form-control"/> </td>
 
                                 <td>
-                                    <input type="checkbox" id="checkbox_@i"  />
+                               
+                                    <input type="checkbox" asp-for="@Model.getposts[i].is_checked" />
                                 </td>                      
                                 <td>
                                     <div class="modal-bootstrap modal-login-form" for="customFile">
@@ -71,7 +72,7 @@
                                     </div>
                                     <!-- BASIC MODAL -->
 
-                        </td>
+                             </td>
                                 <td><label >@Model.getposts[i].status</label> <input type="hidden" asp-for="@Model.getposts[i].status" class="form-control"/> </td>
                                 </tr>
 
@@ -83,7 +84,7 @@
 
                 </table>
                 <div class="col-md-12 text-center">
-                    <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    <button type="submit" id="popup-btn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                         Next
                     </button>
                 </div>
@@ -117,21 +118,27 @@
                                 </tr>
                             </thead>
                             <tbody >
+                         
                                 @{
                                     int j = 0;
                                     foreach(var item in Model.getposts)
                                     {
                                         j++;
-                                        <tr>
-                                            <th scope="row" id="checkbox_@j" >@j</th>                                
-                                            <td>@item.post_id</td>
+                                       
+                                        <tr >
+                                       
+                                             <th scope="row" >@j</th>                                
+                                            <td >@item.post_id</td>
                                             <td>@item.post_name</td>
+                                        
+                                           
                                         </tr>
+                                       
                                     }
 
-                            }
-                                        
-   
+                                 }
+                                  
+                       
                 
                 </tbody>
                 </table>
@@ -148,6 +155,7 @@
   </div>
 </div><!-- br-pagebody -->
 </form>
+
 <!-- ########## END: MAIN PANEL ########## -->
 
 
@@ -268,4 +276,7 @@ fileInput.addEventListener("change", function() {
 				}
 			});
 		});
+        
 	</script>
+   
+ 

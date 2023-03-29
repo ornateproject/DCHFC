@@ -105,6 +105,7 @@ namespace ssc.Models
         public string? dep_name { get; set; }       
         public string? status { get; set; }
         public IFormFile? Upload_doc { get; set; }
+        public string? is_checked { get; set; }
        
         public string? Adhar { get; set; }
         public string? certificate { get; set; }

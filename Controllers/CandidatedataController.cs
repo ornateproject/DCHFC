@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using OfficeOpenXml;
 using ssc.Models;
 using ssc.repository;
+using iTextSharp.text;
 using System.Reflection.Metadata;
 
 namespace ssc.Controllers
@@ -35,16 +36,42 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
-                var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
-               
-                    var asd = _candidaterepo.InsertpostData(data, reg_no);            
-                                             
-               
-                return View("candidate_dashboard", "Candidatedata");
-
+                var reg_no = HttpContext.Session.GetString("Reg_no").ToString();               
+                  //  var asd = _candidaterepo.InsertpostData(data, reg_no);
+               // return View("candidate_dashboard", "Candidatedata");
             }
-            return View();
+            List<getpost> getpostList = new List<getpost>();
+            getpostList = data.getposts.Where(x => x.is_checked == "true").ToList();
+
+            data.getposts = getpostList;
+            return View("~/Views/Candidatedata/candidate_preview.cshtml", data);
+
+
+
         }
+        //public ActionResult MergePDFs(List<string> pdfFiles)
+        //{
+        //    string outputFilePath = "mergedFile.pdf";
+
+        //    using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
+        //    {
+        //        Document document = new Document();
+        //        PdfCopy pdf = new PdfCopy(document, stream);
+        //        document.Open();
+
+        //        foreach (string pdfFile in pdfFiles)
+        //        {
+        //            PdfReader reader = new PdfReader(pdfFile);
+        //            pdf.AddDocument(reader);
+        //            reader.Close();
+        //        }
+
+        //        pdf.Close();
+        //        document.Close();
+        //    }
+
+        //    return File(outputFilePath, "application/pdf", "MergedFile.pdf");
+        //}
         public ActionResult MergePDFs()
         {
             return View();
