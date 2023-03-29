@@ -120,7 +120,7 @@ namespace ssc.repository
 
         }
 
-        public string InsertpostData(managecandidatedata data, string reg_no)
+        public string InsertpostData(managecandidatedata data)
         {
             DataTable dt = new DataTable();
            
@@ -158,7 +158,7 @@ namespace ssc.repository
                             //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
                             cmd.Parameters.AddWithValue("@post_name", posts.post_name);
-                            cmd.Parameters.AddWithValue("@Reg_no", reg_no);
+                            //cmd.Parameters.AddWithValue("@Reg_no", reg_no);
 
                         }
 

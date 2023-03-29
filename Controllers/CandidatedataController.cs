@@ -46,13 +46,10 @@ namespace ssc.Controllers
             data.getposts = getpostList;
            var savedfiles= _candidaterepo.savepdf(data);
 
-
-
             //....................itext sharp
 
            // string outputFilePath = "wwwroot/document/finalpdf_"+"1125.pdf";
             var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document/FinalDocument", reg_no + ".pdf");
-
 
             using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
             {
@@ -74,11 +71,17 @@ namespace ssc.Controllers
              data.candetails.regNo= reg_no+".pdf";
             return View("~/Views/Candidatedata/candidate_preview.cshtml", data);
 
-            //var asd = _candidaterepo.InsertpostData(data, reg_no);
-            //return View("candidate_dashboard", "Candidatedata");
         }
-        public ActionResult MergePDFs()
+
+        [HttpPost]
+        public ActionResult candidate_preview(managecandidatedata data)
         {
+            if (ModelState.IsValid)
+            {
+                var asd = _candidaterepo.InsertpostData(data);
+                return View("candidate_dashboard", "Candidatedata");
+
+            }
             return View();
         }
 
@@ -157,20 +160,20 @@ namespace ssc.Controllers
            // return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> candidate_preview(managecandidatedata data)
-        {
-            if (ModelState.IsValid)
-            {
-                var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
+        //[HttpPost]
+        //public async Task<IActionResult> candidate_preview(managecandidatedata data)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
 
-                var asd = _candidaterepo.InsertpostData(data, reg_no);
+        //        var asd = _candidaterepo.InsertpostData(data, reg_no);
 
 
-                return View("candidate_dashboard", "Candidatedata");
+        //        return View("candidate_dashboard", "Candidatedata");
 
-            }
-            return View();
-        }
+        //    }
+        //    return View();
+        //}
     }
 }
