@@ -304,10 +304,6 @@
             <label for="books1"style="display: contents" class='fa fa-user-circle'>
                 <p style="text-align: center;">Candidate login </p>
             </label>
-            
-
-
-            
         </nav>
 
        
@@ -323,7 +319,7 @@
 
                     <div class="form-group">
  
-            <input  asp-for="candidatelogin.DOB"  type="text" placeholder="DD/MM/YYYY" class="form-control"  />
+            <input  asp-for="candidatelogin.DOB"  type="date"  maxlength="10" class="form-control"  />
                  
                       
                     </div><!-- form-group -->
@@ -332,11 +328,15 @@
                     <button class="btn btn-black btn-block pd-y-10 mg-b-30 text-white" id="btnlog2">Login</button>
                     <div class="">
                         <div class="form-group"><a href="ForgetPassword.html" class="tx-12">Forgot password?</a></div>
-                        @if (!string.IsNullOrEmpty(Convert.ToString(@TempData["error"])))
-                        {
-                            <h6 style="color:red;" class="danger">@TempData["error"]</h6>
-                        }
+                        
                     </div>
+                    <div class="">
+						@if (!string.IsNullOrEmpty(Convert.ToString(@TempData["error"])))
+						{
+							<h6 style="color:red;" class="danger">@TempData["error"]</h6>
+						}
+   </div>
+		  
 
                 </form>
 

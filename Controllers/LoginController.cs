@@ -101,9 +101,10 @@ namespace ssc.Controllers
                     return RedirectToAction("candidate_dashboard", "Candidatedata");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
-                TempData["tab"] = "US";
+                //TempData["tab"] = "US";
                 return RedirectToAction("logincandidate", "Login");
             }
+            TempData["error"] = "Please Enter Valid User Name And Password";
             return RedirectToAction("logincandidate", "Login");
         }
 
