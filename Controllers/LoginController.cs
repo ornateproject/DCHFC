@@ -96,6 +96,7 @@ namespace ssc.Controllers
                var result = _login.candidatelogin(model.candidatelogin);
                 if (result.Rows.Count > 0)
                 {
+                    HttpContext.Session.SetString("Name", Convert.ToString(result.Rows[0]["Name"]));
                     HttpContext.Session.SetString("Reg_no", Convert.ToString(result.Rows[0]["Reg_no"]));
                     HttpContext.Session.SetString("DOB", Convert.ToString(result.Rows[0]["DOB"]));
                     return RedirectToAction("candidate_dashboard", "Candidatedata");
