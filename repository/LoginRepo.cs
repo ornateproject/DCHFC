@@ -57,7 +57,8 @@ namespace ssc.repository
         }
         public DataTable userlogin(UserModel model)
         {
-            DataTable dt = new DataTable();
+           
+                DataTable dt = new DataTable();
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -66,6 +67,7 @@ namespace ssc.repository
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserName", model.UserName);
                     cmd.Parameters.AddWithValue("@Password", model.Password);
+                    //cmd.Parameters.AddWithValue("@Name", model.Name);
                     cmd.Parameters.AddWithValue("@phase", model.phase);
                     cmd.Parameters.AddWithValue("@loginfor", model.post);
                     con.Open();

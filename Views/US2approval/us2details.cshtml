@@ -487,7 +487,7 @@ For more information on enabling MVC for empty projects, visit https://go.micros
             @if (@usertype=="2")
             {
                  @if (@Model.Status != "1" && @Model.Status != "2")
-            {
+               {
 
                 <a href="@Url.Action("Approve", "US2approval", new { id = Model.ID })"><button class="btn btn-red" style="cursor:pointer">Approved</button></a>
 

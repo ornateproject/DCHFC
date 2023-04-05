@@ -171,9 +171,11 @@
                         {
                             <span class="logged-name hidden-md-down">Candidate</span>
                         }*@
-                        else
-                        {
-                            <span class="logged-name hidden-md-down">User Department</span>
+                        else if(@usertype == "3")
+                        { 
+                            var depart =@Accessor.HttpContext.Session.GetString("Name").ToString();
+                            var dept =@Accessor.HttpContext.Session.GetString("dep_name").ToString();
+                            <span class="logged-name hidden-md-down">@depart (@dept)</span>
                         }
 
                         <img src="~/img/img_avatar.png" class="wd-32 rounded-circle" alt="">
