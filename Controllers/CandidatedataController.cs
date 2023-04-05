@@ -1,17 +1,9 @@
 ﻿using iTextSharp.text.pdf;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-//using OfficeOpenXml;
 using ssc.Models;
 using ssc.repository;
 using iTextSharp.text;
-//using System.Reflection.Metadata;
-
-
-
-//using System.Collections.Generic;
-//using System.IO;
-//using SelectPdf;
 
 namespace ssc.Controllers
 {
@@ -32,7 +24,7 @@ namespace ssc.Controllers
            
             managecandidatedata managecandidatedata = new managecandidatedata();
 
-           managecandidatedata.getposts = JsonConvert.DeserializeObject<IList<getpost>>(usdata);
+           managecandidatedata.getposts = JsonConvert.DeserializeObject<List<getpost>>(usdata);
             
             return View(managecandidatedata);
         }
@@ -41,14 +33,12 @@ namespace ssc.Controllers
         public async Task<IActionResult> candidate(managecandidatedata data)
         {
             var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
-            List<getpost> getpostList = new List<getpost>();
-            getpostList = data.getposts.Where(x => x.is_checked == "true").ToList();
-            data.getposts = getpostList;
-           var savedfiles= _candidaterepo.savepdf(data);
 
-            //....................itext sharp
-
-           // string outputFilePath = "wwwroot/document/finalpdf_"+"1125.pdf";
+            managecandidatedata managecan = new managecandidatedata();
+            
+           managecan.getposts = data.getposts.Where(x => x.is_checked == "true").ToList();
+            managecan.candetails = data.candetails;
+            var savedfiles= _candidaterepo.savepdf(managecan);
             var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document/FinalDocument", reg_no + ".pdf");
 
             using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
@@ -63,22 +53,27 @@ namespace ssc.Controllers
                     pdf.AddDocument(reader);
                     reader.Close();
                 }
-
+             // var asd = _candidaterepo.InsertpostData(managecan);
+                //return View("candidate_dashboard", "Candidatedata");
                 pdf.Close();
                 document.Close();
             }
 
-             data.candetails.regNo= reg_no+".pdf";
-            return View("~/Views/Candidatedata/candidate_preview.cshtml", data);
+            managecan.candetails.regNo= reg_no+".pdf";
+            HttpContext.Session.SetString("selected_post",JsonConvert.SerializeObject(managecan));
+            return View("~/Views/Candidatedata/candidate_preview.cshtml", managecan);
 
         }
 
         [HttpPost]
         public ActionResult candidate_preview(managecandidatedata data)
         {
+          //  managecandidatedata managecan = new managecandidatedata();
+            var selected_post = HttpContext.Session.GetString("selected_post");
+            data = JsonConvert.DeserializeObject<managecandidatedata>(selected_post);
             if (ModelState.IsValid)
             {
-                var asd = _candidaterepo.InsertpostData(data);
+               // var asd = _candidaterepo.InsertpostData(data);
                 return View("candidate_dashboard", "Candidatedata");
 
             }
@@ -154,26 +149,12 @@ namespace ssc.Controllers
 
             managecandidatedata managecandidatedata = new managecandidatedata();
 
-            managecandidatedata.getposts = JsonConvert.DeserializeObject<IList<getpost>>(usdata);
+            managecandidatedata.getposts = JsonConvert.DeserializeObject<List<getpost>>(usdata);
 
             return View(managecandidatedata);
            // return View();
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> candidate_preview(managecandidatedata data)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
-
-        //        var asd = _candidaterepo.InsertpostData(data, reg_no);
-
-
-        //        return View("candidate_dashboard", "Candidatedata");
-
-        //    }
-        //    return View();
-        //}
+       
     }
 }

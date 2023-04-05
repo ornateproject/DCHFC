@@ -111,18 +111,39 @@ namespace ssc.Models
         public string? certificate { get; set; }
         public string? Doc_path { get; set; }
     }
+
+
+    public class previewpost
+    {
+        public int id { get; set; }
+        public string? Reg_no { get; set; }
+       
+        public string? post_id { get; set; }
+        public string? dep_name { get; set; }
+        public string? status { get; set; }
+      
+       
+        public string? Doc_path { get; set; }
+    }
     public class candidatepersonaldetails
     {
         public IFormFile? adhar_card { get; set; }
 
         public IFormFile? marksheet { get; set; }
         public string? regNo { get; set; }
+        public IFormFile? final_pdf { get; set; }
     }
 
     public class managecandidatedata
     {
         public candidatepersonaldetails? candetails { get; set; }
-        public IList<getpost> getposts { get; set; }    
+        public List<getpost> getposts { get; set; }    
+    }
+
+    public class managecandidatedata_preview
+    {
+        public string? regNo { get; set; }
+        public List<previewpost>? preposts { get; set; }
     }
     public class DepartmentData
     {

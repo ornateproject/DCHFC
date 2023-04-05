@@ -34,18 +34,17 @@
                 </thead>
                 <tbody >
                     @{
+                       
                         
                         for(var i=0;i< Model.getposts.Count;i++ )
                         {                         
 
                             <tr>
                                 <th scope="row">@i</th>                                
-                                <td><label >@Model.getposts[i].post_id</label> <input type="hidden" asp-for="@Model.getposts[i].post_id" class="form-control"> </td>
-                                <td><label >@Model.getposts[i].post_name</label> <input type="hidden" asp-for="@Model.getposts[i].post_name" class="form-control"/> </td>
-                                
+                                <td><label >@Model.getposts[i].post_id</label> <input  asp-for="@Model.getposts[i].post_id" class="form-control"> </td>
+                                <td><label >@Model.getposts[i].post_name</label> <input  asp-for="@Model.getposts[i].post_name" class="form-control"/> </td>
 
-                                <td><label >@Model.getposts[i].status</label> <input type="hidden" asp-for="@Model.getposts[i].status" class="form-control"/> </td>
-                                </tr>
+                             </tr>
                               
 
                         }
@@ -55,8 +54,9 @@
 
             </table>
              <span class="col-md-12">
-              <p style="color:black;font-weight:200" >  <b> View Document</b></p>
-               <a target="_blank" href="~/document/FinalDocument/@Model.candetails.regNo"><img class="Pdficon1" src="~/img/PDF-icon.png" width="75px"></a>
+              <p style="color:black;font-weight:200">  <b> View Document</b></p>
+               <input type="hidden" asp-for="~/document/FinalDocument/@Model.candetails.regNo" class="form-control"/>
+               <a target="_blank"  href="~/document/FinalDocument/@Model.candetails.regNo" ><img class="Pdficon1" src="~/img/PDF-icon.png" width="75px"></a>
             </span>
                <div class="col-md-12 text-center">
                     <a href="/Candidatedata/candidate" type="button"  style='cursor:pointer' class="btn btn-primary">Back</a>
