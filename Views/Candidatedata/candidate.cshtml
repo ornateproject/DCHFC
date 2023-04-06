@@ -54,12 +54,11 @@
 
                             <tr>
                                 <th scope="row">@i</th>                                
-                                <td><label >@Model.getposts[i].post_id</label> <input type="hidden" asp-for="@Model.getposts[i].post_id" class="form-control"> </td>
-                                <td><label >@Model.getposts[i].post_name</label> <input type="hidden" asp-for="@Model.getposts[i].post_name" class="form-control"/> </td>
-                                <td><label >@Model.getposts[i].dep_name</label> <input type="hidden" asp-for="@Model.getposts[i].dep_name" class="form-control"/> </td>
+                                <td><label>@Model.getposts[i].post_id</label> <input type="hidden" asp-for="@Model.getposts[i].post_id" class="form-control"> </td>
+                                <td><label>@Model.getposts[i].post_name</label> <input type="hidden" asp-for="@Model.getposts[i].post_name" class="form-control"/> </td>
+                                <td><label>@Model.getposts[i].dep_name</label> <input type="hidden" asp-for="@Model.getposts[i].dep_name" class="form-control"/> </td>
 
-                                <td>
-                               
+                                <td>                               
                                     <input type="checkbox"  id="checkbox_@i" asp-for="@Model.getposts[i].is_checked" />
                                 </td>                      
                                 <td>

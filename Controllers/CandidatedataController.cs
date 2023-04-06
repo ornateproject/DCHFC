@@ -25,7 +25,8 @@ namespace ssc.Controllers
             managecandidatedata managecandidatedata = new managecandidatedata();
 
            managecandidatedata.getposts = JsonConvert.DeserializeObject<List<getpost>>(usdata);
-            
+           //managecandidatedata.getposts = model.candidatepersonaldetails(usdata);
+
             return View(managecandidatedata);
         }
        
