@@ -67,6 +67,7 @@ namespace ssc.repository
                     cmd.CommandType = CommandType.StoredProcedure;
                    // cmd.Parameters.AddWithValue("@Department", depart);
                     cmd.Parameters.AddWithValue("@Reg_no", reg_no);
+                    //cmd.Parameters.AddWithValue("@Reg_no", reg_no);
                     cmd.Parameters.AddWithValue("@callval", 3);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
