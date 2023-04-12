@@ -30,19 +30,20 @@ namespace ssc.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = _login.LoginCheck(model.loginuser);
-                if (result.Rows.Count > 0)
-                {
-                    HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
-                    HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["usertype"]));
-                    //HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["usertype"]));
-                    //HttpContext.Session.SetString("emp_name", Convert.ToString(dt.Rows[0][1]));
-                    //HttpContext.Session.SetString("emp_email", Convert.ToString(dt.Rows[0][2]));
-                    return RedirectToAction("dashboard", "US");
-                }
-                TempData["error"] = "Please Enter Valid User Name And Password";
-                TempData["tab"] = "US";
-                return RedirectToAction("Index", "Home");
+                //var result = _login.LoginCheck(model.loginuser);
+                return RedirectToAction("dashboard", "US");
+                //if (result.Rows.Count > 0)
+                //{
+                //    HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
+                //    HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["usertype"]));
+                //    //HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["usertype"]));
+                //    //HttpContext.Session.SetString("emp_name", Convert.ToString(dt.Rows[0][1]));
+                //    //HttpContext.Session.SetString("emp_email", Convert.ToString(dt.Rows[0][2]));
+                //    return RedirectToAction("dashboard", "US");
+                //}
+                //TempData["error"] = "Please Enter Valid User Name And Password";
+                //TempData["tab"] = "US";
+                //return RedirectToAction("Index", "Home");
             }
             TempData["error"] = "Please Enter Valid User Name And Password";
             TempData["tab"] = "US";

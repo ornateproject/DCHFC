@@ -20,11 +20,12 @@ namespace ssc.Controllers
 
         [HttpGet]
         public IActionResult Index()
-        {            
+        {
             var usdata = _usrepo.get_deparment();
             List<DeptRegistration> deptRegistration = new List<DeptRegistration>();
             deptRegistration = JsonConvert.DeserializeObject<List<DeptRegistration>>(usdata);
             return View(deptRegistration);
+            
         }
 
         [HttpGet]
@@ -34,6 +35,7 @@ namespace ssc.Controllers
             List<DepartmentData> dept = new List<DepartmentData>();
             dept = JsonConvert.DeserializeObject<List<DepartmentData>>(usdata);
             return View("~/views/DeptRegDashboard/UserDeptDash.cshtml", dept);
+
         }
     }
 }

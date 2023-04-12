@@ -26,10 +26,12 @@ namespace ssc.repository
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    using (SqlCommand cmd = new SqlCommand("[sscpost].[Reg_record]", con))
+                    using (SqlCommand cmd = new SqlCommand("Department", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@callval", 3);
                         cmd.Parameters.AddWithValue("@Ministry", department.Ministry);
+                        
                         cmd.Parameters.AddWithValue("@Department", department.Department);
                         cmd.Parameters.AddWithValue("@Name", department.Name);
                         cmd.Parameters.AddWithValue("@Mobile_no", department.Mobile_no);
@@ -39,6 +41,7 @@ namespace ssc.repository
                         cmd.Parameters.AddWithValue("@phases",  department.phases);
                         cmd.Parameters.AddWithValue("@Year", department.Year);
                         cmd.Parameters.AddWithValue("@post", department.post);
+                        
                         // cmd.Parameters.AddWithValue("@Upload_doc", department.Upload_doc);
                         //string fileName = department.Upload_doc.FileName;
                         //var fileNames = Path.GetFileName(fileName);
@@ -108,10 +111,10 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[ministry_Dept]", con))
+                using (SqlCommand cmd = new SqlCommand("Department", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.Parameters.AddWithValue("@callval", 1);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
@@ -128,7 +131,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[post_selection]", con))
+                using (SqlCommand cmd = new SqlCommand("post_selection", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -147,10 +150,12 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("get_Dept", con))
+                using (SqlCommand cmd = new SqlCommand("Department", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Ministry", ministryt_id);
+                    cmd.Parameters.AddWithValue("@ministry_id", ministryt_id);
+                    cmd.Parameters.AddWithValue("@callval", 2);
+                    
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);

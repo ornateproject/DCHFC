@@ -20,7 +20,8 @@ namespace ssc.repository
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[loginpage]", con))
+               // using (SqlCommand cmd = new SqlCommand("[sscpost].[loginpage]", con))
+                using (SqlCommand cmd = new SqlCommand("login_tab", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserName", model.UserName);
@@ -41,7 +42,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[post_selection]", con))
+                using (SqlCommand cmd = new SqlCommand("post_selection", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 

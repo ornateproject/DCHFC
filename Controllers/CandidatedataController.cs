@@ -22,10 +22,13 @@ namespace ssc.Controllers
           var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
             var usdata = _candidaterepo.get_postcanddata(reg_no);
            
+            
             managecandidatedata managecandidatedata = new managecandidatedata();
 
            managecandidatedata.getposts = JsonConvert.DeserializeObject<List<getpost>>(usdata);
-           //managecandidatedata.getposts = model.candidatepersonaldetails(usdata);
+            managecandidatedata.candetails = JsonConvert.DeserializeObject<candidatepersonaldetails>(usdata);
+
+            //managecandidatedata.candetails = JsonConvert.DeserializeObject<candidatepersonaldetails>(usdata);
 
             return View(managecandidatedata);
         }
