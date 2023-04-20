@@ -18,7 +18,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[getcandudateuser]", con))
+                using (SqlCommand cmd = new SqlCommand("[getcandudateuser]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id", id);

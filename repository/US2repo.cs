@@ -19,7 +19,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[Get_userdepartment]", con))
+                using (SqlCommand cmd = new SqlCommand("[Get_userdepartment]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@callval", 1);
@@ -38,7 +38,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[Get_userdepartment]", con))
+                using (SqlCommand cmd = new SqlCommand("[Get_userdepartment]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                        cmd.Parameters.AddWithValue("@callval", 2);

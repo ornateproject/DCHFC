@@ -40,7 +40,7 @@ namespace ssc.repository
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 // string query = "UPDATE DeptRegistration SET Status = @Status WHERE Id = @Id";
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[approvmtsdata]", con))
+                using (SqlCommand cmd = new SqlCommand("[approvmtsdata]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Id", id);

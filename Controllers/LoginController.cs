@@ -31,7 +31,6 @@ namespace ssc.Controllers
             if (ModelState.IsValid)
             {
                 var result = _login.LoginCheck(model.loginuser);
-
                 if (result.Rows.Count > 0)
                 {
                     HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));

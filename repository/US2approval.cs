@@ -20,7 +20,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[getus2user]", con))
+                using (SqlCommand cmd = new SqlCommand("[getus2user]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@user_id", user_id);
@@ -41,7 +41,7 @@ namespace ssc.repository
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[approveuserdata]", con))
+                using (SqlCommand cmd = new SqlCommand("[approveuserdata]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Id", id);

@@ -18,7 +18,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[getcandudateregdata]", con))
+                using (SqlCommand cmd = new SqlCommand("[getcandudateregdata]", con))
                 {
 
                     cmd.CommandType = CommandType.StoredProcedure;

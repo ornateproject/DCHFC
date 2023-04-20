@@ -22,7 +22,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[Get_deptregistration]", con))
+                using (SqlCommand cmd = new SqlCommand("[Get_deptregistration]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();                    

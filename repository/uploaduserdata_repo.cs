@@ -139,7 +139,7 @@ namespace ssc.repository
                 {
                     using (SqlConnection con = new SqlConnection(connectionString))
                     {
-                        using (SqlCommand cmd = new SqlCommand("[sscpost].[candidate_data]", con))
+                        using (SqlCommand cmd = new SqlCommand("[candidate_data]", con))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@Reg_no",Convert.ToString(dt.Rows[j]["Reg_no"]));
@@ -171,7 +171,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[post_selection]", con))
+                using (SqlCommand cmd = new SqlCommand("[[post_selection]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 

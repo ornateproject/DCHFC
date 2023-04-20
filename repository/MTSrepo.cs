@@ -19,7 +19,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[all_mtsvacancy]", con))
+                using (SqlCommand cmd = new SqlCommand("[all_mtsvacancy]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@post_name", department.post_name);

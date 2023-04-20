@@ -107,7 +107,7 @@ namespace ssc.Models
         public IFormFile? Upload_doc { get; set; }
         public string? is_checked { get; set; }
        
-        //public string? adhar_card { get; set; }
+        public string? adhar_card { get; set; }
         public string? marksheet { get; set; }
         public string? Doc_path { get; set; }
     }
@@ -131,8 +131,6 @@ namespace ssc.Models
         public IFormFile? marksheet { get; set; }
         public string? regNo { get; set; }
         public IFormFile? final_pdf { get; set; }
-        public string? adhar_path { get; set; }
-        public string? marksheet_path { get; set; }
     }
 
     public class managecandidatedata

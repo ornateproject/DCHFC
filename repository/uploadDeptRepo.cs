@@ -19,7 +19,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[getdeptreg_status]", con))
+                using (SqlCommand cmd = new SqlCommand("[getdeptreg_status]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 

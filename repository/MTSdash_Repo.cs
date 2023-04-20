@@ -19,7 +19,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[getmtslistdata]", con))
+                using (SqlCommand cmd = new SqlCommand("[getmtslistdata]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 

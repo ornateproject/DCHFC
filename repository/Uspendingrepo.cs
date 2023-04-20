@@ -19,7 +19,7 @@ namespace ssc.repository
              DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[getuserdata]", con))
+                using (SqlCommand cmd = new SqlCommand("[getuserdata]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@user_id", user_id);
@@ -40,10 +40,10 @@ namespace ssc.repository
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 // string query = "UPDATE DeptRegistration SET Status = @Status WHERE Id = @Id";
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[approvdept]", con))
+                using (SqlCommand cmd = new SqlCommand("[approvdept]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@Status", status == "Approved" ? 1 : 2);
                     con.Open();
                     cmd.ExecuteNonQuery();

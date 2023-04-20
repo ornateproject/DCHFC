@@ -21,7 +21,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[getuserdash]", con))
+                using (SqlCommand cmd = new SqlCommand("[getuserdash]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 

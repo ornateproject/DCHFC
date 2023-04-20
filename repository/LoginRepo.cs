@@ -20,8 +20,7 @@ namespace ssc.repository
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-               // using (SqlCommand cmd = new SqlCommand("[sscpost].[loginpage]", con))
-                using (SqlCommand cmd = new SqlCommand("login_tab", con))
+                using (SqlCommand cmd = new SqlCommand("[loginpage]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserName", model.UserName);
@@ -42,7 +41,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("post_selection", con))
+                using (SqlCommand cmd = new SqlCommand("[post_selection]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -63,7 +62,7 @@ namespace ssc.repository
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[logindept]", con))
+                using (SqlCommand cmd = new SqlCommand("[logindept]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserName", model.UserName);
@@ -88,7 +87,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[canddata]", con))
+                using (SqlCommand cmd = new SqlCommand("[canddata]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                    cmd.Parameters.AddWithValue("@id", id);
@@ -108,7 +107,7 @@ namespace ssc.repository
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 // string query = "UPDATE DeptRegistration SET Status = @Status WHERE Id = @Id";
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[candidate_status]", con))
+                using (SqlCommand cmd = new SqlCommand("[candidate_status]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Id", id);
@@ -125,7 +124,7 @@ namespace ssc.repository
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[candidatelogin]", con))
+                using (SqlCommand cmd = new SqlCommand("[candidatelogin]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Reg_no", model.Reg_no);
