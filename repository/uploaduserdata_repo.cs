@@ -171,7 +171,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[[post_selection]", con))
+                using (SqlCommand cmd = new SqlCommand("[post_selection]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 

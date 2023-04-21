@@ -81,7 +81,7 @@ namespace ssc.repository
 
         }
 
-        public string getdatelist(int id)
+        public string getdatelist(string Reg_no)
         {
 
             DataTable dt = new DataTable();
@@ -90,7 +90,7 @@ namespace ssc.repository
                 using (SqlCommand cmd = new SqlCommand("[canddata]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                   cmd.Parameters.AddWithValue("@id", id);
+                   cmd.Parameters.AddWithValue("@Reg_no",Reg_no);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);

@@ -62,7 +62,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[Getpost_data]", con))
+                using (SqlCommand cmd = new SqlCommand("[Getpost_data]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                    // cmd.Parameters.AddWithValue("@Department", depart);
@@ -106,7 +106,7 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[getcandidatedata]", con))
+                using (SqlCommand cmd = new SqlCommand("[getcandidatedata]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
@@ -120,7 +120,7 @@ namespace ssc.repository
 
         }
 
-        public string InsertpostData(managecandidatedata data)
+        public string InsertpostData(managecandidatedata data, string reg_no)
         {
             DataTable dt = new DataTable();
            
@@ -128,7 +128,7 @@ namespace ssc.repository
             {
                 con.Open();
 
-                using (SqlCommand cmd = new SqlCommand("[sscpost].[candidate_document]", con))
+                using (SqlCommand cmd = new SqlCommand("[candidate_document]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     foreach (getpost posts in data.getposts)
@@ -158,7 +158,7 @@ namespace ssc.repository
                             //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
                             cmd.Parameters.AddWithValue("@post_name", posts.post_name);
-                            //cmd.Parameters.AddWithValue("@Reg_no", reg_no);
+                            cmd.Parameters.AddWithValue("@Reg_no", reg_no);
 
                         }
 

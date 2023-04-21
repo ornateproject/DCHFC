@@ -35,6 +35,8 @@ namespace ssc.Controllers
         {
             var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
 
+            var asd = _candidaterepo.InsertpostData(data,reg_no);
+
             managecandidatedata managecan = new managecandidatedata();
             
            managecan.getposts = data.getposts.Where(x => x.is_checked == "true").ToList();
@@ -74,7 +76,7 @@ namespace ssc.Controllers
             data = JsonConvert.DeserializeObject<managecandidatedata>(selected_post);
             if (ModelState.IsValid)
             {
-                var asd = _candidaterepo.InsertpostData(data);
+                //var asd = _candidaterepo.InsertpostData(data);
                 return View("candidate_dashboard", "Candidatedata");
 
             }

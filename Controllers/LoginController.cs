@@ -114,9 +114,9 @@ namespace ssc.Controllers
         
 
         [HttpGet]
-        public IActionResult usviewback(int id)
+        public IActionResult usviewback(string id)
         {
-            var usdata = _login.getdatelist(id);
+           var usdata = _login.getdatelist(id);
             getpost dep_reg = new getpost();
             dep_reg = JsonConvert.DeserializeObject<List<getpost>>(usdata)[0];
             return View(dep_reg);         
