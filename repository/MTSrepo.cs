@@ -58,7 +58,7 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@Persons_disabilities", department.Persons_disabilities);
                     cmd.Parameters.AddWithValue("@Previous_requisition", department.Previous_requisition);
                     cmd.Parameters.AddWithValue("@candidates_nominated", department.candidates_nominated);
-                   
+                    cmd.Parameters.AddWithValue("@dep", department.ID);
                     con.Open();
                     int xdvf = cmd.ExecuteNonQuery();
                     //SqlDataAdapter sda = new SqlDataAdapter(cmd);

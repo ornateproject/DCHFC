@@ -68,8 +68,12 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@UserName", model.UserName);
                     cmd.Parameters.AddWithValue("@Password", model.Password);
                     //cmd.Parameters.AddWithValue("@Name", model.Name);
-                    cmd.Parameters.AddWithValue("@phase", model.phase);
                     cmd.Parameters.AddWithValue("@loginfor", model.post);
+                    if (model.post=="selectionpost")
+                    {
+                        cmd.Parameters.AddWithValue("@phase", model.phase);
+
+                    }
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                    // int xdvf = cmd.ExecuteNonQuery();

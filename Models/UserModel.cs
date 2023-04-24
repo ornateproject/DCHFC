@@ -18,8 +18,6 @@ namespace ssc.Models
         //[Display(Prompt = "Post")]
         public string? post { get; set; }
 
-        //[Required(ErrorMessage = "*")]
-        //[Display(Prompt = "phase")]
         public string? phase { get; set; }
         public string? Year { get; set; }
         public string? loginfor { get; set; }

@@ -70,6 +70,7 @@ namespace ssc.Controllers
                     HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["UserType"]));
                     HttpContext.Session.SetString("Name", Convert.ToString(result.Rows[0]["Name"]));
                     HttpContext.Session.SetString("dep_name", Convert.ToString(result.Rows[0]["dep_name"]));
+                   // HttpContext.Session.SetString("loginfor", Convert.ToString(result.Rows[0]["post"]));
                     // return RedirectToAction("us2", "US2");
                     HttpContext.Session.SetString("department", Convert.ToString(result.Rows[0]["department"]));
                     HttpContext.Session.SetString("reg_id", Convert.ToString(result.Rows[0]["reg_id"]));
