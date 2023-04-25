@@ -1,12 +1,6 @@
 ﻿@model ssc.Models.DeptRegistration
 
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
       <div class="br-pageheader pd-y-15 pd-l-20">
         <nav class="breadcrumb pd-0 mg-0 tx-12">
           <a class="breadcrumb-item" href="US1.html">Dashboard</a>
@@ -27,34 +21,34 @@
               <div class="col-lg-4">
                 <div class="form-group">
 
-                  <label class="form-control-label tx-gray-700">Department: <span class="tx-danger">*</span></label>
+                  <label class="form-control-label tx-gray-700">Department: <span class="tx-danger">  </span></label>
                  @Model.Department
                 </div>
               </div><!-- col-4 -->
               <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Name: <span class="tx-danger">*</span></label>
+                  <label class="form-control-label tx-gray-700">Name: <span class="tx-danger">  </span></label>
 				@Model.Name
                   
                 </div>
               </div><!-- col-4 -->
 			  <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Mobile: <span class="tx-danger">*</span></label>
+                  <label class="form-control-label tx-gray-700">Mobile: <span class="tx-danger">  </span></label>
 				 @Model.Mobile_no
                   
                 </div>
               </div>
 			  <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Email: <span class="tx-danger">*</span></label>
+                  <label class="form-control-label tx-gray-700">Email: <span class="tx-danger">  </span></label>
 				@Model.Email
                   
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="form-group">
-                  <label class="form-control-label tx-gray-700">Nodal officer Doc upload: <span class="tx-danger">*</span></label>
+                  <label class="form-control-label tx-gray-700">Nodal officer Doc upload: <span class="tx-danger">  </span></label>
 				  <a target="_blank" href="~/pdf/@Model.Doc_path"><img class="Pdficon1" src="~/img/PDF-icon.png" width="10%"></a>
                  
                 </div>
