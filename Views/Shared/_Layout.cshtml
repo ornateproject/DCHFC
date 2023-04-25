@@ -80,11 +80,11 @@
                         <span class="menu-item-label">View Applied Post</span>
                     </div><!-- menu-item -->
                 </a>
-               
-               
 
-              
-               
+
+
+
+
 
             }
 
@@ -93,40 +93,45 @@
             {
                 if (@usertype == "3")
                 {
-                    
 
-                 <a asp-action="us2" asp-controller="US2" class="br-menu-link">
-                    <div class="br-menu-item">
-                        <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
-                        <span class="menu-item-label">Selection Post</span>
-                    </div><!-- menu-item -->
-                </a>
-               
-                 <a asp-action="usview" asp-controller="Candidatedata" class="br-menu-link">
-                    <div class="br-menu-item">
-                        <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
-                        <span class="menu-item-label">View Applied Post</span>
-                    </div><!-- menu-item -->
-                </a>
-               
+                    var posts = @Accessor.HttpContext.Session.GetString("loginfor").ToString();
+                    if (posts == "selectionpost")
+                    {
+                        <a asp-action="us2" asp-controller="US2" class="br-menu-link">
+                            <div class="br-menu-item">
+                                <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+                                <span class="menu-item-label">Selection Post</span>
+                            </div><!-- menu-item -->
+                        </a>
+
+                        <a asp-action="usview" asp-controller="Candidatedata" class="br-menu-link">
+                            <div class="br-menu-item">
+                                <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+                                <span class="menu-item-label">View Applied Post</span>
+                            </div><!-- menu-item -->
+                        </a>
+
+                    }
+                    if (posts == "MTS")
+                    {
+                        <a asp-action="us3" asp-controller="US3" class="br-menu-link">
+                            <div class="br-menu-item">
+                                <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+                                <span class="menu-item-label">MTS</span>
+                            </div><!-- menu-item -->
+                        </a>
+                        <a asp-action="usview" asp-controller="Candidatedata" class="br-menu-link">
+                            <div class="br-menu-item">
+                                <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+                                <span class="menu-item-label">View Applied Post</span>
+                            </div><!-- menu-item -->
+                        </a>
+
+                    }
+                 
                
                 }
-                else
-                {
-                   <a asp-action="index" asp-controller="MTSselection" class="br-menu-link">
-                    <div class="br-menu-item">
-                        <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
-                        <span class="menu-item-label">MTS</span>
-                    </div><!-- menu-item -->
-                </a>
-                 <a asp-action="usview" asp-controller="Candidatedata" class="br-menu-link">
-                    <div class="br-menu-item">
-                        <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
-                        <span class="menu-item-label">View Applied Post</span>
-                    </div><!-- menu-item -->
-                </a>
                 
-                    }
                    
                
                
