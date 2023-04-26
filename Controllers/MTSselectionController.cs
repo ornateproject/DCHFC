@@ -28,11 +28,10 @@ namespace ssc.Controllers
                 department.TOTAL = department.UR + department.OBC + department.SC + department.ST + department.EWS;
 
                 department.Total_vacancy = department.VH + department.HH + department.OH + department.OTHERS;
-
+                department.ID = Convert.ToInt32(HttpContext.Session.GetString("department"));
                 var asd = _mtsrepo.InsertpostData(department);
 
-
-                return RedirectToAction("Index");
+                return RedirectToAction("us3","US3");
             }
             return View();
         }

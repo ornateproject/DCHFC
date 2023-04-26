@@ -484,7 +484,7 @@
                  @if (@Model.Status != "1" && @Model.Status != "2")
                {
 
-                <a href="@Url.Action("Approve", "US2approval", new { id = Model.ID })"><button class="btn btn-red" style="cursor:pointer">Approved</button></a>
+                    <a href="@Url.Action("Approve", "US2approval", new { id = Model.ID })"><button class="btn btn-success" style="cursor:pointer">Approved</button></a>
 
 
 
