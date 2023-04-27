@@ -106,7 +106,7 @@ namespace ssc.repository
 
         }
 
-        public void UpdatecandidateStatus(int id, string status)
+        public void UpdatecandidateStatus(int Reg_no, string status)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -114,7 +114,7 @@ namespace ssc.repository
                 using (SqlCommand cmd = new SqlCommand("[candidate_status]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@Reg_no", Reg_no);
                     cmd.Parameters.AddWithValue("@status", status == "Approved" ? 1 : 2);
                     con.Open();
                     cmd.ExecuteNonQuery();

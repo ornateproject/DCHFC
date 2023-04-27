@@ -1,5 +1,11 @@
-﻿@model ssc.Models.MTSselection
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model ssc.Models.MTSselection
 
+
+@{
+    var usertype = @Accessor.HttpContext.Session.GetString("userType").ToString();
+}
 
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
@@ -398,7 +404,7 @@
 
 
         <div class="form-layout-footer text-center" "=" ">
-            @if (Model.Status!= "Approved")
+            @*@if (Model.Status!= "Approved")
                     {
                         @if (@Model.Status == "1")
                 {
@@ -424,7 +430,23 @@
 
 
                     } 
-            <button class="btn btn-secondary" style="cursor:pointer" >Cancel</button>
+            <button class="btn btn-secondary" style="cursor:pointer" >Cancel</button>*@
+
+        @if (@usertype == "2")
+        {
+            @if (@Model.Status != "1" && @Model.Status != "2")
+            {
+                    <a href="@Url.Action("Approve", "US3mts", new { id = Model.ID })"><button class="btn btn-success" style="cursor:pointer">Approved</button></a>
+                   <a href="@Url.Action("Reject", "US3mts", new { id = Model.ID })"><button class="btn btn-red" style="cursor:pointer">Rejected</button></a>
+                    <button class="btn btn-secondary" style="cursor:pointer">Cancel</button>
+            }
+        }
+        else
+        {
+                <a href="@Url.Action("us2", "US2")"><button class="btn btn-red" style="cursor:pointer" " text-center">Back</button></a>
+
+        }
+
         </div><!-- form-layout-footer --><!-- form-layout -->
 
 

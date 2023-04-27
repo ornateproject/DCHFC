@@ -81,28 +81,27 @@
             <div class="row mg-b-25">
                 <div class="col-lg-12">
             <div class="modal-bootstrap modal-login-form">
-                        @if (@usertype=="2")
-                        {
-                            <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-red" style="cursor:pointer" " text-center">Back</button></a>
-
-                        }
-                        else
-                        { 
-                            @if (@Model.status != "1" && @Model.status != "2")
-                            {
-                             <a href="@Url.Action("Reject", "Login", new{ id = @Model.id })"><button class="btn btn-red" style="cursor:pointer">Reject</button></a>                
-                             <a href="@Url.Action("Approve", "Login", new{ id = @Model.id })"><button class="btn btn-success" style="cursor:pointer">Approve</button></a>
-                             <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-secondary" style="cursor:pointer">Cancel</button></a>
-                            }
-                            else
-                            {
-                               <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-secondary" style="cursor:pointer">Cancel</button></a>
-
-                              <button class="btn btn-red" hidden style="cursor:pointer">Reject</button>             
-                              <button class="btn btn-success" hidden style="cursor:pointer">Approve</button>   
-                            
-                            }
-                        }
+              @if (@usertype=="2")
+              {
+                  <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-red" style="cursor:pointer" " text-center">Back</button></a>
+             
+              }
+              else
+              { 
+                  @if (@Model.status != "1" && @Model.status != "2")
+                  {
+                   <a href="@Url.Action("Reject", "Login", new{ id = @Model.id })"><button class="btn btn-red" style="cursor:pointer">Reject</button></a>                
+                   <a href="@Url.Action("Approve", "Login", new{ id = @Model.Reg_no })"><button class="btn btn-success" style="cursor:pointer">Approve</button></a>
+                   <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-secondary" style="cursor:pointer">Cancel</button></a>
+                  }
+                  else
+                  {
+                     <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-secondary" style="cursor:pointer">Cancel</button></a>             
+                    <button class="btn btn-red" hidden style="cursor:pointer">Reject</button>             
+                    <button class="btn btn-success" hidden style="cursor:pointer">Approve</button>   
+                  
+                  }
+              }
                        
             </div><!-- form-layout-footer -->
         </div><!-- form-layout -->

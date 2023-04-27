@@ -47,7 +47,7 @@ namespace ssc.Controllers
             using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
             {
                 Document document = new Document();
-                PdfCopy pdf = new PdfCopy(document, stream);
+                PdfCopy pdf = new PdfCopy(document, stream); 
                 document.Open();
 
                 foreach (string pdfFile in savedfiles)
@@ -146,7 +146,7 @@ namespace ssc.Controllers
         public IActionResult candidate_preview()
         {
             //  var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
-           var dept= HttpContext.Session.GetString("department").ToString();
+            var dept= HttpContext.Session.GetString("department").ToString();
 
             var usdata = _candidaterepo.get_postdata(dept);
 
