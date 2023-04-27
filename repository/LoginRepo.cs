@@ -57,7 +57,6 @@ namespace ssc.repository
         }
         public DataTable userlogin(UserModel model)
         {
-           
                 DataTable dt = new DataTable();
 
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -82,7 +81,6 @@ namespace ssc.repository
                 }
             }
             return dt;
-
         }
 
         public string getdatelist(string Reg_no)
