@@ -71,6 +71,7 @@ namespace ssc.repository
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
+                   
                     con.Close();
 
                 }
@@ -158,6 +159,7 @@ namespace ssc.repository
                             //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
                             cmd.Parameters.AddWithValue("@post_name", posts.post_name);
+                            cmd.Parameters.AddWithValue("@Department", posts.dep_name);
                             cmd.Parameters.AddWithValue("@Reg_no", reg_no);
 
                         }
@@ -194,7 +196,7 @@ namespace ssc.repository
                     var filenameextension = Path.GetExtension(markfile);
                     string datetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
 
-                    var newmarksheetfilename = markfile + filenameextension;
+                    var newmarksheetfilename = datetime + filenameextension;
 
                     var filepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/marksheet", newmarksheetfilename + filenameextension);
                     FileInfo File = new FileInfo(Path.Combine(filepath));
@@ -204,7 +206,8 @@ namespace ssc.repository
                     //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
                     cmd.Parameters.AddWithValue("@marksheet", newmarksheetfilename + filenameextension);
-                    int xdvf = cmd.ExecuteNonQuery();
+                    //  int xdvf = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
                     con.Close();
                 }
                 return "ok";

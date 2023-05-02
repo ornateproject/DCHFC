@@ -102,7 +102,8 @@ namespace ssc.Models
         public string? Address { get; set; }
         public string? post_name { get; set; }
         public string? post_id { get; set; }      
-        public string? dep_name { get; set; }       
+        public string? dep_name { get; set; }
+        public string? Department { get; set; }
         public string? status { get; set; }
         public IFormFile? Upload_doc { get; set; }
         public string? is_checked { get; set; }
@@ -124,6 +125,21 @@ namespace ssc.Models
        
         public string? Doc_path { get; set; }
     }
+    public class getpostdata
+    {
+        public int id { get; set; }
+        
+        public string? post_id { get; set; }
+        public string? post_name { get; set; }
+        public string? dep_name { get; set; }
+        public string? Doc_path { get; set; }
+        public string? Reg_no { get; set; }
+        public string? adhar_card { get; set; }
+        public string? marksheet { get; set; }
+        public string? status { get; set; }
+
+        //public string? Doc_path { get; set; }
+    }
     public class candidatepersonaldetails
     {
         public IFormFile? adhar_card { get; set; }
@@ -136,7 +152,8 @@ namespace ssc.Models
     public class managecandidatedata
     {
         public candidatepersonaldetails? candetails { get; set; }
-        public List<getpost> getposts { get; set; }    
+        public List<getpost> getposts { get; set; }
+        public List<getpostdata>  getpost{ get; set; }
     }
 
     public class managecandidatedata_preview
