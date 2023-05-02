@@ -99,7 +99,7 @@ namespace ssc.Controllers
             }
             else if (@user=="3")
             {
-                var depart = HttpContext.Session.GetString("department").ToString();
+                var depart = HttpContext.Session.GetString("dep_name").ToString();
                 var usdata = _candidaterepo.get_postdata(depart);
                 List<getpost> dept = new List<getpost>();
                 dept = JsonConvert.DeserializeObject<List<getpost>>(usdata);

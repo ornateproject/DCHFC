@@ -154,7 +154,7 @@ namespace ssc.repository
 
 
                             cmd.Parameters.AddWithValue("@post_id", posts.post_id);
-
+                            cmd.Parameters.AddWithValue("@Department", posts.dep_name);
                             //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
                             cmd.Parameters.AddWithValue("@post_name", posts.post_name);
@@ -194,7 +194,7 @@ namespace ssc.repository
                     var filenameextension = Path.GetExtension(markfile);
                     string datetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
 
-                    var newmarksheetfilename = markfile + filenameextension;
+                    var newmarksheetfilename = datetime + filenameextension;
 
                     var filepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/marksheet", newmarksheetfilename + filenameextension);
                     FileInfo File = new FileInfo(Path.Combine(filepath));
