@@ -157,7 +157,7 @@ namespace ssc.repository
                             // cmd.Parameters.AddWithValue("@Department", posts.dep_name);
                             //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
-                        }
+                       
                         cmd.Parameters.AddWithValue("@Reg_no", reg_no);
                         cmd.Parameters.AddWithValue("@post_id", posts.post_id);
 
@@ -205,7 +205,7 @@ namespace ssc.repository
                         cmd.Parameters.AddWithValue("@marksheet", newmarksheetfilename + filenameextension);
                         int xdvf = cmd.ExecuteNonQuery();
                         //cmd.ExecuteNonQuery();
-
+                    }
                     }
 
                 }
