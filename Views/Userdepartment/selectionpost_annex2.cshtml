@@ -1,0 +1,223 @@
+﻿@model ssc.Models.UserDepartment
+<script>
+    function findTotal() {
+        var arr = document.getElementsByClassName('num1');
+        var tot = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (parseFloat(arr[i].value))
+                tot += parseFloat(arr[i].value);
+        }
+        document.getElementById('amounttotal').value = tot;
+
+    }
+    function totalFind() {
+        var arr = document.getElementsByClassName('num');
+        var tot = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (parseFloat(arr[i].value))
+                tot += parseFloat(arr[i].value);
+        }
+        document.getElementById('amount').value = tot;
+
+    }
+</script>
+<style>
+
+    #hh {
+        display: block;
+        width: 100%;
+        padding: 0.65rem 0.75rem;
+        font-size: 0.875rem;
+        line-height: 1.25;
+        color: #495057;
+        background-color: #fff;
+        background-image: none;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+
+    }
+</style>
+
+
+<form asp-action="Index" asp-controller="UserDepartment">
+    <div class="br-pageheader pd-y-15 pd-l-20">
+        <nav class="breadcrumb pd-0 mg-0 tx-12">
+            <a class="breadcrumb-item" href="UserDeptDashboard.html">Dashboard</a>
+            <span class="breadcrumb-item active">Vacancy For MTS/ Selection Post</span>
+        </nav>
+    </div><!-- br-pageheader -->
+    <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+        <h4 class="tx-gray-800 mg-b-5">Requisition Proforma (Selection Posts)</h4>
+
+    </div>
+
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+            <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+                <h5 class="tx-gray-800 mg-b-5">GOVERNMENT OF INDIA</h5>
+
+            </div>
+
+            <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+                <h5 class="tx-gray-800 mg-b-5">Department of ________________________________</h5>
+
+            </div>
+
+            <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+                <h5 class="tx-gray-800 mg-b-5">Ministry of ___________________________________</h5>
+
+            </div>
+
+
+            <div class="row mg-b-25">
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <h5 class="tx-gray-800 mg-b-5">F.No. ________________________</h5>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <h5 class="tx-gray-800 mg-b-5">Date: ____________________</h5>
+                     </div>
+                </div>
+
+            </div>
+            <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
+                <h5 class="tx-gray-800 mg-b-5">CERTIFICATE</h5>
+
+            </div>
+
+            <div class="row mg-b-25">
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700 d-flex ">
+                            It is certified that the provisions of the ‘THE RIGHTS OF PERSONS WITH
+                            DISABILITIES ACT, 2016’* which has become effective from 19th day of April, 2017 and
+                            the policy relating to reservation for persons with benchmark disabilities has been taken care
+                            of while sending this requisition. The vacancy(ies) reported in this requisition fall(s) at points
+                            No(s)……………. of Cycle No. of 100 point reservation roster out of whic
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700 d-flex ">
+                            2       It is also certified that the post of ........................................ which is identified
+                            SUITABLE/NOT-SUITABLE for persons with Disabilities (PwD) with following Disabilities:-
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+
+                        <label class="form-control-label tx-gray-700">Type of Disability  <span asp-validation-for="disability_type" class="tx-danger"></span></label>
+                        <select class="form-control select2" asp-for="disability_type" data-placeholder="Exam" id="poNo">
+
+                            <option value=" ">----Select----</option>
+                            <option>(i) Blindness and low vision </option>
+                            <option>(ii)Deaf and hard of hearing </option>
+                            <option>
+                                (iii) Locomotor disability including cerebral palsy,<br /> leprosy cured,<br />dwarfism, acid attack victims and
+                                <br />muscular dystrophy
+                            </option>
+
+                            <option>(iv)Autism, intellectual disability, specific</br>learning disability and mental illness</option>
+                            <option>(v)Multiple disabilities from amongst<br />persons under clauses (i) to (iv) above<br />including deaf, blindness</option>
+
+                        </select>
+                        </p>
+                    </div>
+                </div><!-- col-4 -->
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Category of
+                            Disability <span asp-validation-for="suitable_pwd" class="tx-danger"></span>
+                        </label>
+                        <select class="form-control select2" asp-for="suitable_pwd" data-placeholder="Exam" id="poNo">
+
+                            <option value=" ">----Select----</option>
+                            <option>VH</option>
+                            <option>HH</option>
+                            <option>OH</option>
+                            <option>OTHERS</option>
+
+
+                        </select>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Disability
+                            permissible/suitable for
+                            jobs attached to the post
+                            (i.e. One Arm affected,
+                            One Leg affected, Both
+                            Legs affected, One Arm &
+                            One Leg affected, Both
+                            Arms affected, Low
+                            Vision, Blind etc.)  <span asp-validation-for="permissible" class="tx-danger"></span>
+                        </label>
+                        <input type="text" asp-for="permissible" class="form-control">
+
+
+                    </div>
+                </div>
+                </div>
+                <div class="row mg-b-25">
+                <div class="col-lg-6">
+                    <div class="form-group">
+
+                        <h5 class="tx-gray-800 mg-b-5">Official Seal</h5>
+                        <p></p>
+                        <p></p>
+                        <h4> </h4>
+                        <p></p>
+                        <p>Place: </p>
+                        <p>Date:</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <h5 class="tx-gray-800 mg-b-5">Signature of</h5>
+                        <p>Head of Department/Head of Office : </p>
+                        <p>Name : ....................................</p>
+                        <p>Designation : ....................................</p>
+                        <p>Telephone No.: ....................................</p>
+                        <p>E-mail : ....................................</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h5 class="tx-gray-800 mg-b-5">*Please refer para 10 of DoP&T O.M. No. 36035/02/2017-Estt.(Res.) dated 15.01.2018.</h5>
+            </div>
+            
+        </div>
+        <!-- br-section-wrapper -->
+    </div><!-- br-pagebody -->
+</form>
+
+
+<script type="text/javascript">
+    function ShowMessage(message) {
+        alert(message);
+    }
+</script>

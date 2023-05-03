@@ -48,6 +48,26 @@ namespace ssc.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult selectionpost_annex2()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult selectionpost_annex3()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult selectionpost_annexV()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult selectionpost_annex4()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
