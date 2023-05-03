@@ -38,7 +38,11 @@ namespace ssc.Controllers
                         return View();
         }
 
-
+        [HttpGet]
+        public IActionResult selection_post()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
