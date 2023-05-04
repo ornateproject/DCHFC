@@ -55,44 +55,67 @@
     </div>
 
     <div class="br-pagebody">
-        <div>
+        
         <div class="br-section-wrapper">
-             <div class="row mg-b-25">
-                 <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label tx-gray-700">1 (a) Name of the Organization/Office: <span  class="tx-danger"></span></label>
-
-                        <input  type="text" class="form-control">
-                          </div>
-                     </div>
-                <div class="col-lg-4">
+            <div>
+            <div class="row mg-b-25">
+                <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">(b)Ministry/Department to which attached: <span class="tx-danger"></span></label>
-
+                        <label class="form-control-label tx-gray-700">Name of the Organization/Office:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
                         <input type="text" class="form-control">
                     </div>
                 </div>
-                <div class="col-lg-4">
+            </div>
+            
+               
+                     
+
+            <div class="row mg-b-25">
+                <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">
-                           (c) Whether the requisitioning authority is
-                            authorized by the administrative
-                            Ministry/Deptt. to place the requisition
-                            with the SSC directly: <span asp-validation-for="aisl" class="tx-danger"></span>
-                        </label>
-
-                        <select class="form-control select2" asp-for="aisl" data-placeholder="Exam" id="poNo">
-
-                            <option value=" ">----Select----</option>
-                            <option>Yes</option>
-                            <option>No</option>
-
-                        </select>
-
+                        <label class="form-control-label tx-gray-700">(b) Ministry/Department to which attached:<span asp-validation-for="Name" class="tx-danger"></span></label>
                     </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control">
                     </div>
-                    </div>
+                </div>
+            </div>
+       
+    <div class="row mg-b-25">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="form-control-label tx-gray-700">Whether the requisitioning authority is
+                                                              authorized by the administrative
+                                                              Ministry/Deptt. to place the requisition
+                                                              with the SSC directly:<span asp-validation-for="Name" class="tx-danger"></span></label>
+            </div>
+        </div>
+        
+        <div class="col-lg-6">
+            <div class="form-group">
+                <select class="form-control select2" asp-for="aisl" data-placeholder="Exam" id="poNo">
+
+                    <option value=" ">----Select----</option>
+                    <option>Yes</option>
+                    <option>No</option>
+
+                </select>
+
+            </div>
+        </div>
+    </div>
+    
+       
+
+                
                 <div class="row mg-b-25">
+                    <div class="col-lg-3">
                     <h6 class="tx-gray-800 mg-b-5">
                      (2)   Contact details
                         and complete
@@ -102,195 +125,232 @@
                         organization
                     </h6>
                 </div>
-                <div class="row mg-b-25">
-                    <div class="col-lg-6">
+               
+                
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label class="form-control-label tx-gray-700">Name:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+             
+                  <div class="col-lg-3">
                         <div class="form-group">
-                            <label class="form-control-label tx-gray-700">(a) Name:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                            </div>
+                            </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="form-control-label tx-gray-700">Designation:<span asp-validation-for="Name" class="tx-danger"></span></label>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input type="text" asp-for="Name" class="form-control">
+                            <input type="text" class="form-control">
                         </div>
                     </div>
-                </div>
-                <div class="row mg-b-25">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label class="form-control-label tx-gray-700">(b) Designation:<span asp-validation-for="Desigantion" class="tx-danger"></span></label>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <input type="text" asp-for="Desigantion" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="row mg-b-25">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label class="form-control-label tx-gray-700">(c) Address:<span asp-validation-for="Address" class="tx-danger"></span></label>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <input type="text" asp-for="Address" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="row mg-b-25">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label class="form-control-label tx-gray-700">(d) Tel.No./Mobile No<span asp-validation-for="Mobile_no" class="tx-danger"></span></label>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <input type="text" asp-for="Mobile_no" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="row mg-b-25">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label class="form-control-label tx-gray-700">(e) E-mail:<span asp-validation-for="Email" class="tx-danger"></span></label>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <input type="text" asp-for="Email" class="form-control">
-                        </div>
-                    </div>
-                </div>
 
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="form-control-label tx-gray-700">Address:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="form-control-label tx-gray-700">Telephone No., Mobile
+                              No. & Fax No.:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            </div>
+                            </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="form-control-label tx-gray-700">E-mail:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    </div>
+                
                 <div class="row mg-b-25">
                 <h6 class="tx-gray-800 mg-b-5">(3)  Details of the Post (for which Requisition is being submitted):-</h6>
             </div>
-            <div class="row mg-b-25">
+            </div>
+           
 
-                <div class="col-lg-4">
+                <div class="row mg-b-25">
+                <div class="col-lg-6">
                     <div class="form-group">
-
-                        <label class="form-control-label tx-gray-700">(a) Name Of the Post <span asp-validation-for="post_name" class="tx-danger"></span></label>
-
-                        <input asp-for="post_name" type="text" class="form-control">
-
-                    </div>
-                </div><!-- col-4 -->
-                <div class="col-lg-4">
-                    <div class="form-group">
-                        <label class="form-control-label tx-gray-700">
-                           (b) Pay Matrix (as per 7th CPC): <span asp-validation-for="pay_matrix"
-                                                               class="tx-danger"></span>
-                        </label>
-                        <input asp-for="pay_matrix" type="text" class="form-control">
-
-
+                            <label class="form-control-label tx-gray-700">Name of the post:<span asp-validation-for="Name" class="tx-danger"></span></label>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">
-                           (c) Classification of Post <span asp-validation-for="post_class"
-                                                         class="tx-danger"></span>
-                        </label>
-                        <select class="form-control select2" asp-for="post_class" data-placeholder="Exam" id="poNo">
-
-                            <option value=" ">----Select----</option>
-                            <option>Group ‘B’ Non-Gazetted</option>
-                            <option>Group-‘C’, Non-Technica</option>
-
-                        </select>
-
+                        <input type="text" class="form-control">
                     </div>
-                </div><!-- col-4 -->
-                <!-- col-4 -->
-                <!-- col-4 -->
-                <div class="col-lg-12">
-                    <hr>
-
-
-
                 </div>
             </div>
 
-            <div class="row mg-b-25">
-
-                <div class="col-lg-4">
-                    <div class="form-group">
-
-                        <label class="form-control-label tx-gray-700">
-                           (d) Brief description of the job requirements
-                            and nature of duties of the post
-                            <span asp-validation-for="post_nature" class="tx-danger"></span>
-                        </label>
-
-                        <input type="text" asp-for="post_nature" class="form-control">
-
+                <div class="row mg-b-25">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label tx-gray-700">Pay Matrix (as per 7th CPC):<span asp-validation-for="Name" class="tx-danger"></span></label>
+                        </div>
                     </div>
-                </div><!-- col-4 -->
-                <div class="col-lg-4">
-                    <div class="form-group">
-                        <label class="form-control-label tx-gray-700">
-                          (e)  Place of initial posting [name of the
-                            State(s)]. <span asp-validation-for="initial_place"
-                                             class="tx-danger"></span>
-                        </label>
-                        <input type="text" asp-for="initial_place" class="form-control">
-
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+            <div class="row mg-b-25">
+                <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                           (f) Whether All India Service Liability (AISL)
-                            is involved? <span asp-validation-for="aisl" class="tx-danger"></span>
+                            Classification
+                            of Post<span asp-validation-for="Name" class="tx-danger"></span>
                         </label>
+                    </div>
+                </div>
 
+                <div class="col-lg-6">
+                    <div class="form-group">
                         <select class="form-control select2" asp-for="aisl" data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
-                            <option>Yes</option>
-                            <option>No</option>
+                            <option>
+                                Whether Group ‘B’
+                                Non-Gazetted; or
+                            </option>
+                            <option>
+                                Group-‘C’, Non-
+                                Technical;
+                            </option>
 
                         </select>
 
                     </div>
-
-
-
-
-
-
-                </div><!-- col-4 -->
-                <!-- col-4 -->
-
-
-
+                </div>
             </div>
 
+
             <div class="row mg-b-25">
-
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <div class="form-group">
-
                         <label class="form-control-label tx-gray-700">
-                          (4)  How have the vacancies arisen?
+                            Brief description of the job requirements
+                            and nature of duties of the post.:<span asp-validation-for="Name" class="tx-danger"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-b-25">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Place of initial posting [name of the
+                            State(s)]<span asp-validation-for="Name" class="tx-danger"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+               
+    <div class="row mg-b-25">
+        <div class="col-lg-6">
+            <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Whether All India Service Liability (AISL)
+                            is involved?<span asp-validation-for="Name" class="tx-danger"></span>
+                        </label>
+            </div>
+        </div>
+        
+        <div class="col-lg-6">
+            <div class="form-group">
+                <select class="form-control select2" asp-for="aisl" data-placeholder="Exam" id="poNo">
+
+                    <option value=" ">----Select----</option>
+                    <option>Yes</option>
+                    <option>No</option>
+
+                </select>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="row mg-b-25">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            How have the vacancies arisen?
                             (Clearly specify, by promotion/resignation/
                             death/ retirement etc. in case the vacancy is due
                             to failure to recruit by transfer/deputation, the
-                            details thereof may also be indicated)
-                            <span asp-validation-for="vacancy_ariesn" class="tx-danger"></span>
+                            details thereof may also be indicated)<span asp-validation-for="Name" class="tx-danger"></span>
                         </label>
-
-                        <input type="text" asp-for="vacancy_ariesn" class="form-control">
-
                     </div>
-                </div><!-- col-4 -->
-                <!-- col-4 -->
-
-
-
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
             </div>
 
 
@@ -435,7 +495,7 @@
             </div>
             <div class="row mg-b-25">
 
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="form-group">
 
                         <label class="form-control-label tx-gray-700">Type of Disability  <span asp-validation-for="disability_type" class="tx-danger"></span></label>
@@ -457,7 +517,27 @@
                     </div>
                 </div><!-- col-4 -->
 
-                <div class="col-lg-4">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Category of
+                            Disability <span asp-validation-for="suitable_pwd" class="tx-danger"></span>
+                        </label>
+                        <select class="form-control select2" asp-for="suitable_pwd" data-placeholder="Exam" id="poNo">
+
+                            <option value=" ">----Select----</option>
+                            <option>VH</option>
+                            <option>HH</option>
+                            <option>OH</option>
+                            <option>OTHERS</option>
+
+                        </select>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
                             Suitable
@@ -476,7 +556,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Permissible disability* <span asp-validation-for="permissible" class="tx-danger"></span></label>
                         <input type="text" asp-for="permissible" class="form-control">
@@ -790,73 +870,103 @@
                 </div>
             </div>
 
-            <div class="row mg-b-25">
-                <h6 class="tx-gray-800 mg-b-5">
-                  (11)  Name, address & Tel.
-                    No. of the Officer
-                </h6>
-            </div>
-            <div class="row mg-b-25">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label tx-gray-700">(a) Name:<span asp-validation-for="Name" class="tx-danger"></span></label>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <input type="text" asp-for="Name" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row mg-b-25">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label tx-gray-700">(b) Designation:<span asp-validation-for="Desigantion" class="tx-danger"></span></label>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <input type="text" asp-for="Desigantion" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row mg-b-25">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label tx-gray-700">(c) Address:<span asp-validation-for="Address" class="tx-danger"></span></label>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <input type="text" asp-for="Address" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row mg-b-25">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label tx-gray-700">(d) Tel.No./Mobile No<span asp-validation-for="Mobile_no" class="tx-danger"></span></label>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <input type="text" asp-for="Mobile_no" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row mg-b-25">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label tx-gray-700">(e) E-mail:<span asp-validation-for="Email" class="tx-danger"></span></label>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <input type="text" asp-for="Email" class="form-control">
-                    </div>
-                </div>
-            </div>
 
+
+            <div class="row mg-b-25">
+                <div class="col-lg-3">
+                    <h6 class="tx-gray-800 mg-b-5">
+                        Name, address & Tel.
+                        No. of the Officer (not
+                       below the rank of
+                        Under Secretary or
+                         equivalent of the
+                       Ministry/Deptt.) who
+                        shall be deputed/
+                       contacted to assist
+                       SSC, when required
+                    </h6>
+                </div>
+
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Name:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Designation:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">Address:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">
+                            Telephone No., Mobile
+                            No. & Fax No.:<span asp-validation-for="Name" class="tx-danger"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label class="form-control-label tx-gray-700">E-mail:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
             <div class="row mg-b-25">
                 <div class="col-lg-6">
                     <label class="form-control-label tx-gray-700">
