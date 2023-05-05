@@ -18,7 +18,7 @@
 </div>
 
 <div class="br-pagebody">
-    <div class="br-section-wrapper">
+    <div class="br-section-wrapper" id="divprint">
 
         <div class="form-layout form-layout-1">
 
@@ -497,11 +497,26 @@
             {
              <a href="@Url.Action("us2", "US2")"><button class="btn btn-red" style="cursor:pointer" " text-center">Back</button></a>
 
+                <button onclick="printDiv()" class="btn btn-red" style="cursor:pointer" " text-center">print</button>
+
+
             }
 
             
         </div><!-- form-layout-footer -->
     </div><!-- form-layout -->
+    <script type="text/javascript">
+        function printDiv() {
+            var divToPrint = document.getElementById("divprint");
+            newWin = window.open("");
+            newWin.document.write(divToPrint.outerHTML);
+            newWin.print();
+            newWin.close();
+
+            
+
+        }
+    </script>
 </div>
 
 

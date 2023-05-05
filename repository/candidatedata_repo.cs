@@ -119,8 +119,32 @@ namespace ssc.repository
             return JsonConvert.SerializeObject(dt);
 
         }
+        public string Insertdata(managecandidatedata data,string reg_no)
+        {
 
-        public string InsertpostData(managecandidatedata data, string reg_no)
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[Getpost_data]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    // cmd.Parameters.AddWithValue("@Department", depart);
+                    cmd.Parameters.AddWithValue("@Reg_no", reg_no);
+                    cmd.Parameters.AddWithValue("@callval", 4);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    con.Close();
+
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
+
+        }
+       
+
+        public string InsertpostData(managecandidatedata data, string reg_no,string name 
+            )
         {
             DataTable dt = new DataTable();
 

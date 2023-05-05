@@ -110,6 +110,8 @@ namespace ssc.Models
         public string? adhar_card { get; set; }
         public string? marksheet { get; set; }
         public string? Doc_path { get; set; }
+        public int? isapplied { get; set; }
+        public int? isfinal_submit { get; set; }
     }
 
 

@@ -9,7 +9,7 @@
     </nav>
 </div><!-- br-pageheader -->
 <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
-    <h4 class="tx-gray-800 mg-b-5">Candidate List</h4>
+    <h4 class="tx-gray-800 mg-b-5">Candidate Details</h4>
 
 </div>
 
@@ -23,7 +23,8 @@
                         <th>Sr No.</th>
                         <th>Post Code</th>
                           <th>Post_name</th>
-                        <th>Registration Number</th>
+                        <th>Roll No</th>
+                        <th>Name</th>
                         <th>Status</th>
                         <th>Details</th>
                     </tr>
@@ -40,7 +41,8 @@
                         <th scope="row">@i</th>
                         <th>@item.post_id</th>
                         <th>@item.post_name</th>
-                        <th>@item.Reg_no</th>                    
+                        <th>@item.Reg_no</th> 
+                        <th>@item.Name</th>
                        <td><strong>
                                         
                                 @if (@item.status == "1")

@@ -24,7 +24,8 @@ namespace ssc.Controllers
            
             managecandidatedata managecandidatedata = new managecandidatedata();
 
-           managecandidatedata.getposts = JsonConvert.DeserializeObject<List<getpost>>(usdata);
+           // managecandidatedata.getposts = usdata.getposts.Where(x => x.is_present == "true").ToList();
+            managecandidatedata.getposts = JsonConvert.DeserializeObject<List<getpost>>(usdata);
            //managecandidatedata.getposts = model.candidatepersonaldetails(usdata);
 
             return View(managecandidatedata);
@@ -34,8 +35,8 @@ namespace ssc.Controllers
         public async Task<IActionResult> candidate(managecandidatedata data)
         {
             var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
-
-            var asd = _candidaterepo.InsertpostData(data,reg_no);
+            var name = HttpContext.Session.GetString("Name").ToString();
+            var asd = _candidaterepo.InsertpostData(data,reg_no,name);
 
             managecandidatedata managecan = new managecandidatedata();
             
@@ -71,14 +72,17 @@ namespace ssc.Controllers
         [HttpPost]
         public ActionResult candidate_preview(managecandidatedata data)
         {
-          //  managecandidatedata managecan = new managecandidatedata();
-            var selected_post = HttpContext.Session.GetString("selected_post");
-            data = JsonConvert.DeserializeObject<managecandidatedata>(selected_post);
+            //  managecandidatedata managecan = new managecandidatedata();
+
+            var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
+            var name = HttpContext.Session.GetString("Name").ToString();
+            //var selected_post = HttpContext.Session.GetString("selected_post");
+            //data = JsonConvert.DeserializeObject<managecandidatedata>(selected_post);
             if (ModelState.IsValid)
             {
-                //var asd = _candidaterepo.InsertpostData(data);
-                return View("candidate_dashboard", "Candidatedata");
-
+                var asd = _candidaterepo.Insertdata(data,reg_no);
+                return View("candidate", "Candidatedata");
+                
             }
             return View();
         }
@@ -158,6 +162,5 @@ namespace ssc.Controllers
            // return View();
         }
 
-       
     }
 }

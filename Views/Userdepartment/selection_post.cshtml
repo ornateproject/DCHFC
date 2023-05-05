@@ -61,7 +61,7 @@
             <div class="row mg-b-25">
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">Name of the Organization/Office:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">1 (a) Name of the Organization/Office:<span asp-validation-for="Name" class="tx-danger"></span></label>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -90,7 +90,7 @@
     <div class="row mg-b-25">
         <div class="col-lg-6">
             <div class="form-group">
-                <label class="form-control-label tx-gray-700">Whether the requisitioning authority is
+                <label class="form-control-label tx-gray-700">(c)  Whether the requisitioning authority is
                                                               authorized by the administrative
                                                               Ministry/Deptt. to place the requisition
                                                               with the SSC directly:<span asp-validation-for="Name" class="tx-danger"></span></label>
@@ -129,7 +129,7 @@
                 
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label class="form-control-label tx-gray-700">Name:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                                <label class="form-control-label tx-gray-700">(a) Name:<span asp-validation-for="Name" class="tx-danger"></span></label>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -144,7 +144,7 @@
                             </div>
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <label class="form-control-label tx-gray-700">Designation:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                            <label class="form-control-label tx-gray-700"> (b) Designation:<span asp-validation-for="Name" class="tx-danger"></span></label>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -160,7 +160,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <label class="form-control-label tx-gray-700">Address:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                            <label class="form-control-label tx-gray-700">(c) Address:<span asp-validation-for="Name" class="tx-danger"></span></label>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -177,7 +177,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <label class="form-control-label tx-gray-700">Telephone No., Mobile
+                            <label class="form-control-label tx-gray-700">(d) Telephone No., Mobile
                               No. & Fax No.:<span asp-validation-for="Name" class="tx-danger"></span></label>
                         </div>
                     </div>
@@ -195,7 +195,7 @@
                             </div>
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <label class="form-control-label tx-gray-700">E-mail:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                            <label class="form-control-label tx-gray-700">(e) E-mail:<span asp-validation-for="Name" class="tx-danger"></span></label>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -214,12 +214,13 @@
                 <div class="row mg-b-25">
                 <div class="col-lg-6">
                     <div class="form-group">
-                            <label class="form-control-label tx-gray-700">Name of the post:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                            <label class="form-control-label tx-gray-700">(a) Name of the post:<span asp-validation-for="Name" class="tx-danger"></span></label>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="text" asp-for="post_name" class="form-control">
+                     
                     </div>
                 </div>
             </div>
@@ -227,12 +228,13 @@
                 <div class="row mg-b-25">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label tx-gray-700">Pay Matrix (as per 7th CPC):<span asp-validation-for="Name" class="tx-danger"></span></label>
+                            <label class="form-control-label tx-gray-700">(b) Pay Matrix (as per 7th CPC):<span asp-validation-for="Name" class="tx-danger"></span></label>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input type="text" class="form-control">
+                            <input type="text" asp-for="pay_matrix" class="form-control">
+                            
                         </div>
                     </div>
                 </div>
@@ -240,7 +242,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            Classification
+                           (c) Classification
                             of Post<span asp-validation-for="Name" class="tx-danger"></span>
                         </label>
                     </div>
@@ -248,19 +250,21 @@
 
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <select class="form-control select2" asp-for="aisl" data-placeholder="Exam" id="poNo">
+                        @*<select class="form-control select2" asp-for="aisl" data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
                             <option>
-                                Whether Group ‘B’
-                                Non-Gazetted; or
+                               (i) Whether Group ‘B’
+                                  Non-Gazetted; or
                             </option>
                             <option>
-                                Group-‘C’, Non-
+                                (ii )  Group-‘C’, Non-
                                 Technical;
                             </option>
 
-                        </select>
+                        </select>*@
+                       
+                        <input type="text" asp-for="post_class" class="form-control">
 
                     </div>
                 </div>
@@ -271,14 +275,14 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            Brief description of the job requirements
+                           (d) Brief description of the job requirements
                             and nature of duties of the post.:<span asp-validation-for="Name" class="tx-danger"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="text" asp-for="post_nature" class="form-control">
                     </div>
                 </div>
             </div>
@@ -286,14 +290,15 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            Place of initial posting [name of the
+                           (e)  Place of initial posting [name of the
                             State(s)]<span asp-validation-for="Name" class="tx-danger"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="text" asp-for="initial_place" class="form-control">
+                        
                     </div>
                 </div>
             </div>
@@ -302,7 +307,7 @@
         <div class="col-lg-6">
             <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            Whether All India Service Liability (AISL)
+                          (f)  Whether All India Service Liability (AISL)
                             is involved?<span asp-validation-for="Name" class="tx-danger"></span>
                         </label>
             </div>
@@ -310,35 +315,23 @@
         
         <div class="col-lg-6">
             <div class="form-group">
-                <select class="form-control select2" asp-for="aisl" data-placeholder="Exam" id="poNo">
+               @* <select class="form-control select2" asp-for="aisl" data-placeholder="Exam" id="poNo">
 
                     <option value=" ">----Select----</option>
                     <option>Yes</option>
                     <option>No</option>
 
-                </select>
-
+                </select>*@
+                        <input type="text" asp-for="aisl" class="form-control">
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
             <div class="row mg-b-25">
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            How have the vacancies arisen?
+                          (4)  How have the vacancies arisen?
                             (Clearly specify, by promotion/resignation/
                             death/ retirement etc. in case the vacancy is due
                             to failure to recruit by transfer/deputation, the
@@ -348,7 +341,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="text" asp-for="vacancy_ariesn" class="form-control">
+                       
                     </div>
                 </div>
             </div>
@@ -434,32 +428,38 @@
                 <div class="col-lg-2">
                     <div class="form-group">
                         <input id="hh" onblur="totalFind()" type="text" asp-for="UR" class="num ">
+                      
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="form-group">
                         <input id="hh" onblur="totalFind()" type="text" asp-for="OBC" class="num ">
+                       
                     </div>
                 </div>
 
                 <div class="col-lg-2">
                     <div class="form-group">
                         <input id="hh" onblur="totalFind()" type="text" asp-for="SC" class="num ">
+                     
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="form-group">
                         <input id="hh" onblur="totalFind()" type="text" asp-for="ST" class="num ">
+                       
                     </div>
                 </div>
                 <div class="col-lg-1">
                     <div class="form-group">
                         <input id="hh" onblur="totalFind()" type="text" asp-for="EWS" class="num ">
+                    
                     </div>
                 </div>
                 <div class="col-lg-1">
                     <div class="form-group">
                         <input type="text" id="amount" asp-for="TOTAL" class="form-control" readonly>
+                      
                     </div>
                 </div>
             </div>
@@ -484,13 +484,15 @@
             <div class="row mg-b-25">
                 <p class="tx-gray-800 mg-b-5">
                     <label> (b) Whether the post is identified suitable for PwD Candidates<span asp-validation-for="identified_post" class="tx-danger"></span></label>
-                    <select class="form-control select2" asp-for="identified_post" data-placeholder="Exam" id="poNo">
+                    @*<select class="form-control select2" asp-for="identified_post" data-placeholder="Exam" id="poNo">
 
                         <option value=" ">----Select----</option>
                         <option>Yes</option>
                         <option>No</option>
 
-                    </select>
+                    </select>*@
+                    <input type="text" id="amount" asp-for="identified_post" class="form-control" readonly>
+                   
                 </p>
             </div>
             <div class="row mg-b-25">
@@ -499,7 +501,7 @@
                     <div class="form-group">
 
                         <label class="form-control-label tx-gray-700">Type of Disability  <span asp-validation-for="disability_type" class="tx-danger"></span></label>
-                        <select class="form-control select2" asp-for="disability_type" data-placeholder="Exam" id="poNo">
+                        @*<select class="form-control select2" asp-for="disability_type" data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
                                 <option>(i) Blindness and low vision </option>
@@ -512,7 +514,9 @@
                             <option>(iv)Autism, intellectual disability, specific</br>learning disability and mental illness</option>
                             <option>(v)Multiple disabilities from amongst<br />persons under clauses (i) to (iv) above<br />including deaf, blindness</option>
 
-                        </select>
+                        </select>*@
+                        <input type="text" id="amount" asp-for="disability_type" class="form-control" readonly>
+
                         </p>
                     </div>
                 </div><!-- col-4 -->
@@ -523,7 +527,7 @@
                             Category of
                             Disability <span asp-validation-for="suitable_pwd" class="tx-danger"></span>
                         </label>
-                        <select class="form-control select2" asp-for="suitable_pwd" data-placeholder="Exam" id="poNo">
+                        @*<select class="form-control select2" asp-for="suitable_pwd" data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
                             <option>VH</option>
@@ -531,9 +535,8 @@
                             <option>OH</option>
                             <option>OTHERS</option>
 
-                        </select>
-
-
+                        </select>*@
+                        <input type="text" id="amount" asp-for="suitable_pwd" class="form-control" readonly>
                     </div>
                 </div>
 
@@ -543,15 +546,14 @@
                             Suitable
                             for PwD <span asp-validation-for="suitable_pwd" class="tx-danger"></span>
                         </label>
-                        <select class="form-control select2" asp-for="suitable_pwd" data-placeholder="Exam" id="poNo">
+                        @*<select class="form-control select2" asp-for="suitable_pwd" data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
                             <option>Yes</option>
                             <option>No</option>
-
-
-                        </select>
-
+                        </select>*@
+                         <input type="text" id="amount" asp-for="suitable_pwd" class="form-control" readonly>
+                      
 
                     </div>
                 </div>
@@ -560,7 +562,6 @@
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Permissible disability* <span asp-validation-for="permissible" class="tx-danger"></span></label>
                         <input type="text" asp-for="permissible" class="form-control">
-
 
                     </div>
                 </div>
@@ -601,7 +602,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input id="hh" onblur="findTotal()" type="text" asp-for="VH" class="num1">
-
+                       
                     </div>
                 </div>
             </div>
@@ -614,6 +615,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input id="hh" onblur="findTotal()" type="text" asp-for="HH" class="num1 ">
+                     
                     </div>
                 </div>
             </div>
@@ -626,6 +628,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input id="hh" onblur="findTotal()" type="text" asp-for="OH" class="num1 ">
+                     
                     </div>
                 </div>
             </div>
@@ -638,6 +641,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input id="hh" onblur="findTotal()" type="text" asp-for="OTHERS" class="num1 ">
+                      
                     </div>
                 </div>
             </div>
@@ -653,7 +657,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input type="text" id="amounttotal" asp-for="Total_vacancy" class="form-control" readonly>
-
+                        
                     </div>
                 </div>
             </div>
@@ -673,7 +677,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input type="text" asp-for="reserved_vacancy" class="form-control">
-
+                      
                     </div>
                 </div>
             </div>
@@ -693,14 +697,14 @@
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Number<span asp-validation-for="pwd_number" class="tx-danger"></span></label>
                         <input type="text" asp-for="pwd_number" class="form-control">
-
+                        
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Vertical Category <span asp-validation-for="pwdvertical_category" class="tx-danger"></span> </label>
                         <input type="text" asp-for="pwdvertical_category" class="form-control">
-
+                  
                     </div>
                 </div>
             </div>
@@ -717,14 +721,10 @@
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Number <span asp-validation-for="totalesm_number" class="tx-danger"></span></label>
                         <input type="text" asp-for="totalesm_number" class="form-control">
-
+                      
                     </div>
                 </div>
             </div>
-
-
-
-
             <div class="row mg-b-25">
                 <div class="col-lg-4">
 
@@ -741,14 +741,14 @@
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Number <span asp-validation-for="esm_number" class="tx-danger"></span> </label>
                         <input type="text" asp-for="esm_number" class="form-control">
-
+                     
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">Vertical Category <span asp-validation-for="esmvertical_category" class="tx-danger"></span></label>
                         <input type="text" asp-for="esmvertical_category" class="form-control">
-
+                        
                     </div>
                 </div>
             </div>
@@ -760,8 +760,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-
                         <input type="text" asp-for="probation1" class="form-control">
+                     
                     </div>
                 </div>
             </div>
@@ -787,6 +787,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input type="text" asp-for="Essential" class="form-control">
+                       
                     </div>
                 </div>
             </div>
@@ -802,6 +803,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input type="text" asp-for="Desirable" class="form-control">
+                        
                     </div>
                 </div>
             </div>
@@ -814,6 +816,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input type="text" asp-for="Relaxation" class="form-control">
+                        
                     </div>
                 </div>
             </div>
@@ -829,13 +832,14 @@
                 </div>
                 <div class="col-lg-6">
 
-                    <select class="form-control select2" asp-for="Regional_office" data-placeholder="Exam" id="poNo">
+                    @*<select class="form-control select2" asp-for="Regional_office" data-placeholder="Exam" id="poNo">
 
                         <option value=" ">----Select----</option>
                         <option>Yes</option>
                         <option>No</option>
 
-                    </select>
+                    </select>*@
+                    <input type="text" asp-for="Regional_office" class="form-control">
 
                 </div>
             </div>
@@ -847,7 +851,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input type="text" asp-for="Age_limit" class="form-control">
-
+                    
                     </div>
                 </div>
 
@@ -865,7 +869,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input type="text" asp-for="Requirment" class="form-control">
-
+                       
                     </div>
                 </div>
             </div>
@@ -875,7 +879,7 @@
             <div class="row mg-b-25">
                 <div class="col-lg-3">
                     <h6 class="tx-gray-800 mg-b-5">
-                        Name, address & Tel.
+                      (11)  Name, address & Tel.
                         No. of the Officer (not
                        below the rank of
                         Under Secretary or
@@ -890,12 +894,12 @@
 
                 <div class="col-lg-3">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">Name:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">(a) Name:<span asp-validation-for="Name" class="tx-danger"></span></label>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="text" asp-for="Name" class="form-control">
                     </div>
                 </div>
 
@@ -905,12 +909,13 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">Designation:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">(b) Designation:<span asp-validation-for="Desigantion" class="tx-danger"></span></label>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="text" asp-for="Desigantion" class="form-control">
+                     
                     </div>
                 </div>
 
@@ -921,12 +926,13 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">Address:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">9c) Address:<span asp-validation-for="Address" class="tx-danger"></span></label>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="text" asp-for="Address" class="form-control">
+                        
                     </div>
                 </div>
 
@@ -939,14 +945,15 @@
                 <div class="col-lg-3">
                     <div class="form-group">
                         <label class="form-control-label tx-gray-700">
-                            Telephone No., Mobile
+                           (d) Telephone No., Mobile
                             No. & Fax No.:<span asp-validation-for="Name" class="tx-danger"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="text" asp-for="Mobile_no" class="form-control">
+                        
                     </div>
                 </div>
 
@@ -958,12 +965,13 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="form-group">
-                        <label class="form-control-label tx-gray-700">E-mail:<span asp-validation-for="Name" class="tx-danger"></span></label>
+                        <label class="form-control-label tx-gray-700">(e) E-mail:<span asp-validation-for="Name" class="tx-danger"></span></label>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="text" asp-for="Email" class="form-control">
+                       
                     </div>
                 </div>
             </div>
@@ -976,13 +984,14 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <select class="form-control select2" asp-for="subsequent_orders" data-placeholder="Exam" id="poNo">
+                        @*<select class="form-control select2" asp-for="subsequent_orders" data-placeholder="Exam" id="poNo">
 
                             <option value="">----Select----</option>
                             <option>Yes</option>
                             <option>No</option>
 
-                        </select>
+                        </select>*@
+                        <input type="text" asp-for="subsequent_orders" class="form-control">
 
                     </div>
                 </div>
@@ -1002,14 +1011,15 @@
                 <div class="col-lg-6">
                     <div class="form-group">
 
-                        <select class="form-control select2" asp-for="DOPT_letter" data-placeholder="Exam" id="poNo">
+                       @* <select class="form-control select2" asp-for="DOPT_letter" data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
                             <option>Yes</option>
                             <option>No</option>
 
 
-                        </select>
+                        </select>*@
+                        <input type="text" asp-for="DOPT_letter" class="form-control">
 
                     </div>
                 </div>
@@ -1033,14 +1043,14 @@
                 <div class="col-lg-6">
                     <div class="form-group">
 
-                        <select class="form-control select2" asp-for="no_ofvacancy" data-placeholder="Exam" id="poNo">
+                       @* <select class="form-control select2" asp-for="no_ofvacancy" data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
                             <option>Yes</option>
                             <option>No</option>
 
-
-                        </select>
+                        </select>*@
+                        <input type="text" asp-for="no_ofvacancy" class="form-control">
 
                     </div>
                 </div>
@@ -1057,14 +1067,13 @@
                 <div class="col-lg-6">
                     <div class="form-group">
 
-                        <select class="form-control select2" asp-for="pwd_esm" data-placeholder="Exam" id="poNo">
+                        @*<select class="form-control select2" asp-for="pwd_esm" data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
                             <option>Yes</option>
                             <option>No</option>
-
-
-                        </select>
+                        </select>*@
+                                                <input type="text" asp-for="pwd_esm" class="form-control">
 
                     </div>
                 </div>
@@ -1079,14 +1088,14 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <select class="form-control select2" asp-for="person_disabilities" data-placeholder="Exam" id="poNo">
+                        @*<select class="form-control select2" asp-for="person_disabilities" data-placeholder="Exam" id="poNo">
 
                             <option value=" ">----Select----</option>
                             <option>Yes</option>
                             <option>No</option>
+                        </select>*@
+                                                <input type="text" asp-for="person_disabilities" class="form-control">
 
-
-                        </select>
                     </div>
                 </div>
             </div>
@@ -1104,7 +1113,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input type="text" asp-for="letter_no" class="form-control">
-
+                        
                     </div>
                 </div>
             </div>
@@ -1122,12 +1131,12 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <input type="text" asp-for="office_department" class="form-control">
+                       
                     </div>
                 </div>
 
                 <div class="form-layout-footer" asp-action="index">
-                    <button class="btn btn-red  btn btn-success" id="sbt" style="cursor:pointer" type="submit"> <span class="text-white">Submit</span></button>
-                    <button class="btn btn-secondary " style="cursor:pointer" id="sbt" type='reset'>Cancel</button>
+                    <button type="button" onclick="printpage()"   class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">Print </button>
                 </div><!-- form-layout-footer -->
             </div><!-- form-layout -->
             <!-- br-section-wrapper -->
@@ -1138,5 +1147,9 @@
 <script type="text/javascript">
     function ShowMessage(message) {
         alert(message);
+    }
+
+    function printpage() {
+       window.print();
     }
 </script>

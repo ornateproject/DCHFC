@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
 using ssc.Models;
 using System.Data;
 
@@ -83,6 +84,29 @@ namespace ssc.repository
 
                 return "1";
             }
+        }
+        public string getpost_details(string post_name)
+        {
+            
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[getus2user]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@post_name", post_name);
+                    cmd.Parameters.AddWithValue("@calval", 2);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    
+                    con.Close();
+                }
+            }
+            var asfd = dt.Rows[0];
+            //var zsdf= JsonConvert.SerializeObject(dt.Rows);
+            //var szad= JsonConvert.SerializeObject(Convert.ToString(dt.Rows[0]));
+            return JsonConvert.SerializeObject(dt);
         }
     }
 }

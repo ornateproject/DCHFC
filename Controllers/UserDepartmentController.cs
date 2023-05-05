@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ssc.Data;
 using ssc.Models;
 using ssc.repository;
@@ -31,18 +33,23 @@ namespace ssc.Controllers
                 int myint = Convert.ToInt32(department.VH) + Convert.ToInt32(department.HH) + Convert.ToInt32(department.OH) + Convert.ToInt32(department.OTHERS);
                 department.Total_vacancy = Convert.ToString(myint);
                 department.ID = Convert.ToInt32(HttpContext.Session.GetString("department"));
-                var asd = _userDepRepo.InsertpostData(department);               
-
-                return RedirectToAction("us2","US2");
+                var asd = _userDepRepo.InsertpostData(department);
+              string post_name = department.post_name;
+                return RedirectToAction("selection_post", "UserDepartment", new { post_name = post_name });
             }
                         return View();
         }
 
         [HttpGet]
-        public IActionResult selection_post()
+        public IActionResult selection_post(string post_name)
         {
-            return View();
+            var usdata = _userDepRepo.getpost_details(post_name);
+            UserDepartment dep_reg = new UserDepartment();
+            dep_reg = JsonConvert.DeserializeObject<List<UserDepartment>>(usdata)[0];
+            return View(dep_reg);
         }
+        
+
         [HttpGet]
         public IActionResult selectionpost_annex1()
         {

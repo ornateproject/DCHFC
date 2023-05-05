@@ -23,12 +23,12 @@
  <div style="display:flex;justify-content:space-between;margin-bottom:15px">
     <span>
      <label  style="color:black"class="form-label" for="customFile"><b>Upload Aadhar Card</b></label>
-     <input type="file" asp-for="@Model.candetails.adhar_card" accept=".pdf" class="form-control" id="customFile" />
+                    <input type="file" id="fileInput1" onchange="checkFileUpload()" asp-for="@Model.candetails.adhar_card" accept=".pdf" class="form-control" id="customFile" />
 
     </span>
                 <span>
                     <label style="color:black" class="form-label" for="customFile"><b>Upload 10th Certificate</b></label>
-                    <input type="file" asp-for="@Model.candetails.marksheet" accept=".pdf" class="form-control" id="customFile" />
+                    <input type="file" id="fileInput1" onchange="checkFileUpload()" asp-for="@Model.candetails.marksheet" accept=".pdf" class="form-control" id="customFile" />
                 </span>
 </div>
         <!-- d-flex -->
@@ -43,28 +43,37 @@
                         <th>Department</th>                        
                         <th>Check box</th>
                         <th>Document</th>
-                        <th>      </th>
+                     
                             <th>Status</th>
                         <th>Upload</th>
                         
                     </tr>
                 </thead>
                 <tbody >
-                    @{
-                        
-                        for(var i=0;i< Model.getposts.Count;i++ )
-                        {                         
+                        @{
 
+                        for(var i=0;i< Model.getposts.Count;i++ )
+                        {
+
+                               
                             <tr>
                                 <th scope="row">@i</th>                                
                                 <td><label>@Model.getposts[i].post_id</label> <input type="hidden" asp-for="@Model.getposts[i].post_id" class="form-control"> </td>
                                 <td><label>@Model.getposts[i].post_name</label> <input type="hidden" asp-for="@Model.getposts[i].post_name" class="form-control"/> </td>
                                 <td><label>@Model.getposts[i].dep_name</label> <input type="hidden" asp-for="@Model.getposts[i].dep_name" class="form-control"/> </td>
-
-                                <td>                               
-                                    <input type="checkbox"  id="checkbox_@i" asp-for="@Model.getposts[i].is_checked" />
-                                </td>                      
-                                <td>
+                                    @if (@Model.getposts[i].isfinal_submit ==1)
+                                    {
+                                    <td>
+                                        <input type="checkbox" checked="checked" disabled id="checkbox_@i" asp-for="@Model.getposts[i].is_checked" />
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <input type="checkbox"  id="checkbox_@i" asp-for="@Model.getposts[i].is_checked" />
+                                        </td>
+                                    }              
+                                    <td>
                                     <div class="modal-bootstrap modal-login-form" for="customFile">
                                    
                                         <input type="file"  asp-for="@Model.getposts[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled />
@@ -73,14 +82,28 @@
                                     <!-- BASIC MODAL -->
 
                              </td>
-                                    <td><a href="" class="button">Preview</a></td>
-                                    <td><label>@Model.getposts[i].status</label> <input type="hidden" asp-for="@Model.getposts[i].status" class="form-control" /> </td>
-
-                             <td><button type="submit" id="popup-btn" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
+                                    
+                                    <td>
+                                       
+                                        
+                                     </td>
+                                    @if (@Model.getposts[i].isfinal_submit == 1)
+                                    {
+                             <td><button type="submit" disabled id="popup-btn" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
                        Apply
                                         </button>
 
-                    </td>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <button type="submit" id="popup-btn" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
+                                                Apply
+                                            </button>
+
+                                        </td>
+                                    }
                                 </tr>
 
 
@@ -214,6 +237,19 @@ fileInput.addEventListener("change", function() {
         }
 
 </script>
+<script>
+    function checkFileUpload() {
+        const fileInput = document.getElementById('file-input');
+        const loopingCheckbox = document.getElementById('upload-checkbox');
+
+        if (fileInput.value) {
+            loopingCheckbox.disabled = false;
+        } else {
+            loopingCheckbox.disabled = true;
+        }
+    }
+</script>
+
 <script>
 		$(document).ready(function() {
 			$("input[type='checkbox']").click(function() {
