@@ -28,15 +28,15 @@ namespace ssc.Controllers
 
         //private Uspendingrepo dataAccess = new Uspendingrepo();
 
-        public ActionResult Approve(int id)
+        public ActionResult Approve(int id, DeptRegistration model)
         {
-            _usrepo.UpdateStatusData(id, "Approved");
+            _usrepo.UpdateStatusData(id, "Approved",model);
             return RedirectToAction("Index","US");
         }
 
-        public ActionResult Reject(int id)
+        public ActionResult Reject(int id, DeptRegistration model)
         {
-            _usrepo.UpdateStatusData(id, "Rejected");
+            _usrepo.UpdateStatusData(id, "Rejected", model);
             return RedirectToAction("Index","US");
         }
 

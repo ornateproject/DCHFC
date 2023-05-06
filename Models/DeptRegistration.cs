@@ -53,6 +53,8 @@ namespace ssc.Models
        public string? post { get; set; }
 
         public string? Year { get; set; }
+        public string? Remark { get; set; }
+       
     }
    
     public class ministry
@@ -102,7 +104,8 @@ namespace ssc.Models
         public string? Address { get; set; }
         public string? post_name { get; set; }
         public string? post_id { get; set; }      
-        public string? dep_name { get; set; }       
+        public string? dep_name { get; set; }
+        public string? Department { get; set; }
         public string? status { get; set; }
         public IFormFile? Upload_doc { get; set; }
         public string? is_checked { get; set; }

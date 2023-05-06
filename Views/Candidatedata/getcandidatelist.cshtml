@@ -63,8 +63,8 @@
                         <td>
                             <div class="modal-bootstrap modal-login-form">
 
-                                        <a class="zoomInDown mg-t btn btn-red" asp-action="usviewback" asp-controller="Login" asp-route-id="@item.Reg_no">View Details</a>
-
+                                        <a class="zoomInDown mg-t btn btn-red" href="@Url.Action("usviewback", "Login", new { id = @item.Reg_no, post_id = @item.post_id })">View Details</a>
+                                        
                             </div>
                             <!-- BASIC MODAL -->
 

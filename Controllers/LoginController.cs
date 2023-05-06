@@ -115,23 +115,23 @@ namespace ssc.Controllers
         
 
         [HttpGet]
-        public IActionResult usviewback(string id)
+        public IActionResult usviewback(string id,string post_id)
         {
-           var usdata = _login.getdatelist(id);
+           var usdata = _login.getdatelist(id,post_id);
             getpost dep_reg = new getpost();
             dep_reg = JsonConvert.DeserializeObject<List<getpost>>(usdata)[0];
             return View(dep_reg);         
             
         }
-        public ActionResult Approve(int id)
+        public ActionResult Approve(int id,string post_id )
         {
-            _login.UpdatecandidateStatus(id, "Approved");
+            _login.UpdatecandidateStatus(id, "Approved",post_id);
             return RedirectToAction("usview", "Candidatedata");
         }
 
-        public ActionResult Reject(int id)
+        public ActionResult Reject(int id, string post_id)
         {
-            _login.UpdatecandidateStatus(id, "Rejected");
+            _login.UpdatecandidateStatus(id, "Rejected", post_id);
             return RedirectToAction("usview", "Candidatedata");
         }
 

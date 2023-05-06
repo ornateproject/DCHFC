@@ -203,7 +203,12 @@ namespace ssc.Models
 
         [Required(ErrorMessage = "*")]
         public string? office_department { get; set; }
-
+        public string? Ministry { get; set; }
+        public string? Department { get; set; }
+        public string? d_Name { get; set; }
+        public string? d_Email { get; set; }
+        public string? dep_name { get; set; }
+        public string? d_Mobileno { get; set; }
         public string? Status { get; set; }
 
     }

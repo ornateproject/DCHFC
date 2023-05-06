@@ -43,10 +43,11 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult selection_post(string post_name)
         {
-            var usdata = _userDepRepo.getpost_details(post_name);
+            var usdata = _userDepRepo.getpost_details("Indian Navy");
             UserDepartment dep_reg = new UserDepartment();
             dep_reg = JsonConvert.DeserializeObject<List<UserDepartment>>(usdata)[0];
             return View(dep_reg);
+            //return View();
         }
         
 

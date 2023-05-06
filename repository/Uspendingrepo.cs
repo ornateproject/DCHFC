@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
+using ssc.Models;
 using System.Data;
 
 namespace ssc.repository
@@ -35,7 +36,7 @@ namespace ssc.repository
             return JsonConvert.SerializeObject(dt);
         }
 
-        public void UpdateStatusData(int id, string status)
+        public void UpdateStatusData(int id, string status, DeptRegistration model)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -44,6 +45,7 @@ namespace ssc.repository
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@Remark", model.Remark);
                     cmd.Parameters.AddWithValue("@Status", status == "Approved" ? 1 : 2);
                     con.Open();
                     cmd.ExecuteNonQuery();

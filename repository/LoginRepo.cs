@@ -83,7 +83,7 @@ namespace ssc.repository
             return dt;
         }
 
-        public string getdatelist(string Reg_no)
+        public string getdatelist(string Reg_no,string post_id)
         {
 
             DataTable dt = new DataTable();
@@ -93,6 +93,7 @@ namespace ssc.repository
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                    cmd.Parameters.AddWithValue("@Reg_no",Reg_no);
+                    cmd.Parameters.AddWithValue("@post_id", post_id);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
@@ -104,7 +105,7 @@ namespace ssc.repository
 
         }
 
-        public void UpdatecandidateStatus(int Reg_no, string status)
+        public void UpdatecandidateStatus(int Reg_no, string status,string post_id)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -113,6 +114,7 @@ namespace ssc.repository
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Reg_no", Reg_no);
+                    cmd.Parameters.AddWithValue("@post_id", post_id);
                     cmd.Parameters.AddWithValue("@status", status == "Approved" ? 1 : 2);
                     con.Open();
                     cmd.ExecuteNonQuery();
