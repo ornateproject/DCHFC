@@ -1,4 +1,5 @@
 ﻿@model ssc.Models.UserDepartment
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +20,7 @@
             height: auto;
             border-collapse: collapse;
         }
+
 
         tr, td {
             border: 1px solid black;
@@ -66,7 +68,7 @@
                 <tr>
                     <td colspan="1">b.</td>
                     <td colspan="3">Ministry/Department to which attached</td>
-                    <td colspan="8">@Model.Ministry/ @Model.dep_name</td>
+                    <td colspan="8">@Model.Ministry  @Model.dep_name</td>
                 </tr>
                 <tr>
                     <td colspan="1">c.</td>
@@ -78,7 +80,7 @@
                     <td rowspan="5" width="90px">Contact details and complete postal address of the Nodal Officer of the organization</td>
                     <td colspan="1">a.</td>
                     <td colspan="2">Name:</td>
-                    <td colspan="6">@Model.d_Name</td>
+                    <td colspan="6">@Model.Name</td>
 
                 </tr>
                 <tr>
@@ -660,6 +662,15 @@
                 </div>
             </div>
         </div>
+        
     </div>
+    <div class="form-layout-footer text-center">
+        <a href="/previewpdf/S.Posts_2022%20(2).pdf" class="btn btn-red" style="background-color: red;" style="cursor:pointer" " text-center" download="">Download PDF</a>
+        
+
+    </div>
+
 </body>
+
+
 </html>

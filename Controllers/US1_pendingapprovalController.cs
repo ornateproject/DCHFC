@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using ssc.Models;
 using ssc.repository;
 
+
 namespace ssc.Controllers
 {
     public class US1_pendingapprovalController : Controller
@@ -28,15 +29,15 @@ namespace ssc.Controllers
 
         //private Uspendingrepo dataAccess = new Uspendingrepo();
 
-        public ActionResult Approve(int id, DeptRegistration model)
+        public ActionResult Approve(int id, string Remark)
         {
-            _usrepo.UpdateStatusData(id, "Approved",model);
+            _usrepo.UpdateStatusData(id, "Approved",Remark);
             return RedirectToAction("Index","US");
         }
 
-        public ActionResult Reject(int id, DeptRegistration model)
+        public ActionResult Reject(int id, string Remark)
         {
-            _usrepo.UpdateStatusData(id, "Rejected", model);
+            _usrepo.UpdateStatusData(id, "Rejected", Remark);
             return RedirectToAction("Index","US");
         }
 

@@ -81,8 +81,9 @@ namespace ssc.Controllers
             if (ModelState.IsValid)
             {
                 var asd = _candidaterepo.Insertdata(data,reg_no);
-                return View("candidate", "Candidatedata");
-                
+                // return View("candidate", "Candidatedata");
+                return View("candidate_dashboard", "Candidatedata");
+
             }
             return View();
         }
