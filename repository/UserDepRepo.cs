@@ -108,5 +108,154 @@ namespace ssc.repository
             //var szad= JsonConvert.SerializeObject(Convert.ToString(dt.Rows[0]));
             return JsonConvert.SerializeObject(dt);
         }
+        public string Insertannex1Data(annex1 user)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                  cmd.Parameters.AddWithValue("@Department", user.Department);
+                    cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
+                    cmd.Parameters.AddWithValue("@Department", user.Department);
+                    cmd.Parameters.AddWithValue("@F_No", user.F_No);
+                    cmd.Parameters.AddWithValue("@date", user.Date);
+                    cmd.Parameters.AddWithValue("@Recruitment_Rules", user.Recruitment_Rules);
+                    cmd.Parameters.AddWithValue("@GSR_No", user.GSR_No);
+                    cmd.Parameters.AddWithValue("@GSRNo_Date", user.GSRNo_Date);
+                    cmd.Parameters.AddWithValue("@RRs_post", user.RRs_post);
+                    cmd.Parameters.AddWithValue("@Duties_Res", user.Duties_Res);
+                    cmd.Parameters.AddWithValue("@Name", user.Name);
+                    cmd.Parameters.AddWithValue("@Designation", user.Designation);
+                    cmd.Parameters.AddWithValue("@Mobile_no", user.Mobile_no);
+                    cmd.Parameters.AddWithValue("@Email", user.Email);
+                    cmd.Parameters.AddWithValue("@Place", user.Place);
+                    cmd.Parameters.AddWithValue("@RRs_date", user.RRs_date);
+                    con.Open();
+                    int xdvf = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                }
+
+                return "1";
+            }
+        }
+        public string Insertannex2Data(annex2 user)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Department", user.Department);
+                    cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
+                    cmd.Parameters.AddWithValue("@F_No", user.F_No);
+                    cmd.Parameters.AddWithValue("@Date", user.Date);
+                    cmd.Parameters.AddWithValue("@reported_vacancy", user.reported_vacancy);
+                    cmd.Parameters.AddWithValue("@Noof_vacancy", user.Noof_vacancy);
+                    cmd.Parameters.AddWithValue("@certified_post", user.certified_post);
+                    cmd.Parameters.AddWithValue("@VH", user.VH);
+                    cmd.Parameters.AddWithValue("@HH", user.HH);
+                    cmd.Parameters.AddWithValue("@OH", user.OH);
+                    cmd.Parameters.AddWithValue("@OTHERS", user.OTHERS);
+                    cmd.Parameters.AddWithValue("@Name", user.Name);
+                    cmd.Parameters.AddWithValue("@Designation", user.Designation);
+                    cmd.Parameters.AddWithValue("@Mobile_no", user.Mobile_no);
+                    cmd.Parameters.AddWithValue("@Email", user.Email);
+                    cmd.Parameters.AddWithValue("@Place", user.Place);
+                    cmd.Parameters.AddWithValue("@Official_date", user.Official_date);
+                    con.Open();
+                    int xdvf = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                }
+
+                return "1";
+            }
+        }
+        public string Insertannex3Data(annex3 user)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Department", user.Department);
+                    cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
+                    cmd.Parameters.AddWithValue("@F_No", user.F_No);
+                    cmd.Parameters.AddWithValue("@Date", user.Date);
+                    cmd.Parameters.AddWithValue("@Requisition_Form", user.Requisition_Form);
+                    cmd.Parameters.AddWithValue("@Name", user.Name);
+                    cmd.Parameters.AddWithValue("@Designation", user.Designation);
+                    cmd.Parameters.AddWithValue("@Mobile_no", user.Mobile_no);
+                    cmd.Parameters.AddWithValue("@Email", user.Email);
+                    cmd.Parameters.AddWithValue("@Place", user.Place);
+                    cmd.Parameters.AddWithValue("@Official_date", user.Official_date);
+                    con.Open();
+                    int xdvf = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                }
+
+                return "1";
+            }
+        }
+        public string Insertannex4Data(annex4 user)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Department", user.Department);
+                    cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
+                    cmd.Parameters.AddWithValue("@F_No", user.F_No);
+                    cmd.Parameters.AddWithValue("@Date", user.Date);
+                    cmd.Parameters.AddWithValue("@Name", user.Name);
+                    cmd.Parameters.AddWithValue("@Designation", user.Designation);
+                    cmd.Parameters.AddWithValue("@Mobile_no", user.Mobile_no);
+                    cmd.Parameters.AddWithValue("@Email", user.Email);
+                    cmd.Parameters.AddWithValue("@Place", user.Place);
+                    cmd.Parameters.AddWithValue("@Official_date", user.Official_date);
+                    con.Open();
+                    int xdvf = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                }
+
+                return "1";
+            }
+        }
+        public string InsertannexVData(annex5 user)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Department", user.Department);
+                    cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
+                    cmd.Parameters.AddWithValue("@F_No", user.F_No);
+                    cmd.Parameters.AddWithValue("@Date", user.Date);
+                    cmd.Parameters.AddWithValue("@Name", user.Name);
+                    cmd.Parameters.AddWithValue("@Designation", user.Designation);
+                    cmd.Parameters.AddWithValue("@Mobile_no", user.Mobile_no);
+                    cmd.Parameters.AddWithValue("@Email", user.Email);
+                    cmd.Parameters.AddWithValue("@Place", user.Place);
+                    cmd.Parameters.AddWithValue("@Official_date", user.Official_date);
+                    con.Open();
+                    int xdvf = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                }
+
+                return "1";
+            }
+        }
     }
 }

@@ -235,7 +235,89 @@ namespace ssc.Models
         public string? Mobile_no { get; set; }
         public string? Address { get; set; }
     }
-
+    public class annex1
+    {
+        public int id { get; set; }
+        public string? Department { get; set; }
+        public string? Ministry { get; set; }
+        public string? F_No { get; set; }
+        public string? Date { get; set; }
+        public string? Recruitment_Rules { get; set; }
+        public string? GSR_No { get; set; }
+        public string? GSRNo_Date { get; set; }
+        public string? RRs_post { get; set; }
+        public string? Duties_Res { get; set; }
+        public string? Name { get; set; }
+        public string? Designation { get; set; }
+        public string? Mobile_no { get; set; }
+        public string? Email { get; set; }
+        public string? Place { get; set; }
+        public string? RRs_date { get; set; }
+    }
+    public class annex2
+    {
+        public int id { get; set; }
+        public string? Department { get; set; }
+        public string? Ministry { get; set; }
+        public string? F_No { get; set; }
+        public string? Date { get; set; }
+        public string? reported_vacancy { get; set; }
+        public string? Noof_vacancy { get; set; }
+        public string? certified_post { get; set; }
+        public string? VH {get; set; }
+        public string? HH { get; set; }
+        public string? OH{ get; set; }
+        public string? OTHERS { get; set; }
+        public string? Name { get; set; }
+        public string? Designation { get; set; }
+        public string? Mobile_no { get; set; }
+        public string? Email { get; set; }
+        public string? Place { get; set; }
+        public string? Official_date { get; set; }
+    }
+    public class annex3
+    {
+        public int id { get; set; }
+        public string? Department { get; set; }
+        public string? Ministry { get; set; }
+        public string? F_No { get; set; }
+        public string? Date { get; set; }
+        public string? Requisition_Form { get; set; }
+        public string? Name { get; set; }
+        public string? Designation { get; set; }
+        public string? Mobile_no { get; set; }
+        public string? Email { get; set; }
+        public string? Place { get; set; }
+        public string? Official_date { get; set; }
+    }
+    public class annex4
+    {
+        public int id { get; set; }
+        public string? Department { get; set; }
+        public string? Ministry { get; set; }
+        public string? F_No { get; set; }
+        public string? Date { get; set; }
+        public string? Name { get; set; }
+        public string? Designation { get; set; }
+        public string? Mobile_no { get; set; }
+        public string? Email { get; set; }
+        public string? Place { get; set; }
+        public string? Official_date { get; set; }
+    }
+    public class annex5
+    {
+        public int id { get; set; }
+        public string? Department { get; set; }
+        public string? Ministry { get; set; }
+        public string? F_No { get; set; }
+        public string? Date { get; set; }
+        public string? Name { get; set; }
+        public string? Designation { get; set; }
+        public string? Mobile_no { get; set; }
+        public string? Email { get; set; }
+        public string? Place { get; set; }
+        public string? Official_date { get; set; }
+    }
 }
 
 

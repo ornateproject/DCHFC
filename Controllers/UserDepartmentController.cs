@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2010.Excel;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ssc.Data;
@@ -56,9 +57,30 @@ namespace ssc.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> selectionpost_annex1(annex1 user)
+        {
+            if (ModelState.IsValid)
+            {
+                var asd = _userDepRepo.Insertannex1Data(user);
+                return RedirectToAction("regsuccess", "Regsuccess");
+            }
+            return View();
+        }
         [HttpGet]
         public IActionResult selectionpost_annex2()
         {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> selectionpost_annex2(annex2 user)
+        {
+            if (ModelState.IsValid)
+            {
+                var asd = _userDepRepo.Insertannex2Data(user);
+                return RedirectToAction("regsuccess", "Regsuccess");
+            }
             return View();
         }
         [HttpGet]
@@ -66,14 +88,44 @@ namespace ssc.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> selectionpost_annex3(annex3 user)
+        {
+            if (ModelState.IsValid)
+            {
+                var asd = _userDepRepo.Insertannex3Data(user);
+                return RedirectToAction("regsuccess", "Regsuccess");
+            }
+            return View();
+        }
         [HttpGet]
         public IActionResult selectionpost_annexV()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> selectionpost_annexV(annex5 user)
+        {
+            if (ModelState.IsValid)
+            {
+                var asd = _userDepRepo.InsertannexVData(user);
+                return RedirectToAction("regsuccess", "Regsuccess");
+            }
+            return View();
+        }
         [HttpGet]
         public IActionResult selectionpost_annex4()
         {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> selectionpost_annex4(annex4 user)
+        {
+            if (ModelState.IsValid)
+            {
+                var asd = _userDepRepo.Insertannex4Data(user);
+                return RedirectToAction("regsuccess", "Regsuccess");
+            }
             return View();
         }
         public IActionResult Privacy()
