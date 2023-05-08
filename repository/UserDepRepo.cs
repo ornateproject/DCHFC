@@ -113,10 +113,11 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("", con))
+                using (SqlCommand cmd = new SqlCommand("[Annex_data]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                  cmd.Parameters.AddWithValue("@Department", user.Department);
+                    cmd.Parameters.AddWithValue("@calval", 1);
+                    cmd.Parameters.AddWithValue("@Department", user.Department);
                     cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
                     cmd.Parameters.AddWithValue("@Department", user.Department);
                     cmd.Parameters.AddWithValue("@F_No", user.F_No);
@@ -146,9 +147,10 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("", con))
+                using (SqlCommand cmd = new SqlCommand("[Annex_data]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@calval", 2);
                     cmd.Parameters.AddWithValue("@Department", user.Department);
                     cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
                     cmd.Parameters.AddWithValue("@F_No", user.F_No);
@@ -180,9 +182,10 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("", con))
+                using (SqlCommand cmd = new SqlCommand("[Annex_data]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@calval", 3);
                     cmd.Parameters.AddWithValue("@Department", user.Department);
                     cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
                     cmd.Parameters.AddWithValue("@F_No", user.F_No);
@@ -208,9 +211,10 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("", con))
+                using (SqlCommand cmd = new SqlCommand("[Annex_data]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@calval", 4);
                     cmd.Parameters.AddWithValue("@Department", user.Department);
                     cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
                     cmd.Parameters.AddWithValue("@F_No", user.F_No);
@@ -235,9 +239,10 @@ namespace ssc.repository
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("", con))
+                using (SqlCommand cmd = new SqlCommand("[Annex_data]", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@calval", 5);
                     cmd.Parameters.AddWithValue("@Department", user.Department);
                     cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
                     cmd.Parameters.AddWithValue("@F_No", user.F_No);
