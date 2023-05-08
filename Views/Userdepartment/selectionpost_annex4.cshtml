@@ -1,4 +1,5 @@
-﻿<head>
+﻿@model ssc.Models.annex4
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         * {
@@ -50,15 +51,16 @@
     </style>
 </head>
 <body>
+    <form asp-action="selectionpost_annex4" asp-controller="UserDepartment">
     <div class="content" style="clear:both;">
         <hr />
 
         <h3 style="text-align:right; padding-right:60px;"><u><b>Annex-IV</b></u></h3>
         <h2 style="text-align:center">GOVERNMENT OF INDIA</h2>
-        <h2 style="text-align:center">Department of  <input type="text"></h2>
-        <h2 style="text-align:center">Ministry of  <input type="text"></h2>
-        <h3 class="add">F.No  <input type="text"></h3>
-        <h3 class="add1" style="text-align:right;">Date  <input type="text"></h3>
+            <h2 style="text-align:center">Department of  <input type="text" asp-for="Department"></h2>
+            <h2 style="text-align:center">Ministry of  <input type="text" asp-for="Ministry"></h2>
+            <h3 class="add">F.No  <input type="text" asp-for="F_No"></h3>
+            <h3 class="add1" style="text-align:right;">Date  <input type="text" asp-for="Date"></h3>
     </div>
     <div class="content">
         <h1 style="text-align:center;"><b>CERTIFICATE</b></h1>
@@ -81,17 +83,17 @@
         <div class="">
             <div class="add">
                 <p>Official Seal</p><br /><br />
-                <p>Place : <input type="text"></p>
-                <p>Date : <input type="text"></p>
+                    <p>Place : <input type="text" asp-for="Place"></p>
+                    <p>Date : <input type="text" asp-for="Official_date"></p>
             </div>
             <div class="add1" style="padding-right:5px;">
                 <p>Signature of Head of Department/Head of Office  :</p><br /><br />
-                <p>Name        :&nbsp;  <input type="text"></p>
-                <p>Designation :&nbsp;  <input type="text"></p>
-                <p>Telephonic No.&nbsp; <input type="text"></p>
-                <p>E-mail       :&nbsp; <input type="text"></p>
+                    <p>Name        :&nbsp;  <input type="text" asp-for="Name"></p>
+                    <p>Designation :&nbsp;  <input type="text" asp-for="Designation"></p>
+                    <p>Telephonic No.&nbsp; <input type="text" asp-for="Mobile_no"></p>
+                <p>E-mail       :&nbsp; <input type="text"asp-for="Email"></p>
             </div>
         </div>
     </div>
-
+    </form>
 </body>

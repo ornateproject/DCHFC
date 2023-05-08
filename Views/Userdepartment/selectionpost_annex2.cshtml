@@ -1,4 +1,4 @@
-﻿
+﻿@model ssc.Models.annex2
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -50,15 +50,16 @@
         }
     </style>
 </head>
+  <form asp-action="selectionpost_annex2" asp-controller="UserDepartment">
 <div class="content" style="clear:both;">
     <hr />
 
     <h3 style="text-align:right; padding-right:60px;"><u><b>Annex-II</b></u></h3>
     <h2 style="text-align:center">GOVERNMENT OF INDIA</h2>
-    <h2 style="text-align:center">Department of  <input type="text"></h2>
-    <h2 style="text-align:center">Ministry of  <input type="text"></h2>
+        <h2 style="text-align:center">Department of  <input type="text" asp-for="Department"></h2>
+        <h2 style="text-align:center">Ministry of  <input type="text" asp-for="Ministry"></h2>
     <h3 class="add">F.No  <input type="text"></h3>
-    <h3 class="add1" style="text-align:right;">Date  <input type="text"></h3>
+        <h3 class="add1" style="text-align:right;">Date  <input type="text" asp-for="Date"></h3>
 </div>
 <div class="content">
     <h1 style="text-align:center;"><b>CERTIFICATE</b></h1>
@@ -67,13 +68,13 @@
         DISABILITIES ACT, 2016’* which has become effective from 19th day of April, 2017 and
         the policy relating to reservation for persons with benchmark disabilities has been taken care
         of while sending this requisition. The vacancy(ies) reported in this requisition fall(s) at points
-        No(s) <input type="text">. of Cycle No. of 100 point reservation roster out of which,  <input type="text">.
+            No(s) <input type="text" asp-for="reported_vacancy">. of Cycle No. of 100 point reservation roster out of which,  <input type="text" asp-for="Noof_vacancy">.
         number of vacancy(ies) is/are reserved for persons with benchmark disabilities."
     </p>
     <br />
     <br />
     <p>
-        2. It is also certified that the post of  <input type="text"> which is identified SUITABLE/NOT-SUITABLE for persons with Disabilities (PwD) with following Disabilities:-
+            2. It is also certified that the post of  <input type="text" asp-for="certified_post"> which is identified SUITABLE/NOT-SUITABLE for persons with Disabilities (PwD) with following Disabilities:-
     </p>
     <table>
         <tr>
@@ -86,44 +87,47 @@
         <tr>
             <td colspan="3">(i) Blindness and low vision </td>
             <td colspan="3">VH</td>
-            <td colspan="3"> <input type="text"></td>
+                <td colspan="3"> <input type="text" asp-for="VH"></td>
         </tr>
         <tr>
             <td colspan="3">(ii) Deaf and hard of hearing</td>
             <td colspan="3">HH</td>
-            <td colspan="3"> <input type="text"></td>
+                <td colspan="3"> <input type="text" asp-for="HH"></td>
         </tr>
         <tr>
             <td colspan="3">(iii) Locomotor disability including cerebral palsy, leprosy cured, dwarfism, acid attack victims and muscular dystrophy</td>
             <td colspan="3">OH</td>
-            <td colspan="3"> <input type="text"></td>
+                <td colspan="3"> <input type="text" asp-for="OH"></td>
         </tr>
         <tr>
             <td colspan="3">(iv) Autism, intellectual disability, specific learning disability and mental illness</td>
             <td rowspan="2">Others</td>
-            <td colspan="3"> <input type="text"></td>
+                <td colspan="3"> <input type="text" asp-for="OTHERS"></td>
         </tr>
         <tr>
             <td colspan="3">(v) Multiple disabilities from amongst persons under clauses (i) to (iv) above including deaf, blindness </td>
-            <td colspan="3"> <input type="text"></td>
+                <td colspan="3"> <input type="text" asp-for="Name"></td>
         </tr>
 
     </table>
     <div class="">
         <div class="add">
             <p>Official Seal</p><br /><br />
-            <p>Place : <input type="text"></p>
-            <p>Date : <input type="text"></p>
+                <p>Place : <input type="text" asp-for="Place"></p>
+                <p>Date : <input type="text" asp-for="Official_date"></p>
         </div>
         <div class="add1" style="padding-right:5px;">
             <p>Signature of Head of Department/Head of Office  :</p><br /><br />
-            <p>Name        :&nbsp;  <input type="text"></p>
-            <p>Designation :&nbsp;  <input type="text"></p>
-            <p>Telephonic No.&nbsp; <input type="text"></p>
-            <p>E-mail       :&nbsp; <input type="text"></p>
+            <p>Name        :&nbsp;  <input type="text" asp-for="Name"></p>
+                <p>Designation :&nbsp;  <input type="text" asp-for="Designation"></p>
+                <p>Telephonic No.&nbsp; <input type="text" asp-for="Mobile_no"></p>
+                <p>E-mail       :&nbsp; <input type="text" asp-for="Email"></p>
         </div>
     </div>
-</div>
+    </div> <div class="form-layout-footer" asp-action="index">
+        <button class="btn btn-red  btn btn-success" id="sbt" style="cursor:pointer" type="submit"> <span class="text-white">Submit</span></button>
+        <button class="btn btn-secondary " style="cursor:pointer" id="sbt" type='reset'>Cancel</button>
+    </div><
 
 <p style="clear:both; text-align:center;"><b>*Please refer para 10 of DoP&T O.M. No. 36035/02/2017-Estt.(Res.) dated 15.01.2018.</b></p>
-
+</form>

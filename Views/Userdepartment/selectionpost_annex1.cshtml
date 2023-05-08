@@ -1,4 +1,6 @@
-﻿<html>
+﻿@model ssc.Models.annex1
+
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -51,23 +53,25 @@
     </style>
 </head>
 <body>
+
+    <form asp-action="selectionpost_annex1" asp-controller="UserDepartment">
     <div class="container">
 <div class="content" style="clear:both;">
     <hr />
 
     <h3 style="text-align:right; padding-right:60px;"><u><b>Annex-I</b></u></h3>
     <h2 style="text-align:center">GOVERNMENT OF INDIA</h2>
-    <h2 style="text-align:center">Department of <input type="text"></h2>
-    <h2 style="text-align:center">Ministry of   <input type="text"></h2>
-    <h3 class="add">F.No <input type="text"></h3>
-    <h3 class="add1" style="text-align:right;">Date <input type="text"></h3>
+    <h2 style="text-align:center">Department of <input type="text" asp-for="Department"></h2>
+    <h2 style="text-align:center">Ministry of   <input type="text" asp-for="Ministry"></h2>
+    <h3 class="add">F.No <input type="text" asp-for="F_No"></h3>
+    <h3 class="add1" style="text-align:right;">Date <input type="text" asp-for="Date"></h3>
 </div>
 <div class="content">
     <h1 style="text-align:center;"><b>CERTIFICATE</b></h1>
     <p>
         This is to certify that the Recruitment Rules (RRs) for the post of
-        <input type="text"> have been notified vide GSR No. <input type="text"> dated
-        <input type="text"> (Bilingual Copies of the notified RRs are also enclosed
+        <input type="text" asp-for="Recruitment_Rules"> have been notified vide GSR No. <input type="text" asp-for="GSR_No"> dated
+        <input type="text" asp-for="GSRNo_Date"> (Bilingual Copies of the notified RRs are also enclosed
         herewith). The Age-limit as mentioned in the RRs is .................. years and the
         relaxation in upper Age-limit shall be available as per DoP&T O.M. No.
         15012/2/2010-Estt.(D) dated the 27th March, 2012 read with the DoP&T O.M. No.
@@ -79,7 +83,7 @@
     <table>
         <tr>
            
-                                            <textarea style="height:110px" class="form-control" style="width:100%" id="remark" name="remark" rows="4" cols="125"></textarea>
+                                            <textarea style="height:110px" asp-for="RRs_post" class="form-control" style="width:100%" id="remark" name="remark" rows="4" cols="125"></textarea>
 
         </tr>
         <tr>
@@ -92,7 +96,7 @@
     <div class="row mg-b-25">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <textarea class="form-control" style="width:100%" id="remark" name="remark" rows="4" cols="125"></textarea>
+                                <textarea class="form-control" asp-for="Duties_Res" style="width:100%" id="remark" name="remark" rows="4" cols="125"></textarea>
 
                             </div>
                         </div>
@@ -103,18 +107,23 @@
         <div class="add">
             <p>Official Seal</p><br /><br />
             <p><b>Encl.: RRs</b></p><br /><br />
-            <p>Place :<input type="text"></p>
-            <p>Date :<input type="text"></p>
+            <p>Place :<input type="text" asp-for="Place"></p>
+            <p>Date :<input type="text" asp-for="RRs_date"></p>
         </div>
         <div class="add1" style="padding-right:5px;">
             <p>Signature of Head of Department/Head of Office  :</p><br /><br />
-            <p>Name        :&nbsp;    <input type="text"></p>
-            <p>Designation :&nbsp;    <input type="text"></p>
-            <p>Telephonic No.&nbsp;   <input type="text"></p>
-            <p>E-mail       :&nbsp;   <input type="text"></p>
+            <p>Name        :&nbsp;    <input type="text"asp-for="Name"></p>
+                        <p>Designation :&nbsp;    <input type="text" asp-for="Designation"></p>
+                        <p>Telephonic No.&nbsp;   <input type="text" asp-for="Mobile_no"></p>
+                        <p>E-mail       :&nbsp;   <input type="text" asp-for="Email"></p>
         </div>
     </div>
+                <div class="form-layout-footer" asp-action="index">
+                    <button class="btn btn-red  btn btn-success" id="sbt" style="cursor:pointer" type="submit"> <span class="text-white">Submit</span></button>
+                    <button class="btn btn-secondary " style="cursor:pointer" id="sbt" type='reset'>Cancel</button>
+                </div><!-- form-layout-footer -->
 </div>
 </div>
+</form>
 </body>
 </html>

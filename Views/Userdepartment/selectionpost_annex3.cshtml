@@ -1,4 +1,5 @@
-﻿<head>
+﻿@model ssc.Models.annex3
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         * {
@@ -50,20 +51,21 @@
     </style>
 </head>
 <body>
+    <form asp-action="selectionpost_annex3" asp-controller="UserDepartment">
     <div class="content">
         <hr />
 
         <h3 style="text-align:right; padding-right:60px;"><u><b>Annex-III</b></u></h3>
         <h2 style="text-align:center">GOVERNMENT OF INDIA</h2>
-        <h2 style="text-align:center">Department of <input type="text"></h2>
-        <h2 style="text-align:center">Ministry of  <input type="text"></h2>
+        <h2 style="text-align:center">Department of <input type="text" asp-for="Department"></h2>
+            <h2 style="text-align:center">Ministry of  <input type="text" asp-for="Ministry"></h2>
         <h3 class="add">F.No <input type="text"></h3>
-        <h3 class="add1" style="text-align:right;">Date  <input type="text"></h3>
+            <h3 class="add1" style="text-align:right;">Date  <input type="text" asp-for="Date"></h3>
     </div>
     <div class="content">
         <h1 style="text-align:center;"><b>CERTIFICATE</b></h1>
         <p>
-            I have personally checked and ensured the correctness of all information given in the Requisition Form for the post of <input type="text">
+                I have personally checked and ensured the correctness of all information given in the Requisition Form for the post of <input type="text" asp-for="Requisition_Form">
         </p>
         <br />
         <br />
@@ -71,16 +73,21 @@
         <div class="">
             <div class="add">
                 <p>Official Seal</p><br /><br />
-                <p>Place : <input type="text"></p>
-                <p>Date : <input type="text"></p>
+                    <p>Place : <input type="text" asp-for="Place"></p>
+                    <p>Date : <input type="text" asp-for="Official_date"></p>
             </div>
             <div class="add1" style="padding-right:5px;">
                 <p>Signature of Head of Department/Head of Office  :</p><br /><br />
-                <p>Name        :&nbsp;  <input type="text"></p>
-                <p>Designation :&nbsp;  <input type="text"></p>
-                <p>Telephonic No.&nbsp; <input type="text"></p>
-                <p>E-mail       :&nbsp; <input type="text"></p>
+                    <p>Name        :&nbsp;  <input type="text" asp-for="Name"></p>
+                    <p>Designation :&nbsp;  <input type="text" asp-for="Department"></p>
+                    <p>Telephonic No.&nbsp; <input type="text" asp-for="Mobile_no"></p>
+                    <p>E-mail       :&nbsp; <input type="text" asp-for="Email"></p>
             </div>
         </div>
     </div>
+        </div> <div class="form-layout-footer" asp-action="index">
+            <button class="btn btn-red  btn btn-success" id="sbt" style="cursor:pointer" type="submit"> <span class="text-white">Submit</span></button>
+            <button class="btn btn-secondary " style="cursor:pointer" id="sbt" type='reset'>Cancel</button>
+        </div><
+    </form>
 </body>
