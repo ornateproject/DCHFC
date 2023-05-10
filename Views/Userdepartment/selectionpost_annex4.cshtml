@@ -87,7 +87,13 @@
                     <p>Date : <input type="text" asp-for="Official_date"></p>
             </div>
             <div class="add1" style="padding-right:5px;">
-                <p>Signature of Head of Department/Head of Office  :</p><br /><br />
+                    <p>Signature of Head of Department/Head of Office  :</p><div>
+                        <input type="file" id="fileInput" onchange="previewImage()" accept="image/jpeg">
+                    </div>
+                    <div>
+                        <img id="preview" src="#" alt="Preview Image" style="display:none; width: 160px; height:80px;">
+                    </div>
+                    <br />
                     <p>Name        :&nbsp;  <input type="text" asp-for="Name"></p>
                     <p>Designation :&nbsp;  <input type="text" asp-for="Designation"></p>
                     <p>Telephonic No.&nbsp; <input type="text" asp-for="Mobile_no"></p>
