@@ -142,6 +142,43 @@ namespace ssc.Controllers
         }
 
         [HttpGet]
+        public IActionResult candidateupload_doc()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        
+        public IActionResult MergePDFs(candidate_doc document)
+        {
+            //if (pdfFile == null || pdfFile.Length == 0)
+            //{
+            //    return BadRequest("Please select a PDF file to upload.");
+            //}
+
+            //// Read the uploaded PDF file into a memory stream
+            //MemoryStream memoryStream = new MemoryStream();
+            //pdfFile.CopyTo(memoryStream);
+
+            //// Merge the PDF files using iTextSharp package
+            //memoryStream.Position = 0;
+            //PdfReader reader = new PdfReader(memoryStream);
+            //MemoryStream mergedPDF = new MemoryStream();
+            //Document document = new Document();
+            //PdfCopy pdf = new PdfCopy(document, mergedPDF);
+            //document.Open();
+            //pdf.AddDocument(reader);
+            //pdf.Close();
+            //reader.Close();
+            //document.Close();
+
+            // Return the merged PDF file to the user
+           // return File(mergedPDF.ToArray(), "application/pdf", "MergedPDF.pdf");
+            return View();
+        }
+
+
+        [HttpGet]
         public IActionResult candidate_dashboard()
         {
             return View();

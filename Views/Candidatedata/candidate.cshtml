@@ -74,14 +74,16 @@
                                         </td>
                                     }              
                                     <td>
-                                    <div class="modal-bootstrap modal-login-form" for="customFile">
-                                   
-                                        <input type="file"  asp-for="@Model.getposts[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled />
+                                        <a asp-controller="Candidatedata" asp-action="candidateupload_doc" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i" disabled>Upload Document</a>
 
-                                    </div>
+                                   <!-- <div class="modal-bootstrap modal-login-form" for="customFile">
+                                   
+                                       <input type="file"  asp-for="@Model.getposts[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled />
+
+                                    </div>-->
                                     <!-- BASIC MODAL -->
 
-                             </td>
+                                    </td>
                                     
                                     <td>
                                        

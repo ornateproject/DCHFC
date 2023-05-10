@@ -138,6 +138,29 @@ namespace ssc.Models
         public IFormFile? final_pdf { get; set; }
     }
 
+    public class  candidate_doc{
+        public string? doc_name1 { get; set; }
+        public IFormFile? pdfFile1 { get; set; }
+        public string? doc_name2 { get; set; }
+        public IFormFile? pdfFile2 { get; set; }
+        public string? doc_name3 { get; set; }
+        public IFormFile? pdfFile3 { get; set; }
+        public string? doc_name4 { get; set; }
+        public IFormFile? pdfFile4 { get; set; }
+        public string? doc_name5 { get; set; }
+        public IFormFile? pdfFile5 { get; set; }
+        public string? doc_name6 { get; set; }
+        public IFormFile? pdfFile6 { get; set; }
+        public string? doc_name7 { get; set; }
+        public IFormFile? pdfFile7 { get; set; }
+        public string? doc_name8 { get; set; }
+        public IFormFile? pdfFile8 { get; set; }
+        public string? doc_name9 { get; set; }
+        public IFormFile? pdfFile9 { get; set; }
+        public string? doc_name10{ get; set; }
+        public IFormFile? pdfFile10 { get; set; }
+    }
+
     public class managecandidatedata
     {
         public candidatepersonaldetails? candetails { get; set; }

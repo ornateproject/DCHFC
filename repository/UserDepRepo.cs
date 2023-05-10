@@ -119,7 +119,6 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@calval", 1);
                     cmd.Parameters.AddWithValue("@Department", user.Department);
                     cmd.Parameters.AddWithValue("@Ministry", user.Ministry);
-                    cmd.Parameters.AddWithValue("@Department", user.Department);
                     cmd.Parameters.AddWithValue("@F_No", user.F_No);
                     cmd.Parameters.AddWithValue("@date", user.Date);
                     cmd.Parameters.AddWithValue("@Recruitment_Rules", user.Recruitment_Rules);
