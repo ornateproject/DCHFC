@@ -5,7 +5,7 @@
 }
 
 @*<form asp-action="candidateupload_doc" asp-controller="Candidatedata">*@
-<form method="post" enctype="multipart/form-data" asp-action="MergePDFs" asp-controller="Candidatedata">
+<form method="post" enctype="multipart/form-data" asp-action="MergePDFs" asp-controller="US1_status">
    
 <div class="form-layout form-layout-1">
     <div class="row mg-b-25">
@@ -184,11 +184,16 @@
 
     </div><!-- row -->
 
-    <div class="form-layout-footer">
+   @* <div class="form-layout-footer">
     @*                               <a href="/US1approval/approval"><button class="btn btn-red">Approved</button></a>
         *@
-            <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-red">Upload Document</button>
+           @* <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-red">Upload Document</button>
             <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary">Cancel</button>
-    </div>
+    </div>*@
+        <div class="form-layout-footer text-center">
+            <a href="/Can_doc/10th%20result_merged.pdf" class="btn btn-red" style="background-color: red;" style="cursor:pointer" " text-center" download="Can_doc">Upload Document</a>            <button type="submit" id="popup-btn" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary">Cancel</button>
+            <button type="submit" id="popup-btn" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary">Cancel</button>
+
+        </div>
 </div>
 </form>

@@ -79,6 +79,7 @@ namespace ssc.Models
         public candidate? candidatelogin { get; set; }
         public List<phases>? phases_post { get; set; }
         public uploadcandidate? upload_data { get; set; }
+        public List<candidate_doc>? upload_Doc { get; set; }
 
     }
     
@@ -139,6 +140,8 @@ namespace ssc.Models
     }
 
     public class  candidate_doc{
+        internal readonly object FileNames;
+
         public string? doc_name1 { get; set; }
         public IFormFile? pdfFile1 { get; set; }
         public string? doc_name2 { get; set; }
@@ -159,6 +162,7 @@ namespace ssc.Models
         public IFormFile? pdfFile9 { get; set; }
         public string? doc_name10{ get; set; }
         public IFormFile? pdfFile10 { get; set; }
+        public List<IFormFile> PdfFiles { get; internal set; }
     }
 
     public class managecandidatedata

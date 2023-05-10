@@ -88,7 +88,7 @@
         </tr>
         <tr>
 
-                                            <textarea style="height:110px" class="form-control" style="width:100%" id="remark" name="remark" rows="4" cols="125">Skill Test/PET/PST/Medical Test/Typing Test, etc.(If applicable)</textarea>
+                                            <textarea style="height:110px" class="form-control" style="width:100%" id="remark" name="remark" rows="4" cols="125"></textarea>
 
         </tr>
     </table>
@@ -111,7 +111,14 @@
                         <p>Date :<input type="text" asp-for="RRs_date"></p>
         </div>
         <div class="add1" style="padding-right:5px;">
-            <p>Signature of Head of Department/Head of Office  :</p><br /><br />
+            <p>Signature of Head of Department/Head of Office  :</p>
+            <div>
+                        <input type="file" id="fileInput" onchange="previewImage()" accept="image/jpeg">
+                        </div>
+                        <div>
+                            <img id="preview" src="#" alt="Preview Image" style="display:none; width: 160px; height:80px;">
+                        </div>
+                        <br/>
             <p>Name        :&nbsp;    <input type="text"asp-for="Name"></p>
                         <p>Designation :&nbsp;    <input type="text" asp-for="Designation"></p>
                         <p>Telephonic No.&nbsp;   <input type="text" asp-for="Mobile_no"></p>
@@ -126,4 +133,23 @@
 </div>
 </form>
 </body>
+<script>
+    function previewImage() {
+        var preview = document.querySelector('#preview');
+        var file = document.querySelector('#fileInput').files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+            preview.style.display = "block";
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+            preview.style.display = "none";
+        }
+    }
+</script>
 </html>

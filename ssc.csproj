@@ -42,6 +42,7 @@
     <Folder Include="wwwroot\document\PDF\" />
     <Folder Include="wwwroot\marksheet\" />
     <Folder Include="wwwroot\adharcard\" />
+    <Folder Include="wwwroot\Can_doc\" />
     <Folder Include="wwwroot\pdf\" />
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
