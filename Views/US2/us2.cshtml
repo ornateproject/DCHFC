@@ -23,12 +23,21 @@
 <div class="br-pagebody">
     <div class="br-section-wrapper">
 
+     
         @if (@usertype=="3")
         {
             <div class="text-right">
          <a class="zoomInDown  mg-t btn btn-red" style="margin-bottom:10px" href="/userDepartment/index">Add New Post</a>
          </div>
         }
+        
+        @if (@usertype == "2")
+        {
+            <div class="text-right">
+                <a class="zoomInDown  mg-t btn btn-red" style="margin-bottom:10px" href="/Can_doc/Phase_XI_Selection_Posts_Data_2023.xlsx">Download Excel</a>
+        </div>
+        }
+
         
         <!-- d-flex -->
         <div class="table-wrapper rounded table-responsive">
