@@ -43,7 +43,7 @@
                         <th>Department</th>                        
                         <th>Check box</th>
                         <th>Document</th>
-                     
+                          <th>Preview</th>
                             <th>Status</th>
                         <th>Upload</th>
                         
@@ -84,11 +84,21 @@
                                     <!-- BASIC MODAL -->
 
                                     </td>
-                                    
+                                    @if (@Model.getposts[i].isfinal_submit == 0)
+                                    {
+                                        <td>
+                                            <a href="/Can_doc/10th%20result_merged.pdf" style="cursor:pointer">Preview</a>
+
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                        </td>
+                                    }
                                     <td>
-                                       
-                                        
                                      </td>
+                                     
                                     @if (@Model.getposts[i].isfinal_submit == 1)
                                     {
                              <td><button type="submit" disabled id="popup-btn" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
