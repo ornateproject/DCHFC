@@ -209,6 +209,9 @@ namespace ssc.Models
         public string? d_Email { get; set; }
         public string? dep_name { get; set; }
         public string? d_Mobileno { get; set; }
+        public string? postcode_reg { get; set; }
+        public string? submit_date { get; set; }
+        public string? ministry_name { get; set; }
         public string? Status { get; set; }
 
     }
@@ -221,6 +224,8 @@ namespace ssc.Models
         
 
     }
+   
+
     public class uploadcandidate
     {
         public string? post { get; set; }

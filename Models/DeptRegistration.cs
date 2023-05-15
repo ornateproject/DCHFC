@@ -138,10 +138,13 @@ namespace ssc.Models
         public string? regNo { get; set; }
         public IFormFile? final_pdf { get; set; }
     }
-
-    public class  candidate_doc{
-        internal readonly object FileNames;
-
+    public class PdfMergeModel
+    {
+        public List<IFormFile> PdfFiles { get; set; }
+    }
+    public class  candidate_doc
+    {
+        public string? name { get; set; }
         public string? doc_name1 { get; set; }
         public IFormFile? pdfFile1 { get; set; }
         public string? doc_name2 { get; set; }
@@ -168,7 +171,8 @@ namespace ssc.Models
     public class managecandidatedata
     {
         public candidatepersonaldetails? candetails { get; set; }
-        public List<getpost> getposts { get; set; }    
+        public List<getpost> getposts { get; set; } 
+        public candidate_doc? upload_doc { get; set; }
     }
 
     public class managecandidatedata_preview

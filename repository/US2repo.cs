@@ -32,6 +32,24 @@ namespace ssc.repository
             return JsonConvert.SerializeObject(dt);
 
         }
+        public string get_execldata()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[Get_userdepartment]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@callval", 3);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    con.Close();
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
+
+        }
 
         public string getpost_data(string department)
         {

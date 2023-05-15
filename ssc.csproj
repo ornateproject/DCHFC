@@ -38,6 +38,7 @@
 
   <ItemGroup>
     <Folder Include="pdf\" />
+    <Folder Include="wwwroot\allpdf\finaldocument\" />
     <Folder Include="wwwroot\document\finalpdf\" />
     <Folder Include="wwwroot\document\PDF\" />
     <Folder Include="wwwroot\marksheet\" />

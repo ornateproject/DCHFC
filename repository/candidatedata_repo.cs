@@ -143,8 +143,7 @@ namespace ssc.repository
         }
        
 
-        public string InsertpostData(managecandidatedata data, string reg_no,string name 
-            )
+        public string InsertpostData(managecandidatedata data, string reg_no,string name  )
         {
             DataTable dt = new DataTable();
 

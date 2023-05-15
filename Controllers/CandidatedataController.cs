@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using ssc.Models;
 using ssc.repository;
 using iTextSharp.text;
+using System.Drawing;
 
 namespace ssc.Controllers
 {
@@ -11,12 +12,14 @@ namespace ssc.Controllers
     {
         
         private readonly candidatedata_repo _candidaterepo;
+        private readonly candidateuser_Repo _canduserrepo;
+
         public CandidatedataController(IConfiguration configuration)
         {
             _candidaterepo = new candidatedata_repo(configuration);
-            // _usdashrepo = new DeptDashrepo(configuration);
+             _canduserrepo = new candidateuser_Repo(configuration);
         }
-
+     
         [HttpGet]
         public IActionResult candidate()
         {
@@ -148,8 +151,40 @@ namespace ssc.Controllers
             return View();
         }
 
-        
-    
+
+        [HttpPost]
+        public IActionResult candidateupload_doc(managecandidatedata data)
+        {
+            var name = HttpContext.Session.GetString("Name").ToString();
+            managecandidatedata managecan = new managecandidatedata();
+            managecan.upload_doc = data.upload_doc;
+            var savedfiles = _canduserrepo.savepdf(managecan);
+            var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/allpdf/finaldocument", name + ".pdf");
+
+            using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
+            {
+                Document document = new Document();
+                PdfCopy pdf = new PdfCopy(document, stream);
+                document.Open();
+
+                foreach (string pdfFile in savedfiles)
+                {
+                    PdfReader reader = new PdfReader(pdfFile);
+                    pdf.AddDocument(reader);
+                    reader.Close();
+                }
+                // var asd = _candidaterepo.InsertpostData(managecan);
+                //return View("candidate_dashboard", "Candidatedata");
+                pdf.Close();
+                document.Close();
+            }
+            //managecan.candetails.regNo = reg_no + ".pdf";
+
+            managecan.upload_doc.name = name + ".pdf";
+           // HttpContext.Session.SetString("selected_post", JsonConvert.SerializeObject(managecan));
+            return View("~/Views/Candidatedata/candidate.cshtml", managecan);
+        }
+
 
 
 

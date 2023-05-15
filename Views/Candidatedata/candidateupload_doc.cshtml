@@ -1,11 +1,11 @@
-﻿@model ssc.Models.candidate_doc
+﻿@model managecandidatedata;
 @{
     Layout = "~/Views/Shared/_LayoutCandidate.cshtml";
 
 }
 
 @*<form asp-action="candidateupload_doc" asp-controller="Candidatedata">*@
-<form method="post" enctype="multipart/form-data" asp-action="MergePDFs" asp-controller="US1_status">
+<form method="post" enctype="multipart/form-data" asp-action="candidateupload_doc" asp-controller="Candidatedata"  asp-antiforgery="false">
    
 <div class="form-layout form-layout-1">
     <div class="row mg-b-25">
@@ -27,29 +27,13 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                <input type="text" id="file1" asp-for="doc_name1" class="form-control" />
+                    <input type="text" name="PdfFiles" id="file1" asp-for="@Model.upload_doc.pdfFile1" class="form-control" multiple />
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" id="file1" asp-for="pdfFile1" onChange="validatePDF(this)" accept=".pdf" />
-
-            </div>
-        </div>
-
-    </div><!-- row -->
-    <div class="row mg-b-25">
-
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="text" asp-for="doc_name2" class="form-control" />
-
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="file" id="file2" asp-for="pdfFile2" onChange="validatePDF(this)" accept=".pdf" />
+                    <input type="file" name="PdfFiles" id="file1" asp-for="@Model.upload_doc.pdfFile1" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
@@ -59,29 +43,13 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text" asp-for="doc_name3" class="form-control" />
+                    <input type="text" name="PdfFiles" asp-for="@Model.upload_doc.doc_name2" class="form-control" />
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" id="file3" asp-for="pdfFile3" onChange="validatePDF(this)" accept=".pdf" />
-
-            </div>
-        </div>
-
-    </div><!-- row -->
-    <div class="row mg-b-25">
-
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="text" asp-for="doc_name4" class="form-control" />
-
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="file" id="file4" asp-for="pdfFile4" onChange="validatePDF(this)" accept=".pdf" />
+                    <input type="file" id="file2" asp-for="@Model.upload_doc.pdfFile2" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
@@ -91,13 +59,13 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                <input type="text" asp-for="doc_name5" class="form-control" />
+                    <input type="text" asp-for="@Model.upload_doc.doc_name3" class="form-control" />
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" id="file5" asp-for="pdfFile5" onChange="validatePDF(this)" accept=".pdf" />
+                    <input type="file" id="file3" asp-for="@Model.upload_doc.pdfFile3" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
@@ -107,13 +75,45 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text" asp-for="doc_name6" class="form-control" />
+                    <input type="text" asp-for="@Model.upload_doc.doc_name4" class="form-control" />
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" asp-for="pdfFile6" id="file6" onChange="validatePDF(this)" accept=".pdf" />
+                    <input type="file" id="file4" asp-for="@Model.upload_doc.pdfFile4" onChange="validatePDF(this)" accept=".pdf" />
+
+            </div>
+        </div>
+
+    </div><!-- row -->
+    <div class="row mg-b-25">
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                    <input type="text" asp-for="@Model.upload_doc.doc_name5" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                    <input type="file" id="file5" asp-for="@Model.upload_doc.pdfFile5" onChange="validatePDF(this)" accept=".pdf" />
+
+            </div>
+        </div>
+
+    </div><!-- row -->
+    <div class="row mg-b-25">
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                    <input type="text" asp-for="@Model.upload_doc.doc_name6" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                    <input type="file" asp-for="@Model.upload_doc.pdfFile6" id="file6" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
@@ -123,29 +123,13 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text" asp-for="doc_name7" class="form-control" />
+                    <input type="text" asp-for="@Model.upload_doc.doc_name7" class="form-control" />
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" id="file7" asp-for="pdfFile7" onChange="validatePDF(this)" accept=".pdf" />
-
-            </div>
-        </div>
-
-    </div><!-- row -->
-<div class="row mg-b-25">
-
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="text" asp-for="doc_name8"  class="form-control" />
-
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="file" asp-for="pdfFile8" id="file8" onChange="validatePDF(this)" accept=".pdf" />
+                    <input type="file" id="file7" asp-for="@Model.upload_doc.pdfFile7" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
@@ -155,13 +139,29 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text" asp-for="doc_name9" class="form-control" />
+                    <input type="text" asp-for="@Model.upload_doc.doc_name8" class="form-control" />
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" id="file9" asp-for="pdfFile9" onChange="validatePDF(this)" accept=".pdf" />
+                    <input type="file" asp-for="@Model.upload_doc.pdfFile8" id="file8" onChange="validatePDF(this)" accept=".pdf" />
+
+            </div>
+        </div>
+
+    </div><!-- row -->
+<div class="row mg-b-25">
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                    <input type="text" asp-for="@Model.upload_doc.doc_name9" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                    <input type="file" id="file9" asp-for="@Model.upload_doc.pdfFile9" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
@@ -171,28 +171,27 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text" asp-for="doc_name10" class="form-control" />
+                    <input type="text" asp-for="@Model.upload_doc.doc_name10" class="form-control" />
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" id="file10" asp-for="pdfFile10" onChange="validatePDF(this)" accept=".pdf" />
+                    <input type="file" name="PdfFiles" id="file10" asp-for="@Model.upload_doc.pdfFile10" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
 
     </div><!-- row -->
 
-   @* <div class="form-layout-footer">
-    @*                               <a href="/US1approval/approval"><button class="btn btn-red">Approved</button></a>
-        *@
-           @* <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-red">Upload Document</button>
+    <div class="form-layout-footer">
+                                   
+         <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-red">Upload Document</button>
             <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary">Cancel</button>
-    </div>*@
-        <div class="form-layout-footer text-center">
+    </div>
+       @* <div class="form-layout-footer text-center">
             <a href="/Can_doc/10th%20result_merged.pdf" class="btn btn-red" style="background-color: red;" style="cursor:pointer" " text-center" download="Can_doc">Upload Document</a>            <button type="submit" id="popup-btn" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary">Cancel</button>
 
-        </div>
+        </div>*@
 </div>
 </form>

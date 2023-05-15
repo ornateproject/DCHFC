@@ -1,8 +1,6 @@
 ﻿using iTextSharp.text.pdf;
 using Microsoft.AspNetCore.Mvc;
 using iTextSharp.text;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using System.IO;
 using System.Linq;
 using ssc.Models;
