@@ -68,7 +68,7 @@ namespace ssc.Controllers
             }
 
             managecan.candetails.regNo= reg_no+".pdf";
-            HttpContext.Session.SetString("selected_post",JsonConvert.SerializeObject(managecan));
+            //HttpContext.Session.SetString("selected_post",JsonConvert.SerializeObject(managecan));
             return View("~/Views/Candidatedata/candidate_preview.cshtml", managecan);
 
         }
@@ -181,7 +181,7 @@ namespace ssc.Controllers
             //managecan.candetails.regNo = reg_no + ".pdf";
 
             managecan.upload_doc.name = name + ".pdf";
-           // HttpContext.Session.SetString("selected_post", JsonConvert.SerializeObject(managecan));
+            HttpContext.Session.SetString("selected_post", JsonConvert.SerializeObject(managecan));
             return View("~/Views/Candidatedata/candidate.cshtml", managecan);
         }
 
