@@ -153,13 +153,15 @@ namespace ssc.Controllers
 
 
         [HttpPost]
-        public IActionResult candidateupload_doc(managecandidatedata data)
+        public IActionResult candidateupload_doc(managecandidatedata data,string post_id)
         {
             var name = HttpContext.Session.GetString("Name").ToString();
+            var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
+
             managecandidatedata managecan = new managecandidatedata();
             managecan.upload_doc = data.upload_doc;
             var savedfiles = _canduserrepo.savepdf(managecan);
-            var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/allpdf/finaldocument", name + ".pdf");
+            var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/allpdf/finaldocument", post_id +"_"+ reg_no +".pdf");
 
             using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
             {
@@ -180,12 +182,10 @@ namespace ssc.Controllers
             }
             //managecan.candetails.regNo = reg_no + ".pdf";
 
-            managecan.upload_doc.name = name + ".pdf";
+            managecan.upload_doc.post_id = post_id + "_"+reg_no+ ".pdf";
             HttpContext.Session.SetString("selected_post", JsonConvert.SerializeObject(managecan));
             return View("~/Views/Candidatedata/candidate.cshtml", managecan);
         }
-
-
 
 
         [HttpGet]

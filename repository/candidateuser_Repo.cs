@@ -42,30 +42,33 @@ namespace ssc.repository
             if (data.upload_doc.pdfFile1 != null)
             {
             
-            var fileName1 = Path.GetFileName(data.upload_doc.pdfFile1?.FileName);
-            var filenamewithoutextension1 = Path.GetFileNameWithoutExtension(fileName1);
-
-            var extension1 = Path.GetExtension(fileName1);
-            string vardatetime1 = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
-
-            var newfilenamewithoutextension1 = vardatetime1 + filenamewithoutextension1;
-
-            //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
-            var path1 = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/allpdf", newfilenamewithoutextension1 + extension1);
-            FileInfo file1 = new FileInfo(Path.Combine(path1));
-            var stream1 = new FileStream(path1, FileMode.Create);
-                data.upload_doc.pdfFile1.CopyTo(stream1);
-            uploadedfiles.Add(path1);
-            stream1.Close();
-           }
+                 var fileName1 = Path.GetFileName(data.upload_doc.pdfFile1?.FileName);
+                var doc_name1 = Path.GetFileName(data.upload_doc.doc_name1);
+                var filenamewithoutextension1 = Path.GetFileNameWithoutExtension(fileName1);
+               
+                 var extension1 = Path.GetExtension(fileName1 + doc_name1);
+                 string vardatetime1 = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+               
+                 var newfilenamewithoutextension1 = vardatetime1 + filenamewithoutextension1;
+               
+                 //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
+                 var path1 = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/allpdf", newfilenamewithoutextension1 + extension1);
+                 FileInfo file1 = new FileInfo(Path.Combine(path1));
+                 var stream1 = new FileStream(path1, FileMode.Create);
+                     data.upload_doc.pdfFile1.CopyTo(stream1);
+                 uploadedfiles.Add(path1);
+                 stream1.Close();
+            }
             //-------------------------------------------------------------------------------
             //================================file2===============================
             if (data.upload_doc.pdfFile2 != null)
             {
                 var fileName2 = Path.GetFileName(data.upload_doc.pdfFile2?.FileName);
+                var doc_name2 = Path.GetFileName(data.upload_doc.doc_name2);
+
                 var filenamewithoutextension2 = Path.GetFileNameWithoutExtension(fileName2);
 
-                var extension2 = Path.GetExtension(fileName2);
+                var extension2 = Path.GetExtension(fileName2 + doc_name2);
                 string vardatetime2 = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
 
                 var newfilenamewithoutextension2 = vardatetime2 + filenamewithoutextension2;

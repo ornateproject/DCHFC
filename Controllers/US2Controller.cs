@@ -57,11 +57,7 @@ namespace ssc.Controllers
                 var sheetName = "Sheet1";
                 ExcelWorksheet ws = excelPackage.Workbook.Worksheets.Add(sheetName);
                 //var worksheet = excelPackage.CreateWorksheet("Sheet1");
-
-                // Write headers
-                //ws.Cells[1, 1].Value = "Ministry";
-                //ws.Cells[1, 2].Value = "Department";
-                //ws.Cells[1, 3].Value = "Name";
+ 
                 ws.Cells[1, 1].Value = "postcode_reg";
                 ws.Cells[1, 2].Value = "post_name";
                 ws.Cells[1, 3].Value = "SC";
@@ -77,8 +73,6 @@ namespace ssc.Controllers
                 ws.Cells[1, 13].Value = "submit_date";
                 ws.Cells[1, 14].Value = "dep_name";
                 ws.Cells[1, 15].Value = "ministry_name";
-
-
 
                 // Write data
                 int row = 2;

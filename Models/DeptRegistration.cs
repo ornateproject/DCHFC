@@ -144,6 +144,8 @@ namespace ssc.Models
     }
     public class  candidate_doc
     {
+        public string? reg_no { get; set; }
+        public string? post_id { get; set; }
         public string? name { get; set; }
         public string? doc_name1 { get; set; }
         public IFormFile? pdfFile1 { get; set; }
@@ -173,6 +175,7 @@ namespace ssc.Models
         public candidatepersonaldetails? candetails { get; set; }
         public List<getpost> getposts { get; set; } 
         public candidate_doc? upload_doc { get; set; }
+
     }
 
     public class managecandidatedata_preview

@@ -27,23 +27,24 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text" name="PdfFiles" id="file1" asp-for="@Model.upload_doc.pdfFile1" class="form-control" multiple />
+                    <input type="text"   asp-for="upload_doc.doc_name1" class="form-control"  />
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" name="PdfFiles" id="file1" asp-for="@Model.upload_doc.pdfFile1" onChange="validatePDF(this)" accept=".pdf" />
+                    <input type="file"  id="file1" asp-for="@Model.upload_doc.pdfFile1" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
+
 
     </div><!-- row -->
     <div class="row mg-b-25">
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text" name="PdfFiles" asp-for="@Model.upload_doc.doc_name2" class="form-control" />
+                    <input type="text"  asp-for="upload_doc.doc_name2" class="form-control" />
 
             </div>
         </div>
@@ -185,8 +186,8 @@
     </div><!-- row -->
 
     <div class="form-layout-footer">
-                                   
-         <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-red">Upload Document</button>
+
+            <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-red">Upload Document</button>
             <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary">Cancel</button>
     </div>
        @* <div class="form-layout-footer text-center">

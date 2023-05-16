@@ -74,7 +74,7 @@
                                         </td>
                                     }              
                                     <td>
-                                        <a asp-controller="Candidatedata" asp-action="candidateupload_doc" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i" disabled>Upload Document</a>
+                                        <a asp-controller="Candidatedata" asp-action="candidateupload_doc"  asp-route-post_id="@Model.getposts[i].post_id" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i" disabled>Upload Document</a>
 
                                    <!-- <div class="modal-bootstrap modal-login-form" for="customFile">
                                    
@@ -87,7 +87,7 @@
                                     @if (@Model.getposts[i].isfinal_submit == 0)
                                     {
                                         <td>
-                                            <a href="" style="cursor:pointer">Preview</a>
+                                            <a  href="" style="cursor:pointer">Preview</a>
 
                                         </td>
                                     }
