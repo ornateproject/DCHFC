@@ -148,7 +148,11 @@ namespace ssc.Controllers
         [HttpGet]
         public IActionResult candidateupload_doc()
         {
-            return View();
+            var document_name = _candidaterepo.get_docname();
+            managecandidatedata managecandata = new managecandidatedata();
+            managecandata.candocument = JsonConvert.DeserializeObject<List<candidatedocument_data>>(document_name);
+            
+            return View(managecandata);
         }
 
 
@@ -161,7 +165,7 @@ namespace ssc.Controllers
             managecandidatedata managecan = new managecandidatedata();
             managecan.upload_doc = data.upload_doc;
             var savedfiles = _canduserrepo.savepdf(managecan);
-            var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/allpdf/finaldocument", post_id +"_"+ reg_no +".pdf");
+            var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/allpdf/finaldocument", post_id+"_" +reg_no +".pdf");
 
             using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
             {
@@ -175,16 +179,15 @@ namespace ssc.Controllers
                     pdf.AddDocument(reader);
                     reader.Close();
                 }
-                // var asd = _candidaterepo.InsertpostData(managecan);
-                //return View("candidate_dashboard", "Candidatedata");
                 pdf.Close();
                 document.Close();
             }
-            //managecan.candetails.regNo = reg_no + ".pdf";
-
-            managecan.upload_doc.post_id = post_id + "_"+reg_no+ ".pdf";
-            HttpContext.Session.SetString("selected_post", JsonConvert.SerializeObject(managecan));
+            managecan.upload_doc.regNo = post_id+"_" +reg_no+ ".pdf";
+            //HttpContext.Session.SetString("selected_post", JsonConvert.SerializeObject(managecan));
+            //return View("candidate", "Candidatedata");
             return View("~/Views/Candidatedata/candidate.cshtml", managecan);
+           // RedirectToAction("", "Candidatedata");
+
         }
 
 

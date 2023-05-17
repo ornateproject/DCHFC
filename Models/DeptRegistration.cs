@@ -79,6 +79,7 @@ namespace ssc.Models
         public candidate? candidatelogin { get; set; }
         public List<phases>? phases_post { get; set; }
         public uploadcandidate? upload_data { get; set; }
+      
         public List<candidate_doc>? upload_Doc { get; set; }
 
     }
@@ -144,10 +145,14 @@ namespace ssc.Models
     }
     public class  candidate_doc
     {
+        public int id { get; set; }
+        public string? regNo { get; set; }
+        public string Doc_name { get; set; }
         public string? reg_no { get; set; }
         public string? post_id { get; set; }
         public string? name { get; set; }
         public string? doc_name1 { get; set; }
+
         public IFormFile? pdfFile1 { get; set; }
         public string? doc_name2 { get; set; }
         public IFormFile? pdfFile2 { get; set; }
@@ -175,9 +180,38 @@ namespace ssc.Models
         public candidatepersonaldetails? candetails { get; set; }
         public List<getpost> getposts { get; set; } 
         public candidate_doc? upload_doc { get; set; }
+        public List<candidatedocument_data> candocument { get; set; }
 
     }
+    public class candidatedocument_data
+    {
 
+        public int id { get; set; }
+        public string Doc_name { get; set; }
+        public string? reg_no { get; set; }
+        public string? post_id { get; set; }
+        public string? name { get; set; }
+        public string? doc_name1 { get; set; }
+        public IFormFile? pdfFile1 { get; set; }
+        public string? doc_name2 { get; set; }
+        public IFormFile? pdfFile2 { get; set; }
+        public string? doc_name3 { get; set; }
+        public IFormFile? pdfFile3 { get; set; }
+        public string? doc_name4 { get; set; }
+        public IFormFile? pdfFile4 { get; set; }
+        public string? doc_name5 { get; set; }
+        public IFormFile? pdfFile5 { get; set; }
+        public string? doc_name6 { get; set; }
+        public IFormFile? pdfFile6 { get; set; }
+        public string? doc_name7 { get; set; }
+        public IFormFile? pdfFile7 { get; set; }
+        public string? doc_name8 { get; set; }
+        public IFormFile? pdfFile8 { get; set; }
+        public string? doc_name9 { get; set; }
+        public IFormFile? pdfFile9 { get; set; }
+        public string? doc_name10 { get; set; }
+        public IFormFile? pdfFile10 { get; set; }
+    }
     public class managecandidatedata_preview
     {
         public string? regNo { get; set; }

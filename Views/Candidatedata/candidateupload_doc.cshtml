@@ -1,23 +1,29 @@
-﻿@model managecandidatedata;
+﻿@model ssc.Models.managecandidatedata;
 @{
     Layout = "~/Views/Shared/_LayoutCandidate.cshtml";
 
 }
 
 @*<form asp-action="candidateupload_doc" asp-controller="Candidatedata">*@
-<form method="post" enctype="multipart/form-data" asp-action="candidateupload_doc" asp-controller="Candidatedata"  asp-antiforgery="false">
+<form method="post" enctype="multipart/form-data" asp-action="candidateupload_doc" asp-controller="Candidatedata" asp-route-post_id="@Context.Request.Query["post_id"]" asp-antiforgery="false">
    
 <div class="form-layout form-layout-1">
+       <div class="br-section-wrapper">
+     <div class="row mg-b-25">
+            <div class="col-lg-12">
+         <h4 style="color:black">Note:- Any relavent doc to be submitted may be clubed together to upload</h4>
+         </div>
+         </div>
     <div class="row mg-b-25">
 
         <div class="col-lg-6">
             <div class="form-group">
-              <h4>Document Name</h4>
+                        <h4 style="color:black">Document Name</h4>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                <h4>Upload File</h4>
+                        <h4 style="color:black">Upload File</h4>
             </div>
         </div>
 
@@ -27,13 +33,21 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text"   asp-for="upload_doc.doc_name1" class="form-control"  />
+                        <select class="form-control select2" asp-for="upload_doc.doc_name1" class="form-control">
 
+                            <option value=" ">----Select----</option>
+                            @foreach (var item in Model.candocument)
+                            {
+                                <option value="@item.Doc_name"> @item.Doc_name</option>
+                            }
+
+                     
+                        </select>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file"  id="file1" asp-for="@Model.upload_doc.pdfFile1" onChange="validatePDF(this)" accept=".pdf" />
+                        <input type="file" id="file1" asp-for="@Model.upload_doc.pdfFile1" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
@@ -44,29 +58,22 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text"  asp-for="upload_doc.doc_name2" class="form-control" />
+                        <select class="form-control select2" asp-for="upload_doc.doc_name2" class="form-control">
+
+                            <option value=" ">----Select----</option>
+                            @foreach (var item in Model.candocument)
+                            {
+                                <option value="@item.Doc_name"> @item.Doc_name</option>
+                            }
+
+
+                        </select>
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" id="file2" asp-for="@Model.upload_doc.pdfFile2" onChange="validatePDF(this)" accept=".pdf" />
-
-            </div>
-        </div>
-
-    </div><!-- row -->
-    <div class="row mg-b-25">
-
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="text" asp-for="@Model.upload_doc.doc_name3" class="form-control" />
-
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="file" id="file3" asp-for="@Model.upload_doc.pdfFile3" onChange="validatePDF(this)" accept=".pdf" />
+                        <input type="file" id="file2" asp-for="@Model.upload_doc.pdfFile2" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
@@ -76,29 +83,22 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text" asp-for="@Model.upload_doc.doc_name4" class="form-control" />
+                        <select class="form-control select2" asp-for="upload_doc.doc_name3" class="form-control">
+
+                            <option value=" ">----Select----</option>
+                            @foreach (var item in Model.candocument)
+                            {
+                                <option value="@item.Doc_name"> @item.Doc_name</option>
+                            }
+
+
+                        </select>
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" id="file4" asp-for="@Model.upload_doc.pdfFile4" onChange="validatePDF(this)" accept=".pdf" />
-
-            </div>
-        </div>
-
-    </div><!-- row -->
-    <div class="row mg-b-25">
-
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="text" asp-for="@Model.upload_doc.doc_name5" class="form-control" />
-
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="file" id="file5" asp-for="@Model.upload_doc.pdfFile5" onChange="validatePDF(this)" accept=".pdf" />
+                        <input type="file" id="file3" asp-for="@Model.upload_doc.pdfFile3" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
@@ -108,13 +108,72 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text" asp-for="@Model.upload_doc.doc_name6" class="form-control" />
+                        <select class="form-control select2" asp-for="upload_doc.doc_name4" class="form-control">
+
+                            <option value=" ">----Select----</option>
+                            @foreach (var item in Model.candocument)
+                            {
+                                <option value="@item.Doc_name"> @item.Doc_name</option>
+                            }
+
+
+                        </select>
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" asp-for="@Model.upload_doc.pdfFile6" id="file6" onChange="validatePDF(this)" accept=".pdf" />
+                        <input type="file" id="file4" asp-for="@Model.upload_doc.pdfFile4" onChange="validatePDF(this)" accept=".pdf" />
+
+            </div>
+        </div>
+
+    </div><!-- row -->
+    <div class="row mg-b-25">
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                        <select class="form-control select2" asp-for="upload_doc.doc_name5" class="form-control">
+
+                            <option value=" ">----Select----</option>
+                            @foreach (var item in Model.candocument)
+                            {
+                                <option value="@item.Doc_name"> @item.Doc_name</option>
+                            }
+
+
+                        </select>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                        <input type="file" id="file5" asp-for="@Model.upload_doc.pdfFile5" onChange="validatePDF(this)" accept=".pdf" />
+
+            </div>
+        </div>
+
+    </div><!-- row -->
+    <div class="row mg-b-25">
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                        <select class="form-control select2" asp-for="upload_doc.doc_name6" class="form-control">
+
+                            <option value=" ">----Select----</option>
+                            @foreach (var item in Model.candocument)
+                            {
+                                <option value="@item.Doc_name"> @item.Doc_name</option>
+                            }
+
+
+                        </select>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                        <input type="file" asp-for="@Model.upload_doc.pdfFile6" id="file6" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
@@ -124,75 +183,71 @@
 
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="text" asp-for="@Model.upload_doc.doc_name7" class="form-control" />
+                        <select class="form-control select2" asp-for="upload_doc.doc_name7" class="form-control">
+
+                            <option value=" ">----Select----</option>
+                            @foreach (var item in Model.candocument)
+                            {
+                                <option value="@item.Doc_name"> @item.Doc_name</option>
+                            }
+
+
+                        </select>
 
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                    <input type="file" id="file7" asp-for="@Model.upload_doc.pdfFile7" onChange="validatePDF(this)" accept=".pdf" />
+                        <input type="file" id="file7" asp-for="@Model.upload_doc.pdfFile7" onChange="validatePDF(this)" accept=".pdf" />
 
             </div>
         </div>
 
     </div><!-- row -->
-<div class="row mg-b-25">
+            <div class="form-layout-footer">
+                @*            <input type="hidden" name="post_id" value="@Model.upload_doc.post_id">
+                *@            <button type="submit" id="popup-btn" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-red">Upload Document</button>
 
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="text" asp-for="@Model.upload_doc.doc_name8" class="form-control" />
-
+                <button type="submit" id="popup-btn" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary">Cancel</button>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="file" asp-for="@Model.upload_doc.pdfFile8" id="file8" onChange="validatePDF(this)" accept=".pdf" />
-
-            </div>
-        </div>
-
-    </div><!-- row -->
-<div class="row mg-b-25">
-
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="text" asp-for="@Model.upload_doc.doc_name9" class="form-control" />
-
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="file" id="file9" asp-for="@Model.upload_doc.pdfFile9" onChange="validatePDF(this)" accept=".pdf" />
-
-            </div>
-        </div>
-
-    </div><!-- row -->
-    <div class="row mg-b-25">
-
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="text" asp-for="@Model.upload_doc.doc_name10" class="form-control" />
-
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="form-group">
-                    <input type="file" name="PdfFiles" id="file10" asp-for="@Model.upload_doc.pdfFile10" onChange="validatePDF(this)" accept=".pdf" />
-
-            </div>
-        </div>
-
-    </div><!-- row -->
-
-    <div class="form-layout-footer">
-
-            <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-red">Upload Document</button>
-            <button type="submit" id="popup-btn"  data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary">Cancel</button>
     </div>
-       @* <div class="form-layout-footer text-center">
-            <a href="/Can_doc/10th%20result_merged.pdf" class="btn btn-red" style="background-color: red;" style="cursor:pointer" " text-center" download="Can_doc">Upload Document</a>            <button type="submit" id="popup-btn" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary">Cancel</button>
 
-        </div>*@
+   
 </div>
 </form>
+
+            <script>
+    function DocUpload() {
+        const allowedTypes = 'pdf';
+
+        const fileInput = document.querySelector('input[type="file"]');
+        const filePath = fileInput.value;
+
+        const fileExtension = filePath.split('.').pop().toLowerCase();
+
+        if (!allowedTypes.includes(fileExtension)) {
+            alert('Invalid file format. Only PDF are allowed.');
+            fileInput.value = ''; // reset the file input to clear the selected file
+        }
+
+
+    }
+    function validatePDF(input) {
+        // Get the uploaded file object
+        var file = input.files[0];
+
+        // Check if the file is a PDF and has a valid type
+        //if (file.type == "application/pdf") {
+        //  // Do something to validate the PDF, such as checking its metadata
+        //  alert("PDF is valid!");
+        //}
+        if (file.type != "application/pdf") {
+            // Show an error message if the file is not a valid PDF
+            alert("Please select a valid PDF file!");
+            // Clear the input field to prevent further submission
+            input.value = null;
+        }
+    }
+
+            </script>
+@*//============================================input validation with file upload==========================================*@

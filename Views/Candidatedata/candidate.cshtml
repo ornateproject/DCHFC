@@ -1,10 +1,12 @@
 ﻿@model managecandidatedata;
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
 @{
     Layout = "~/Views/Shared/_LayoutCandidate.cshtml";
   
 }
 @{
-   
+    var regno = @Accessor.HttpContext.Session.GetString("Reg_no").ToString();
 }
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
@@ -21,11 +23,11 @@
     <div class="br-pagebody">
     <div class="br-section-wrapper">
  <div style="display:flex;justify-content:space-between;margin-bottom:15px">
-    <span>
+    @*<span>
      <label  style="color:black"class="form-label" for="customFile"><b>Upload Aadhar Card</b></label>
                     <input type="file" id="fileInput1" onchange="checkFileUpload()" asp-for="@Model.candetails.adhar_card" accept=".pdf" class="form-control" id="customFile" />
 
-    </span>
+    </span>*@
                 <span>
                     <label style="color:black" class="form-label" for="customFile"><b>Upload 10th Certificate</b></label>
                     <input type="file" id="fileInput1" onchange="checkFileUpload()" asp-for="@Model.candetails.marksheet" accept=".pdf" class="form-control" id="customFile" />
@@ -87,7 +89,7 @@
                                     @if (@Model.getposts[i].isfinal_submit == 0)
                                     {
                                         <td>
-                                            <a  href="" style="cursor:pointer">Preview</a>
+                                            <a href="~/allpdf/finaldocument/" style="cursor:pointer">Preview</a>
 
                                         </td>
                                     }
