@@ -42,34 +42,34 @@ namespace ssc.Controllers
             var name = HttpContext.Session.GetString("Name").ToString();
             var asd = _candidaterepo.InsertpostData(data,reg_no,name);
 
-            managecandidatedata managecan = new managecandidatedata();
+           // managecandidatedata managecan = new managecandidatedata();
             
-           managecan.getposts = data.getposts.Where(x => x.is_checked == "true").ToList();
-            managecan.candetails = data.candetails;
-            var savedfiles= _candidaterepo.savepdf(managecan);
-            var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document/FinalDocument", reg_no + ".pdf");
+           //managecan.getposts = data.getposts.Where(x => x.is_checked == "true").ToList();
+           // managecan.candetails = data.candetails;
+           // var savedfiles= _candidaterepo.savepdf(managecan);
+           // var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document/FinalDocument", reg_no + ".pdf");
 
-            using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
-            {
-                Document document = new Document();
-                PdfCopy pdf = new PdfCopy(document, stream); 
-                document.Open();
+           // using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
+           // {
+           //     Document document = new Document();
+           //     PdfCopy pdf = new PdfCopy(document, stream); 
+           //     document.Open();
 
-                foreach (string pdfFile in savedfiles)
-                {
-                    PdfReader reader = new PdfReader(pdfFile);
-                    pdf.AddDocument(reader);
-                    reader.Close();
-                }
-             // var asd = _candidaterepo.InsertpostData(managecan);
-                //return View("candidate_dashboard", "Candidatedata");
-                pdf.Close();
-                document.Close();
-            }
+           //     foreach (string pdfFile in savedfiles)
+           //     {
+           //         PdfReader reader = new PdfReader(pdfFile);
+           //         pdf.AddDocument(reader);
+           //         reader.Close();
+           //     }
+           //  // var asd = _candidaterepo.InsertpostData(managecan);
+         return View("candidate_dashboard", "Candidatedata");
+           //     pdf.Close();
+           //     document.Close();
+           // }
 
-            managecan.candetails.regNo= reg_no+".pdf";
-            //HttpContext.Session.SetString("selected_post",JsonConvert.SerializeObject(managecan));
-            return View("~/Views/Candidatedata/candidate_preview.cshtml", managecan);
+           // managecan.candetails.regNo= reg_no+".pdf";
+           // //HttpContext.Session.SetString("selected_post",JsonConvert.SerializeObject(managecan));
+           // return View("~/Views/Candidatedata/candidate_preview.cshtml", managecan);
 
         }
 
@@ -163,6 +163,7 @@ namespace ssc.Controllers
             var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
 
             managecandidatedata managecan = new managecandidatedata();
+            var asd = _candidaterepo.Insertcandidate_doc(data, post_id);
             managecan.upload_doc = data.upload_doc;
             var savedfiles = _canduserrepo.savepdf(managecan);
             var outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/allpdf/finaldocument", post_id+"_" +reg_no +".pdf");
@@ -172,7 +173,7 @@ namespace ssc.Controllers
                 Document document = new Document();
                 PdfCopy pdf = new PdfCopy(document, stream);
                 document.Open();
-
+              //  document.Add(new Paragraph(data.upload_doc.doc_name1));
                 foreach (string pdfFile in savedfiles)
                 {
                     PdfReader reader = new PdfReader(pdfFile);
@@ -182,7 +183,7 @@ namespace ssc.Controllers
                 pdf.Close();
                 document.Close();
             }
-            managecan.candetails.regNo = post_id+"_" +reg_no+ ".pdf";
+            managecan.upload_doc.regNo = post_id+"_" +reg_no+ ".pdf";
             //HttpContext.Session.SetString("selected_post", JsonConvert.SerializeObject(managecan));
             //return View("candidate", "Candidatedata");
            // return View("~/Views/Candidatedata/candidate.cshtml", managecan);

@@ -64,7 +64,7 @@
                                 <td><label>@Model.getposts[i].dep_name</label> <input type="hidden" asp-for="@Model.getposts[i].dep_name" class="form-control"/> </td>
                                     @if (@Model.getposts[i].isfinal_submit ==1)
                                     {
-                                    <td>
+                                        <td>
                                         <input type="checkbox" checked="checked" disabled id="checkbox_@i" asp-for="@Model.getposts[i].is_checked" />
                                         </td>
                                     }
@@ -88,7 +88,8 @@
                                     @if (@Model.getposts[i].isfinal_submit == 0)
                                     {
                                         <td>
-                                            <a href="~/allpdf/finaldocument/@Model.candetails.regNo" style="cursor:pointer">Preview</a>
+                                            <!--<a href="~/allpdf/finaldocument/@Model.getposts[i].post_id" style="cursor:pointer">Preview</a>-->
+                                            <a asp-for="@Model.getposts[i].Upload_doc" href="~/allpdf/finaldocument/@(Model.getposts[i].post_id)_@(regno).pdf">Preview</a>
 
                                         </td>
                                     }
@@ -103,7 +104,7 @@
                                     @if (@Model.getposts[i].isfinal_submit == 1)
                                     {
                              <td><button type="submit" disabled id="popup-btn" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
-                       Apply
+                              Apply
                                         </button>
 
                                         </td>

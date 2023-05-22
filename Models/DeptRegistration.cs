@@ -117,6 +117,7 @@ namespace ssc.Models
         public string? Doc_path { get; set; }
         public int? isapplied { get; set; }
         public int? isfinal_submit { get; set; }
+        public int? uploaded_status { get; set; }
     }
 
 
