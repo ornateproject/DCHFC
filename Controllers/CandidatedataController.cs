@@ -182,11 +182,11 @@ namespace ssc.Controllers
                 pdf.Close();
                 document.Close();
             }
-            managecan.upload_doc.regNo = post_id+"_" +reg_no+ ".pdf";
+            managecan.candetails.regNo = post_id+"_" +reg_no+ ".pdf";
             //HttpContext.Session.SetString("selected_post", JsonConvert.SerializeObject(managecan));
             //return View("candidate", "Candidatedata");
-            return View("~/Views/Candidatedata/candidate.cshtml", managecan);
-           // RedirectToAction("", "Candidatedata");
+           // return View("~/Views/Candidatedata/candidate.cshtml", managecan);
+           return RedirectToAction("candidate", "Candidatedata", managecan);
 
         }
 
@@ -212,6 +212,10 @@ namespace ssc.Controllers
             return View(managecandidatedata);
            // return View();
         }
-
+        [HttpGet]
+        public IActionResult CandidateSheet()
+        {
+            return View();
+        }
     }
 }
