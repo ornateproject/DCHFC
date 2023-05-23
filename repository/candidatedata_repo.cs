@@ -56,7 +56,26 @@ namespace ssc.repository
             }
             return JsonConvert.SerializeObject(dt);
         }
+        public string get_applypostdata(string post_id)
+        {
 
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[dbo].[candidate_data]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("callval", 4);
+                    cmd.Parameters.AddWithValue("@post_id", post_id);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                    sda.Fill(dt);
+                    con.Close();
+                }
+            }
+            return JsonConvert.SerializeObject(dt);
+        }
         public string get_uspostdata()
         {
 
@@ -186,7 +205,7 @@ namespace ssc.repository
 
         }
 
-        public string InsertpostData(managecandidatedata data, string reg_no,string name  )
+        public string InsertpostData(managecandidatedata data, string reg_no,string name, string outputFilePath)
         {
             DataTable dt = new DataTable();
 
@@ -200,25 +219,25 @@ namespace ssc.repository
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        if (posts.Upload_doc != null)
-                        {
-                            var doc_fileName = Path.GetFileName(posts.Upload_doc?.FileName);
+                        //if (posts.Upload_doc != null)
+                        //{
+                        //    var doc_fileName = Path.GetFileName(posts.Upload_doc?.FileName);
 
-                            var doc_filenamewithoutextension = Path.GetFileNameWithoutExtension(doc_fileName);
+                        //    var doc_filenamewithoutextension = Path.GetFileNameWithoutExtension(doc_fileName);
 
-                            var doc_extension = Path.GetExtension(doc_fileName);
-                            string varDatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+                        //    var doc_extension = Path.GetExtension(doc_fileName);
+                        //    string varDatetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
 
-                            var newfilenamewithoutextensiondoc = varDatetime + doc_filenamewithoutextension;
+                        //    var newfilenamewithoutextensiondoc = varDatetime + doc_filenamewithoutextension;
 
-                            //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
-                            var doc_path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextensiondoc + doc_extension);
-                            FileInfo doc_file = new FileInfo(Path.Combine(doc_path));
-                            var doc_stream = new FileStream(doc_path, FileMode.Create);
-                            posts.Upload_doc.CopyTo(doc_stream);
-                            doc_stream.Close();
-                            cmd.Parameters.AddWithValue("@Doc_path", newfilenamewithoutextensiondoc + doc_extension);
-
+                        //    //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", fileName);
+                        //    var doc_path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/document", newfilenamewithoutextensiondoc + doc_extension);
+                        //    FileInfo doc_file = new FileInfo(Path.Combine(doc_path));
+                        //    var doc_stream = new FileStream(doc_path, FileMode.Create);
+                        //    posts.Upload_doc.CopyTo(doc_stream);
+                        //    doc_stream.Close();
+                        //   cmd.Parameters.AddWithValue("@Doc_path", newfilenamewithoutextensiondoc + doc_extension);
+                        cmd.Parameters.AddWithValue("@Doc_path", outputFilePath);
 
                             // cmd.Parameters.AddWithValue("@Department", posts.dep_name);
                             //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
@@ -228,7 +247,7 @@ namespace ssc.repository
                         cmd.Parameters.AddWithValue("@post_id", posts.post_id);
 
                         cmd.Parameters.AddWithValue("@post_name", posts.post_name);
-                        cmd.Parameters.AddWithValue("@Department", posts.dep_name);
+                        cmd.Parameters.AddWithValue("@Department", posts.Department);
                         //........................marksheet upload started................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
                         //var fileName = Path.GetFileName(data.candetails.adhar_card?.FileName);
@@ -252,26 +271,26 @@ namespace ssc.repository
 
                         //........................ upload adharcard started................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
-                        var markfile = Path.GetFileName(data.candetails.marksheet?.FileName);
+                        //var markfile = Path.GetFileName(data.candetails.marksheet?.FileName);
 
-                        var marksheetfilename = Path.GetFileNameWithoutExtension(markfile);
+                        //var marksheetfilename = Path.GetFileNameWithoutExtension(markfile);
 
-                        var filenameextension = Path.GetExtension(markfile);
-                        string datetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
+                        //var filenameextension = Path.GetExtension(markfile);
+                        //string datetime = DateTime.Now.ToString("ddMMyyyyHHmmssffff");
 
-                        var newmarksheetfilename = datetime + filenameextension;
+                        //var newmarksheetfilename = datetime + filenameextension;
 
-                        var filepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/marksheet", newmarksheetfilename + filenameextension);
-                        FileInfo File = new FileInfo(Path.Combine(filepath));
-                        var Stream = new FileStream(filepath, FileMode.Create);
-                        data.candetails.marksheet.CopyTo(Stream);
-                        Stream.Close();
-                        //........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
+                        //var filepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/marksheet", newmarksheetfilename + filenameextension);
+                        //FileInfo File = new FileInfo(Path.Combine(filepath));
+                        //var Stream = new FileStream(filepath, FileMode.Create);
+                        //data.candetails.marksheet.CopyTo(Stream);
+                        //Stream.Close();
+                        ////........................file upload end................................cmd.Parameters.AddWithValue("@Upload_doc", newfilenamewithoutextension + extension);
 
-                        cmd.Parameters.AddWithValue("@marksheet", newmarksheetfilename + filenameextension);
+                        //cmd.Parameters.AddWithValue("@marksheet", newmarksheetfilename + filenameextension);
                         int xdvf = cmd.ExecuteNonQuery();
                         //cmd.ExecuteNonQuery();
-                    }
+                   // }
                     }
 
                 }

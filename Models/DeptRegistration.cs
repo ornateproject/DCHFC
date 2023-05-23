@@ -191,6 +191,8 @@ namespace ssc.Models
         public string Doc_name { get; set; }
         public string? reg_no { get; set; }
         public string? post_id { get; set; }
+        public string? Department { get; set; }
+        public string? post_name { get; set; }
         public string? name { get; set; }
         public string? doc_name1 { get; set; }
         public IFormFile? pdfFile1 { get; set; }

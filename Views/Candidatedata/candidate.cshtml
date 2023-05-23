@@ -8,6 +8,8 @@
 @{
     var regno = @Accessor.HttpContext.Session.GetString("Reg_no").ToString();
 }
+
+
 <div class="br-pageheader pd-y-15 pd-l-20">
     <nav class="breadcrumb pd-0 mg-0 tx-12">
         <a class="breadcrumb-item" href="US1.html">Candidate</a>
@@ -73,18 +75,20 @@
                                         <td>
                                             <input type="checkbox"  id="checkbox_@i" asp-for="@Model.getposts[i].is_checked" />
                                         </td>
-                                    }              
-                                    <td>
-                                        <a asp-controller="Candidatedata" asp-action="candidateupload_doc"  asp-route-post_id="@Model.getposts[i].post_id" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i" disabled>Upload Document</a>
+                                    }
+                                    @if (@Model.getposts[i].uploaded_status == 1)
+                                    {
+                                        <td>
+                                            <a style="color: gray; cursor: not-allowed; pointer-events: none; text-decoration: none;" asp-controller="Candidatedata" asp-action="candidateupload_doc" asp-route-post_id="@Model.getposts[i].post_id" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i" >Upload Document</a>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <a asp-controller="Candidatedata" asp-action="candidateupload_doc" asp-route-post_id="@Model.getposts[i].post_id" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i" >Upload Document</a>
+                                        </td>
+                                    }
 
-                                   <!-- <div class="modal-bootstrap modal-login-form" for="customFile">
-                                   
-                                       <input type="file"  asp-for="@Model.getposts[i].Upload_doc"  id="fileUpload_@i" accept=".pdf" disabled />
-
-                                    </div>-->
-                                    <!-- BASIC MODAL -->
-
-                                    </td>
                                     @if (@Model.getposts[i].isfinal_submit == 0)
                                     {
                                         <td>
