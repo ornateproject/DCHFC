@@ -221,6 +221,7 @@ namespace ssc.Controllers
             return View(managecandidatedata);
            // return View();
         }
+
         [HttpGet]
         public IActionResult CandidateSheet()
         {
