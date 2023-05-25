@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2010.Excel;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ssc.Models;
@@ -43,9 +44,19 @@ namespace ssc.Controllers
             DBModel dep_reg = new DBModel();
             dep_reg = JsonConvert.DeserializeObject<List<DBModel>>(usdata)[0];
             return View(dep_reg);
-            //List<getpost> dept = new List<getpost>();
-            //dept = JsonConvert.DeserializeObject<List<getpost>>(usdata)[0];
-            //return View(dept);
+            
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CandidateSheet(DBModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var asd = _Dbrepo.InsertpostData(model);
+                return RedirectToAction("regsuccess", "Regsuccess");
+            }
+            return View();
+
         }
     }
 }
