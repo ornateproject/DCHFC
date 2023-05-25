@@ -50,13 +50,19 @@ namespace ssc.Controllers
         [HttpPost]
         public async Task<IActionResult> CandidateSheet(DBModel model)
         {
-            if (ModelState.IsValid)
-            {
                 var asd = _Dbrepo.InsertpostData(model);
                 return RedirectToAction("regsuccess", "Regsuccess");
-            }
-            return View();
+           
 
+        }
+        public IActionResult all_datacandidate()
+        {
+            var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
+            var usdata = _Dbrepo.getcandidate_data(reg_no);
+            DBModel dep_reg = new DBModel();
+            dep_reg = JsonConvert.DeserializeObject<List<DBModel>>(usdata)[0];
+            return View(dep_reg);
+           // return View();
         }
     }
 }

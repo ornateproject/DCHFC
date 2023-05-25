@@ -27,6 +27,7 @@ Code=========================================================================*@
 
 <body>
     @*=================================================Header=========================================================================*@
+    <form asp-action="CandidateSheet" asp-controller="DB">
     <div class="br-pagebody">
         <div class="br-section-wrapper">
             <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30 text-center">
@@ -190,11 +191,11 @@ Code=========================================================================*@
                                 </tr>
                                 <tr>
                                     <td width="20px" colspan="3">2.1 Highest Education Qualification(As declared by the candidate)</td>
-                                    <td colspan="3"><input style="border:none;background-color:#FFF"  type="text" /></td>
+                                    <td colspan="3"><input style="border:none;background-color:#FFF" asp-for="highest_qualification" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">2.2 Qualifying Education Qualification</td>
-                                    <td colspan="3"><input style="border:none;background-color:#FFF"  type="text" /></td>
+                                    <td colspan="3"><input style="border:none;background-color:#FFF" asp-for="Qualifying_education" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td>State/UT of <br /> Board/University</td>
@@ -203,14 +204,16 @@ Code=========================================================================*@
                                     <td>Roll No</td>
                                     <td>Year of passing </td>
                                     <td>percentage</td>
+                                    <td>CGPA</td>
                                 </tr>
                                 <tr>
-                                    <td> <input style="border:none;background-color:#FFF" asp-for="highest_qualification" type="text" rows="2" cols="12" /></td>
-                                    <td> <input style="border:none;background-color:#FFF" type="text" rows="2" cols="20"/></td>
-                                    <td> <input style="border:none;background-color:#FFF" type="text" rows="2" cols="12"/></td>
-                                    <td> <input style="border:none;background-color:#FFF" type="text" rows="2" cols="12"/></td>
-                                    <td> <input style="border:none;background-color:#FFF" type="text" rows="2" cols="8"/></td>
-                                    <td> <input style="border:none;background-color:#FFF" type="text" rows="2" cols="5"/></td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="University" type="text" rows="2" cols="12" /></td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="Nameof_board" type="text" rows="2" cols="20" /></td>
+                                    <td> <input style="border:none;background-color:#FFF" type="text" asp-for="Subjects" rows="2" cols="12" /></td>
+                                    <td> <input style="border:none;background-color:#FFF" type="text" asp-for="Rollno_highestqualification" rows="2" cols="12" /></td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="Passing_Year" type="text" rows="2" cols="8" /></td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="Percentage" type="text" rows="2" cols="5" /></td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="CGPA" type="text" rows="2" cols="5" /></td>
 
                                 </tr>
                             </tbody>
@@ -223,11 +226,11 @@ Code=========================================================================*@
                                 </tr>
                                 <tr>
                                     <td>3.1 Code for Eligible Post</td>
-                                    <td> <input style="border:none;background-color:#FFF" type="text" /></td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="Eligiblepost_code" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td>3.2 Order of preference</td>
-                                    <td> <textarea style="border:none;background-color:#FFF" type="text" rows="2" cols="20"></textarea></td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="Order_prefrence" type="text" rows="2" cols="20"/></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -241,20 +244,20 @@ Code=========================================================================*@
                                     <td colspan="2" style="text-align: center;"><b>PART - IV (Date of Birth)</b></td>
                                 </tr>
                                 <tr>
-                                    <td>3.1 Code for Eligible Post</td>
-                                    <td> <textarea style="border:none;background-color:#FFF" type="text" rows="2" cols="30"></textarea></td>
+                                    <td>4.1 Post Prefrence</td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="Post_prefrence" type="text" rows="2" cols="30" /></td>
                                 </tr>
                                 <tr>
-                                    <td>3.2 Order of preference</td>
-                                    <td> <textarea style="border:none;background-color:#FFF" type="text" rows="2" cols="30"></textarea></td>
+                                    <td>4.2 Date of Birth(dd/mm/yyyy)</td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="DOB" type="text" rows="2" cols="30" /></td>
                                 </tr>
                                 <tr>
-                                    <td>3.2 Order of preference</td>
-                                    <td> <textarea style="border:none;background-color:#FFF" type="text" rows="2" cols="30"></textarea></td>
+                                    <td>4.3 Age(as on 01.01.2022)</td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="AGE" type="text" rows="2" cols="30" /></td>
                                 </tr>
                                 <tr>
-                                    <td>3.2 Order of preference</td>
-                                    <td> <textarea style="border:none;background-color:#FFF" type="text" rows="2" cols="30"></textarea></td>
+                                    <td>4.4 Age Relaxation Code</td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="Relaxation_age" type="text" rows="2" cols="30" /></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -273,12 +276,12 @@ Code=========================================================================*@
                                         case of education through Distance Mode
                                     </td>
                                     <td width="10px"><input width="10px" style="border:none" type="text" /></td>
-                                    <td width="10px"><input width="10px" style="border:none" type="text" /></td>
+                                    <td width="10px"><input width="10px" asp-for="Distance_education" style="border:none" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td>5.2 Whether document in support of DOB produced</td>
                                     <td width="10px"><input width="10px" style="border:none" type="text" /></td>
-                                    <td width="10px"><input width="10px" style="border:none" type="text" /></td>
+                                    <td width="10px"><input width="10px" asp-for="Document_DOB" style="border:none" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -286,12 +289,12 @@ Code=========================================================================*@
                                         stipulated date
                                     </td>
                                     <td width="10px"><input width="10px" style="border:none" type="text" /></td>
-                                    <td width="10px"><input width="10px" style="border:none" type="text" /></td>
+                                    <td width="10px"><input width="10px" asp-for="Essential_qualification" style="border:none" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td>5.4 Whether document in support of caste produced</td>
                                     <td width="10px"><input width="10px" style="border:none" type="text" /></td>
-                                    <td width="10px"><input width="10px" style="border:none" type="text" /></td>
+                                    <td width="10px"><input width="10px" asp-for="Document_caste" style="border:none" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -299,7 +302,7 @@ Code=========================================================================*@
                                         authority in prescribed proforma produced
                                     </td>
                                     <td width="10px"><input width="10px" style="border:none" type="text" /></td>
-                                    <td width="10px"><input width="10px" style="border:none" type="text" /></td>
+                                    <td width="10px"><input width="10px" asp-for="OBC_certificate" style="border:none" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -307,7 +310,7 @@ Code=========================================================================*@
                                         stipulated date and whether submitted undertaking
                                     </td>
                                     <td width="10px"><input width="10px" style="border:none" type="text" /></td>
-                                    <td width="10px"><input width="10px" style="border:none" type="text" /></td>
+                                    <td width="10px"><input width="10px" asp-for="ESMdischarge_certificate" style="border:none" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -315,7 +318,7 @@ Code=========================================================================*@
                                         estabish from the certified produced
                                     </td>
                                     <td width="10px"><input width="10px" style="border:none" type="text" /></td>
-                                    <td width="10px"><input width="10px" style="border:none" type="text" /></td>
+                                    <td width="10px"><input width="10px" asp-for="PWD_status" style="border:none" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -323,7 +326,7 @@ Code=========================================================================*@
                                         Employee candidates who have claimed age-relaxation
                                     </td>
                                     <td width="10px"><input width="10px" style="border:none" type="text" /></td>
-                                    <td width="10px"><input width="10px" style="border:none" type="text" /></td>
+                                    <td width="10px"><input width="10px" asp-for="NOCproduced_Central" style="border:none" type="text" /></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -331,7 +334,7 @@ Code=========================================================================*@
                                         establis
                                     </td>
                                     <td width="10px"><input width="10px" style="border:none" type="text" /></td>
-                                    <td width="10px"><input width="10px" style="border:none" type="text" /></td>
+                                    <td width="10px"><input width="10px" asp-for="Civilianemployee_status" style="border:none" type="text" /></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -342,15 +345,15 @@ Code=========================================================================*@
                                 </tr>
                                 <tr>
                                     <td>6.1 Candidate Status</td>
-                                    <td> <textarea style="border:none;background-color:#FFF" type="text" rows="2" cols="60"></textarea></td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="Candidature_status" type="text" rows="2" cols="60" /></td>
                                 </tr>
                                 <tr>
                                     <td>6.2 Reason for Rejection</td>
-                                    <td> <textarea style="border:none;background-color:#FFF" type="text" rows="2" cols="60"></textarea></td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="Reject_reason" type="text" rows="2" cols="60" /></td>
                                 </tr>
                                 <tr>
                                     <td>6.3 Remark</td>
-                                    <td> <textarea style="border:none;background-color:#FFF" type="text" rows="2" cols="60"></textarea></td>
+                                    <td> <input style="border:none;background-color:#FFF" asp-for="Remarks" type="text" rows="2" cols="60" /></td>
                                 </tr>
                             </tbody>
 
@@ -453,7 +456,7 @@ Code=========================================================================*@
             </div>
         </div>
     </div>
-
+    </form>
 </body>
 
 </html>

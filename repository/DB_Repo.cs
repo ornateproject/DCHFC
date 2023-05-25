@@ -87,6 +87,30 @@ namespace ssc.repository
             return JsonConvert.SerializeObject(dt);
 
         }
+        public string getcandidate_data(string Reg_no)
+        {
+
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[dbo].[DB]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@callval", 4);
+                    //  cmd.Parameters.AddWithValue("@Reg_no", post_id);
+                    cmd.Parameters.AddWithValue("@Roll_no", Reg_no);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+
+                    con.Close();
+
+                }
+            }
+            var asfd = dt.Rows[0];
+            return JsonConvert.SerializeObject(dt);
+
+        }
         public string InsertpostData(DBModel model)
         {
 
@@ -97,7 +121,7 @@ namespace ssc.repository
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@callval", 3);
-                    cmd.Parameters.AddWithValue("@Reg_no", model.Reg_no);
+                    cmd.Parameters.AddWithValue("@Roll_no", model.Reg_no);
                     cmd.Parameters.AddWithValue("@Name", model.Name);
                     cmd.Parameters.AddWithValue("@Candidate_remark", model.Candidate_remark);
                     cmd.Parameters.AddWithValue("@Father_name", model.Father_name);

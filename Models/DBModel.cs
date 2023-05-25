@@ -34,6 +34,7 @@
         public string University { get; set; }
         public string Nameof_board { get; set; }
         public string Subjects { get; set; }
+        public string OPTION { get; set; }
         public string Rollno_highestqualification { get; set; }
         public string Passing_Year { get; set; }
         public string Percentage { get; set; }
