@@ -35,5 +35,17 @@ namespace ssc.Controllers
             return View(dept);
         }
 
+        [HttpGet]
+        public IActionResult CandidateSheet(string id)
+        {
+            //var reg_no = HttpContext.Session.GetString("Reg_no").ToString();
+            var usdata = _Dbrepo.getselecteddata(id);
+            DBModel dep_reg = new DBModel();
+            dep_reg = JsonConvert.DeserializeObject<List<DBModel>>(usdata)[0];
+            return View(dep_reg);
+            //List<getpost> dept = new List<getpost>();
+            //dept = JsonConvert.DeserializeObject<List<getpost>>(usdata)[0];
+            //return View(dept);
+        }
     }
 }

@@ -62,5 +62,29 @@ namespace ssc.repository
             return JsonConvert.SerializeObject(dt);
 
         }
+        public string getselecteddata(string Reg_no)
+        {
+
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("[dbo].[DB]", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@callval", 2);
+                  //  cmd.Parameters.AddWithValue("@Reg_no", post_id);
+                    cmd.Parameters.AddWithValue("@Reg_no", Reg_no);
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+
+                    con.Close();
+
+                }
+            }
+            var asfd = dt.Rows[0];
+            return JsonConvert.SerializeObject(dt);
+
+        }
     }
 }
