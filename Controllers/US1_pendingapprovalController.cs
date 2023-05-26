@@ -30,6 +30,7 @@ namespace ssc.Controllers
         //private Uspendingrepo dataAccess = new Uspendingrepo();
 
         public ActionResult Approve(int id, string Remark)
+        
         {
             _usrepo.UpdateStatusData(id, "Approved",Remark);
             return RedirectToAction("Index","US");
