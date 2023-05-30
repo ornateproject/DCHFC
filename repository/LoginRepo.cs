@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
+using Org.BouncyCastle.Asn1.Cms;
 using ssc.Models;
 using System.Data;
 
@@ -115,6 +116,7 @@ namespace ssc.repository
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Reg_no", Reg_no);
                     cmd.Parameters.AddWithValue("@post_id", post_id);
+                    //cmd.Parameters.AddWithValue("@Remark", post.Remark);
                     cmd.Parameters.AddWithValue("@status", status == "Approved" ? 1 : 2);
                     con.Open();
                     cmd.ExecuteNonQuery();

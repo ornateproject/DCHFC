@@ -35,9 +35,6 @@ namespace ssc.Controllers
                 {
                     HttpContext.Session.SetString("user_id", Convert.ToString(result.Rows[0]["id"]));
                     HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["usertype"]));
-                    //HttpContext.Session.SetString("userType", Convert.ToString(result.Rows[0]["usertype"]));
-                    //HttpContext.Session.SetString("emp_name", Convert.ToString(dt.Rows[0][1]));
-                    //HttpContext.Session.SetString("emp_email", Convert.ToString(dt.Rows[0][2]));
                     return RedirectToAction("dashboard", "US");
                 }
                 TempData["error"] = "Please Enter Valid User Name And Password";
@@ -126,14 +123,14 @@ namespace ssc.Controllers
         public ActionResult Approve(int id,string post_id )
         {
             _login.UpdatecandidateStatus(id, "Approved",post_id);
-            return RedirectToAction("usview", "Candidatedata");
+            return RedirectToAction("Email", "Candidatedata", new { htmlString = "application rejected " });
         }
 
-        public ActionResult Reject(int id, string post_id)
-        {
-            _login.UpdatecandidateStatus(id, "Rejected", post_id);
-            return RedirectToAction("usview", "Candidatedata");
-        }
+        //public ActionResult Reject(int id, string post_id)
+        //{
+        //    _login.UpdatecandidateStatus(id, "Rejected", post_id);
+        //    return RedirectToAction("usview", "Candidatedata");
+        //}
 
         [HttpGet]
         public IActionResult linkselectionmts()

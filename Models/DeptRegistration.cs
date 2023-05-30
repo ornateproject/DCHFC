@@ -111,6 +111,7 @@ namespace ssc.Models
         public string? status { get; set; }
         public IFormFile? Upload_doc { get; set; }
         public string? is_checked { get; set; }
+        public string? Remark { get; set; }
        
         public string? adhar_card { get; set; }
         public string? marksheet { get; set; }

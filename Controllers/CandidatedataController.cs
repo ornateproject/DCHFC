@@ -5,6 +5,9 @@ using ssc.Models;
 using ssc.repository;
 using iTextSharp.text;
 using System.Drawing;
+using System.Net.Mail;
+using System.Net;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace ssc.Controllers
 {
@@ -181,7 +184,7 @@ namespace ssc.Controllers
 
             using (FileStream stream = new FileStream(outputFilePath, FileMode.Create))
             {
-                Document document = new Document();
+               iTextSharp.text.Document document = new iTextSharp.text.Document();
                 PdfCopy pdf = new PdfCopy(document, stream);
                 document.Open();
                 foreach (string pdfFile in savedfiles)
@@ -222,6 +225,38 @@ namespace ssc.Controllers
            // return View();
         }
 
-        
+        public IActionResult Email(string htmlString)
+        {
+            try
+            {
+                //string memberString = System.IO.File.ReadAllText("wwwroot/otp_email.html").ToString();
+                //memberString = memberString.Replace("@OTP", otp);
+
+                //var bodyhtml = memberString;
+                string from = "neha@ornatets.com";
+                //Creates the email message
+                MailMessage emailMessage = new MailMessage(from, "nkumar@ornatets.com");
+                //Adds the subject for email
+                emailMessage.Subject = "asd";
+                //Sets the HTML string as email body
+                emailMessage.IsBodyHtml = true;
+                emailMessage.Body = "asd";
+               
+                //  emailMessage.Bcc.Add(new MailAddress("vivek@ornatets.com"));
+                using (SmtpClient client = new SmtpClient())
+                {
+                    //Update your SMTP Server address here
+                    client.Host = "mail.ornatets.com";
+                    client.UseDefaultCredentials = false;
+                    //Update your email credentials here
+                    client.Credentials = new System.Net.NetworkCredential(from, "NehaSahu@123");
+                    client.Port = 587;
+                    client.EnableSsl = false;
+                    client.Send(emailMessage);
+                }
+            }
+            catch (Exception) { }
+            return RedirectToAction("usview","Candidatedata");
+        }
     }
 }
