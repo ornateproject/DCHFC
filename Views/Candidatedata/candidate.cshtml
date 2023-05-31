@@ -80,9 +80,18 @@
                                     
                                     @if (@Model.getposts[i].uploaded_status == 1)
                                     {
-                                        <td>
-                                            <a style="color: gray; cursor: not-allowed; pointer-events: none; text-decoration: none;" asp-controller="Candidatedata" asp-action="candidateupload_doc" asp-route-post_id="@Model.getposts[i].post_id" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i" >Upload Document</a>
-                                        </td>
+                                        @if (@Model.getposts[i].status == "2")
+                                        {
+                                            <a asp-controller="Candidatedata" asp-action="candidateupload_doc" asp-route-post_id="@Model.getposts[i].post_id" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i">Upload Document</a>
+
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a style="color: gray; cursor: not-allowed; pointer-events: none; text-decoration: none;" asp-controller="Candidatedata" asp-action="candidateupload_doc" asp-route-post_id="@Model.getposts[i].post_id" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i">Upload Document</a>
+                                            </td>
+                                        }
+                                       
                                     }
                                     else
                                     {
@@ -134,12 +143,16 @@
 
                                             </td>
                                         }
-                                        //<td>
-                                        //    <button type="submit" disabled id="popup-btn" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
-                                        //        Apply
-                                        //    </button>
+                                        else
+                                        {
+                                            <td>
+                                                <button type="submit" disabled id="popup-btn" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
+                                                    Apply
+                                                </button>
 
-                                        //</td>
+                                            </td>
+                                        }
+                                       
                                     }
                                    
                                     else
