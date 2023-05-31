@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Net.Mail;
 using System.Net;
 using DocumentFormat.OpenXml.Wordprocessing;
+using Grpc.Core;
 
 namespace ssc.Controllers
 {
@@ -222,38 +223,70 @@ namespace ssc.Controllers
             managecandidatedata.getposts = JsonConvert.DeserializeObject<List<getpost>>(usdata);
 
             return View(managecandidatedata);
-           // return View();
+            // return View();
         }
 
-        public IActionResult Email(string htmlString)
+        public IActionResult Email(string status)
         {
             try
             {
-                //string memberString = System.IO.File.ReadAllText("wwwroot/otp_email.html").ToString();
-                //memberString = memberString.Replace("@OTP", otp);
-
-                //var bodyhtml = memberString;
-                string from = "neha@ornatets.com";
-                //Creates the email message
-                MailMessage emailMessage = new MailMessage(from, "nkumar@ornatets.com");
-                //Adds the subject for email
-                emailMessage.Subject = "asd";
-                //Sets the HTML string as email body
-                emailMessage.IsBodyHtml = true;
-                emailMessage.Body = "asd";
-               
-                //  emailMessage.Bcc.Add(new MailAddress("vivek@ornatets.com"));
-                using (SmtpClient client = new SmtpClient())
+                if (status== "Approved")
                 {
-                    //Update your SMTP Server address here
-                    client.Host = "mail.ornatets.com";
-                    client.UseDefaultCredentials = false;
-                    //Update your email credentials here
-                    client.Credentials = new System.Net.NetworkCredential(from, "NehaSahu@123");
-                    client.Port = 587;
-                    client.EnableSsl = false;
-                    client.Send(emailMessage);
+                    string memberString = System.IO.File.ReadAllText("wwwroot/message.html").ToString();
+                    // string memberString = File.ReadAllText(filePath);
+                    string body = memberString;
+                    //var bodyhtml = memberString;
+                    string from = "neha@ornatets.com";
+                    //Creates the email message
+                    MailMessage emailMessage = new MailMessage(from, "abhishek@ornatets.com");
+                    //Adds the subject for email
+                    emailMessage.Subject = "Test";
+                    //Sets the HTML string as email body
+                    emailMessage.IsBodyHtml = true;
+                    emailMessage.Body = body;
+
+                    //  emailMessage.Bcc.Add(new MailAddress("vivek@ornatets.com"));
+                    using (SmtpClient client = new SmtpClient())
+                    {
+                        //Update your SMTP Server address here
+                        client.Host = "mail.ornatets.com";
+                        client.UseDefaultCredentials = false;
+                        //Update your email credentials here
+                        client.Credentials = new System.Net.NetworkCredential(from, "NehaSahu@123");
+                        client.Port = 587;
+                        client.EnableSsl = false;
+                        client.Send(emailMessage);
+                    }
                 }
+                if (status== "Rejected")
+                {
+                    string memberString = System.IO.File.ReadAllText("wwwroot/re_message.html").ToString();
+                    // string memberString = File.ReadAllText(filePath);
+                    string body = memberString;
+                    //var bodyhtml = memberString;
+                    string from = "neha@ornatets.com";
+                    //Creates the email message
+                    MailMessage emailMessage = new MailMessage(from, "abhishek@ornatets.com");
+                    //Adds the subject for email
+                    emailMessage.Subject = "Test";
+                    //Sets the HTML string as email body
+                    emailMessage.IsBodyHtml = true;
+                    emailMessage.Body = body;
+
+                    //  emailMessage.Bcc.Add(new MailAddress("vivek@ornatets.com"));
+                    using (SmtpClient client = new SmtpClient())
+                    {
+                        //Update your SMTP Server address here
+                        client.Host = "mail.ornatets.com";
+                        client.UseDefaultCredentials = false;
+                        //Update your email credentials here
+                        client.Credentials = new System.Net.NetworkCredential(from, "NehaSahu@123");
+                        client.Port = 587;
+                        client.EnableSsl = false;
+                        client.Send(emailMessage);
+                    }
+                }
+               
             }
             catch (Exception) { }
             return RedirectToAction("usview","Candidatedata");

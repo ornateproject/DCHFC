@@ -123,14 +123,14 @@ namespace ssc.Controllers
         public ActionResult Approve(int id,string post_id )
         {
             _login.UpdatecandidateStatus(id, "Approved",post_id);
-            return RedirectToAction("Email", "Candidatedata", new { htmlString = "application rejected " });
+            return RedirectToAction("Email", "Candidatedata", new { status = "Approved" });
         }
 
-        //public ActionResult Reject(int id, string post_id)
-        //{
-        //    _login.UpdatecandidateStatus(id, "Rejected", post_id);
-        //    return RedirectToAction("usview", "Candidatedata");
-        //}
+        public ActionResult Reject(int id, string post_id)
+        {
+            _login.UpdatecandidateStatus(id, "Rejected", post_id);
+            return RedirectToAction("Email", "Candidatedata", new { status = "Rejected" });
+        }
 
         [HttpGet]
         public IActionResult linkselectionmts()
