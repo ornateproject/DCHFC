@@ -123,15 +123,25 @@
                                         }
 
                                     </td>
-                                     
-                                    @if (@Model.getposts[i].isfinal_submit == 1)
-                                    {
-                             <td><button type="submit" disabled id="popup-btn" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
-                              Apply
-                                        </button>
 
-                                        </td>
+                                    @if (@Model.getposts[i].isfinal_submit == 1 )
+                                    {
+                                        @if (@Model.getposts[i].status == "2")
+                                        {
+                                            <td><button type="submit"  id="popup-btn" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
+                                                    Apply
+                                                </button>
+
+                                            </td>
+                                        }
+                                        //<td>
+                                        //    <button type="submit" disabled id="popup-btn" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
+                                        //        Apply
+                                        //    </button>
+
+                                        //</td>
                                     }
+                                   
                                     else
                                     {
                                         <td>
