@@ -82,8 +82,9 @@
                                     {
                                         @if (@Model.getposts[i].status == "2")
                                         {
-                                            <a asp-controller="Candidatedata" asp-action="candidateupload_doc" asp-route-post_id="@Model.getposts[i].post_id" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i">Upload Document</a>
-
+                                            <td>
+                                                <a asp-controller="Candidatedata" asp-action="candidateupload_doc" asp-route-post_id="@Model.getposts[i].post_id" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i">Upload Document</a>
+                                            </td>
                                         }
                                         else
                                         {
@@ -102,6 +103,16 @@
 
                                     @if (@Model.getposts[i].isfinal_submit == 0)
                                     {
+                                        
+                                            <td>
+                                                <!--<a href="~/allpdf/finaldocument/@Model.getposts[i].post_id" style="cursor:pointer">Preview</a>-->
+                                                <a asp-for="@Model.getposts[i].Upload_doc" href="~/allpdf/finaldocument/@(Model.getposts[i].post_id)_@(regno).pdf">Preview</a>
+
+                                        </td>
+
+                                    }
+                                    else if (@Model.getposts[i].status == "2")
+                                    {
                                         <td>
                                             <!--<a href="~/allpdf/finaldocument/@Model.getposts[i].post_id" style="cursor:pointer">Preview</a>-->
                                             <a asp-for="@Model.getposts[i].Upload_doc" href="~/allpdf/finaldocument/@(Model.getposts[i].post_id)_@(regno).pdf">Preview</a>
@@ -111,6 +122,8 @@
                                     else
                                     {
                                         <td>
+                                            <a style="color: gray; cursor: not-allowed; pointer-events: none; text-decoration: none;" asp-controller="Candidatedata" asp-action="candidateupload_doc" asp-route-post_id="@Model.getposts[i].post_id" asp-for="@Model.getposts[i].Upload_doc" id="fileUpload_@i">Preview</a>
+
                                         </td>
                                     }
                                     <td>
