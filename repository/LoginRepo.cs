@@ -117,7 +117,9 @@ namespace ssc.repository
                     cmd.Parameters.AddWithValue("@Reg_no", Reg_no);
                     cmd.Parameters.AddWithValue("@post_id", post_id);
                     //cmd.Parameters.AddWithValue("@Remark", post.Remark);
-                    cmd.Parameters.AddWithValue("@status", status == "Approved" ? 1 : 2);
+                    cmd.Parameters.AddWithValue("@status", status == "Approved" ? 1 : status == "Rejected" ? 2 : 3);
+
+                   // cmd.Parameters.AddWithValue("@status", status == "Approved" ? 1 : 2);
                     con.Open();
                     cmd.ExecuteNonQuery();
                 }

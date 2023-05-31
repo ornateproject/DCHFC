@@ -96,14 +96,21 @@
              
               }
               else
-                      
-                  @if (@Model.status != "1" && @Model.status != "2")
+
+                        @if (@Model.status != "1" && @Model.status != "2" && @Model.status != "3")
                   {
                             <a href="@Url.Action("Reject", "Login", new{ id = @Model.Reg_no, post_id = @Model.post_id})"><button class="btn btn-red" style="cursor:pointer">Reject</button></a>
                             <a href="@Url.Action("Approve", "Login", new{ id = @Model.Reg_no, post_id = @Model.post_id})"><button class="btn btn-success" style="cursor:pointer">Approve</button></a>
-                   <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-secondary" style="cursor:pointer">Cancel</button></a>
+                            <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-secondary" style="cursor:pointer">Cancel</button></a>
+                  }
+                  else if (@Model.status == "2")
+                  {
+                            <a href="@Url.Action("Rejected", "Login", new{ id = @Model.Reg_no, post_id = @Model.post_id})"><button class="btn btn-red" style="cursor:pointer">Reject</button></a>
+                            <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-secondary" style="cursor:pointer">Cancel</button></a>
+
                   }
                     else{
+
                         <a href="@Url.Action("usview", "Candidatedata")"><button class="btn btn-secondary" style="cursor:pointer">Cancel</button></a>
 
                     }      
