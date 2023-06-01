@@ -199,7 +199,7 @@ namespace ssc.Controllers
             }
             managecan.upload_doc.regNo = post_id+"_" +reg_no+ ".pdf";
             var asd = _candidaterepo.InsertpostData(data, reg_no, name, outputFilePath);
-            return RedirectToAction("candidate", "Candidatedata", managecan);
+            return RedirectToAction("candidate", "Candidatedata");
 
         }
 

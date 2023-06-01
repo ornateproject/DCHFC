@@ -215,6 +215,16 @@ namespace ssc.Models
         public string? Status { get; set; }
 
     }
+    public class Managepostform
+    {
+        public UserDepartment? user { get; set; }
+        public annex1? GetAnnex1 { get; set; }
+        public annex2? GetAnnex2 { get; set; }
+        public annex3? GetAnnex3 { get; set; }
+        public annex4? GetAnnex4 { get; set; }
+        public annex5? GetAnnex5 { get; set; }
+
+    }
     public class dataupload
     {
         public string? Department { get; set; }
