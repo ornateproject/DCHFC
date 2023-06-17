@@ -184,17 +184,20 @@ Code=========================================================================*@
                         </table>
                         @*============================Second Table=========================*@
 
-                        <table class="table table-bordered m-3">
+                        <table class="table table-bordered" style="margin-left: auto;
+            margin-right: auto;
+           
+            table-layout: fixed;">
                             <tbody>
                                 <tr>
-                                    <td colspan="6" style="text-align: center;"><b>PART - II (Education Details)</b></td>
+                                    <td colspan="7" style="text-align: center;"><b>PART - II (Education Details)</b></td>
                                 </tr>
                                 <tr>
-                                    <td width="20px" colspan="3">2.1 Highest Education Qualification(As declared by the candidate)</td>
+                                    <td width="20px" colspan="4">2.1 Highest Education Qualification(As declared by the candidate)</td>
                                     <td colspan="3"><input style="border:none;background-color:#FFF" asp-for="highest_qualification" type="text" /></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="3">2.2 Qualifying Education Qualification</td>
+                                    <td colspan="4">2.2 Qualifying Education Qualification</td>
                                     <td colspan="3"><input style="border:none;background-color:#FFF" asp-for="Qualifying_education" type="text" /></td>
                                 </tr>
                                 <tr>
@@ -207,13 +210,13 @@ Code=========================================================================*@
                                     <td>CGPA</td>
                                 </tr>
                                 <tr>
-                                    <td> <input style="border:none;background-color:#FFF" asp-for="University" type="text" rows="2" cols="12" /></td>
-                                    <td> <input style="border:none;background-color:#FFF" asp-for="Nameof_board" type="text" rows="2" cols="20" /></td>
-                                    <td> <input style="border:none;background-color:#FFF" type="text" asp-for="Subjects" rows="2" cols="12" /></td>
-                                    <td> <input style="border:none;background-color:#FFF" type="text" asp-for="Rollno_highestqualification" rows="2" cols="12" /></td>
-                                    <td> <input style="border:none;background-color:#FFF" asp-for="Passing_Year" type="text" rows="2" cols="8" /></td>
-                                    <td> <input style="border:none;background-color:#FFF" asp-for="Percentage" type="text" rows="2" cols="5" /></td>
-                                    <td> <input style="border:none;background-color:#FFF" asp-for="CGPA" type="text" rows="2" cols="5" /></td>
+                                    <td> <input size="14" style="border:none;background-color:#FFF" asp-for="University" type="text" rows="2" cols="12" /></td>
+                                    <td> <input size="14" style="border:none;background-color:#FFF" asp-for="Nameof_board" type="text" rows="2" cols="20" /></td>
+                                    <td> <input  size="14" style="border:none;background-color:#FFF" type="text" asp-for="Subjects" rows="2" cols="12" /></td>
+                                    <td> <input size="12" style="border:none;background-color:#FFF" type="text" asp-for="Rollno_highestqualification" rows="2" cols="12" /></td>
+                                    <td> <input size="10" style="border:none;background-color:#FFF" asp-for="Passing_Year" type="text" rows="2" cols="8" /></td>
+                                    <td> <input size="8" style="border:none;background-color:#FFF" asp-for="Percentage" type="text" rows="2" cols="5" /></td>
+                                    <td> <input size="8" style="border:none;background-color:#FFF" asp-for="CGPA" type="text" rows="2" cols="5" /></td>
 
                                 </tr>
                             </tbody>
