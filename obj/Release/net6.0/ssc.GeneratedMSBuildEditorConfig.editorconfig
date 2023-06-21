@@ -1,0 +1,201 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ssc
+build_property.RootNamespace = ssc
+build_property.ProjectDir = C:\Users\user\Desktop\office\download\postssc\postssc\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\user\Desktop\office\download\postssc\postssc
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidatedata/candidate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlZGF0YVxjYW5kaWRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidatedata/candidateupload_doc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlZGF0YVxjYW5kaWRhdGV1cGxvYWRfZG9jLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidatedata/candidate_dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlZGF0YVxjYW5kaWRhdGVfZGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidatedata/candidate_preview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlZGF0YVxjYW5kaWRhdGVfcHJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidatedata/getcandidatedata.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlZGF0YVxnZXRjYW5kaWRhdGVkYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidatedata/getcandidatedatadept.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlZGF0YVxnZXRjYW5kaWRhdGVkYXRhZGVwdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidatedata/getcandidatelist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlZGF0YVxnZXRjYW5kaWRhdGVsaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidatedata/getuscandidatelist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlZGF0YVxnZXR1c2NhbmRpZGF0ZWxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidatedata/usview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlZGF0YVx1c3ZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidateregdata/candidateregdata.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlcmVnZGF0YVxjYW5kaWRhdGVyZWdkYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Candidateuserdata/candidateuserdata.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRldXNlcmRhdGFcY2FuZGlkYXRldXNlcmRhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/DataUploadNomination/uploadnomination.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVVwbG9hZE5vbWluYXRpb25cdXBsb2Fkbm9taW5hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Dataupload_deptreg/uploadDeptdata.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YXVwbG9hZF9kZXB0cmVnXHVwbG9hZERlcHRkYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Dataupload_mts/uploadmtsdata.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YXVwbG9hZF9tdHNcdXBsb2FkbXRzZGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Dataupload_userdept/uploaduserdata.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YXVwbG9hZF91c2VyZGVwdFx1cGxvYWR1c2VyZGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/DeptRegDashboard/UserDeptDash.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwdFJlZ0Rhc2hib2FyZFxVc2VyRGVwdERhc2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/DeptRegistration/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwdFJlZ2lzdHJhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Login/linkselectionmts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cbGlua3NlbGVjdGlvbm10cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Login/logincandidate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cbG9naW5jYW5kaWRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Login/usviewback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cdXN2aWV3YmFjay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/MTSselection/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVRTc2VsZWN0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/MTS_postDash/Mtsdash.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVRTX3Bvc3REYXNoXE10c2Rhc2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Regsuccess/regsuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnc3VjY2Vzc1xyZWdzdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Shared/_LayoutCandidate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDYW5kaWRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/US1_pendingapproval/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVVMxX3BlbmRpbmdhcHByb3ZhbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/US2approval/us2details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVVMyYXBwcm92YWxcdXMyZGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/US2/us2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVVMyXHVzMi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/US3mts/us3mtsapproval.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVVMzbXRzXHVzM210c2FwcHJvdmFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/US3/us3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVVMzXHVzMy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Userdepartment/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcmRlcGFydG1lbnRcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Userdepartment/Index1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcmRlcGFydG1lbnRcSW5kZXgxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Userdepartment/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcmRlcGFydG1lbnRcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Userdepartment/selectionpost_annex1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcmRlcGFydG1lbnRcc2VsZWN0aW9ucG9zdF9hbm5leDEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Userdepartment/selectionpost_annex2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcmRlcGFydG1lbnRcc2VsZWN0aW9ucG9zdF9hbm5leDIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Userdepartment/selectionpost_annex3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcmRlcGFydG1lbnRcc2VsZWN0aW9ucG9zdF9hbm5leDMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Userdepartment/selectionpost_annex4.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcmRlcGFydG1lbnRcc2VsZWN0aW9ucG9zdF9hbm5leDQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Userdepartment/selectionpost_annexV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcmRlcGFydG1lbnRcc2VsZWN0aW9ucG9zdF9hbm5leFYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Userdepartment/selection_post.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcmRlcGFydG1lbnRcc2VsZWN0aW9uX3Bvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/UserDeptDash/UserDeptDash.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckRlcHREYXNoXFVzZXJEZXB0RGFzaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/US/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVVNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/office/download/postssc/postssc/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-5l8vujkmdb
